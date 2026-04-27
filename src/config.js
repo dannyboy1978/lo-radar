@@ -21,7 +21,7 @@ export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
 // ─── APP — where signed-in LOs go ───────────────────────────────────────
 // Initially shared with the service-business apps. Eventually may move to
 // app.loradar.com on its own subdomain.
-export const APP_URL = "https://app.retentioniq.io/refi";
+export const APP_URL = "https://app.loradar.com";
 
 // ─── PARENT MARKETING SITE ──────────────────────────────────────────────
 // For the small "we're part of TechStack" footer link.
