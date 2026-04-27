@@ -16,7 +16,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Base title={`${post.data.title} | LO Radar`} description={post.data.description}>
+<Base title={`${post.data.title} | LO Radar`} description={post.data.description} ogImage={`/og/blog/${Astro.params.slug}.png`}>
   <article class="pt-20 pb-16">
     <div class="container-xl max-w-3xl">
       <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">
