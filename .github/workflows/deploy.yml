@@ -1,0 +1,41 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# LO Radar · Auto-deploy workflow
+# Triggers on every push to `main`. SSHs into the VPS and runs ./deploy.sh.
+#
+# GitHub Secrets required:
+#   VPS_HOST     — VPS IP (same as TechStack — 187.77.194.176)
+#   VPS_USER     — SSH user (root)
+#   VPS_SSH_KEY  — private SSH key authorized on VPS
+# ═══════════════════════════════════════════════════════════════════════════
+
+name: Deploy LO Radar marketing site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-loradar-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build & restart on VPS
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host:     ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key:      ${{ secrets.VPS_SSH_KEY }}
+          port:     22
+          timeout:  60s
+          command_timeout: 8m
+          script: |
+            set -e
+            cd /root/loradar
+            bash deploy.sh

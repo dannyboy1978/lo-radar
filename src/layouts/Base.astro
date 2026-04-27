@@ -1,0 +1,98 @@
+---
+import "../styles/globals.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_URL, BRAND_NAME, CONTACT_EMAIL } from "../config.js";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description, canonical, ogImage = "/og-default.png" } = Astro.props;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicons (placeholder — replace once brand finalized) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0a0d15" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, SITE_URL).toString()} />
+    <meta property="og:site_name" content={BRAND_NAME} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, SITE_URL).toString()} />
+
+    <!-- Schema.org Organization (LO Radar as a TechStack brand) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      "name": BRAND_NAME,
+      "alternateName": "TechStack LO Radar",
+      "url": SITE_URL,
+      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/loradar-logo.png`, "width": 512, "height": 512 },
+      "email": CONTACT_EMAIL,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "parentOrganization": { "@type": "Organization", "name": "TechStack LLC", "url": "https://retentioniq.io" },
+      "description": "LO Radar is a refi intelligence platform for individual mortgage loan officers. Pipeline NPV, Drift Radar, ARM Reset Calendar, Voice-trained drafts. Compliance-aware (RESPA / TILA / TCPA).",
+    })} />
+
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": BRAND_NAME,
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": SITE_URL,
+      "description": "Refi intelligence platform for mortgage loan officers. Consolidates a career book across every LOS, surfaces rate-drops, ARM resets, anniversaries, HELOC opportunities. Drafts compliance-aware outreach in the LO's voice.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "description": "Performance pricing: $399/mo base + $85 per closed deal, capped at $1,499/mo"
+        },
+      },
+    })} />
+  </head>
+
+  <body class="antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

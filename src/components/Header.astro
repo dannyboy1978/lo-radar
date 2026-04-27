@@ -1,0 +1,67 @@
+---
+import { BOOKING_URL, APP_URL, BRAND_NAME } from "../config.js";
+const path = Astro.url.pathname;
+const isActive = (p) => path === p || (p !== "/" && path.startsWith(p));
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-ink-100">
+  <div class="container-xl flex items-center justify-between h-16 md:h-20">
+    <a href="/" class="flex items-center gap-3 font-bold text-ink-900 shrink-0">
+      <!-- Replace with loradar-logo.png once finalized -->
+      <span class="font-serif text-2xl text-gradient-gold">LO Radar</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+      <a href="/" class={`px-3 py-2 rounded-md transition-colors ${isActive("/") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>How it works</a>
+      <a href="/pricing" class={`px-3 py-2 rounded-md transition-colors ${isActive("/pricing") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Pricing</a>
+      <a href="/blog" class={`px-3 py-2 rounded-md transition-colors ${isActive("/blog") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Blog</a>
+      <a href="/vs" class={`px-3 py-2 rounded-md transition-colors ${isActive("/vs") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Compare</a>
+      <a href="/glossary" class={`px-3 py-2 rounded-md transition-colors ${isActive("/glossary") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Glossary</a>
+    </nav>
+
+    <div class="flex items-center gap-2 md:gap-3">
+      <a href={APP_URL} class="hidden sm:inline text-sm font-medium text-ink-700 hover:text-ink-900">Sign in</a>
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-1.5 bg-ink-900 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-ink-800 transition-colors"
+      >
+        Book a demo
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg text-ink-900 hover:bg-ink-50 transition-colors"
+      >
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-ink-100 bg-white">
+    <nav class="container-xl py-5 space-y-1">
+      <a href="/" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">How it works</a>
+      <a href="/pricing" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Pricing</a>
+      <a href="/blog" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Blog</a>
+      <a href="/vs" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Compare</a>
+      <a href="/glossary" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Glossary</a>
+      <a href={APP_URL} class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Sign in</a>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="block px-4 py-3 rounded-lg bg-ink-900 text-white text-center font-semibold">Book a demo</a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  document.getElementById("mobile-menu-toggle")?.addEventListener("click", () => {
+    document.getElementById("mobile-menu")?.classList.toggle("hidden");
+  });
+</script>

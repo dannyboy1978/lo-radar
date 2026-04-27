@@ -1,0 +1,130 @@
+---
+import { BOOKING_URL } from "../../config.js";
+import Base from "../../layouts/Base.astro";
+import { COMPETITORS } from "../../data/competitors.js";
+
+export async function getStaticPaths() {
+  return COMPETITORS.map(c => ({ params: { slug: c.slug }, props: { competitor: c } }));
+}
+const { competitor } = Astro.props;
+const c = competitor;
+---
+
+<Base
+  title={`LO Radar vs ${c.name} (2026): Honest Comparison for Loan Officers`}
+  description={`Side-by-side comparison of LO Radar and ${c.name}. What each does well, where they differ, and how to decide.`}
+>
+  <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">
+        <a href="/vs" class="hover:text-ink-900">Comparisons</a> / LO Radar vs {c.name}
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        LO Radar <span class="text-gradient-gold">vs <span class="italic">{c.name}.</span></span>
+      </h1>
+      <p class="text-xl text-ink-600 font-light leading-relaxed max-w-3xl mb-8">
+        An honest, side-by-side look. {c.name} does its job well — here's where it shines, where LO Radar goes further, and how to decide.
+      </p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm hover:shadow-xl transition-all">
+        See LO Radar on your CSV
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-ink-50 rounded-xl p-6 border border-ink-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-ink-500 mb-2">Stay with {c.name} if…</div>
+          <p class="text-sm text-ink-700 leading-relaxed">{c.whoIsRight.stayWithThem}</p>
+        </div>
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">Switch to LO Radar if…</div>
+          <p class="text-sm text-ink-700 leading-relaxed">{c.whoIsRight.switchToUs}</p>
+        </div>
+        <div class="bg-gradient-to-br from-ink-900 to-ink-950 text-white rounded-xl p-6">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-gradient-gold mb-2">Run both if…</div>
+          <p class="text-sm text-ink-200 leading-relaxed">{c.whoIsRight.runBoth}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink-50/40">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-ink-500 mb-3">Credit where it's due</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.1] mb-4">What {c.name} <span class="italic">does well.</span></h2>
+      <p class="text-ink-600 leading-relaxed mb-6">{c.competitorBlurb}</p>
+      <ul class="space-y-3">
+        {c.whatTheyDoWell.map(item => (
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-ink-800">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">The differentiator</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.1] mb-10">
+        Where LO Radar <span class="italic text-refi-600">goes further.</span>
+      </h2>
+      <div class="space-y-8">
+        {c.whereWeDiffer.map((d, i) => (
+          <div class="grid md:grid-cols-[60px_1fr] gap-5 items-start">
+            <div class="text-5xl font-serif italic text-refi-600 leading-none">0{i+1}</div>
+            <div>
+              <h3 class="font-bold text-ink-900 text-xl mb-2">{d.title}</h3>
+              <p class="text-ink-600 leading-relaxed">{d.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink-50/40">
+    <div class="container-xl max-w-5xl">
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.1] mb-8">Feature-by-feature.</h2>
+      <div class="bg-white rounded-2xl border border-ink-200 overflow-hidden shadow-sm">
+        <table class="w-full text-sm">
+          <thead class="bg-refi-50 border-b border-refi-200">
+            <tr>
+              <th class="text-left px-5 py-4 font-bold text-ink-900 text-xs uppercase tracking-widest w-2/5">Capability</th>
+              <th class="text-left px-5 py-4 font-bold text-ink-700 text-xs uppercase tracking-widest">{c.name}</th>
+              <th class="text-left px-5 py-4 font-bold text-refi-700 text-xs uppercase tracking-widest">LO Radar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {c.sideBySide.map((row, i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-ink-50/30"}>
+                <td class="px-5 py-3 text-ink-900 font-medium border-b border-ink-100">{row[0]}</td>
+                <td class="px-5 py-3 text-ink-700 border-b border-ink-100">{row[1]}</td>
+                <td class="px-5 py-3 text-refi-700 font-semibold border-b border-ink-100">{row[2]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container-xl max-w-4xl">
+      <h2 class="font-serif text-3xl text-ink-900 mb-6">Other comparisons</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+        {COMPETITORS.filter(o => o.slug !== c.slug).map(o => (
+          <a href={`/vs/${o.slug}`} class="group bg-ink-50 rounded-xl border border-ink-200 p-4 hover:border-refi-400 hover:shadow-md transition-all">
+            <div class="text-[10px] font-bold uppercase tracking-widest text-ink-500 mb-1">vs</div>
+            <div class="font-bold text-ink-900 group-hover:text-refi-700">{o.name}</div>
+            <div class="text-xs text-ink-500 mt-1">{o.category}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

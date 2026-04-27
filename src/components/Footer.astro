@@ -1,0 +1,75 @@
+---
+import { BOOKING_URL, CONTACT_EMAIL, PARENT_SITE, BRAND_NAME } from "../config.js";
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-ink-950 text-ink-300 mt-32">
+  <div class="container-xl py-16">
+    <div class="border-b border-ink-800/60 pb-10 md:pb-12 mb-10 md:mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+      <div class="max-w-xl">
+        <div class="font-serif text-2xl text-gradient-gold mb-3">LO Radar</div>
+        <div class="font-serif italic text-xl sm:text-2xl text-white leading-tight">
+          The clients you closed are<br/>
+          <span class="text-gradient-gold">your next deals.</span>
+        </div>
+        <p class="text-sm text-ink-400 mt-3 leading-relaxed">
+          Refi intelligence for individual mortgage loan officers. Pipeline NPV, Drift Radar, ARM Reset Calendar, Voice-trained drafts. Compliance-aware (RESPA / TILA / TCPA).
+        </p>
+      </div>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm hover:shadow-2xl transition-all whitespace-nowrap">
+        Book a demo
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+      <div>
+        <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Product</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="hover:text-white">How it works</a></li>
+          <li><a href="/pricing" class="hover:text-white">Pricing</a></li>
+          <li><a href="/glossary" class="hover:text-white">Glossary</a></li>
+          <li><a href="/vs" class="hover:text-white">vs Competitors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Capabilities</h4>
+        <ul class="space-y-2 text-sm">
+          <li>Pipeline NPV</li>
+          <li>Drift Radar</li>
+          <li>Rate-Drop Radar</li>
+          <li>ARM Reset Calendar</li>
+          <li>Voice Training</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Resources</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/blog" class="hover:text-white">Blog</a></li>
+          <li><a href="/press" class="hover:text-white">Press</a></li>
+          <li><a href={`mailto:${CONTACT_EMAIL}`} class="hover:text-white">{CONTACT_EMAIL}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li class="text-ink-400">Austin, Texas</li>
+          <li>
+            <a href={PARENT_SITE} class="hover:text-white">
+              Part of TechStack →
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-ink-800/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ink-500">
+      <div>© {year} TechStack LLC. All rights reserved.</div>
+      <div class="flex flex-wrap gap-6">
+        <a href={`${PARENT_SITE}/privacy`} class="hover:text-white">Privacy</a>
+        <a href={`${PARENT_SITE}/terms`} class="hover:text-white">Terms</a>
+        <a href="/pricing" class="hover:text-white">Pricing</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,46 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Base
+  title="Blog — LO Radar"
+  description="Tactical, math-driven content for mortgage loan officers working their past-client book. ARM cadences, anniversary playbooks, Pipeline NPV math, voice-trained outreach."
+>
+  <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">Blog</div>
+      <h1 class="font-serif text-5xl md:text-7xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        Tactics for the <span class="italic text-gradient-gold">past-client book.</span>
+      </h1>
+      <p class="text-xl text-ink-600 font-light leading-relaxed max-w-3xl">
+        Math-driven, no-fluff playbooks on what top-producing loan officers actually do with their career book.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-4xl">
+      <div class="space-y-6">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}/`} class="group block border-b border-ink-100 pb-6">
+            <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">{post.data.category}</div>
+            <h2 class="font-serif text-2xl md:text-3xl text-ink-900 group-hover:text-refi-700 leading-tight mb-2 transition-colors">
+              {post.data.title}
+            </h2>
+            <p class="text-ink-600 leading-relaxed mb-3">{post.data.description}</p>
+            <div class="text-xs text-ink-500 font-medium">
+              {post.data.pubDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+              {post.data.readingTime ? ` · ${post.data.readingTime}` : ""}
+            </div>
+          </a>
+        ))}
+      </div>
+      {posts.length === 0 && (
+        <p class="text-ink-500 italic text-center py-12">More content coming soon.</p>
+      )}
+    </div>
+  </section>
+</Base>

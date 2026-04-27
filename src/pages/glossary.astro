@@ -1,0 +1,51 @@
+---
+import Base from "../layouts/Base.astro";
+
+const TERMS = [
+  { term: "Pipeline NPV", short: "The present value of a mortgage LO's career book of past clients, priced as an asset that moves daily." },
+  { term: "Drift Radar", short: "Per-borrower churn prediction scored against each client's personal contact rhythm — not a generic threshold." },
+  { term: "Voice Training", short: "A system that learns the LO's writing voice from past sent messages and renders every draft in their tone." },
+  { term: "Rate-Drop Radar", short: "Past borrowers ranked by projected annual savings if they refinanced today at current market rates." },
+  { term: "ARM Reset Calendar", short: "Every 5/1, 7/1, and 10/1 ARM in the LO's book, mapped to its reset date with a 12-month pre-reset cadence." },
+  { term: "Anniversary Triggers", short: "Auto-drafted outreach at year 1, 3, 5, 7, and 10 of a past borrower's purchase. Year 5 is statistically the highest-conversion refinance year." },
+  { term: "HELOC Radar", short: "Equity-rich past borrowers worth a HELOC conversation. Sorted by available equity × rate spread." },
+  { term: "Cash-Out Detection", short: "Borrowers whose appreciated equity could fund a renovation, second property, or business — flagged by life-event signals." },
+  { term: "Second-Home Signals", short: "Lifestyle indicators (vacation searches, kid heading to college, job relocation) that suggest a second-home purchase is imminent." },
+  { term: "Credit-Improvement Flags", short: "Past borrowers whose credit score has improved 40+ points since origination — they may now qualify for a meaningful rate reduction." },
+  { term: "RESPA", short: "Real Estate Settlement Procedures Act. Federal law restricting kickbacks and disclosure requirements in real-estate transactions." },
+  { term: "TILA", short: "Truth in Lending Act. Requires lenders to disclose loan terms clearly and uniformly across products." },
+  { term: "TCPA", short: "Telephone Consumer Protection Act. Restricts automated phone and SMS contact without prior consent." },
+  { term: "LOS", short: "Loan Origination System — the core software an LO uses to originate, process, and close mortgages. Encompass, Calyx, Byte, MeridianLink, LendingPad." },
+  { term: "Empirical Bayes", short: "Statistical technique that blends a borrower's personal contact history with a population-level prior — produces stable cadence estimates even with thin data." },
+];
+---
+
+<Base
+  title="Glossary — LO Radar"
+  description="Plain-English definitions of every term LO Radar uses. Pipeline NPV, Drift Radar, ARM Reset Calendar, RESPA, TILA, TCPA, and more."
+>
+  <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">Glossary</div>
+      <h1 class="font-serif text-5xl md:text-6xl text-ink-900 tracking-tight leading-[1.05] mb-6">
+        The LO Radar <span class="italic text-gradient-gold">vocabulary.</span>
+      </h1>
+      <p class="text-xl text-ink-600 font-light leading-relaxed">
+        Plain-English definitions for every term we use across the platform.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-4xl">
+      <dl class="space-y-10">
+        {TERMS.map(t => (
+          <div>
+            <dt class="font-serif text-2xl md:text-3xl text-ink-900 tracking-tight mb-2">{t.term}</dt>
+            <dd class="text-ink-700 leading-relaxed">{t.short}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+</Base>

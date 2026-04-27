@@ -1,0 +1,258 @@
+---
+import { BOOKING_URL, BRAND_NAME } from "../config.js";
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="LO Radar — Refi intelligence for mortgage loan officers"
+  description="Consolidate your career book across every LOS. Pipeline NPV, Drift Radar, ARM Reset Calendar, voice-trained drafts. Compliance-aware (RESPA / TILA / TCPA). Performance pricing."
+>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="relative pt-24 md:pt-32 pb-20 md:pb-28 bg-ink-950 text-white overflow-hidden">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-30 pointer-events-none"
+      style="background: radial-gradient(circle, rgba(20,184,166,0.4), transparent 70%); filter: blur(120px);"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-25 pointer-events-none"
+      style="background: radial-gradient(circle, rgba(201,169,106,0.5), transparent 70%); filter: blur(120px);"></div>
+
+    <div class="container-xl relative">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+          <span class="w-6 h-px bg-amber-300"></span>
+          For mortgage loan officers
+        </div>
+
+        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-8">
+          The clients you closed are<br/>
+          <span class="italic text-gradient-gold">your next deals.</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-ink-300 font-light leading-relaxed max-w-3xl mb-10">
+          LO Radar consolidates your entire career book across every LOS — Encompass, Calyx, Surefire, Jungo, folders of PDFs — into a single intelligence layer. Then it tells you which past borrower to call today, why, and exactly what to say.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl hover:shadow-amber-500/20 transition-all">
+            Bring a CSV — see your book in 15 minutes
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="#how-it-works" class="text-sm font-semibold text-ink-300 hover:text-white inline-flex items-center gap-1.5">
+            How it works <span class="opacity-60">↓</span>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-10 text-sm text-ink-400">
+          <div class="flex items-center gap-2"><svg class="w-4 h-4 text-gold-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Works with every LOS you've ever used</div>
+          <div class="flex items-center gap-2"><svg class="w-4 h-4 text-gold-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>RESPA / TILA / TCPA aware</div>
+          <div class="flex items-center gap-2"><svg class="w-4 h-4 text-gold-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Performance pricing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ THE PROBLEM ═══════ -->
+  <section class="py-24 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-center mb-12">
+        <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">The problem</div>
+        <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight max-w-3xl mx-auto">
+          70% of ARM borrowers refinance with <span class="italic text-refi-600">somebody else.</span>
+        </h2>
+        <p class="text-lg text-ink-600 mt-5 leading-relaxed max-w-2xl mx-auto">
+          That's not a competitive market dynamic. It's a workflow failure. Your past book is scattered across Encompass, Calyx, Surefire, and folders of PDFs from three jobs ago. There's no single view of "who do I call today?"
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-12">
+        <div class="p-6 rounded-xl border border-ink-100 bg-ink-50/40">
+          <div class="text-3xl font-serif italic text-refi-600 mb-2">7/1 ARM resets</div>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            You wrote it 7 years ago. The reset is in 4 months. You haven't talked to her in 18 months. Rocket Mortgage is calling her tomorrow.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl border border-ink-100 bg-ink-50/40">
+          <div class="text-3xl font-serif italic text-refi-600 mb-2">Rate-drop opportunities</div>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            Three of your 2022 borrowers could save $7,200/year right now if they refinanced. You don't know it. They don't know you do.
+          </p>
+        </div>
+        <div class="p-6 rounded-xl border border-ink-100 bg-ink-50/40">
+          <div class="text-3xl font-serif italic text-refi-600 mb-2">Year-5 anniversaries</div>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            Year 5 is statistically the highest-conversion refinance year. You have 47 borrowers hitting it this year. Nobody's calling them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ HOW IT WORKS ═══════ -->
+  <section id="how-it-works" class="py-24 bg-gradient-to-b from-ink-50/40 to-white scroll-mt-24">
+    <div class="container-xl">
+      <div class="max-w-3xl mb-16">
+        <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">How it works</div>
+        <h2 class="font-serif text-4xl md:text-6xl text-ink-900 tracking-tight leading-[1.05]">
+          Three screens. <span class="italic text-refi-600">Five minutes a day.</span>
+        </h2>
+      </div>
+
+      <div class="space-y-8">
+        <div class="grid md:grid-cols-[80px_1fr_1.2fr] gap-6 md:gap-8 items-start bg-white rounded-2xl border border-ink-100 p-6 md:p-8">
+          <div class="text-7xl font-serif italic text-refi-200 leading-none">1</div>
+          <div>
+            <h3 class="text-2xl font-bold text-ink-900 mb-3">Open your morning briefing</h3>
+            <p class="text-ink-600 leading-relaxed">
+              LO Radar opens to one screen: your top 3 calls today. Each one has the rate math already done — current rate, today's market rate, monthly delta, projected annual savings. No spreadsheets. No "I'll get to it later."
+            </p>
+          </div>
+          <div class="bg-ink-50 rounded-xl p-5 border border-ink-100">
+            <div class="text-[10px] text-ink-500 uppercase font-bold tracking-widest mb-3">Today's top calls</div>
+            <div class="space-y-2 text-sm">
+              <div class="flex items-center justify-between p-2 bg-white rounded">
+                <span class="text-ink-700">Whitmore, J. · 7/1 ARM resetting Jul</span>
+                <span class="text-refi-700 font-bold">$8,400/yr</span>
+              </div>
+              <div class="flex items-center justify-between p-2 bg-white rounded">
+                <span class="text-ink-700">Montgomery, R. · year-5 anniversary</span>
+                <span class="text-refi-700 font-bold">$7,200/yr</span>
+              </div>
+              <div class="flex items-center justify-between p-2 bg-white rounded">
+                <span class="text-ink-700">Kensington, A. · rate-drop 80bp</span>
+                <span class="text-refi-700 font-bold">$6,100/yr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[80px_1fr_1.2fr] gap-6 md:gap-8 items-start bg-white rounded-2xl border border-ink-100 p-6 md:p-8">
+          <div class="text-7xl font-serif italic text-refi-200 leading-none">2</div>
+          <div>
+            <h3 class="text-2xl font-bold text-ink-900 mb-3">Review the draft. Tap to send.</h3>
+            <p class="text-ink-600 leading-relaxed">
+              Each call has a pre-drafted outreach message — in your voice (we learn it from past sent messages), with the specific rate math inserted, and RESPA / TILA / TCPA compliance flags already applied. You read, tweak, and send from your own email or CRM.
+            </p>
+          </div>
+          <div class="bg-ink-50 rounded-xl p-5 border border-ink-100">
+            <div class="text-[10px] text-ink-500 uppercase font-bold tracking-widest mb-2">Draft for Whitmore</div>
+            <div class="bg-white rounded-2xl p-4 border border-ink-100 text-sm text-ink-800 leading-relaxed italic">
+              "Hey Jim — your 7/1 ARM hits adjustment in July. At today's index, your reset rate would be ~7.1%. A new 30-yr fixed at 5.95% saves you about $700/mo. Worth 15 min this week? — Melissa"
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[80px_1fr_1.2fr] gap-6 md:gap-8 items-start bg-white rounded-2xl border border-ink-100 p-6 md:p-8">
+          <div class="text-7xl font-serif italic text-refi-200 leading-none">3</div>
+          <div>
+            <h3 class="text-2xl font-bold text-ink-900 mb-3">Watch your Pipeline NPV move.</h3>
+            <p class="text-ink-600 leading-relaxed">
+              Every conversation you start, every reactivation, every closed refi moves your Pipeline NPV ticker. The number you'd use if you sold the book — moves daily, like a stock. Stop thinking in monthly pulls; start thinking in book value.
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-ink-950 to-ink-900 rounded-xl p-5 text-white border border-ink-800">
+            <div class="text-[10px] font-bold uppercase tracking-widest text-gradient-gold mb-1">Pipeline NPV · live</div>
+            <div class="font-serif text-4xl mb-1">$1.84M</div>
+            <div class="text-xs text-emerald-400">+$42K · 30 days · 340 active relationships</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ THE INTELLIGENCE LAYER ═══════ -->
+  <section class="py-24 bg-ink-950 text-white">
+    <div class="container-xl">
+      <div class="max-w-3xl mb-16">
+        <div class="text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-4">
+          <span class="inline-block w-6 h-px bg-amber-300 mr-2 align-middle"></span>
+          The intelligence layer
+        </div>
+        <h2 class="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight mb-5">
+          Three things <span class="italic text-gradient-gold">no other LO tool</span> is doing.
+        </h2>
+        <p class="text-lg text-ink-300 font-light leading-relaxed">
+          Total Expert sends segment-based journeys. HomeBot mails monthly equity reports. Sales Boomerang pings you on rate drops. LO Radar goes further.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-ink-800/40 backdrop-blur rounded-2xl border border-ink-700 p-7">
+          <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-gradient-gold mb-3">01 · Pipeline NPV</div>
+          <h3 class="font-serif text-3xl mb-3 leading-tight">Your book, <span class="italic text-gradient-gold">priced like an asset.</span></h3>
+          <p class="text-sm text-ink-300 leading-relaxed">
+            Future originations weighted by each borrower's likelihood of returning, discounted to today. Moves daily. The number you'd use if you sold or pitched.
+          </p>
+        </div>
+        <div class="bg-ink-800/40 backdrop-blur rounded-2xl border border-ink-700 p-7">
+          <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-gradient-gold mb-3">02 · Drift Radar</div>
+          <h3 class="font-serif text-3xl mb-3 leading-tight">Churn prediction, <span class="italic text-gradient-gold">per borrower.</span></h3>
+          <p class="text-sm text-ink-300 leading-relaxed">
+            Each borrower scored against their own contact rhythm — not a generic "haven't talked in 18 months" threshold. Catches drift weeks before it converts to a competitor.
+          </p>
+        </div>
+        <div class="bg-ink-800/40 backdrop-blur rounded-2xl border border-ink-700 p-7">
+          <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-gradient-gold mb-3">03 · Voice Training</div>
+          <h3 class="font-serif text-3xl mb-3 leading-tight">Drafts that sound <span class="italic text-gradient-gold">like you.</span></h3>
+          <p class="text-sm text-ink-300 leading-relaxed">
+            Paste 15 emails you've sent past clients. We learn your tone — greeting, sign-off, sentence length, distinctive phrases. Every draft from then on sounds like yours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ THE SEVEN TRIGGERS ═══════ -->
+  <section class="py-24 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Seven triggers, one inbox</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-12">
+        LO Radar watches your book for <span class="italic">seven specific moments.</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          { t: "Rate-Drop Radar", d: "Past borrowers ranked by projected annual savings if they refi today. Math runs daily." },
+          { t: "ARM Reset Calendar", d: "Every 5/1, 7/1, 10/1 ARM in your book mapped to its reset date. T-12 / T-9 / T-6 / T-3 / T-1 cadence." },
+          { t: "Anniversary Triggers", d: "Year 1, 3, 5, 7, 10 — each gets its own playbook. Year 5 is the highest-conversion refi year." },
+          { t: "HELOC Radar", d: "Equity-rich past borrowers worth a HELOC conversation. Sorted by available equity × rate spread." },
+          { t: "Cash-Out Detection", d: "Borrowers whose appreciated equity could fund the home renovation, second property, or business they've mentioned." },
+          { t: "Second-Home Signals", d: "Lifestyle indicators (vacation searches, kid heading to college in another state) that suggest a second-home purchase." },
+          { t: "Credit-Improvement Flags", d: "Past borrowers whose credit has improved 40+ points — they may now qualify for a meaningful rate reduction." },
+        ].map((tr, i) => (
+          <div class="bg-ink-50/50 rounded-xl p-5 border border-ink-100">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl font-serif italic text-refi-600 leading-none">0{i + 1}</span>
+              <div>
+                <h3 class="font-bold text-ink-900 mb-1">{tr.t}</h3>
+                <p class="text-sm text-ink-600 leading-relaxed">{tr.d}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FINAL CTA ═══════ -->
+  <section class="py-24 md:py-32 bg-gradient-to-br from-ink-900 via-slate-900 to-ink-950 text-white">
+    <div class="container-xl">
+      <div class="max-w-3xl">
+        <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-gradient-gold mb-8">Ready when you are</div>
+        <h2 class="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight mb-8">
+          Bring a CSV export<br/>
+          <span class="italic text-gradient-gold">from any LOS.</span>
+        </h2>
+        <p class="text-lg text-ink-300 font-light leading-relaxed mb-12 max-w-2xl">
+          15 minutes. We import a sample of your book, run the triggers against today's market, and walk you through what a week of outreach would look like. No slide deck.
+        </p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl hover:shadow-amber-500/30 transition-all">
+            Book a 15-min walkthrough
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <a href="/pricing" class="text-sm text-ink-300 hover:text-white font-medium tracking-wide">
+            Or review the pricing →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

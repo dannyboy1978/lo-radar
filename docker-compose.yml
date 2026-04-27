@@ -1,0 +1,33 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# LO Radar marketing site — Hostinger VPS
+# Joins the existing `web` network (nginx-proxy + acme-companion).
+# Lives ALONGSIDE the techstack-iq + techstack-marketing containers.
+# ═══════════════════════════════════════════════════════════════════════════
+
+services:
+  loradar-marketing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: loradar-marketing:latest
+    container_name: loradar-marketing
+    restart: unless-stopped
+    expose:
+      - "80"
+    environment:
+      VIRTUAL_HOST: ${LORADAR_DOMAIN}                  # loradar.com,www.loradar.com
+      VIRTUAL_PORT: "80"
+      LETSENCRYPT_HOST: ${LORADAR_DOMAIN}
+      LETSENCRYPT_EMAIL: hello@techstackllc.info
+    networks:
+      - web
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+networks:
+  web:
+    external: true
