@@ -211,3 +211,5 @@ The placeholder text appears in:
 | **Total** | **~2 hours** |
 
 After that: the new site builds authority independently. Same playbooks (G2, podcasts, LinkedIn, etc.) apply but to mortgage-LO-specific channels.
+
+_Live at loradar.com._
