@@ -9,9 +9,10 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
-const { title, description, canonical, ogImage = "/og-default.png" } = Astro.props;
+const { title, description, canonical, ogImage = "/og-default.png", breadcrumbs } = Astro.props;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).toString();
 ---
 
@@ -86,6 +87,31 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).toString
         },
       },
     })} />
+  
+    <!-- Schema.org WebSite — declares the site to Google + enables future sitelinks -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://loradar.com/#website",
+      "url": "https://loradar.com/",
+      "name": "LO Radar",
+      "description": "Refi intelligence platform for individual mortgage loan officers.",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://loradar.com/#organization" }
+    })}></script>
+
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((b, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": b.name,
+          "item": b.url
+        }))
+      })} />
+    )}
   </head>
 
   <body class="antialiased">
