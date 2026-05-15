@@ -1,5 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
+import { SITE_URL } from "../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Glossary", url: SITE_URL + "/glossary/" },
+];
 
 const TERMS = [
   { term: "Pipeline NPV", short: "The present value of a mortgage LO's career book of past clients, priced as an asset that moves daily." },
@@ -21,8 +27,9 @@ const TERMS = [
 ---
 
 <Base
-  title="Glossary — LO Radar"
-  description="Plain-English definitions of every term LO Radar uses. Pipeline NPV, Drift Radar, ARM Reset Calendar, RESPA, TILA, TCPA, and more."
+  title="Mortgage Loan Officer Glossary — Refi Triggers, Pipeline NPV, ARM Resets | LO Radar"
+  description="Plain-English definitions for mortgage loan officers: Pipeline NPV, Drift Radar, ARM Reset Calendar, Anniversary Triggers, HELOC Radar, Cash-Out Detection, Credit-Improvement Flags, RESPA, TILA, TCPA, LOS, and more."
+  breadcrumbs={breadcrumbs}
 >
   <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
     <div class="container-xl max-w-4xl">

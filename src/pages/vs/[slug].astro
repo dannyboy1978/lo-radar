@@ -1,5 +1,5 @@
 ---
-import { BOOKING_URL } from "../../config.js";
+import { BOOKING_URL, SITE_URL } from "../../config.js";
 import Base from "../../layouts/Base.astro";
 import { COMPETITORS } from "../../data/competitors.js";
 
@@ -8,11 +8,24 @@ export async function getStaticPaths() {
 }
 const { competitor } = Astro.props;
 const c = competitor;
+
+// Slugs that have a hand-designed per-comparison OG image in /public/og/vs/.
+// New competitors fall back to the default OG until images are added.
+const SLUGS_WITH_OG = new Set(["homebot", "total-expert", "sales-boomerang"]);
+const ogImage = SLUGS_WITH_OG.has(c.slug) ? `/og/vs/${c.slug}.png` : undefined;
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Compare", url: SITE_URL + "/vs/" },
+  { name: `vs ${c.name}`, url: SITE_URL + `/vs/${c.slug}/` },
+];
 ---
 
 <Base
-  title={`LO Radar vs ${c.name} (2026): Honest Comparison for Loan Officers`}
-  description={`Side-by-side comparison of LO Radar and ${c.name}. What each does well, where they differ, and how to decide.`} ogImage={`/og/vs/${Astro.params.slug}.png`}
+  title={`LO Radar vs ${c.name} (2026): Honest Comparison for Mortgage Loan Officers`}
+  description={`Side-by-side comparison of LO Radar and ${c.name} for mortgage loan officers. ${c.competitorBlurb.split('.').slice(0, 1).join('.')}. Where each one wins, where they differ, and how to decide.`}
+  ogImage={ogImage}
+  breadcrumbs={breadcrumbs}
 >
   <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
     <div class="container-xl max-w-5xl">

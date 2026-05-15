@@ -1,11 +1,17 @@
 ---
-import { BOOKING_URL } from "../config.js";
+import { BOOKING_URL, SITE_URL } from "../config.js";
 import Base from "../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Pricing", url: SITE_URL + "/pricing/" },
+];
 ---
 
 <Base
-  title="Pricing — LO Radar"
-  description="Performance pricing for individual mortgage loan officers. $399/mo base + $85 per closed deal LO Radar helped surface, capped at $1,499/mo. Month-to-month."
+  title="Pricing — LO Radar | Mortgage Loan Officer Software, Performance-Based"
+  description="Performance pricing for mortgage loan officer software. LO Radar: $399/mo base + $85 per closed deal LO Radar helped surface, capped at $1,499/mo. Month-to-month, no annual contract."
+  breadcrumbs={breadcrumbs}
 >
   <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
     <div class="container-xl max-w-5xl text-center">

@@ -1,11 +1,18 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { COMPETITORS } from "../../data/competitors.js";
+import { SITE_URL } from "../../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Compare", url: SITE_URL + "/vs/" },
+];
 ---
 
 <Base
-  title="LO Radar vs Competitors — Honest Comparisons"
-  description="Side-by-side comparisons of LO Radar against HomeBot, Total Expert, Sales Boomerang, and other mortgage LO tools. Where each one wins, what they share, and how to decide."
+  title="LO Radar vs Competitors — Mortgage Loan Officer Software Comparisons"
+  description="Honest side-by-side comparisons of LO Radar against every major mortgage loan officer tool: HomeBot, Total Expert, Sales Boomerang, Aidium, Surefire CRM, Bonzo, BNTouch, Shape, Velocify, and MMI. When to pick each one, when to switch, and when to run both."
+  breadcrumbs={breadcrumbs}
 >
   <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
     <div class="container-xl max-w-5xl">

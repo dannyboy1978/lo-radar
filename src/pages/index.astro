@@ -1,11 +1,13 @@
 ---
 import { BOOKING_URL, BRAND_NAME } from "../config.js";
 import Base from "../layouts/Base.astro";
+import { FAQ } from "../data/faq.js";
 ---
 
 <Base
-  title="LO Radar — Refi intelligence for mortgage loan officers"
-  description="Consolidate your career book across every LOS. Pipeline NPV, Drift Radar, ARM Reset Calendar, voice-trained drafts. Compliance-aware (RESPA / TILA / TCPA). Performance pricing."
+  title="LO Radar — Past-Client Intelligence Software for Mortgage Loan Officers"
+  description="Past-client intelligence software for individual mortgage loan officers. LO Radar surfaces refinance opportunities, ARM resets, anniversary triggers, equity windows, and credit-improvement signals across your career book — with compliance-aware (RESPA / TILA / TCPA) outreach drafts in your voice. Performance pricing, month-to-month."
+  faq={FAQ}
 >
   <!-- ═══════ HERO ═══════ -->
   <section class="relative pt-24 md:pt-32 pb-20 md:pb-28 bg-ink-950 text-white overflow-hidden">
@@ -45,6 +47,31 @@ import Base from "../layouts/Base.astro";
           <div class="flex items-center gap-2"><svg class="w-4 h-4 text-gold-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>RESPA / TILA / TCPA aware</div>
           <div class="flex items-center gap-2"><svg class="w-4 h-4 text-gold-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Performance pricing</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ DEFINITIONAL ANSWER BLOCK (AEO) ═══════
+       Plain-language, citable summary directly under the hero. Written for
+       AI search engines (ChatGPT / Perplexity / Claude search) and for Google
+       featured-snippet eligibility. Keep the first sentence keyword-dense.
+  ═══════════════════════════════════════════════════════════════════ -->
+  <section class="py-14 md:py-16 bg-white border-b border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">What LO Radar is</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-5">
+        Past-client intelligence software <span class="italic text-refi-600">for mortgage loan officers.</span>
+      </h2>
+      <div class="space-y-4 text-lg text-ink-700 leading-relaxed max-w-3xl">
+        <p>
+          <strong>LO Radar</strong> is past-client intelligence software built specifically for individual mortgage loan officers. It consolidates a loan officer's entire career book — across Encompass, Calyx, Surefire, Jungo, and any LOS the LO has ever used — into a single intelligence layer that scans for refinance opportunities daily.
+        </p>
+        <p>
+          Each morning, LO Radar surfaces the highest-value past borrowers to call: rate-drop opportunities ranked by projected annual savings, ARM resets approaching their adjustment date, anniversary triggers (year 1, 3, 5, 7, 10), HELOC and cash-out windows, and credit-improvement events. Every alert includes the rate math, the compliance posture, and a draft outreach message written in the LO's own voice.
+        </p>
+        <p>
+          Unlike enterprise mortgage CRMs (Total Expert, Surefire CRM, Aidium) that are configured by marketing teams over months, LO Radar is built for the individual LO and runs against a CSV export in days. Pricing is performance-based: $399/mo base + $85 per closed deal, capped at $1,499/mo. RESPA, TILA, and TCPA compliance posture is built into every draft.
+        </p>
       </div>
     </div>
   </section>
@@ -227,6 +254,41 @@ import Base from "../layouts/Base.astro";
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FAQ (AEO + Featured snippets) ═══════
+       Renders the same 7 Q&A pairs that ship in the FAQPage JSON-LD schema.
+       Plain-text answers near the bottom of the homepage give AI search
+       engines and Google a clean anchor to cite.
+  ═══════════════════════════════════════════════════════════════════ -->
+  <section id="faq" class="py-24 bg-ink-50/40 scroll-mt-24">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Common questions</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        Loan officers ask <span class="italic text-refi-600">about LO Radar.</span>
+      </h2>
+
+      <div class="space-y-3">
+        {FAQ.map((item, i) => (
+          <details class="group bg-white rounded-xl border border-ink-100 open:border-refi-300 open:shadow-md transition-all">
+            <summary class="cursor-pointer list-none px-6 py-5 flex items-start justify-between gap-4">
+              <div class="flex items-start gap-3">
+                <span class="text-xl font-serif italic text-refi-600 leading-none mt-1 shrink-0">0{i + 1}</span>
+                <h3 class="font-bold text-ink-900 text-lg leading-snug">{item.q}</h3>
+              </div>
+              <svg class="w-5 h-5 text-ink-400 shrink-0 mt-1 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-6 pl-[3.25rem]">
+              <p class="text-ink-700 leading-relaxed">{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-10 text-sm text-ink-600">
+        Still curious? <a href="/vs" class="font-semibold text-refi-700 hover:text-refi-900">Compare LO Radar to HomeBot, Sales Boomerang, Total Expert, Aidium, Surefire, Bonzo, and more →</a>
       </div>
     </div>
   </section>

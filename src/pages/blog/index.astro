@@ -1,13 +1,20 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { SITE_URL } from "../../config.js";
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Blog", url: SITE_URL + "/blog/" },
+];
 ---
 
 <Base
-  title="Blog — LO Radar"
-  description="Tactical, math-driven content for mortgage loan officers working their past-client book. ARM cadences, anniversary playbooks, Pipeline NPV math, voice-trained outreach."
+  title="Mortgage Loan Officer Blog — Past-Client Playbooks | LO Radar"
+  description="Tactical, math-driven content for mortgage loan officers working their past-client book. ARM cadences, anniversary playbooks, Pipeline NPV math, voice-trained outreach, refinance trigger strategy."
+  breadcrumbs={breadcrumbs}
 >
   <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
     <div class="container-xl max-w-5xl">

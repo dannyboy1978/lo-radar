@@ -10,9 +10,10 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   breadcrumbs?: Array<{ name: string; url: string }>;
+  faq?: Array<{ q: string; a: string }>;
 }
 
-const { title, description, canonical, ogImage = "/og-default.png", breadcrumbs } = Astro.props;
+const { title, description, canonical, ogImage = "/og-default.png", breadcrumbs, faq } = Astro.props;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).toString();
 ---
 
@@ -109,6 +110,18 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, SITE_URL).toString
           "position": i + 1,
           "name": b.name,
           "item": b.url
+        }))
+      })} />
+    )}
+
+    {faq && faq.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faq.map(item => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": { "@type": "Answer", "text": item.a }
         }))
       })} />
     )}
