@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "og:gen": "node scripts/gen-og.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.0",
@@ -16,5 +17,9 @@
     "astro": "^5.0.0",
     "tailwindcss": "^3.4.13",
     "@tailwindcss/typography": "^0.5.15"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.10.13"
   }
 }
