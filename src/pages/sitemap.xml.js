@@ -13,11 +13,17 @@ export const prerender = true;
 const SITE = "https://loradar.com";
 
 const STATIC_PAGES = [
-  { path: "/",         priority: "1.0", changefreq: "weekly"  },
-  { path: "/pricing",  priority: "0.9", changefreq: "weekly"  },
-  { path: "/blog",     priority: "0.8", changefreq: "weekly"  },
-  { path: "/vs",       priority: "0.7", changefreq: "monthly" },
-  { path: "/glossary", priority: "0.7", changefreq: "monthly" },
+  { path: "/",             priority: "1.0", changefreq: "weekly"  },
+  { path: "/pricing",      priority: "0.9", changefreq: "weekly"  },
+  { path: "/blog",         priority: "0.8", changefreq: "weekly"  },
+  { path: "/vs",           priority: "0.7", changefreq: "monthly" },
+  { path: "/integrations", priority: "0.7", changefreq: "monthly" },
+  { path: "/security",     priority: "0.7", changefreq: "monthly" },
+  { path: "/about",        priority: "0.6", changefreq: "monthly" },
+  { path: "/contact",      priority: "0.6", changefreq: "monthly" },
+  { path: "/glossary",     priority: "0.6", changefreq: "monthly" },
+  { path: "/privacy",      priority: "0.3", changefreq: "yearly"  },
+  { path: "/terms",        priority: "0.3", changefreq: "yearly"  },
 ];
 
 function escapeXml(s) {
