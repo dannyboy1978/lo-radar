@@ -1,0 +1,111 @@
+---
+import Base from "../layouts/Base.astro";
+import { BOOKING_URL, SITE_URL, CONTACT_EMAIL } from "../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Contact", url: SITE_URL + "/contact/" },
+];
+---
+
+<Base
+  title="Contact LO Radar — Talk to a Human"
+  description="Talk to LO Radar — book a 15-minute walkthrough, email support, or reach out about enterprise / branch deployments. Austin-based, Central Time, responsive on weekdays."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="pt-24 pb-16 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">Contact</div>
+      <h1 class="font-serif text-5xl md:text-7xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        Talk to a <span class="italic text-gradient-gold">human.</span>
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed max-w-3xl">
+        Three ways to reach us. All of them go to a person, not a queue.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <!-- Book a demo -->
+        <div class="bg-gradient-to-br from-ink-950 to-ink-900 rounded-2xl p-7 text-white border border-gold-300/30">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-gradient-gold mb-3">Best for prospects</div>
+          <h3 class="font-serif text-2xl mb-3 leading-tight">15-min walkthrough</h3>
+          <p class="text-sm text-ink-300 leading-relaxed mb-6">
+            Bring a CSV from any LOS. We'll run LO Radar against a sample of your real book during the call and walk you through what a week of outreach would look like. No deck.
+          </p>
+          <a href={BOOKING_URL} target="_blank" rel="noopener" class="block text-center px-5 py-3 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm hover:shadow-xl transition-all">
+            Book a demo
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div class="bg-white rounded-2xl p-7 border border-ink-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-3">Best for questions</div>
+          <h3 class="font-serif text-2xl mb-3 leading-tight text-ink-900">Email us</h3>
+          <p class="text-sm text-ink-600 leading-relaxed mb-6">
+            For product questions, support, partnership inquiries, or anything we missed in the walkthrough. We respond within one business day, usually faster.
+          </p>
+          <a href={`mailto:${CONTACT_EMAIL}`} class="block text-center px-5 py-3 bg-ink-900 text-white rounded-lg font-semibold text-sm hover:bg-ink-800 transition-all break-all">
+            {CONTACT_EMAIL}
+          </a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="bg-white rounded-2xl p-7 border border-ink-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-3">Best for branches + lenders</div>
+          <h3 class="font-serif text-2xl mb-3 leading-tight text-ink-900">Enterprise / branch</h3>
+          <p class="text-sm text-ink-600 leading-relaxed mb-6">
+            Multi-LO seats, SSO/SAML, custom compliance overlay, dedicated success manager, branch-level Pipeline NPV. Same booking link — mention "branch deployment" in the form.
+          </p>
+          <a href={BOOKING_URL} target="_blank" rel="noopener" class="block text-center px-5 py-3 bg-ink-900 text-white rounded-lg font-semibold text-sm hover:bg-ink-800 transition-all">
+            Talk to sales
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink-50/40 border-t border-ink-100">
+    <div class="container-xl max-w-3xl">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-6">
+        What you'll get from the walkthrough.
+      </h2>
+      <ul class="space-y-3 text-ink-700">
+        <li class="flex gap-3">
+          <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Your top 3 past-client refinance opportunities, ranked by projected annual savings</span>
+        </li>
+        <li class="flex gap-3">
+          <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Your ARM reset calendar for the next 12 months — every 5/1, 7/1, 10/1 in your book, with reset dates</span>
+        </li>
+        <li class="flex gap-3">
+          <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>A first cut of your Pipeline NPV — the present value of your past-client book as a single number</span>
+        </li>
+        <li class="flex gap-3">
+          <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>A live draft of your first outreach message — once we've seen a few of your past sent messages</span>
+        </li>
+        <li class="flex gap-3">
+          <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Straight answers on pricing, onboarding, compliance, and integration with your LOS</span>
+        </li>
+      </ul>
+      <p class="text-sm text-ink-500 mt-8 italic">
+        We don't do "discovery calls" or two-stage qualification before showing you the product. The walkthrough IS the product.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-t border-ink-100">
+    <div class="container-xl max-w-3xl">
+      <h2 class="font-serif text-2xl text-ink-900 mb-4">Where we are</h2>
+      <p class="text-ink-700">Austin, Texas. Central Time. The team is remote-first; most of the engineering and product team is in CT or PT. We are responsive on weekdays and conservative about weekends.</p>
+    </div>
+  </section>
+</Base>

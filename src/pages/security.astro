@@ -1,0 +1,230 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE_URL, CONTACT_EMAIL } from "../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Security & Compliance", url: SITE_URL + "/security/" },
+];
+
+const faq = [
+  {
+    q: "Is past-client data encrypted at rest?",
+    a: "Yes. All past-client data is encrypted at rest with AES-256. The database is a managed Postgres instance (Supabase) on AWS infrastructure in the United States. Database backups are encrypted, retained for 30 days, and stored in a separate AWS region.",
+  },
+  {
+    q: "Does LO Radar send messages to my past clients on my behalf?",
+    a: "No. This is a first principle of LO Radar. We generate drafts; you send them from your own email, CRM, or phone. This preserves your existing TCPA contact-consent record, keeps you legally clean as the sender, and prevents the appearance of a third-party broker under RESPA Section 8.",
+  },
+  {
+    q: "Is LO Radar SOC 2 compliant?",
+    a: "We follow SOC 2 Type II control objectives in our internal practices (access logging, least-privilege internal access, encryption, change management, vendor DPAs), but we have not yet completed a formal third-party SOC 2 audit. For enterprise / branch deployments where a SOC 2 letter is a procurement requirement, talk to us — we can prioritize the audit if it unblocks a deployment.",
+  },
+  {
+    q: "How does LO Radar handle the Homebuyers Privacy Protection Act (HPPA)?",
+    a: "LO Radar operates on past-client data that you, as the originating loan officer, already legally possess. We do not purchase, broker, or aggregate trigger-lead data from credit bureaus or any third party — which is exactly the activity HPPA restricted as of March 4, 2026. Past-client intelligence is, in fact, the regulatorily clean alternative to the third-party trigger-lead market that HPPA closed.",
+  },
+  {
+    q: "What is your data residency?",
+    a: "All production data is stored in the United States. Specifically: application hosting on Hostinger (US data center), primary database on Supabase (US, AWS), email delivery via Resend (US). No data leaves the United States in the normal course of operations.",
+  },
+];
+---
+
+<Base
+  title="Security & Compliance | LO Radar — RESPA, TILA, TCPA, FCRA, GLBA, HPPA"
+  description="LO Radar security and compliance posture for mortgage loan officers. RESPA, TILA, TCPA, FCRA, GLBA, and post-HPPA data handling. Encryption at rest + transit. We draft, we never send. Audit log per account."
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">Security & Compliance</div>
+      <h1 class="font-serif text-5xl md:text-7xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        Built for the regulatory <span class="italic text-gradient-gold">reality of mortgage.</span>
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed max-w-3xl">
+        LO Radar handles the most sensitive asset in your business: your past-client book. Here's how we treat it.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE PILLARS -->
+  <section class="py-16 bg-white border-t border-ink-100">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Regulatory frameworks</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-10">
+        Compliance posture, by statute.
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">GLBA</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">Gramm-Leach-Bliley Act</h3>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            All past-client information is treated as non-public personal information. Encryption at rest (AES-256), encryption in transit (TLS 1.2+), least-privilege internal access with SSO + mandatory 2FA, access logging per record. We will not collect Social Security Numbers, government IDs, credit reports, or bank account numbers — and we reject imports that contain them.
+          </p>
+        </div>
+        <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">RESPA § 8</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">Real Estate Settlement Procedures Act</h3>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            LO Radar is software. We do not provide settlement services. We do not accept referrals for fees. We do not act as a kickback conduit between LOs and other settlement providers. Per-deal pricing on the Performance tier is consideration for software usage, not a referral fee.
+          </p>
+        </div>
+        <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">TILA</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">Truth in Lending Act</h3>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            Every rate or APR figure LO Radar surfaces carries the calculation basis and the data date so you can verify before quoting. Draft outreach messages reference rate scenarios, not loan estimates, and clearly indicate that any quote will follow a formal Loan Estimate process.
+          </p>
+        </div>
+        <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">TCPA</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">Telephone Consumer Protection Act</h3>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            LO Radar does not send messages, voice calls, or SMS on your behalf. We draft; you send from your own systems. This keeps TCPA consent obligations cleanly under your existing contact-consent framework. We surface compliance flags on every draft so you can confirm consent status before reaching out.
+          </p>
+        </div>
+        <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">FCRA</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">Fair Credit Reporting Act</h3>
+          <p class="text-sm text-ink-700 leading-relaxed">
+            LO Radar does not pull credit reports and is not a consumer reporting agency. Credit-improvement flags are derived from soft-pull aggregations or borrower-volunteered data — never from a hard pull through LO Radar. Any decision to refinance is contingent on the LO's own permissible-purpose credit pull through their existing originator workflow.
+          </p>
+        </div>
+        <div class="bg-gradient-to-br from-ink-950 to-ink-900 rounded-2xl p-6 border border-gold-300/30 text-white">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-gradient-gold mb-2">HPPA · NEW</div>
+          <h3 class="font-serif text-2xl mb-3">Homebuyers Privacy Protection Act</h3>
+          <p class="text-sm text-ink-300 leading-relaxed">
+            Effective March 4, 2026. Third parties may no longer purchase consumer mortgage inquiry data from credit bureaus. LO Radar is structurally aligned: we operate on past-client data you already legally possess as the originating LO. We do not purchase, broker, or aggregate any third-party trigger-lead data.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST PRINCIPLES -->
+  <section class="py-16 bg-ink-50/40 border-t border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">First principles</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-10">
+        Four things that shape every product decision.
+      </h2>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl border border-ink-100 p-6">
+          <h3 class="font-bold text-ink-900 text-xl mb-2">1. We draft. You send.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            LO Radar generates outreach drafts but never sends messages on your behalf. You send from your own email, CRM, or phone. This is intentional and architectural — it keeps TCPA, CAN-SPAM, and state-equivalent consent law obligations cleanly under your existing framework, and it preserves your record as the consenting sender.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-ink-100 p-6">
+          <h3 class="font-bold text-ink-900 text-xl mb-2">2. Your book is your book.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            We are a processor; you are the controller. We do not aggregate, anonymize-and-sell, or repurpose your past-client data. We do not enrich a shared dataset. We do not market to your past clients on our own behalf. We will not — under any circumstance — sell or share your borrower data with a third party.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-ink-100 p-6">
+          <h3 class="font-bold text-ink-900 text-xl mb-2">3. Audit every access.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            Every read and write to your past-client data is logged with timestamp, actor, and operation. You can request your access log at any time by emailing <a href={`mailto:${CONTACT_EMAIL}`} class="text-refi-700 underline">{CONTACT_EMAIL}</a>. Internal engineering access is gated by SSO with mandatory 2FA and is least-privilege by default — only the engineers operating the underlying systems can reach production data, and we log every time.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-ink-100 p-6">
+          <h3 class="font-bold text-ink-900 text-xl mb-2">4. Reject the data we don't need.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            LO Radar does not need Social Security Numbers, credit reports, government IDs, or bank account numbers to do its job. We don't ask for them, and our CSV importer actively rejects rows that contain them. The less of that data we hold, the smaller the blast radius if anything ever goes wrong.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SUMMARY -->
+  <section class="py-16 bg-white border-t border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Technical summary</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-10">
+        How the system is built.
+      </h2>
+
+      <dl class="grid md:grid-cols-2 gap-x-10 gap-y-6">
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Encryption at rest</dt>
+          <dd class="text-sm text-ink-700">AES-256 on production database and all backup snapshots.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Encryption in transit</dt>
+          <dd class="text-sm text-ink-700">TLS 1.2+ enforced on every endpoint. HSTS with one-year max-age.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Data residency</dt>
+          <dd class="text-sm text-ink-700">United States only. Hosting on Hostinger (US), database on Supabase (US AWS).</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Authentication</dt>
+          <dd class="text-sm text-ink-700">Email + password with optional SSO/SAML (Enterprise tier). 2FA available.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Backups</dt>
+          <dd class="text-sm text-ink-700">Daily encrypted snapshots, 30-day retention, separate AWS region.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Vendor DPAs</dt>
+          <dd class="text-sm text-ink-700">Data Processing Agreements with Hostinger, Supabase, Stripe, Resend.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Access log</dt>
+          <dd class="text-sm text-ink-700">Per-account, timestamped, includes engineering accesses. Available on request.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Account deletion</dt>
+          <dd class="text-sm text-ink-700">30-day export window. Production deletion within 7 days. Backup expiry within 60 days.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">Application-layer logging</dt>
+          <dd class="text-sm text-ink-700">No PII in error logs. No past-client data in any third-party analytics or tracing pipeline.</dd>
+        </div>
+        <div>
+          <dt class="font-bold text-ink-900 mb-1">No advertising pixels</dt>
+          <dd class="text-sm text-ink-700">Zero advertising or behavioral tracking inside the signed-in LO Radar application.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-ink-50/40 border-t border-ink-100">
+    <div class="container-xl max-w-3xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Security FAQ</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-8">
+        Questions we get from compliance officers.
+      </h2>
+
+      <div class="space-y-3">
+        {faq.map((item, i) => (
+          <details class="group bg-white rounded-xl border border-ink-100 open:border-refi-300 open:shadow-md transition-all">
+            <summary class="cursor-pointer list-none px-6 py-5 flex items-start justify-between gap-4">
+              <div class="flex items-start gap-3">
+                <span class="text-xl font-serif italic text-refi-600 leading-none mt-1 shrink-0">0{i + 1}</span>
+                <h3 class="font-bold text-ink-900 text-lg leading-snug">{item.q}</h3>
+              </div>
+              <svg class="w-5 h-5 text-ink-400 shrink-0 mt-1 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-6 pl-[3.25rem]">
+              <p class="text-ink-700 leading-relaxed">{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <p class="text-sm text-ink-600 mt-10">
+        Compliance officer not satisfied? Email <a href={`mailto:${CONTACT_EMAIL}`} class="text-refi-700 underline">{CONTACT_EMAIL}</a> with the specific control you need addressed and we'll respond with documentation within one business day.
+      </p>
+    </div>
+  </section>
+</Base>

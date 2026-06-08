@@ -1,0 +1,203 @@
+---
+import Base from "../layouts/Base.astro";
+import { BOOKING_URL, SITE_URL } from "../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Integrations", url: SITE_URL + "/integrations/" },
+];
+
+const losSystems = [
+  { name: "Encompass", vendor: "ICE Mortgage Technology", method: "CSV export · MeridianLink integration also supported via API on Enterprise tier" },
+  { name: "Calyx Point + PointCentral", vendor: "Calyx Software", method: "CSV export from Pipeline + Borrower modules" },
+  { name: "Surefire CRM", vendor: "ICE Mortgage Technology (formerly Black Knight / Top of Mind)", method: "CSV export · API on roadmap" },
+  { name: "Jungo", vendor: "Salesforce-based mortgage CRM", method: "CSV export from contact + opportunity reports" },
+  { name: "Byte Software (BytePro)", vendor: "Byte Software", method: "CSV export from loan reports" },
+  { name: "MeridianLink LOS", vendor: "MeridianLink", method: "CSV export · API integration available" },
+  { name: "LendingPad", vendor: "LendingPad Corp", method: "CSV export from pipeline and closed loans" },
+  { name: "Mortgage Director (formerly LendingQB)", vendor: "MeridianLink", method: "CSV export from loan reports" },
+  { name: "OpenClose LOS", vendor: "OpenClose (now Cognitive Operating System)", method: "CSV export from pipeline and post-close reports" },
+  { name: "BNTouch", vendor: "BNTouch Mortgage CRM", method: "CSV export from contact + loan history" },
+  { name: "Shape CRM", vendor: "Shape Software", method: "CSV export from contact + opportunity reports" },
+  { name: "Bonzo", vendor: "Bonzo", method: "CSV export from contacts" },
+  { name: "Aidium (formerly Whiteboard)", vendor: "Aidium", method: "CSV export from contacts + closed loans" },
+  { name: "HubSpot CRM", vendor: "HubSpot", method: "CSV export from contacts (custom mortgage properties supported)" },
+  { name: "Salesforce", vendor: "Salesforce.com (any mortgage-customized org)", method: "CSV export from contact + opportunity objects" },
+  { name: "Top of Mind Networks (legacy)", vendor: "Now Surefire CRM (ICE)", method: "CSV export · legacy data import supported" },
+  { name: "Custom / spreadsheet", vendor: "Anything you've kept in Excel or Google Sheets across multiple jobs", method: "CSV import with column mapping" },
+];
+
+const faq = [
+  {
+    q: "What's the minimum data LO Radar needs to import?",
+    a: "Borrower name, contact email or phone, loan close date, original loan amount, current rate, term (e.g. 30-yr fixed, 7/1 ARM), and property zip code. With those eight fields per past borrower, LO Radar can run the full analysis. Additional fields (NMLS, branch, original LTV, current servicer) improve precision but are not required.",
+  },
+  {
+    q: "Do you connect via API or just CSV?",
+    a: "Both, depending on the LOS. CSV import works for every LOS today and is the fastest path to value (you're seeing your top 3 calls within 15 minutes). API integrations are available on the Enterprise tier for MeridianLink, Encompass (via partner connector), and a growing list. We are LOS-agnostic on purpose — we'd rather support every LOS at the CSV level than be deeply integrated with one.",
+  },
+  {
+    q: "What if I have past clients spread across two or three former employers?",
+    a: "That's the norm, not the exception, and it's exactly what LO Radar is built for. You import a CSV from each prior LOS (or from the spreadsheet/PDFs you exported when you left). LO Radar dedupes by borrower email + phone + property address, merges loan histories, and presents one consolidated career-book view. Most LOs are surprised how many of their best opportunities are hiding in the 'pre-current-job' tranche.",
+  },
+  {
+    q: "Can I import folders of PDFs from a prior LOS I no longer have access to?",
+    a: "Yes, on the Performance and Enterprise tiers we run OCR + structured extraction against PDF loan files. Send us the folder and we'll convert it to LO Radar-ingestible CSV during onboarding. This is a one-time service for new accounts and doesn't carry a per-document fee.",
+  },
+  {
+    q: "Does LO Radar integrate with my email or CRM for sending outreach?",
+    a: "We don't send messages on your behalf — see /security for why — but we generate drafts you can copy to your email, your CRM (BNTouch, Shape, Bonzo, HubSpot, Salesforce, etc.), or your phone. Drafts are formatted for plain text email, mobile-friendly subject lines, and short SMS. On the Enterprise tier, we can stage drafts directly into BNTouch, Shape, or Bonzo so the LO clicks send from inside their existing workflow.",
+  },
+];
+---
+
+<Base
+  title="LOS Integrations — Encompass, Calyx, Surefire, Jungo, MeridianLink + Every CRM | LO Radar"
+  description="LO Radar imports your past-client book from every LOS (Encompass, Calyx, Surefire, Jungo, Byte, MeridianLink, LendingPad, OpenClose) and every mortgage CRM (BNTouch, Shape, Bonzo, Aidium). CSV-first. API on Enterprise tier."
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">Integrations</div>
+      <h1 class="font-serif text-5xl md:text-7xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        Every LOS. <span class="italic text-gradient-gold">Every CRM. Every job you've had.</span>
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed max-w-3xl">
+        LO Radar is LOS-agnostic by design. If you can export a CSV from it, we can import it.
+      </p>
+    </div>
+  </section>
+
+  <!-- LOS LIST -->
+  <section class="py-16 bg-white border-t border-ink-100">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Loan origination systems</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-3">
+        Confirmed compatible LOS platforms.
+      </h2>
+      <p class="text-ink-600 max-w-2xl mb-10">
+        We've imported real past-client data from each of these. If yours isn't listed, the answer is almost certainly yes — message us with the system name.
+      </p>
+
+      <div class="space-y-3">
+        {losSystems.map((sys) => (
+          <div class="grid md:grid-cols-[1fr_auto] gap-4 bg-ink-50/40 rounded-xl p-5 border border-ink-100 hover:border-refi-300 transition-colors">
+            <div>
+              <div class="font-serif text-xl text-ink-900 mb-1">{sys.name}</div>
+              <div class="text-xs text-ink-500 mb-2 italic">{sys.vendor}</div>
+              <div class="text-sm text-ink-700">{sys.method}</div>
+            </div>
+            <div class="flex items-start md:items-center">
+              <svg class="w-5 h-5 text-emerald-500 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IMPORT WORKS -->
+  <section class="py-16 bg-ink-50/40 border-t border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">How import works</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-10">
+        15 minutes from CSV to action list.
+      </h2>
+
+      <div class="space-y-6">
+        <div class="grid md:grid-cols-[60px_1fr] gap-5 items-start bg-white rounded-2xl border border-ink-100 p-6">
+          <div class="text-5xl font-serif italic text-refi-600 leading-none">01</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-xl mb-2">Export from your LOS</h3>
+            <p class="text-ink-600 leading-relaxed">
+              Most LOSes have a Pipeline → Export → CSV path that's two or three clicks. We'll send a one-page export guide for your specific system if you don't already know how. You can include closed loans only, or closed + in-process, or your full contact database — whichever matches what you want LO Radar to work against.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[60px_1fr] gap-5 items-start bg-white rounded-2xl border border-ink-100 p-6">
+          <div class="text-5xl font-serif italic text-refi-600 leading-none">02</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-xl mb-2">Drop the CSV into LO Radar</h3>
+            <p class="text-ink-600 leading-relaxed">
+              The importer auto-maps the columns it recognizes (borrower name, email, loan close date, original amount, rate, term, ARM details, property zip). For anything it doesn't recognize, you point and click to map the column. The importer rejects rows that contain Social Security Numbers, credit-report pulls, or bank account numbers — we don't need them and won't accept them.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[60px_1fr] gap-5 items-start bg-white rounded-2xl border border-ink-100 p-6">
+          <div class="text-5xl font-serif italic text-refi-600 leading-none">03</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-xl mb-2">Add CSVs from prior jobs</h3>
+            <p class="text-ink-600 leading-relaxed">
+              Most LOs have past-client data scattered across two or three prior employers. Upload a CSV from each. LO Radar dedupes by borrower email + phone + property address, merges loan histories, and presents one consolidated career-book view. The deals hiding in the "pre-current-job" tranche are usually the surprise — that's the unworked back catalog.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[60px_1fr] gap-5 items-start bg-white rounded-2xl border border-ink-100 p-6">
+          <div class="text-5xl font-serif italic text-refi-600 leading-none">04</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-xl mb-2">Train your voice (optional, 5 min)</h3>
+            <p class="text-ink-600 leading-relaxed">
+              Paste 15–30 outreach messages you've sent past clients before. LO Radar's voice model extracts your greeting style, sign-off, sentence length, distinctive phrases, and tone. From then on, every draft is rendered in three flavors of your voice: your tone, a little warmer, a little more direct.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[60px_1fr] gap-5 items-start bg-white rounded-2xl border border-ink-100 p-6">
+          <div class="text-5xl font-serif italic text-refi-600 leading-none">05</div>
+          <div>
+            <h3 class="font-bold text-ink-900 text-xl mb-2">Open the morning briefing</h3>
+            <p class="text-ink-600 leading-relaxed">
+              From day one, LO Radar opens to your top 3 calls today — ranked by projected annual savings if they refinanced now. Each one ships with the rate math, the ARM proximity context, and the draft message in your voice. The full Pipeline NPV, Drift Radar, ARM Reset Calendar, Anniversary Triggers, HELOC + Cash-Out detection, and Credit-Improvement flags layer in over the following 24-48 hours as the system finishes scoring your full book.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white border-t border-ink-100">
+    <div class="container-xl max-w-3xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Integration FAQ</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-8">
+        Common questions.
+      </h2>
+      <div class="space-y-3">
+        {faq.map((item, i) => (
+          <details class="group bg-ink-50/40 rounded-xl border border-ink-100 open:border-refi-300 open:shadow-md transition-all">
+            <summary class="cursor-pointer list-none px-6 py-5 flex items-start justify-between gap-4">
+              <div class="flex items-start gap-3">
+                <span class="text-xl font-serif italic text-refi-600 leading-none mt-1 shrink-0">0{i + 1}</span>
+                <h3 class="font-bold text-ink-900 text-lg leading-snug">{item.q}</h3>
+              </div>
+              <svg class="w-5 h-5 text-ink-400 shrink-0 mt-1 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-6 pl-[3.25rem]">
+              <p class="text-ink-700 leading-relaxed">{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-ink-900 via-slate-900 to-ink-950 text-white">
+    <div class="container-xl max-w-4xl">
+      <h2 class="font-serif text-3xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+        Bring a CSV from <span class="italic text-gradient-gold">any LOS.</span>
+      </h2>
+      <p class="text-lg text-ink-300 font-light leading-relaxed mb-10 max-w-2xl">
+        15 minutes. We'll import a sample, run the triggers against today's market, and walk you through what a week of outreach would look like on your real book.
+      </p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book a 15-min walkthrough
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </section>
+</Base>

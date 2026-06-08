@@ -46,13 +46,17 @@ const year = new Date().getFullYear();
         <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Resources</h4>
         <ul class="space-y-2 text-sm">
           <li><a href="/blog" class="hover:text-white">Blog</a></li>
-          <li><a href="/press" class="hover:text-white">Press</a></li>
+          <li><a href="/glossary" class="hover:text-white">Glossary</a></li>
+          <li><a href="/integrations" class="hover:text-white">Integrations</a></li>
+          <li><a href="/security" class="hover:text-white">Security</a></li>
           <li><a href={`mailto:${CONTACT_EMAIL}`} class="hover:text-white">{CONTACT_EMAIL}</a></li>
         </ul>
       </div>
       <div>
         <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-4">Company</h4>
         <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:text-white">About</a></li>
+          <li><a href="/contact" class="hover:text-white">Contact</a></li>
           <li class="text-ink-400">Austin, Texas</li>
           <li>
             <a href={PARENT_SITE} class="hover:text-white">
@@ -84,8 +88,9 @@ const year = new Date().getFullYear();
     <div class="mt-16 pt-8 border-t border-ink-800/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ink-500">
       <div>© {year} TechStack LLC. All rights reserved.</div>
       <div class="flex flex-wrap gap-6">
-        <a href={`${PARENT_SITE}/privacy`} class="hover:text-white">Privacy</a>
-        <a href={`${PARENT_SITE}/terms`} class="hover:text-white">Terms</a>
+        <a href="/privacy" class="hover:text-white">Privacy</a>
+        <a href="/terms" class="hover:text-white">Terms</a>
+        <a href="/security" class="hover:text-white">Security</a>
         <a href="/pricing" class="hover:text-white">Pricing</a>
       </div>
     </div>

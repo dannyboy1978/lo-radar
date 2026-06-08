@@ -7,51 +7,158 @@ const breadcrumbs = [
   { name: "Glossary", url: SITE_URL + "/glossary/" },
 ];
 
+/* ──────────────────────────────────────────────────────────────────────────
+   Each TERM has:
+   - term       → display name + DefinedTerm name (slug-able)
+   - short      → 1-line summary (also feeds DefinedTermSet schema)
+   - long       → 80-120 word definition rendered on page
+   - related    → cross-link slugs (optional, for internal-link density)
+   ────────────────────────────────────────────────────────────────────────── */
 const TERMS = [
-  { term: "Pipeline NPV", short: "The present value of a mortgage LO's career book of past clients, priced as an asset that moves daily." },
-  { term: "Drift Radar", short: "Per-borrower churn prediction scored against each client's personal contact rhythm — not a generic threshold." },
-  { term: "Voice Training", short: "A system that learns the LO's writing voice from past sent messages and renders every draft in their tone." },
-  { term: "Rate-Drop Radar", short: "Past borrowers ranked by projected annual savings if they refinanced today at current market rates." },
-  { term: "ARM Reset Calendar", short: "Every 5/1, 7/1, and 10/1 ARM in the LO's book, mapped to its reset date with a 12-month pre-reset cadence." },
-  { term: "Anniversary Triggers", short: "Auto-drafted outreach at year 1, 3, 5, 7, and 10 of a past borrower's purchase. Year 5 is statistically the highest-conversion refinance year." },
-  { term: "HELOC Radar", short: "Equity-rich past borrowers worth a HELOC conversation. Sorted by available equity × rate spread." },
-  { term: "Cash-Out Detection", short: "Borrowers whose appreciated equity could fund a renovation, second property, or business — flagged by life-event signals." },
-  { term: "Second-Home Signals", short: "Lifestyle indicators (vacation searches, kid heading to college, job relocation) that suggest a second-home purchase is imminent." },
-  { term: "Credit-Improvement Flags", short: "Past borrowers whose credit score has improved 40+ points since origination — they may now qualify for a meaningful rate reduction." },
-  { term: "RESPA", short: "Real Estate Settlement Procedures Act. Federal law restricting kickbacks and disclosure requirements in real-estate transactions." },
-  { term: "TILA", short: "Truth in Lending Act. Requires lenders to disclose loan terms clearly and uniformly across products." },
-  { term: "TCPA", short: "Telephone Consumer Protection Act. Restricts automated phone and SMS contact without prior consent." },
-  { term: "LOS", short: "Loan Origination System — the core software an LO uses to originate, process, and close mortgages. Encompass, Calyx, Byte, MeridianLink, LendingPad." },
-  { term: "Empirical Bayes", short: "Statistical technique that blends a borrower's personal contact history with a population-level prior — produces stable cadence estimates even with thin data." },
+  {
+    term: "Pipeline NPV",
+    short: "The present value of a mortgage LO's career book of past clients, priced as an asset that moves daily.",
+    long: "Pipeline NPV is the present value of a loan officer's entire career book of past clients, calculated as the sum of expected future commissions from each past borrower's projected next transaction, weighted by their probability of returning to the originating LO and discounted to today. It moves daily as rates, equity, and contact engagement change. LO Radar treats Pipeline NPV as the balance-sheet view of the book — the number an LO would use if pitching a partnership, recruiting a new shop, or selling the book. Unlike pipeline-stage reporting (which counts active opportunities), Pipeline NPV captures latent value across the entire past-client base.",
+  },
+  {
+    term: "Drift Radar",
+    short: "Per-borrower churn prediction scored against each client's personal contact rhythm — not a generic threshold.",
+    long: "Drift Radar is a per-borrower churn-prediction score that compares a past client's recent contact pattern to their own personal historical rhythm. Where most retention tools fire generic 'haven't talked in 18 months' alerts, Drift Radar learns each borrower's baseline (some borrowers expect quarterly touchpoints; others are happy with annual) and surfaces drift weeks before it converts to a competitor relationship. The model blends each borrower's history with a population-level prior (Empirical Bayes) so it stays stable even on thin contact data. Drift scores feed directly into the daily ranked call list.",
+  },
+  {
+    term: "Voice Training",
+    short: "A system that learns the LO's writing voice from past sent messages and renders every draft in their tone.",
+    long: "Voice Training is the LO Radar process that captures an individual loan officer's writing voice and uses it to render every outreach draft. The LO pastes 15–30 messages they've sent past clients before. LO Radar extracts the LO's greeting style, sign-off, sentence length distribution, distinctive phrases, and tone register. Every draft from then on is rendered in three flavors of the LO's voice: their tone, a little warmer, a little more direct. This is how LO Radar produces drafts that sound like the LO instead of like generic CRM templates. Voice models are private per LO and never shared.",
+  },
+  {
+    term: "Rate-Drop Radar",
+    short: "Past borrowers ranked by projected annual savings if they refinanced today at current market rates.",
+    long: "Rate-Drop Radar is the LO Radar engine that compares each past borrower's current note rate to today's available market rate for their loan profile, calculates the projected monthly and annual savings if they refinanced now, and ranks the book by absolute dollar savings opportunity. The ranking runs daily so that as market rates move, the top of the call list reshuffles automatically. Each ranked borrower ships with the refinance math: current rate, target rate, monthly delta, annual savings, and a compliance-aware draft outreach.",
+  },
+  {
+    term: "ARM Reset Calendar",
+    short: "Every 5/1, 7/1, and 10/1 ARM in the LO's book, mapped to its reset date with a 12-month pre-reset cadence.",
+    long: "The ARM Reset Calendar is a 12-month forward view of every adjustable-rate mortgage in the LO's past-client book, mapped to its specific reset date and structured around a T-12 / T-9 / T-6 / T-3 / T-1 outreach cadence. Each ARM is a fixed date on the calendar — there's no uncertainty about when the reset hits — and yet roughly 70% of ARM borrowers refinance with a different loan officer because the original LO either didn't know the reset was coming or started the conversation too late. The ARM Reset Calendar makes that miss structurally impossible by surfacing the reset early and prompting outreach every three months on a known cadence.",
+  },
+  {
+    term: "Anniversary Triggers",
+    short: "Auto-drafted outreach at year 1, 3, 5, 7, and 10 of a past borrower's purchase. Year 5 is statistically the highest-conversion refinance year.",
+    long: "Anniversary Triggers are a set of pre-scheduled outreach windows tied to the calendar year of a past borrower's original loan close: year 1 (welcome + check-in), year 3 (early refi consideration), year 5 (peak refi year), year 7 (typical move year for first-time buyers), and year 10 (often a downsize or upgrade trigger). Year 5 is consistently the highest-conversion year for refinances in the LO Radar dataset. Each anniversary trigger ships with year-specific copy templates and the rate math for the borrower's specific loan. Anniversaries are scored alongside rate-drop, ARM, and equity opportunities in the daily ranked call list.",
+  },
+  {
+    term: "HELOC Radar",
+    short: "Equity-rich past borrowers worth a HELOC conversation. Sorted by available equity × rate spread.",
+    long: "HELOC Radar flags past borrowers whose current home equity (estimated from market AVM data + amortization since origination) creates a viable home-equity line of credit opportunity. Borrowers are ranked by available equity multiplied by today's prevailing HELOC rate spread, surfacing the highest-dollar conversations first. HELOC outreach drafts include current estimated equity, current HELOC market rates, monthly payment scenarios, and the compliance-aware framing required when discussing equity products. HELOC opportunities are particularly valuable in elevated-rate environments where straight refinances don't pencil but cash-out via HELOC does.",
+  },
+  {
+    term: "Cash-Out Detection",
+    short: "Borrowers whose appreciated equity could fund a renovation, second property, or business — flagged by life-event signals.",
+    long: "Cash-Out Detection identifies past borrowers whose home appreciation has created enough equity to fund a significant life or business expense via cash-out refinance. The detection combines AVM-derived current equity, public-records life-event signals (permits pulled, business registrations, college-age children, recent move-related searches), and notes from prior LO conversations. Cash-out candidates ship with a draft that frames the conversation around the borrower's specific likely use case — renovation, investment property, business capital, debt consolidation, college funding — rather than a generic rate pitch.",
+  },
+  {
+    term: "Second-Home Signals",
+    short: "Lifestyle indicators (vacation searches, kid heading to college, job relocation) that suggest a second-home purchase is imminent.",
+    long: "Second-Home Signals are aggregated lifestyle indicators that suggest a past borrower may be approaching a second-home or investment-property purchase. Signals include patterns like recurring vacation-area searches, children entering high school or transitioning to college (often in a different state), recent job changes with remote-work flexibility, and significant appreciation in the primary residence. None of these signals alone constitutes a sales opportunity, but in combination they identify the small subset of past borrowers who are most likely in-market for a second mortgage. LO Radar surfaces these candidates with the context that triggered the signal so the LO can open the conversation appropriately.",
+  },
+  {
+    term: "Credit-Improvement Flags",
+    short: "Past borrowers whose credit score has improved 40+ points since origination — they may now qualify for a meaningful rate reduction.",
+    long: "Credit-Improvement Flags identify past borrowers whose credit profile has materially improved since their original loan was written — typically a 40+ point FICO score increase derived from soft-pull aggregations or borrower-volunteered updates. A meaningful credit improvement often unlocks a better loan pricing tier even when market rates haven't moved, making it a legitimate refinance conversation independent of rate environment. LO Radar does not pull credit reports itself (we are not a consumer reporting agency); credit-improvement flags are derived from non-FCRA-regulated soft-pull data and from borrower self-reported updates. Each flag ships with the estimated new pricing tier and the corresponding refinance math.",
+  },
+  {
+    term: "RESPA",
+    short: "Real Estate Settlement Procedures Act. Federal law restricting kickbacks and disclosure requirements in real-estate transactions.",
+    long: "The Real Estate Settlement Procedures Act (RESPA) is a federal consumer protection statute governing real-estate settlement services. Section 8 is the most relevant section for mortgage LOs: it prohibits kickbacks, referral fees, and fee-splitting for settlement services. LO Radar is structured to be RESPA-compliant by design — we are a software vendor providing past-client intelligence, not a settlement service provider; our per-deal pricing on the Performance tier is consideration for software usage, not a referral fee; and we do not broker connections between LOs and other settlement-service providers. Every outreach draft is annotated with relevant compliance posture flags.",
+  },
+  {
+    term: "TILA",
+    short: "Truth in Lending Act. Requires lenders to disclose loan terms clearly and uniformly across products.",
+    long: "The Truth in Lending Act (TILA) is the federal statute requiring lenders to disclose credit terms in a standardized way so consumers can compare products. The TILA-RESPA Integrated Disclosure (TRID) rule consolidated TILA and RESPA disclosures into the Loan Estimate (delivered within 3 business days of application) and the Closing Disclosure (delivered at least 3 business days before consummation). LO Radar surfaces rate and APR information as decision-support for an LO's outreach conversations, with the calculation basis and data date annotated. Draft outreach explicitly frames rate quotes as preliminary scenarios — any binding quote follows a formal Loan Estimate.",
+  },
+  {
+    term: "TCPA",
+    short: "Telephone Consumer Protection Act. Restricts automated phone and SMS contact without prior consent.",
+    long: "The Telephone Consumer Protection Act (TCPA) restricts how businesses can contact consumers via voice calls, SMS, and fax — particularly via autodialers and pre-recorded voice messages. Key TCPA requirements for mortgage LOs include scrubbing call lists against the federal Do Not Call Registry, maintaining an internal DNC list, securing express written consent before any auto-dialed marketing contact, and identifying the caller on every contact. LO Radar does not send messages on the LO's behalf — every draft is sent from the LO's own systems, which keeps TCPA consent obligations cleanly under the LO's existing process. Compliance flags surface inline so the LO can verify consent status before each outreach.",
+  },
+  {
+    term: "FCRA",
+    short: "Fair Credit Reporting Act. Federal law governing how consumer credit information may be collected, used, and shared.",
+    long: "The Fair Credit Reporting Act (FCRA) regulates consumer reporting agencies (credit bureaus) and the use of consumer credit information. For mortgage LOs, FCRA's most relevant provisions cover permissible purposes for pulling credit, required disclosures, and adverse action notices. LO Radar is not a consumer reporting agency and does not pull credit reports. Credit-improvement flags surfaced in the product are derived from non-FCRA-regulated soft-pull aggregations and borrower-volunteered updates. Any actual credit pull for a refinance qualifies under the LO's existing permissible-purpose framework through their normal originator workflow.",
+  },
+  {
+    term: "GLBA",
+    short: "Gramm-Leach-Bliley Act. Federal law requiring financial institutions to safeguard non-public personal information.",
+    long: "The Gramm-Leach-Bliley Act (GLBA) requires financial institutions — including mortgage lenders and brokers — to protect consumers' non-public personal information through technical, administrative, and physical safeguards. LO Radar handles past-client data as GLBA-protected NPI by default: AES-256 encryption at rest, TLS 1.2+ in transit, least-privilege internal access with SSO + mandatory 2FA, per-record access logging, and explicit Data Processing Agreements with every infrastructure vendor. We do not collect Social Security Numbers, credit reports, government IDs, or bank account numbers — and we reject CSV imports that contain them.",
+  },
+  {
+    term: "HPPA",
+    short: "Homebuyers Privacy Protection Act. Effective March 4, 2026; restricts third-party access to mortgage trigger leads.",
+    long: "The Homebuyers Privacy Protection Act (HPPA) took effect March 4, 2026. It restricts third parties from purchasing consumer mortgage inquiry data from credit bureaus — the data that powered the third-party 'mortgage trigger lead' industry. Under HPPA, only the originator of the consumer's current mortgage (the LO who wrote the existing loan), the servicer, or certain financial institutions may access that intent data. The practical effect: past-client intelligence is now the only legally accessible source of mortgage refinance intent for most loan officers. LO Radar operates exclusively on past-client data the LO already legally possesses as the originator — we do not purchase or aggregate third-party trigger-lead data.",
+  },
+  {
+    term: "LOS",
+    short: "Loan Origination System — the core software an LO uses to originate, process, and close mortgages.",
+    long: "A Loan Origination System (LOS) is the system-of-record software a mortgage loan officer uses to manage the loan application from initial inquiry through funding. Major LOS platforms include Encompass (ICE Mortgage Technology), Calyx Point + PointCentral (Calyx Software), Byte Software, MeridianLink LOS, LendingPad, Mortgage Director (formerly LendingQB), and OpenClose. LO Radar is LOS-agnostic by design: it imports past-client data from any LOS via CSV export, supports API integrations on the Enterprise tier, and dedupes past clients across multiple LOSes when an LO has worked at different shops. See /integrations for the full list.",
+  },
+  {
+    term: "Empirical Bayes",
+    short: "Statistical technique that blends a borrower's personal contact history with a population-level prior — produces stable cadence estimates even with thin data.",
+    long: "Empirical Bayes is the statistical framework underpinning Drift Radar. For each past borrower, LO Radar blends two signals: that borrower's specific contact history with the LO (which may be sparse, e.g., 3 touchpoints over 4 years) and a population-level prior derived from similar borrower archetypes (which is dense and stable). The blended estimate is more reliable than either signal alone — particularly for new accounts where individual contact history is too thin to estimate cadence from scratch. As more contact history accumulates per borrower, the estimate naturally shifts weight from the population prior to the borrower's own pattern.",
+  },
+  {
+    term: "Past-client intelligence",
+    short: "Software that continuously analyzes an LO's existing book of past borrowers and surfaces a ranked daily call list with rate math and draft outreach.",
+    long: "Past-client intelligence is the category of software that continuously scans a mortgage loan officer's existing book of past borrowers and surfaces a ranked daily list of who to contact today, with the rate math and a draft outreach message ready. It differs from a CRM (which stores contacts), from marketing automation (which sends drip campaigns), and from trigger-lead products (which alert on credit-bureau inquiries from third parties). Past-client intelligence is analysis-first: the output is a justified call list. After HPPA closed the third-party trigger-lead market in March 2026, past-client intelligence became the only legal path to mortgage intent data for most LOs. LO Radar is the past-client intelligence platform built specifically for the individual LO.",
+  },
 ];
+
+/* The DefinedTerm schema gets the short summary; the page renders the long. */
+const definedTerms = TERMS.map(t => ({ name: t.term, description: t.short }));
 ---
 
 <Base
   title="Mortgage Loan Officer Glossary — Refi Triggers, Pipeline NPV, ARM Resets | LO Radar"
-  description="Plain-English definitions for mortgage loan officers: Pipeline NPV, Drift Radar, ARM Reset Calendar, Anniversary Triggers, HELOC Radar, Cash-Out Detection, Credit-Improvement Flags, RESPA, TILA, TCPA, LOS, and more."
+  description="Plain-English definitions for mortgage loan officers: Pipeline NPV, Drift Radar, Voice Training, ARM Reset Calendar, Anniversary Triggers, HELOC Radar, Cash-Out Detection, RESPA, TILA, TCPA, FCRA, GLBA, HPPA, LOS, past-client intelligence, and more."
   breadcrumbs={breadcrumbs}
+  definedTerms={definedTerms}
 >
   <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
     <div class="container-xl max-w-4xl">
       <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">Glossary</div>
       <h1 class="font-serif text-5xl md:text-6xl text-ink-900 tracking-tight leading-[1.05] mb-6">
-        The LO Radar <span class="italic text-gradient-gold">vocabulary.</span>
+        The mortgage LO <span class="italic text-gradient-gold">vocabulary.</span>
       </h1>
       <p class="text-xl text-ink-600 font-light leading-relaxed">
-        Plain-English definitions for every term we use across the platform.
+        Plain-English definitions for every term LO Radar uses, every regulatory statute that touches mortgage retention, and every concept behind past-client intelligence as a category.
       </p>
     </div>
   </section>
 
-  <section class="py-12 bg-white">
+  <!-- TOC -->
+  <section class="py-8 bg-white border-y border-ink-100">
     <div class="container-xl max-w-4xl">
-      <dl class="space-y-10">
-        {TERMS.map(t => (
-          <div>
-            <dt class="font-serif text-2xl md:text-3xl text-ink-900 tracking-tight mb-2">{t.term}</dt>
-            <dd class="text-ink-700 leading-relaxed">{t.short}</dd>
-          </div>
-        ))}
+      <div class="text-[10px] font-bold uppercase tracking-widest text-ink-500 mb-3">On this page</div>
+      <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+        {TERMS.map(t => {
+          const slug = t.term.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          return <a href={`#${slug}`} class="text-refi-700 hover:text-refi-900 hover:underline">{t.term}</a>;
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container-xl max-w-4xl">
+      <dl class="space-y-14">
+        {TERMS.map(t => {
+          const slug = t.term.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          return (
+            <div id={slug} class="scroll-mt-24">
+              <dt class="font-serif text-2xl md:text-3xl text-ink-900 tracking-tight mb-3">{t.term}</dt>
+              <dd class="text-ink-700 leading-relaxed text-lg max-w-3xl">{t.long}</dd>
+            </div>
+          );
+        })}
       </dl>
     </div>
   </section>

@@ -1,0 +1,107 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE_URL, CONTACT_EMAIL } from "../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Terms of Service", url: SITE_URL + "/terms/" },
+];
+const lastUpdated = "June 7, 2026";
+---
+
+<Base
+  title="Terms of Service | LO Radar"
+  description="LO Radar Terms of Service — performance pricing, monthly cap, month-to-month cancellation, data ownership, the drafts-never-sent principle, RESPA/TILA/TCPA posture, and what we will and won't do with your past-client book."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-3xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">Legal</div>
+      <h1 class="font-serif text-5xl md:text-6xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        Terms of <span class="italic text-gradient-gold">service.</span>
+      </h1>
+      <p class="text-base text-ink-500">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-3xl prose prose-lg prose-ink max-w-none">
+      <p class="text-lg text-ink-700 leading-relaxed">
+        These Terms of Service ("Terms") govern your use of LO Radar, software provided by <strong>TechStack LLC</strong>, a Texas limited liability company. By creating an account or using LO Radar, you agree to these Terms. If you don't agree, don't use LO Radar.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">1. What LO Radar is</h2>
+      <p>LO Radar is past-client intelligence software for individual mortgage loan officers. It imports a loan officer's career book of past borrowers (via CSV from any LOS), runs refinance and engagement analysis against current market data, and produces a daily ranked action list with rate math and compliance-aware outreach drafts. LO Radar is software, not a settlement service, lead-generation service, broker, or marketing agency.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">2. Account eligibility</h2>
+      <p>You may use LO Radar if you are a licensed mortgage loan officer (NMLS-registered), a branch manager, a private wealth mortgage banker, or an employee of a mortgage lender, broker, bank, or credit union with authority to handle past-client data for refinance and retention purposes. You confirm that the past-client data you import is data you have a legitimate business purpose to handle under your employment or contractor arrangement.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">3. Pricing and billing</h2>
+      <p>LO Radar offers three pricing tiers, all month-to-month:</p>
+      <ul>
+        <li><strong>Performance</strong> — $399/month base + $85 per closed loan LO Radar surfaced (attribution via the closed-loop dashboard). Capped at $1,499/month per LO so total cost is predictable.</li>
+        <li><strong>Flat</strong> — $999/month per LO, flat, no per-deal fee.</li>
+        <li><strong>Enterprise</strong> — custom, for multi-LO branches and lender shops. Includes SSO, custom compliance overlays, dedicated success manager.</li>
+      </ul>
+      <p>Billing occurs on the same day of the month as your sign-up. Performance-tier per-deal fees are billed monthly in arrears based on closed loans attributed in the prior calendar month. Payment is by credit card or ACH.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">4. Cancellation</h2>
+      <p>You can cancel any time. Cancellation is effective at the end of the current billing month. You have 30 days from cancellation to export all your data; after 30 days, we delete it (see Privacy Policy section 6).</p>
+      <p>We do not pro-rate the unused portion of a billing month and we do not charge a cancellation fee. There are no annual contracts.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">5. Data ownership</h2>
+      <p><strong>You own your past-client data.</strong> We are a processor; you are the controller. We use that data exclusively to provide the LO Radar service to you. We do not aggregate, anonymize-and-sell, or repurpose it for any other product or third party. See our Privacy Policy for full details.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">6. The drafts-never-sent principle</h2>
+      <p>LO Radar generates outreach drafts. <strong>LO Radar does not send messages on your behalf.</strong> Every draft is presented to you for review and is sent from your own email account, SMS, CRM, or phone. This means:</p>
+      <ul>
+        <li>You are the sender for all messaging-law purposes (TCPA, CAN-SPAM, state equivalents)</li>
+        <li>Your existing contact-consent and Do-Not-Call records continue to apply unchanged</li>
+        <li>We cannot and do not represent ourselves to your past clients</li>
+      </ul>
+      <p>If you ever want a "send for me" workflow, contact us — there is a legally clean path but it requires explicit per-borrower written consent and we will require evidence of that consent before enabling it.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">7. Compliance representations</h2>
+      <p>You represent and warrant that:</p>
+      <ul>
+        <li>You are authorized under your employment or contractor agreement to process the past-client data you import into LO Radar</li>
+        <li>Your past-client contact list complies with applicable Do-Not-Call (federal and state) requirements</li>
+        <li>You have valid consent under TCPA where required for any outbound automated voice or SMS contact</li>
+        <li>You will not use LO Radar to circumvent the Homebuyers Privacy Protection Act (HPPA), e.g., by importing trigger-lead data acquired in violation of HPPA from third parties</li>
+        <li>You will not use LO Radar to violate RESPA Section 8 (no kickbacks, no fee-splitting for settlement services)</li>
+      </ul>
+      <p>LO Radar surfaces compliance flags inline on every draft, but compliance with consumer-protection law in your outbound communications remains your responsibility as the sender.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">8. Acceptable use</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Import data you don't have legitimate business authority to process</li>
+        <li>Use LO Radar to send harassing, deceptive, or unauthorized communications to past clients</li>
+        <li>Reverse-engineer, scrape, or attempt to extract LO Radar's models, algorithms, or training data</li>
+        <li>Resell or sublicense access to LO Radar without our written permission</li>
+        <li>Use LO Radar in a way that violates federal mortgage law (RESPA, TILA, ECOA, FCRA, GLBA, HPPA) or your state's licensing requirements</li>
+      </ul>
+      <p>We may suspend or terminate access for violations of the above with notice and a reasonable cure period.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">9. Service availability</h2>
+      <p>We target 99.5% uptime, measured monthly, excluding scheduled maintenance announced at least 48 hours in advance. We do not currently offer a contractual SLA on the Performance or Flat tier; the Enterprise tier includes a custom SLA negotiated per contract.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">10. Disclaimer</h2>
+      <p>LO Radar provides analysis and outreach drafts as <em>decision support</em>, not as financial, legal, or compliance advice. Rate math, ARM-reset calculations, and refinance-savings projections are based on data you provide and publicly observable market rates; you are responsible for verifying any figure before quoting it to a client or relying on it in a regulatory filing. Compliance flags surface posture concerns but do not constitute a legal opinion.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">11. Limitation of liability</h2>
+      <p>To the maximum extent permitted by law, TechStack LLC's aggregate liability arising out of these Terms or your use of LO Radar will not exceed the fees you paid us in the 12 months preceding the claim. We are not liable for indirect, incidental, consequential, or punitive damages, including lost profits or lost business opportunities, even if advised of the possibility.</p>
+      <p>Nothing in this section limits liability that cannot be limited under applicable law.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">12. Governing law</h2>
+      <p>These Terms are governed by the laws of the State of Texas, without regard to conflict-of-laws principles. Exclusive jurisdiction for any dispute is the state and federal courts located in Travis County, Texas.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">13. Changes to these Terms</h2>
+      <p>We may update these Terms occasionally. Material changes will be announced to active account holders by email at least 14 days before they take effect. Continued use of LO Radar after a change constitutes acceptance.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">14. Contact</h2>
+      <p>Questions about these Terms: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      <p>TechStack LLC<br/>Austin, Texas, USA</p>
+    </div>
+  </section>
+</Base>

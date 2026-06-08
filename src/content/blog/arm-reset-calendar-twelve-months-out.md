@@ -1,5 +1,5 @@
 ---
-title: "ARM Reset: What Loan Officers Should Be Doing 12 Months Before Their Client Refinances (Somewhere Else)."
+title: "ARM Reset Playbook: The 12-Month LO Workflow"
 description: "Every 5/1, 7/1, and 10/1 ARM has a known reset date. And every single one represents a client who's either going to refinance with you or with somebody else. The 12-month pre-reset workflow that wins the 1:1 moments."
 pubDate: 2026-04-25
 heroImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80&auto=format&fit=crop"

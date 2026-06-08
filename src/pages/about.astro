@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+import { BOOKING_URL, SITE_URL, PARENT_SITE } from "../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "About", url: SITE_URL + "/about/" },
+];
+---
+
+<Base
+  title="About LO Radar — Past-Client Intelligence for Mortgage Loan Officers"
+  description="LO Radar is built by TechStack LLC in Austin, Texas. Past-client intelligence software for individual mortgage loan officers — Pipeline NPV, Drift Radar, ARM Reset Calendar, Voice Training. Built to convert the asset every LO already owns: their career book."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="pt-24 pb-16 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">About</div>
+      <h1 class="font-serif text-5xl md:text-7xl text-ink-900 tracking-tight leading-[1.05] mb-6">
+        We built LO Radar because <span class="italic text-gradient-gold">past clients are the asset.</span>
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed max-w-3xl">
+        Loan officers spend their first decade building a book. LO Radar exists so they can spend the rest of their career compounding it.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-t border-ink-100">
+    <div class="container-xl max-w-3xl prose prose-lg prose-ink max-w-none">
+      <h2 class="font-serif text-3xl text-ink-900 mb-4">The thesis</h2>
+      <p>A working loan officer originates somewhere between 30 and 300 loans a year. After ten years, that's a book of 300 to 3,000 borrowers — people whose loan terms you know, whose ARM reset dates you know, whose anniversary dates you know, and whose current monthly payment you know. That book is the largest asset on the LO's balance sheet, and it grows every month.</p>
+      <p>And yet, by the time most LOs are five years in, 70% of their past borrowers refinance with somebody else.</p>
+      <p>That's not a competitive market dynamic. It's a <strong>workflow failure</strong>. The book is scattered across Encompass, Calyx, Surefire, Jungo, and folders of PDFs from two prior jobs. There's no single view of "who do I call today." There's no rate math on the screen. There's no ARM reset calendar. There's no draft message ready to go in your voice.</p>
+      <p>LO Radar solves that. We pull the entire career book into one place, run the analysis daily, and surface the three highest-value calls to make today — with the rate math done and the message drafted.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">Why now</h2>
+      <p>Two structural shifts converged in 2026:</p>
+      <p><strong>The Homebuyers Privacy Protection Act</strong> (effective March 4, 2026) ended third-party access to mortgage trigger leads. Only the originating loan officer can legally access their past borrowers' refinance-intent data. This turned every LO's past-client book from a "nice-to-have asset" into the <em>only</em> trigger lead source they can legally pursue.</p>
+      <p><strong>AI-grade per-borrower analysis</strong> became cheap enough to run continuously. What used to require a marketing analyst to query manually now runs against every borrower in your book every day — the rate math, the ARM proximity, the equity-window detection, the credit-improvement flagging, the draft outreach in your voice.</p>
+      <p>LO Radar sits squarely at the intersection of those two shifts.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">Built by TechStack LLC</h2>
+      <p>LO Radar is a product of <strong>TechStack LLC</strong>, an Austin-based software firm. We build past-client intelligence systems for verticals where the existing customer relationship is the most valuable asset on the balance sheet — and where most operators are bad at compounding it.</p>
+      <p>Our sister product, <a href={PARENT_SITE}>RetentionIQ</a>, applies the same past-client intelligence approach to service businesses (HVAC, plumbing, roofing, dental, med-spa). Same engine, different vertical. The mortgage LO version is LO Radar, and it has its own dedicated team and product surface.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">First principles</h2>
+      <p>A few things we believe and that show up everywhere in the product:</p>
+      <p><strong>1. We draft. You send.</strong> LO Radar generates outreach drafts but never sends them on your behalf. You send from your own email, CRM, or phone. This preserves your existing TCPA/contact-consent record, keeps you legally clean as the sender, and prevents the appearance of a third-party broker under RESPA.</p>
+      <p><strong>2. Your data is yours.</strong> We don't aggregate, anonymize-and-sell, or repurpose your past-client book. We don't enrich a shared dataset with it. We don't market to your past clients on our own behalf. The book stays the LO's book.</p>
+      <p><strong>3. Compliance posture is built in, not bolted on.</strong> RESPA, TILA, TCPA, and HPPA awareness is checked on every draft inline — not surfaced in a separate compliance tool that an LO has to remember to open.</p>
+      <p><strong>4. Performance pricing because we believe the product works.</strong> Our default pricing has a small base fee and a per-closed-deal variable — we get paid more when you close more, capped so the bill never runs away. If we were unsure the product would surface deals you wouldn't otherwise close, we'd price it differently.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">Where we are</h2>
+      <p>Austin, Texas. We work remotely-first but most of the team is in Central Time. The product is live, paying customers are signed, and we are growing the past-client intelligence category.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">Get in touch</h2>
+      <p>The best way to see what LO Radar does is to <a href={BOOKING_URL} target="_blank" rel="noopener">book a 15-minute walkthrough</a>. Bring a CSV from any LOS — we'll run LO Radar against a sample of your real book during the call and you'll see your top three opportunities by the end of it. No deck, no pre-sales pitch, no scripted demo.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gradient-to-br from-ink-900 via-slate-900 to-ink-950 text-white">
+    <div class="container-xl max-w-4xl">
+      <h2 class="font-serif text-3xl md:text-5xl leading-[1.05] tracking-tight mb-8">
+        See LO Radar on <span class="italic text-gradient-gold">your real book.</span>
+      </h2>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book a 15-min walkthrough
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </section>
+</Base>

@@ -6,12 +6,44 @@ const breadcrumbs = [
   { name: "Home", url: SITE_URL + "/" },
   { name: "Pricing", url: SITE_URL + "/pricing/" },
 ];
+
+const faq = [
+  {
+    q: "How does Performance pricing work?",
+    a: "Performance pricing is $399 per month base plus $85 per closed loan that LO Radar surfaced, capped at $1,499 per month total. The cap is per-LO, so even in a heavy refi month the bill is predictable. The variable portion fires only on loans attributed to LO Radar via the closed-loop attribution dashboard — when you mark a loan as closed and confirm it originated from a LO Radar surfaced opportunity. If the attribution is ambiguous, we default in your favor and don't charge.",
+  },
+  {
+    q: "What counts as a 'closed deal LO Radar surfaced'?",
+    a: "Any loan that closed where the borrower's first reactivated outreach in the prior 180 days originated from an LO Radar alert. Pure inbound calls and walk-ins don't count. Loans that were already in the pipeline before LO Radar surfaced them don't count. The closed-loop attribution dashboard shows you the trail per closed loan, and you can dispute any attribution before billing — we approve the override every time.",
+  },
+  {
+    q: "What's the difference between Performance and Flat?",
+    a: "Same product, different billing shape. Performance ($399 base + $85/deal, capped at $1,499) is the right choice for most active LOs — you pay more when you close more, and you cap out at $1,499 even if LO Radar surfaces fifteen closed deals in a month. Flat ($999/mo, no per-deal fee) is the right choice if you want predictable monthly billing for accounting simplicity, you expect heavy LO Radar attribution, or you're at a shop where variable software fees create internal friction.",
+  },
+  {
+    q: "Are there any annual contracts or setup fees?",
+    a: "No. Month-to-month, no annual commitment, no setup fee, no implementation fee, no per-CSV import fee. Cancel anytime with 30 days notice. We do not charge a per-LOS-integration fee — every LOS is supported at CSV-import level on every tier. PDF extraction during onboarding (for legacy past-client data stuck in PDF loan files) is included on Performance and Enterprise tiers.",
+  },
+  {
+    q: "Is there a trial?",
+    a: "The 15-minute walkthrough doubles as your trial. We import a CSV sample of your real past-client book during the call, run the triggers against today's market, and show you the top 3 opportunities live. If those three calls don't look like deals worth making, don't sign up. Most LOs decide on the call.",
+  },
+  {
+    q: "How is Enterprise pricing structured?",
+    a: "Enterprise (multi-LO branches and lender shops) is custom and quoted per deployment. It includes everything in Performance plus SSO/SAML, branch-level Pipeline NPV aggregation, custom compliance overlay, dedicated customer success, and prioritized API integrations with your LOS. Typical Enterprise deployments start at $25K/year for a 25-LO branch. Talk to sales via the booking link.",
+  },
+  {
+    q: "What happens to my data if I cancel?",
+    a: "You have 30 days from cancellation to export every record in CSV format. After 30 days, your past-client data is permanently deleted from production within 7 days and from encrypted backups within 60 days (the standard backup retention window). We never retain past-client data of cancelled accounts and never repurpose it. See our Privacy Policy for full retention details.",
+  },
+];
 ---
 
 <Base
   title="Pricing — LO Radar | Mortgage Loan Officer Software, Performance-Based"
-  description="Performance pricing for mortgage loan officer software. LO Radar: $399/mo base + $85 per closed deal LO Radar helped surface, capped at $1,499/mo. Month-to-month, no annual contract."
+  description="LO Radar pricing for mortgage loan officers: $399/mo base + $85 per closed deal LO Radar surfaced, capped at $1,499/mo. Flat $999/mo also available. Enterprise custom. Month-to-month, no annual contract."
   breadcrumbs={breadcrumbs}
+  faq={faq}
 >
   <section class="pt-24 pb-12 bg-gradient-to-b from-ink-50/40 to-white">
     <div class="container-xl max-w-5xl text-center">
@@ -48,6 +80,7 @@ const breadcrumbs = [
             <li class="flex gap-2">✓ Voice Training (3-tone drafts)</li>
             <li class="flex gap-2">✓ Attribution dashboard</li>
             <li class="flex gap-2">✓ RESPA / TILA / TCPA compliance</li>
+            <li class="flex gap-2">✓ PDF extraction for legacy past-client files</li>
           </ul>
           <a href={BOOKING_URL} target="_blank" rel="noopener" class="block text-center px-5 py-3 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm hover:shadow-xl transition-all">
             Book a demo
@@ -66,6 +99,7 @@ const breadcrumbs = [
             <li class="flex gap-2">✓ Everything in Performance</li>
             <li class="flex gap-2">✓ No usage-based fees</li>
             <li class="flex gap-2">✓ Simpler accounting</li>
+            <li class="flex gap-2">✓ Good fit for heavy-volume LOs</li>
           </ul>
           <a href={BOOKING_URL} target="_blank" rel="noopener" class="block text-center px-5 py-3 bg-ink-900 text-white rounded-lg font-semibold text-sm hover:bg-ink-800 transition-all">
             Book a demo
@@ -84,6 +118,7 @@ const breadcrumbs = [
             <li class="flex gap-2">✓ SSO / SAML</li>
             <li class="flex gap-2">✓ Custom compliance overlay</li>
             <li class="flex gap-2">✓ Dedicated CSM</li>
+            <li class="flex gap-2">✓ Prioritized LOS API integrations</li>
           </ul>
           <a href={BOOKING_URL} target="_blank" rel="noopener" class="block text-center px-5 py-3 bg-ink-900 text-white rounded-lg font-semibold text-sm hover:bg-ink-800 transition-all">
             Talk to sales
@@ -91,9 +126,73 @@ const breadcrumbs = [
         </div>
       </div>
 
-      <p class="text-center text-sm text-ink-500 mt-10 italic">
-        Month-to-month. No annual contracts. Cancel with 30 days notice. The Performance tier exists because we want our incentives aligned with yours — we only get paid the variable component when we actually surface a closed deal.
+      <p class="text-center text-sm text-ink-500 mt-10 italic max-w-3xl mx-auto">
+        Month-to-month. No annual contracts. Cancel with 30 days notice. The Performance tier exists because we want our incentives aligned with yours — we only earn the variable component when we actually surface a closed deal.
       </p>
+    </div>
+  </section>
+
+  <!-- WHY PERFORMANCE PRICING -->
+  <section class="py-16 bg-ink-50/40 border-t border-ink-100">
+    <div class="container-xl max-w-3xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Why this pricing model</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-6">
+        We get paid when you close more deals.
+      </h2>
+      <div class="space-y-4 text-ink-700 leading-relaxed">
+        <p>
+          Most software companies want flat recurring revenue regardless of customer outcomes. We took a different shape on purpose: a small predictable base ($399/mo) covers the platform cost, and the rest of our upside is tied to <strong>closed loans LO Radar surfaced</strong>. If we don't surface deals, we don't earn the variable component. If we surface a lot, we earn proportionally — capped at $1,499 so the bill never runs away.
+        </p>
+        <p>
+          The cap matters. A heavy refi month for a top-producing LO might involve LO Radar attribution on 15–20 closed loans. Without the cap, that would be $1,725 in fees on top of the base; with the cap, it's $1,499. We'd rather under-collect on heavy months than have an LO resent the bill.
+        </p>
+        <p>
+          The $85 per-deal fee is calibrated against the typical LO commission on a refinance ($2,500–$8,000+). Even at the cap, LO Radar is the cheapest line item on the closed loan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white border-t border-ink-100">
+    <div class="container-xl max-w-3xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-3">Pricing FAQ</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.1] mb-8">
+        Questions LOs ask before signing up.
+      </h2>
+
+      <div class="space-y-3">
+        {faq.map((item, i) => (
+          <details class="group bg-ink-50/40 rounded-xl border border-ink-100 open:border-refi-300 open:shadow-md transition-all">
+            <summary class="cursor-pointer list-none px-6 py-5 flex items-start justify-between gap-4">
+              <div class="flex items-start gap-3">
+                <span class="text-xl font-serif italic text-refi-600 leading-none mt-1 shrink-0">0{i + 1}</span>
+                <h3 class="font-bold text-ink-900 text-lg leading-snug">{item.q}</h3>
+              </div>
+              <svg class="w-5 h-5 text-ink-400 shrink-0 mt-1 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="px-6 pb-6 pl-[3.25rem]">
+              <p class="text-ink-700 leading-relaxed">{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-ink-900 via-slate-900 to-ink-950 text-white">
+    <div class="container-xl max-w-4xl">
+      <h2 class="font-serif text-3xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+        See it on your <span class="italic text-gradient-gold">real book first.</span>
+      </h2>
+      <p class="text-lg text-ink-300 font-light leading-relaxed mb-10 max-w-2xl">
+        15 minutes. Bring a CSV. We'll show LO Radar against your actual past-client list. If the top three opportunities don't look real, don't sign up.
+      </p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book a 15-min walkthrough
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
   </section>
 </Base>
