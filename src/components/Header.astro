@@ -14,6 +14,7 @@ const isActive = (p) => path === p || (p !== "/" && path.startsWith(p));
     <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
       <a href="/" class={`px-3 py-2 rounded-md transition-colors ${isActive("/") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>How it works</a>
       <a href="/pricing" class={`px-3 py-2 rounded-md transition-colors ${isActive("/pricing") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Pricing</a>
+      <a href="/enterprise" class={`px-3 py-2 rounded-md transition-colors ${isActive("/enterprise") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Enterprise</a>
       <a href="/blog" class={`px-3 py-2 rounded-md transition-colors ${isActive("/blog") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Blog</a>
       <a href="/vs" class={`px-3 py-2 rounded-md transition-colors ${isActive("/vs") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Compare</a>
       <a href="/glossary" class={`px-3 py-2 rounded-md transition-colors ${isActive("/glossary") ? "text-refi-700 bg-refi-50" : "text-ink-700 hover:bg-ink-50"}`}>Glossary</a>
@@ -51,6 +52,7 @@ const isActive = (p) => path === p || (p !== "/" && path.startsWith(p));
     <nav class="container-xl py-5 space-y-1">
       <a href="/" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">How it works</a>
       <a href="/pricing" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Pricing</a>
+      <a href="/enterprise" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Enterprise</a>
       <a href="/blog" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Blog</a>
       <a href="/vs" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Compare</a>
       <a href="/glossary" class="block px-4 py-3 rounded-lg text-ink-700 hover:bg-ink-50 font-medium">Glossary</a>

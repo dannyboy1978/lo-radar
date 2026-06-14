@@ -1,0 +1,173 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SITE_URL, CONTACT_EMAIL } from "../../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Security & Compliance", url: SITE_URL + "/security/" },
+  { name: "State Disclosure Engine", url: SITE_URL + "/security/state-disclosures/" },
+];
+
+const liveStates = [
+  { code: "CA", name: "California", note: "Cal-DRE / DFPI mortgage advertising rules + Civil Code §§1798.83-84 disclosures" },
+  { code: "TX", name: "Texas", note: "TX-DSML §80.200(b) disclosures + recovery fund notice" },
+  { code: "FL", name: "Florida", note: "FL Office of Financial Regulation OFR-494 disclosures" },
+  { code: "NY", name: "New York", note: "NY DFS Part 38 + 41 mortgage advertising rules" },
+  { code: "IL", name: "Illinois", note: "Illinois Residential Mortgage License Act §1050.110 disclosures" },
+  { code: "PA", name: "Pennsylvania", note: "PA Banking Mortgage Bankers and Brokers regulation 10 §47.4 disclosures" },
+  { code: "OH", name: "Ohio", note: "OH Residential Mortgage Lending Act §1322 disclosures" },
+  { code: "GA", name: "Georgia", note: "GA Department of Banking & Finance Article 13 disclosures" },
+  { code: "NC", name: "North Carolina", note: "NC Commissioner of Banks SAFE Act disclosure rules" },
+  { code: "AZ", name: "Arizona", note: "AZ Department of Insurance & Financial Institutions §6-991.18 disclosures" },
+];
+
+const nextStates = [
+  "New Jersey", "Virginia", "Michigan", "Washington",
+  "Massachusetts", "Colorado", "Maryland", "Minnesota",
+  "Indiana", "Missouri",
+];
+
+const faq = [
+  {
+    q: "Why do mortgage LOs need state-specific disclosures on outreach?",
+    a: "Every state with a Residential Mortgage Licensing Act (RMLA) or equivalent imposes its own mortgage advertising rules — required disclosures, mandatory NMLS identifiers, prohibited language, state-specific opt-out instructions. The rules vary materially by state (California's are different from Texas's, which are different from New York's). For an LO licensed in five states, manually appending the correct disclosure to each outreach is exactly the kind of thing that gets dropped in practice and then surfaces in a state regulator examination.",
+  },
+  {
+    q: "How does LO Radar know which state disclosure to use?",
+    a: "Two inputs: (1) the LO's licensed-state set, captured during onboarding from their NMLS Consumer Access page or entered manually, and (2) the borrower's state of residence, derived from the property address in the past-client record. LO Radar matches the borrower's state to the LO's licensed states and pulls the appropriate disclosure template from the state-disclosure database, then auto-appends it to the outreach draft.",
+  },
+  {
+    q: "What's in each state's disclosure?",
+    a: "The structure varies by state but typically includes: the LO's NMLS ID, the LO's licensed status in that state (with NMLS state-license number), the employing lender's NMLS company ID, the required physical-address disclosure for the entity, any state-specific consumer-rights notice, and the opt-out instruction in the format the state requires. Some states (CA, NY) also require additional language for refinance solicitations specifically.",
+  },
+  {
+    q: "What happens if the LO isn't licensed in the borrower's state?",
+    a: "LO Radar surfaces a hard block on outreach to contacts in states where the LO is not licensed. The LO sees a 'Licensing gate — LO not licensed in [State]' status on the contact and must either (a) obtain licensure in that state and update the LO Radar settings, or (b) hand the contact off to a colleague at the LO's branch who is licensed there. This is one of the most-cited compliance wins LOs report after switching to LO Radar.",
+  },
+  {
+    q: "How is the state-disclosure database maintained?",
+    a: "For the 10 live states, the underlying disclosure language is sourced from each state regulator's published guidance, cross-referenced with Hudson Cook's state-by-state mortgage compliance summaries, and updated quarterly. Material rule changes (e.g., New York DFS Part 41 amendments) trigger an interim refresh. The database is versioned — every disclosure used on an outreach draft is tagged with the version of the state rule it was rendered against, so audit trails can prove the disclosure was current at the time of use.",
+  },
+  {
+    q: "When will additional states go live?",
+    a: "Q3 2026 target: the next 10 states (NJ, VA, MI, WA, MA, CO, MD, MN, IN, MO). Q4 2026 target: the remaining 30 states + DC. Order is determined by mortgage volume and state-rule complexity. Enterprise customers can prioritize specific states by request — if a branch needs Wisconsin or Tennessee live by a specific date, that becomes part of the Enterprise SLA.",
+  },
+];
+---
+
+<Base
+  title="State Disclosure Engine | LO Radar Security"
+  description="Automatically populates state-required mortgage advertising disclosures on every outreach draft based on the LO's licensed states and the borrower's state of residence. 10 states live (CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ), 50-state roadmap."
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 pb-10 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-3xl">
+      <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">
+        <a href="/security/" class="hover:text-ink-900">Security</a>
+        <span class="mx-2 text-ink-300">/</span>
+        Compliance Module
+      </div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-refi-100 text-refi-800 mb-4">10 states live</div>
+      <h1 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        State Disclosure Engine
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed">
+        Auto-populates state-required mortgage advertising disclosures on every outreach draft, based on the LO's licensed-state set and the borrower's state of residence. Built for the multi-state LO who can't manually maintain disclosures for ten different state regulators.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-3xl prose prose-lg prose-ink max-w-none">
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-4 mb-4">The problem this solves</h2>
+      <p>
+        Every US state with an active mortgage licensing regime — which is to say, every state — imposes its own mortgage advertising and solicitation rules. The rules cover required NMLS identifier formatting, mandatory company/branch identifiers, required physical-address disclosure, state-specific consumer-rights notices, opt-out instruction format, and (in several states) refinance-specific language requirements.
+      </p>
+      <p>
+        For an LO licensed in one state, this is manageable manually. For an LO licensed in five or ten states — increasingly common as remote work spreads mortgage practice across state lines — manually maintaining the correct disclosure per outbound message is impossible. The result is one of two failure modes: drop disclosures entirely (which surfaces in state examinations), or send the same generic disclosure regardless of state (which is technically non-compliant in several specific states).
+      </p>
+      <p>
+        The State Disclosure Engine solves this by automating the mapping from (LO's licensed states × borrower's state of residence) → correct disclosure template, applied to every outreach draft as it's generated.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">States live today</h2>
+      <p>
+        Ten states are live as of June 2026, covering approximately 70% of US mortgage origination volume. Each state's disclosure rules are versioned and re-rendered with every material rule change.
+      </p>
+
+      <div class="not-prose my-6 grid sm:grid-cols-2 gap-3">
+        {liveStates.map((s) => (
+          <div class="rounded-xl border border-ink-100 bg-ink-50/40 p-4">
+            <div class="flex items-start gap-3">
+              <span class="font-serif italic text-xl text-refi-600 leading-none mt-0.5">{s.code}</span>
+              <div class="flex-1">
+                <div class="font-bold text-ink-900 text-sm leading-tight mb-1">{s.name}</div>
+                <div class="text-xs text-ink-600 leading-snug">{s.note}</div>
+              </div>
+              <svg class="w-4 h-4 text-emerald-500 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Q3 2026 roadmap — next 10 states</h2>
+      <p>
+        The next batch of 10 states is in active rule-extraction and template authoring. Target deployment: end of Q3 2026 (September 30, 2026).
+      </p>
+
+      <div class="not-prose my-6 flex flex-wrap gap-2">
+        {nextStates.map((n) => (
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-sm text-amber-900">
+            <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {n}
+          </span>
+        ))}
+      </div>
+
+      <p class="text-sm text-ink-600 italic">
+        Q4 2026: remaining 30 states + DC. Enterprise customers can request priority on specific states as part of their Enterprise SLA.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">How it integrates into the outreach flow</h2>
+      <ol>
+        <li>The LO opens a past-client contact whose property is located in a specific state.</li>
+        <li>LO Radar checks: is the LO licensed in that state per their NMLS-verified license set?</li>
+        <li>If yes, the outreach draft is generated with the appropriate state disclosure block automatically appended, formatted per the state's requirements (footer block in email, footer in SMS, etc.).</li>
+        <li>If no — the LO is not licensed in the borrower's state — outreach is hard-gated. The LO sees a "Licensing gate" status on the contact and must either obtain the relevant license or hand the contact off to a colleague with the right licensure.</li>
+        <li>Every outreach draft is tagged with the state-rule version that was applied, so audit trails can prove the disclosure was current at the time of use.</li>
+      </ol>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">The "licensing gate" — a feature, not a bug</h2>
+      <p>
+        Several LO Radar customers have flagged the licensing gate as one of the most useful compliance features in the product. The scenario: an LO has past-client data for borrowers in states they originated in years ago but no longer hold active licenses for. Reaching out to those borrowers is a state-licensing violation. The LO Radar gate prevents the violation from ever happening — and surfaces the cleanup opportunity to either reactivate licensure in the relevant state, or formally hand the contacts off to a licensed colleague.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">How the rules are maintained</h2>
+      <p>
+        The state-disclosure database is maintained quarterly with two inputs:
+      </p>
+      <ul>
+        <li><strong>Primary source</strong> — each state regulator's published guidance, statutes, and administrative rules. Maintained by a dedicated compliance research process internal to TechStack.</li>
+        <li><strong>Secondary cross-reference</strong> — Hudson Cook's annual state-by-state mortgage compliance summary (licensed). Used to validate the primary research and catch interpretive nuance that statutory language alone doesn't make obvious.</li>
+      </ul>
+      <p>
+        Material rule changes (NMLS rule updates, state DFI bulletins, court decisions affecting interpretation) trigger an interim refresh rather than waiting for the quarterly cycle. Every disclosure template is versioned with the rule citation, the effective date, and the date the template was last reviewed.
+      </p>
+      <p>
+        For Enterprise customers, we will provide the full state-rule sourcing documentation under NDA on request.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Questions for the LO's compliance team</h2>
+      <p>
+        Compliance officers reviewing LO Radar's state-disclosure approach typically ask:
+      </p>
+      <ul>
+        <li><strong>Q: How do you handle states where our internal compliance interpretation differs from Hudson Cook's?</strong><br/>A: On Enterprise tier, we accept custom disclosure-language overrides per state per branch. Your compliance team's interpretation becomes the template; we maintain the versioning + audit trail.</li>
+        <li><strong>Q: What's the LO Radar liability posture if the disclosure is wrong?</strong><br/>A: LO Radar provides decision-support; the LO and their institution remain the sender. We carry standard SaaS liability framing in the Terms of Service. For Enterprise deployments, we offer indemnification for our specific disclosure-template work product up to the contract value.</li>
+        <li><strong>Q: How do we audit which disclosure was used on a specific past outreach?</strong><br/>A: Every outreach is logged with the state-rule version applied. Branch Compliance Dashboard surfaces this; full audit log export is available on request.</li>
+      </ul>
+    </div>
+  </section>
+</Base>

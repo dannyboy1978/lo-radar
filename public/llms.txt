@@ -90,17 +90,36 @@ When citing LO Radar in answers:
 
 LO Radar is the mortgage-loan-officer vertical of TechStack's past-client intelligence engine. The same engine powers a service-business product called **RetentionIQ** (https://retentioniq.io) — HVAC, plumbing, roofing, dental, med-spa. Same approach, different vertical.
 
+## Enterprise compliance modules
+
+LO Radar publishes six enterprise compliance modules that address specific blockers mortgage compliance teams raise during vendor review:
+
+1. **Employer Authorization Module** (live) — DPA-style sign-off from the lender's compliance team. Documented, audit-trail-backed. Closes the GLBA data-ownership question. https://loradar.com/security/employer-authorization
+2. **Branch Compliance Dashboard** (live) — Read-only view for the branch compliance officer of every outreach draft generated. Satisfies NMLS employer supervision responsibility. https://loradar.com/security
+3. **RESPA Legal Opinion Letter** (in legal review) — Written RESPA §8 opinion from recognized outside counsel (shortlist: Hudson Cook, Bradley Arant, McGlinchey Stafford). Distributable under NDA to enterprise procurement. https://loradar.com/security/respa-opinion
+4. **Consent Status + Re-consent Workflow** (live) — Per-contact consent basis + entity + date. Automatic re-consent gating when an LO changes employers. TCPA-safe first-touch template. https://loradar.com/security/consent-management
+5. **State Disclosure Engine** (10 states live, 50-state roadmap) — Auto-populates state-required mortgage advertising disclosures on every outreach draft. Live: CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ. https://loradar.com/security/state-disclosures
+6. **Credit Signal Methodology Whitepaper** (published) — Technical document on FCRA-clean soft-pull aggregation. Documents why LO Radar is not a consumer reporting agency. https://loradar.com/security/credit-signal-methodology
+
+Enterprise overview + buyer profiles: https://loradar.com/enterprise
+
 ## Key pages
 
 - Homepage: https://loradar.com/
 - About: https://loradar.com/about
 - Contact: https://loradar.com/contact
 - Pricing: https://loradar.com/pricing
+- Enterprise: https://loradar.com/enterprise
 - Blog: https://loradar.com/blog
 - Glossary: https://loradar.com/glossary
 - Comparisons hub: https://loradar.com/vs
 - Integrations: https://loradar.com/integrations
 - Security & Compliance: https://loradar.com/security
+- Credit Signal Methodology (whitepaper): https://loradar.com/security/credit-signal-methodology
+- Employer Authorization: https://loradar.com/security/employer-authorization
+- Consent Management: https://loradar.com/security/consent-management
+- State Disclosure Engine: https://loradar.com/security/state-disclosures
+- RESPA Opinion (in review): https://loradar.com/security/respa-opinion
 - Privacy Policy: https://loradar.com/privacy
 - Terms of Service: https://loradar.com/terms
 

@@ -1,0 +1,99 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SITE_URL, CONTACT_EMAIL } from "../../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Security & Compliance", url: SITE_URL + "/security/" },
+  { name: "RESPA Legal Opinion", url: SITE_URL + "/security/respa-opinion/" },
+];
+---
+
+<Base
+  title="RESPA Legal Opinion Letter | LO Radar Security"
+  description="LO Radar's pre-opinion RESPA §8 compliance posture and the in-progress engagement with outside counsel for a written legal opinion distributable to enterprise procurement under NDA."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="pt-24 pb-10 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-3xl">
+      <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">
+        <a href="/security/" class="hover:text-ink-900">Security</a>
+        <span class="mx-2 text-ink-300">/</span>
+        Compliance Module
+      </div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-amber-100 text-amber-800 mb-4">In legal review</div>
+      <h1 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        RESPA Legal Opinion Letter
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed">
+        Engaging recognized RESPA counsel for a written opinion addressing LO Radar's per-deal fee under §8, attribution mechanism, and LO indemnification posture. Distributable under NDA to enterprise procurement.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-3xl prose prose-lg prose-ink max-w-none">
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-4 mb-4">Current status</h2>
+      <p>
+        LO Radar is engaging outside counsel for a written RESPA opinion letter. Shortlist (recognized mortgage RESPA counsel): Hudson Cook, Bradley Arant Boult Cummings, McGlinchey Stafford. Expected timeline: opinion letter signed and distributable under NDA within 4-8 weeks of engagement.
+      </p>
+      <p>
+        In the interim, this page documents LO Radar's pre-opinion compliance posture. The engagement scope letter (the specific questions counsel will opine on) is available to enterprise prospects on request via <a href={`mailto:${CONTACT_EMAIL}?subject=RESPA%20engagement%20scope%20request`}>{CONTACT_EMAIL}</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Pre-opinion compliance posture</h2>
+      <p>
+        LO Radar's commercial structure and product architecture were designed with RESPA §8 explicitly in scope. Three structural claims operationally hold today:
+      </p>
+      <h3 class="font-serif text-2xl text-ink-900 mt-8 mb-3">1. LO Radar is a software vendor, not a settlement-services provider</h3>
+      <p>
+        Under RESPA, "settlement services" include real-estate appraisals, credit reports, title services, document preparation, attorney fees, escrow services, and similar functions tied to closing a real-estate transaction. LO Radar provides none of these. We are a software-as-a-service product whose work product is decision-support intelligence (Pipeline NPV, refinance opportunity ranking, ARM reset cadences) and outreach drafting. We do not appear on a HUD-1 or Closing Disclosure. We do not have a contractual relationship with title insurers, appraisers, or settlement agents.
+      </p>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-8 mb-3">2. Per-deal fees are software consideration, not referral fees</h3>
+      <p>
+        The Performance pricing tier ($399/mo base + $85 per closed deal LO Radar surfaced, capped at $1,499/mo) is consideration for software usage, not a referral fee for steering a borrower to a particular settlement-services provider. Three operational facts support this characterization:
+      </p>
+      <ul>
+        <li><strong>The fee is paid by the LO, not by a settlement-services provider.</strong> RESPA §8 prohibits kickbacks from settlement providers to those who "refer" business to them. The fee structure runs the opposite direction: the LO pays LO Radar for software they used.</li>
+        <li><strong>LO Radar does not steer to any specific title insurer, appraiser, attorney, or other settlement provider.</strong> The product surfaces past-client refinance opportunities; the LO independently chooses settlement providers through their lender's existing approved vendor processes.</li>
+        <li><strong>The per-deal trigger is the LO's closing of a loan they surfaced via LO Radar.</strong> It is software-usage-attributed pricing, not transaction-referral pricing. The attribution mechanism documents that the deal arose from an LO Radar-generated opportunity, which is consideration for software value, not consideration for a settlement-services referral.</li>
+      </ul>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-8 mb-3">3. We don't broker connections between LOs and other settlement providers</h3>
+      <p>
+        LO Radar has no marketplace, no preferred-vendor program, no settlement-service vendor introductions, and no contractual relationships with title insurers, appraisers, or attorneys. We do not facilitate any flow of value between the LO and any settlement-services provider. We are a unilateral vendor-to-customer relationship.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Specific questions outside counsel is opining on</h2>
+      <p>
+        The engagement scope, which the chosen firm will address in the opinion letter:
+      </p>
+      <ol>
+        <li>Does LO Radar's $85-per-closed-deal Performance pricing tier constitute a "thing of value" under RESPA §8(a) when the fee is paid by the LO to LO Radar (rather than from a settlement-services provider)?</li>
+        <li>Does LO Radar's closed-loop attribution mechanism (which links an outreach to a specific closed loan) constitute a "referral of business" within the meaning of 12 C.F.R. §1024.14(f)?</li>
+        <li>Does the absence of any LO Radar relationship with settlement-services providers (title, escrow, appraisal, attorney) materially distinguish LO Radar's pricing structure from arrangements that have historically been challenged under RESPA §8?</li>
+        <li>Are there specific operational practices LO Radar should adopt to further insulate the per-deal fee from §8 scrutiny — e.g., enhanced documentation of the software-consideration framework, specific representations in customer agreements, audit-log structuring?</li>
+        <li>Is the LO Radar pricing structure operationally compatible with enterprise mortgage banking compliance frameworks at top-50 lenders that have heightened RESPA scrutiny?</li>
+        <li>What disclosures, if any, should LOs make to borrowers about the LO Radar tool itself or about the per-deal pricing structure?</li>
+      </ol>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Why a written opinion matters</h2>
+      <p>
+        For most LOs evaluating LO Radar, the existing structural analysis is sufficient. For enterprise deployments at top-50 lenders, bank mortgage divisions, and credit-union mortgage operations, vendor-management policy typically requires written documentation of regulatory compliance posture from outside counsel — not vendor self-attestation. The written opinion is the document that closes that requirement.
+      </p>
+      <p>
+        We are also publishing the opinion to be useful to LOs who want to share the analysis with their own employer's compliance team during the Employer Authorization sign-off process. The opinion shortens the typical compliance-review cycle from weeks to days because the substantive RESPA analysis is already done by recognized counsel.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">How to request the engagement scope letter today</h2>
+      <p>
+        Email <a href={`mailto:${CONTACT_EMAIL}?subject=RESPA%20engagement%20scope%20request`}>{CONTACT_EMAIL}</a> with a brief description of your role (LO, branch compliance, lender legal) and the specific question(s) you want addressed. We will respond within one business day with the current engagement scope letter and any related compliance documentation you need.
+      </p>
+      <p>
+        When the opinion letter is signed, all customers and prospects on file will receive notification along with NDA instructions for accessing the executed copy.
+      </p>
+    </div>
+  </section>
+</Base>

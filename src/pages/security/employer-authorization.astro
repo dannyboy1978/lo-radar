@@ -1,0 +1,175 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SITE_URL, BOOKING_URL, CONTACT_EMAIL } from "../../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Security & Compliance", url: SITE_URL + "/security/" },
+  { name: "Employer Authorization", url: SITE_URL + "/security/employer-authorization/" },
+];
+
+const faq = [
+  {
+    q: "Why does LO Radar need employer authorization?",
+    a: "Past-client data held by a loan officer typically remains the property of the employing lender (or the lender that originated the loan, if the LO has moved). The Gramm-Leach-Bliley Act treats this data as non-public personal information subject to safeguarding by the institution. Employer Authorization gives the lender's compliance team a documented, audit-trail-backed sign-off that LO Radar is an approved data processor — closing the GLBA data-ownership question that vendor-management reviews open with.",
+  },
+  {
+    q: "What does the employer actually sign?",
+    a: "A standard Data Processing Agreement (DPA) addendum tailored for mortgage past-client intelligence. It specifies: (1) the categories of data LO Radar processes (no SSN, credit reports, government IDs, or bank account numbers), (2) the processing purposes (refinance / ARM / anniversary / equity / credit-improvement signal generation and outreach drafting), (3) data residency (US only), (4) security controls (encryption at rest + transit, least-privilege access, audit logging), (5) sub-processor disclosure, and (6) breach notification timelines. The DPA template is built around the standard SaaS DPA structure used in financial services.",
+  },
+  {
+    q: "What if the employer's compliance team wants edits to the DPA?",
+    a: "We accept reasonable edits via DocuSign redline. Common edits we've accepted in past engagements include: specific data-residency commitments, deeper SOC 2 evidence requirements, customized breach-notification windows, and lender-specific audit cadence. Edits that materially expand our liability or require capabilities we don't have (e.g., on-premises deployment) we will discuss directly.",
+  },
+  {
+    q: "What does authorization status look like inside the LO Radar app?",
+    a: "Every page of every LO's LO Radar interface carries an 'Authorized by [Employer Name] since [Date]' status indicator at the top. The full authorization audit trail — DPA version, signature date, signer name, signer email, signer title — lives in Settings → Compliance → Employer Authorizations. Revocations are equally visible and immediately gate further processing.",
+  },
+  {
+    q: "Can an LO have authorizations from multiple employers?",
+    a: "Yes. The common case is an LO who originated loans at Lender A (now departed), currently works at Lender B, and has past-client data legitimately accumulated from both engagements. Both employers can authorize LO Radar; the system tracks consent_entity per contact (see Consent Management) so outreach to each past borrower references the correct authorizing entity.",
+  },
+  {
+    q: "Can an employer revoke authorization?",
+    a: "Yes, at any time, by emailing notice of revocation. We process revocations within 24 hours: outreach drafting for contacts tied to the revoking employer is gated, the LO sees a 'Revoked by [Employer]' status on relevant contacts, and the LO must obtain alternative consent (employer re-authorization or direct borrower re-consent) before further outreach. Past audit records are preserved.",
+  },
+];
+
+const article = {
+  headline: "Employer Authorization Module — How LO Radar Documents Lender Sign-Off as an Approved Data Processor",
+  description: "Detailed walkthrough of LO Radar's Employer Authorization Module: the DPA framework, the in-app authorization status surface, multi-employer support, revocation workflow, and audit trail design.",
+  author: "TechStack Engineering",
+  datePublished: "2026-06-13T00:00:00Z",
+  section: "Compliance Module",
+  keywords: ["GLBA", "DPA", "data processing agreement", "vendor management", "employer authorization", "mortgage compliance"],
+};
+---
+
+<Base
+  title="Employer Authorization Module | LO Radar Security"
+  description="LO Radar's Employer Authorization Module gives lender compliance teams a documented, audit-trail-backed sign-off as approved data processor. DPA framework, multi-employer support, revocation workflow, full audit trail."
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+  article={article}
+>
+  <section class="pt-24 pb-10 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-3xl">
+      <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">
+        <a href="/security/" class="hover:text-ink-900">Security</a>
+        <span class="mx-2 text-ink-300">/</span>
+        Compliance Module
+      </div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 mb-4">Available</div>
+      <h1 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        Employer Authorization Module
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed">
+        How the lender's compliance team signs off on LO Radar as an approved data processor — without leaving the LO waiting weeks for procurement review.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-3xl prose prose-lg prose-ink max-w-none">
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-4 mb-4">The problem this solves</h2>
+      <p>
+        When a loan officer brings LO Radar into a regulated lender, the first compliance question is always the same: <em>"You're processing our past-client data — what authorizes that?"</em> The Gramm-Leach-Bliley Act treats past-client mortgage data as non-public personal information that the originating institution is responsible for safeguarding. Even when the data physically lives in the LO's own systems (their email, their notes app, the CSV they exported from the LOS), the lender remains the GLBA-responsible entity.
+      </p>
+      <p>
+        Without a documented authorization framework, every LO Radar deployment at a regulated lender becomes a one-off vendor-management exercise that can take weeks. With Employer Authorization, it's a single DPA signature followed by a real-time status indicator the compliance team can audit at any time.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">How the workflow runs</h2>
+      <ol>
+        <li><strong>The LO initiates authorization.</strong> From inside LO Radar (Settings → Compliance → Connect Employer), the LO enters their employing lender's name and the email address of their compliance contact. LO Radar sends a branded authorization invitation to the compliance contact.</li>
+        <li><strong>The compliance officer reviews the DPA.</strong> The invitation lands as an email from compliance@loradar.com with a secure unique link. The DPA is presented in a clean readable format with the standard sections (data categories, processing purposes, residency, security controls, sub-processors, breach notification). Redline edits are supported via DocuSign integration on the Enterprise tier; smaller deployments use a click-through accept flow.</li>
+        <li><strong>The compliance officer signs.</strong> Electronic signature is captured with timestamp, IP address, and signer attestation. The authorization becomes effective immediately on signature.</li>
+        <li><strong>The LO's interface updates.</strong> A persistent header bar on every LO Radar page now reads <em>"Authorized by [Employer Name] since [Date]"</em>. The LO can see the same audit trail the compliance officer has access to.</li>
+        <li><strong>The compliance officer retains visibility.</strong> The compliance officer receives a quarterly summary email and can access the Branch Compliance Dashboard at any time to see every outreach draft generated by every authorized LO under their authorization.</li>
+      </ol>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">What the DPA covers</h2>
+      <p>
+        The DPA template is structured around the standard SaaS Data Processing Agreement framework used in financial services, with mortgage-vertical specifics:
+      </p>
+      <ul>
+        <li><strong>Data categories processed</strong> — borrower name, contact info, loan terms (rate, balance, term, ARM type, reset date, property address), loan history. Explicitly excluded: SSN, government IDs, full credit reports, bank account numbers.</li>
+        <li><strong>Processing purposes</strong> — refinance opportunity analysis, ARM reset workflow, anniversary triggers, HELOC and cash-out signal detection, credit-improvement signal surfacing, outreach draft generation, attribution reporting. No purpose beyond what the LO opts into.</li>
+        <li><strong>Sub-processors</strong> — Hostinger (US hosting), Supabase / AWS (US database), Stripe (billing only — no past-client data), Resend (transactional email to the LO — no past-client outreach passes through us).</li>
+        <li><strong>Security controls</strong> — AES-256 encryption at rest, TLS 1.2+ in transit, SSO with mandatory 2FA on internal access, least-privilege role-based access, per-record access logging.</li>
+        <li><strong>Data residency</strong> — United States only. No EEA, UK, or APAC sub-processing.</li>
+        <li><strong>Breach notification</strong> — 72-hour notification standard; configurable down to 24 hours on Enterprise tier.</li>
+        <li><strong>Sub-processor change notice</strong> — 30 days advance notice for any material sub-processor change.</li>
+        <li><strong>Audit rights</strong> — annual SOC 2 evidence (or equivalent control documentation) on request; lender-led audit rights with reasonable notice.</li>
+        <li><strong>Term and termination</strong> — coterminous with the LO's LO Radar subscription; revocable by the employer at any time with 24-hour effect.</li>
+        <li><strong>Liability</strong> — capped at 12 months of subscription fees; standard exceptions for confidentiality, IP, and gross negligence carved out.</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Multi-employer support</h2>
+      <p>
+        The common case for a mid-career LO is past-client data legitimately accumulated across multiple employers. Three scenarios are explicitly supported:
+      </p>
+      <p>
+        <strong>(a) Single current employer, no historical.</strong> The LO works at Lender A today. Past-client data is from loans the LO originated at Lender A only. One authorization, one DPA.
+      </p>
+      <p>
+        <strong>(b) Current employer + prior employer(s) with historical data.</strong> The LO works at Lender B today but legitimately retained contact-level past-client information from their time at Lender A (and possibly Lender C before that). All three employers' authorizations are captured separately; each past-client contact is tagged with its consent_entity. Outreach to a contact references the correct authorizing entity. If a prior employer revokes (uncommon but possible), the contacts under that authorization are gated.
+      </p>
+      <p>
+        <strong>(c) Branch / lender holds the authorization on behalf of its LO bench.</strong> For enterprise deployments where the branch is the paying tenant, the branch's compliance officer signs one authorization that covers all current and future LO employees. New LOs joining the branch inherit the authorization automatically.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Audit trail</h2>
+      <p>
+        Every authorization, every signature event, every status change, and every revocation is permanently recorded in the LO Radar audit log. The audit log captures:
+      </p>
+      <ul>
+        <li>Authorization event (issued / signed / revoked / re-authorized)</li>
+        <li>DPA version at time of event</li>
+        <li>Signer identity (name, email, title, IP, timestamp)</li>
+        <li>Employer organization details (name, NMLS company ID if provided, address)</li>
+        <li>Scope of authorization (LO accounts covered)</li>
+        <li>Subsequent processing summary (count of contacts, count of drafts generated under this authorization, last activity)</li>
+      </ul>
+      <p>
+        The audit log is exportable to CSV by the LO at any time, and is provided as a quarterly summary to the authorizing compliance officer automatically. For lender audits, we will provide the full audit log in a format suitable for the lender's audit-trail repository on request.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">What happens if the LO never gets authorization</h2>
+      <p>
+        LO Radar continues to operate. Drafts are generated. Calls are surfaced. The LO sees a soft banner in the interface indicating "Employer authorization not yet on file — recommended for compliance posture." The functional posture is identical, but compliance officers reviewing the system will see the LO has not yet captured the employer sign-off. For independent LOs without a single employer (most common: 1099 mortgage brokers), the system supports an "Independent LO" attestation in lieu of employer authorization.
+      </p>
+      <p>
+        For LOs at a regulated lender who do not have authorization on file, certain Enterprise-tier features (Branch Compliance Dashboard, advanced audit exports, RESPA opinion letter distribution) remain locked until authorization is captured.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">For compliance officers reviewing this document</h2>
+      <p>
+        If you are a compliance officer evaluating LO Radar for vendor approval, the documents most relevant to your review are:
+      </p>
+      <ul>
+        <li>This page (Employer Authorization framework)</li>
+        <li><a href="/privacy/">Privacy Policy</a> (data handling, retention, third-party processors, user rights)</li>
+        <li><a href="/terms/">Terms of Service</a> (commercial framework, data ownership, drafts-never-sent principle, liability)</li>
+        <li><a href="/security/">Security & Compliance overview</a> (regulatory pillars, technical summary)</li>
+        <li><a href="/security/credit-signal-methodology/">Credit Signal Methodology Whitepaper</a> (FCRA posture)</li>
+        <li><a href="/security/consent-management/">Consent Management</a> (TCPA posture)</li>
+        <li><a href="/security/state-disclosures/">State Disclosure Engine</a> (state advertising compliance)</li>
+      </ul>
+      <p>
+        For documents typically requested under NDA — DPA template, SOC 2 evidence, breach notification procedures, sub-processor list with executed DPAs, the in-progress RESPA opinion engagement scope — please email <a href={`mailto:${CONTACT_EMAIL}?subject=Vendor%20review%20documents`}>{CONTACT_EMAIL}</a> with your NDA template or ours.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink-50/40 border-t border-ink-100">
+    <div class="container-xl max-w-3xl text-center">
+      <h2 class="font-serif text-2xl md:text-3xl text-ink-900 leading-tight mb-5">Ready to authorize LO Radar for your branch?</h2>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-ink-900 text-white rounded-lg font-semibold text-sm hover:bg-ink-800 transition-colors">
+        Book an enterprise call
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </section>
+</Base>

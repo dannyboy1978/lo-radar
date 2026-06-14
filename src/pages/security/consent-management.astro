@@ -1,0 +1,164 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SITE_URL, CONTACT_EMAIL } from "../../config.js";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Security & Compliance", url: SITE_URL + "/security/" },
+  { name: "Consent Management", url: SITE_URL + "/security/consent-management/" },
+];
+
+const faq = [
+  {
+    q: "Why track consent at the per-contact level?",
+    a: "TCPA, CAN-SPAM, state-level Mini-TCPAs, and Do Not Call registries all evaluate consent at the consumer level — not at the LO level. When a past borrower originally provided contact consent during their loan origination, that consent was given to a specific entity (the originating lender) for a specific purpose (servicing-and-related-communications, typically). LO Radar mirrors that reality by storing consent_basis, consent_entity, and consent_date on every contact record. This makes consent status auditable per contact and detects the cases where re-consent is required (e.g., the LO has changed employers since the consent was originally given).",
+  },
+  {
+    q: "What are the recognized consent bases?",
+    a: "Four primary bases: (1) originator-prior-relationship — the LO originated the loan and the borrower's loan-origination consent covers continuing contact within the same entity; (2) borrower-volunteered — the borrower has explicitly opted in to ongoing contact via a recent recorded interaction; (3) re-consent — the borrower has re-confirmed contact preferences (typically after an LO employer change); (4) inherited-with-employer-authorization — the authorizing employer attests that consent was captured under its own framework and is documented in its system of record.",
+  },
+  {
+    q: "What triggers the re-consent workflow?",
+    a: "When an LO's current employer (per their LO Radar account settings) is different from the consent_entity stored on a past-client contact, outreach drafting for that contact is automatically gated. The LO sees a 'Re-consent required' status and is presented with the TCPA-safe first-touch template (see below). Only after the borrower responds to the re-consent message and the LO records the response is the contact unlocked for ongoing outreach.",
+  },
+  {
+    q: "What does the TCPA-safe re-consent template look like?",
+    a: "The template explicitly acknowledges the LO's change in employment, names both the prior employer (where the consent was originally given) and the current employer, and asks the borrower to confirm continued contact preferences. The first-touch message is informational only — no rate quote, no refinance pitch — and includes a clear opt-out instruction in compliance with CAN-SPAM and state Mini-TCPA requirements. See the template below.",
+  },
+  {
+    q: "What happens if a borrower opts out?",
+    a: "The contact is immediately tagged with consent_basis='opted-out' and outreach drafting is permanently gated for that contact. Internal DNC list integration is automatic. The audit log captures the opt-out timestamp and the channel through which it was received. Re-opt-in requires explicit written borrower request, captured and stored with the contact.",
+  },
+  {
+    q: "Does LO Radar integrate with our existing CRM's consent fields?",
+    a: "Yes on Enterprise. The Employer Authorization flow includes an option to specify the CRM-of-record (BNTouch, Shape, Bonzo, Aidium, Total Expert, Surefire, etc.) and the field path for each consent attribute in that CRM. LO Radar syncs consent status bidirectionally on a configurable cadence so the CRM remains the operational system of record for consent.",
+  },
+];
+---
+
+<Base
+  title="Consent Management + Re-consent Workflow | LO Radar Security"
+  description="Per-contact consent tracking for mortgage loan officers: consent basis, consent entity, consent date. Automatic re-consent workflow on employer transitions, with a TCPA-safe first-touch template. CAN-SPAM and state Mini-TCPA aware."
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 pb-10 bg-gradient-to-b from-ink-50/40 to-white">
+    <div class="container-xl max-w-3xl">
+      <div class="text-[10px] font-bold uppercase tracking-[0.25em] text-refi-700 mb-4">
+        <a href="/security/" class="hover:text-ink-900">Security</a>
+        <span class="mx-2 text-ink-300">/</span>
+        Compliance Module
+      </div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 mb-4">Available</div>
+      <h1 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-5">
+        Consent Management + Re-consent Workflow
+      </h1>
+      <p class="text-xl text-ink-700 font-light leading-relaxed">
+        Per-contact consent tracking with automatic re-consent gating when an LO changes employers. Built for the LOs who change shops every 4-6 years and don't want to inherit TCPA exposure with their book.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container-xl max-w-3xl prose prose-lg prose-ink max-w-none">
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-4 mb-4">The data model</h2>
+      <p>
+        Every past-client contact in LO Radar carries three consent-related fields:
+      </p>
+      <ul>
+        <li><strong>consent_basis</strong> — one of: <code>originator-prior-relationship</code>, <code>borrower-volunteered</code>, <code>re-consent</code>, <code>inherited-with-employer-authorization</code>, <code>opted-out</code>, <code>unknown</code></li>
+        <li><strong>consent_entity</strong> — the legal entity to which the consent was given. Typically the LO's employing lender at the time of origination (e.g., "First National Mortgage Inc.")</li>
+        <li><strong>consent_date</strong> — the date the consent was given or last re-affirmed</li>
+      </ul>
+      <p>
+        When a past-client CSV is imported, contacts default to <code>consent_basis='originator-prior-relationship'</code> with <code>consent_entity</code> set to the LO's then-current employer. This reflects the standard origination-consent framework: borrowers consenting to loan servicing and related communications from the originating institution.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">The re-consent trigger</h2>
+      <p>
+        The re-consent workflow fires automatically when:
+      </p>
+      <ol>
+        <li>The LO updates their current employer in Settings → Account → Employer</li>
+        <li>The new employer differs from the <code>consent_entity</code> stored on one or more past-client contacts</li>
+        <li>The contact's <code>consent_basis</code> is <code>originator-prior-relationship</code> (the most common case where re-consent applies)</li>
+      </ol>
+      <p>
+        For affected contacts, LO Radar:
+      </p>
+      <ul>
+        <li>Tags the contact with status <em>"Re-consent required"</em></li>
+        <li>Gates standard outreach drafting until re-consent is captured</li>
+        <li>Surfaces the TCPA-safe re-consent first-touch template (below) as the only available outreach</li>
+        <li>Logs the re-consent gate event to the audit log</li>
+      </ul>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">The TCPA-safe re-consent template</h2>
+      <p>The first-touch template explicitly acknowledges the LO's employment change, names both the prior and current employer, and asks the borrower to confirm preferences. The template is informational — no rate quote, no commercial pitch.</p>
+
+      <div class="not-prose my-8 rounded-2xl border border-ink-200 bg-ink-50/40 p-6">
+        <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-3">Sample template — email</div>
+        <div class="bg-white rounded-xl p-5 border border-ink-100 text-ink-800 leading-relaxed text-sm whitespace-pre-line italic">{`Hi [Borrower First Name],
+
+Quick housekeeping note — I wanted to let you know that since we worked together on your mortgage at [Prior Employer Name], I've moved to [Current Employer Name]. I'm still licensed and still here when you need a mortgage question answered.
+
+Before I send you anything else, I want to make sure you're okay with that. If you'd like me to keep you in the loop on rate and refinance opportunities going forward, just reply with a thumbs-up (or say "yes, keep me on the list"). If you'd rather I stop reaching out, reply STOP or "remove me" and I'll permanently remove you from outreach — no offense taken.
+
+Either way, thank you for the original business. Hope you and the family are well.
+
+— [LO First Name]
+[LO Name], NMLS #[NMLS ID]
+[Current Employer Name]
+[LO Phone] · [LO Email]
+
+To opt out of future emails, reply STOP or click [unsubscribe link].
+`}</div>
+      </div>
+
+      <p>
+        The SMS variant is similarly informational and explicitly opt-in-requesting; it carries the required STOP / HELP instructions and the LO's NMLS identifier per state-level mortgage advertising rules. The SMS template is generated by the State Disclosure Engine using the borrower's state-of-residence and the LO's NMLS licensed states.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">What happens after the borrower responds</h2>
+      <p>
+        Three outcomes are supported:
+      </p>
+      <p>
+        <strong>(a) Opt-in (affirmative response).</strong> The LO records the response (manual entry or, on Enterprise, automatic detection from the LO's connected inbox). The contact's consent fields update to <code>consent_basis='re-consent'</code>, <code>consent_entity=[Current Employer]</code>, <code>consent_date=[today]</code>. Standard outreach drafting unlocks immediately. The audit log records the opt-in.
+      </p>
+      <p>
+        <strong>(b) Opt-out (STOP / "remove me" / negative response).</strong> The contact updates to <code>consent_basis='opted-out'</code>. Outreach drafting is permanently gated. Internal DNC list updates. The audit log captures the opt-out timestamp and channel.
+      </p>
+      <p>
+        <strong>(c) No response (default after 30 days).</strong> The contact remains in <em>"Re-consent required"</em> status indefinitely. The LO can manually escalate via phone or in-person conversation; if successful, the LO captures the verbal consent in LO Radar (with date and channel for audit) and the contact unlocks. Without affirmative re-consent, the contact stays gated to outreach.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Why this is the right TCPA posture</h2>
+      <p>
+        TCPA exposure for mortgage LOs concentrates in two scenarios:
+      </p>
+      <ul>
+        <li><strong>Auto-dialed or pre-recorded contact without prior express written consent.</strong> LO Radar does not auto-dial and does not send messages on the LO's behalf — drafts are sent from the LO's own systems, manually, which keeps these out of the autodialer-consent framework.</li>
+        <li><strong>Contact to a past borrower after the LO has left the originating entity, where the original consent was tied to that entity.</strong> This is the scenario the re-consent workflow specifically addresses. Without it, an LO who changes employers inherits TCPA exposure with their book — the consent given to Lender A doesn't automatically transfer to outreach from the LO at Lender B.</li>
+      </ul>
+      <p>
+        The re-consent workflow makes the TCPA posture clean by ensuring every commercial outreach has an unambiguous consent record traceable to the current sender entity. The audit log makes that record defensible.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Integration with the Branch Compliance Dashboard</h2>
+      <p>
+        At the branch level, the compliance officer can audit consent status across all LOs in the branch. The Branch Compliance Dashboard surfaces:
+      </p>
+      <ul>
+        <li>Count of contacts in each consent state (originator-prior-relationship, borrower-volunteered, re-consent, opted-out, unknown)</li>
+        <li>Count of "Re-consent required" contacts per LO</li>
+        <li>Re-consent completion rate per LO over time</li>
+        <li>Recent opt-outs across the branch</li>
+      </ul>
+      <p>
+        This gives the branch supervisor the visibility expected under NMLS employer-supervision responsibilities without exposing the underlying past-client PII to the compliance officer.
+      </p>
+    </div>
+  </section>
+</Base>
