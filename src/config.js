@@ -10,9 +10,12 @@ export const PARENT_COMPANY = "TechStack LLC";
 export const SITE_URL = "https://loradar.com";
 
 // ─── BOOKING — primary CTA destination (GHL calendar) ───────────────────
+// All venture sites share a single TechStack Strategy Call calendar. The
+// product & UTM params tag every booking with its origin so we can see
+// which brand drove the meeting inside GHL contacts.
 export const BOOKING_URL =
   import.meta.env.PUBLIC_BOOKING_URL ||
-  "https://link.techstackllc.info/widget/booking/8RjvinXFqOoRV4NMxyEA";
+  "https://link.techstackllc.info/widget/booking/8RjvinXFqOoRV4NMxyEA?product=LO%20Radar&utm_source=loradar.com&utm_medium=web&utm_campaign=book-demo";
 
 // ─── CONTACT ─────────────────────────────────────────────────────────────
 export const CONTACT_EMAIL = "hello@techstackllc.info";
