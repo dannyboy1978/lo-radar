@@ -6,7 +6,7 @@
 
 // ─── Brand (placeholder — Danny is researching final name) ──────────────
 export const BRAND_NAME = "LO Radar";
-export const PARENT_COMPANY = "TechStack LLC";
+export const PARENT_COMPANY = "TechStack Consulting LLC";
 export const SITE_URL = "https://loradar.com";
 
 // ─── BOOKING — primary CTA destination (GHL calendar) ───────────────────

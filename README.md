@@ -1,6 +1,6 @@
 # LO Radar — standalone marketing site
 
-A complete, deployable Astro project for the LO Radar brand. Built to live at `loradar.com` (or whatever final domain Danny picks) as a separate marketing surface from `retentioniq.io`. Same backend codebase, same Supabase, same TechStack LLC ownership — just a focused buyer destination for mortgage loan officers.
+A complete, deployable Astro project for the LO Radar brand. Built to live at `loradar.com` (or whatever final domain Danny picks) as a separate marketing surface from `retentioniq.io`. Same backend codebase, same Supabase, same TechStack Consulting LLC ownership — just a focused buyer destination for mortgage loan officers.
 
 ---
 
