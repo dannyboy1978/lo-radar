@@ -32,7 +32,11 @@ jobs:
           host:     ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key:      ${{ secrets.VPS_SSH_KEY }}
-          port:     22
+          # Port 51822, not 22. Hostinger's network edge intermittently
+          # blackholes port-22 SYNs (tcpdump-confirmed 2026-07-22); a deploy
+          # over :22 fails with 'dial tcp :22: i/o timeout' roughly 40% of the
+          # time. 51822 is open to Anywhere in ufw and is 8/8 reliable.
+          port:     51822
           timeout:  60s
           command_timeout: 8m
           script: |
