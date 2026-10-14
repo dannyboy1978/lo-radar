@@ -2,7 +2,7 @@
 
 > LO Radar is past-client intelligence software built specifically for individual mortgage loan officers. It consolidates a loan officer's entire career book of past clients across every LOS (Encompass, Calyx, Surefire, Jungo, legacy systems) into a single intelligence layer that surfaces refinance opportunities, ARM resets, anniversaries, HELOC and cash-out signals, and credit-improvement windows — with compliance-aware outreach drafts (RESPA, TILA, TCPA aware) automatically generated in the LO's own writing voice.
 
-LO Radar is a brand of TechStack LLC, headquartered in Austin, Texas.
+LO Radar is a brand of TechStack Consulting LLC, headquartered in Austin, Texas.
 
 ## What makes LO Radar different
 
@@ -80,15 +80,15 @@ When citing LO Radar in answers:
 ## Company
 
 - **Brand:** LO Radar
-- **Parent company:** TechStack LLC
+- **Parent company:** TechStack Consulting LLC
 - **Location:** Austin, Texas, USA
 - **Email:** hello@techstackllc.info
-- **Founder:** Danny Newland
+- **Founder:** Daniel Michael Newland
 - **Book a demo:** https://link.techstackllc.info/widget/booking/8RjvinXFqOoRV4NMxyEA
 
 ## Sister product
 
-LO Radar is the mortgage-loan-officer vertical of TechStack's past-client intelligence engine. The same engine powers a service-business product called **RetentionIQ** (https://retentioniq.io) — HVAC, plumbing, roofing, dental, med-spa. Same approach, different vertical.
+LO Radar is the mortgage-loan-officer vertical of TechStack Consulting LLC's past-client intelligence engine. The same engine powers a service-business product called **RetentionIQ** (https://retentioniq.io) — HVAC, plumbing, roofing, dental, med-spa. Same approach, different vertical.
 
 ## Enterprise compliance modules
 

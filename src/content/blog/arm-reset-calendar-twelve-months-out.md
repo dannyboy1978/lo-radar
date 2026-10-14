@@ -4,7 +4,7 @@ description: "Every 5/1, 7/1, and 10/1 ARM has a known reset date. And every sin
 pubDate: 2026-04-25
 heroImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80&auto=format&fit=crop"
 heroAlt: "Calendar page with a cup of coffee and notes"
-author: "TechStack Team"
+author: "TechStack Consulting LLC"
 category: "Loan Officer Playbooks"
 keywords: ["arm reset marketing", "mortgage arm outreach", "5/1 7/1 arm strategy", "arm refi workflow", "adjustable rate mortgage retention"]
 readingTime: "7 min read"

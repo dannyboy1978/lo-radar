@@ -4,7 +4,7 @@
    One source of truth. Update brand, calendar, app URL here.
    ══════════════════════════════════════════════════════════════════════════ */
 
-// ─── Brand (placeholder — Danny is researching final name) ──────────────
+// ─── Brand ───────────────────────────────────────────────────────────────
 export const BRAND_NAME = "LO Radar";
 export const PARENT_COMPANY = "TechStack Consulting LLC";
 export const SITE_URL = "https://loradar.com";
@@ -27,5 +27,5 @@ export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
 export const APP_URL = "https://app.loradar.com";
 
 // ─── PARENT MARKETING SITE ──────────────────────────────────────────────
-// For the small "we're part of TechStack" footer link.
+// For the small "we are part of TechStack Consulting LLC" footer link.
 export const PARENT_SITE = "https://retentioniq.io";

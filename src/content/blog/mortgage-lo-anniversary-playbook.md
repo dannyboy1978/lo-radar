@@ -4,7 +4,7 @@ description: "The purchase anniversary is the single most overlooked trigger in 
 pubDate: 2026-04-25
 heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80&auto=format&fit=crop"
 heroAlt: "Couple holding keys in front of a new home"
-author: "TechStack Team"
+author: "TechStack Consulting LLC"
 category: "Loan Officer Playbooks"
 keywords: ["mortgage anniversary marketing", "loan officer past client outreach", "mortgage lo retention", "refinance anniversary trigger", "purchase anniversary mortgage"]
 readingTime: "8 min read"
