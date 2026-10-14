@@ -8,7 +8,7 @@ const breadcrumbs = [
   { name: "State Disclosure Engine", url: SITE_URL + "/security/state-disclosures/" },
 ];
 
-const liveStates = [
+const launchStates = [
   { code: "CA", name: "California", note: "Cal-DRE / DFPI mortgage advertising rules + Civil Code §§1798.83-84 disclosures" },
   { code: "TX", name: "Texas", note: "TX-DSML §80.200(b) disclosures + recovery fund notice" },
   { code: "FL", name: "Florida", note: "FL Office of Financial Regulation OFR-494 disclosures" },
@@ -46,7 +46,7 @@ const faq = [
   },
   {
     q: "How is the state-disclosure database maintained?",
-    a: "For the 10 live states, the underlying disclosure language is sourced from each state regulator's published guidance, cross-referenced with Hudson Cook's state-by-state mortgage compliance summaries, and updated quarterly. Material rule changes (e.g., New York DFS Part 41 amendments) trigger an interim refresh. The database is versioned — every disclosure used on an outreach draft is tagged with the version of the state rule it was rendered against, so audit trails can prove the disclosure was current at the time of use.",
+    a: "Disclosure language is drafted from each state regulator's published guidance and is reviewed by outside counsel before it is activated for customers. Once active, it is refreshed quarterly. Material rule changes (e.g., New York DFS Part 41 amendments) trigger an interim refresh. The database is versioned — every disclosure used on an outreach draft is tagged with the version of the state rule it was rendered against, so audit trails can prove the disclosure was current at the time of use.",
   },
   {
     q: "When will additional states go live?",
@@ -57,7 +57,7 @@ const faq = [
 
 <Base
   title="State Disclosure Engine | LO Radar Security"
-  description="Automatically populates state-required mortgage advertising disclosures on every outreach draft based on the LO's licensed states and the borrower's state of residence. 10 states live (CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ), 50-state roadmap."
+  description="Appends state-required mortgage advertising disclosures to outreach drafts based on the LO's licensed states and the borrower's state of residence. 10-state launch set (CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ) under outside counsel review, 50-state roadmap."
   breadcrumbs={breadcrumbs}
   faq={faq}
 >
@@ -68,7 +68,7 @@ const faq = [
         <span class="mx-2 text-ink-300">/</span>
         Compliance Module
       </div>
-      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-refi-100 text-refi-800 mb-4">10 states live</div>
+      <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-refi-100 text-refi-800 mb-4">10-state launch set</div>
       <h1 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-5">
         State Disclosure Engine
       </h1>
@@ -92,13 +92,13 @@ const faq = [
         The State Disclosure Engine solves this by automating the mapping from (LO's licensed states × borrower's state of residence) → correct disclosure template, applied to every outreach draft as it's generated.
       </p>
 
-      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">States live today</h2>
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Launch set</h2>
       <p>
-        Ten states are live as of June 2026, covering approximately 70% of US mortgage origination volume. Each state's disclosure rules are versioned and re-rendered with every material rule change.
+        The launch set covers ten states and approximately 70% of US mortgage origination volume. The licensed-state settings, the per-state database, and the versioning model are built. Disclosure text for each state is under outside counsel review before it is appended to customer drafts. Each state's disclosure rules are versioned and re-rendered with every material rule change.
       </p>
 
       <div class="not-prose my-6 grid sm:grid-cols-2 gap-3">
-        {liveStates.map((s) => (
+        {launchStates.map((s) => (
           <div class="rounded-xl border border-ink-100 bg-ink-50/40 p-4">
             <div class="flex items-start gap-3">
               <span class="font-serif italic text-xl text-refi-600 leading-none mt-0.5">{s.code}</span>

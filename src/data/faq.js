@@ -34,6 +34,6 @@ export const FAQ = [
   },
   {
     q: "Does LO Radar handle RESPA, TILA, and TCPA compliance?",
-    a: "Yes. Every outreach draft LO Radar generates is checked for RESPA (Real Estate Settlement Procedures Act), TILA (Truth in Lending Act), and TCPA (Telephone Consumer Protection Act) compliance posture before being shown to the loan officer. LO Radar does not send messages on behalf of LOs — it drafts, and the LO sends from their own inbox or CRM, which preserves the LO's contact-consent record. An audit log captures every draft generated and edit made. Compliance posture is also surfaced inline so the LO can see why a flag fired.",
+    a: "Yes. Every outreach draft LO Radar generates is checked for RESPA (Real Estate Settlement Procedures Act), TILA (Truth in Lending Act), and TCPA (Telephone Consumer Protection Act) compliance posture before being shown to the loan officer. LO Radar does not auto-send messages on behalf of LOs: it drafts, a named human approves, and the message goes from the LO's own inbox or CRM or through an employer-controlled channel, which preserves the LO's contact-consent record. An audit log captures every draft generated and edit made. Compliance posture is also surfaced inline so the LO can see why a flag fired.",
   },
 ];

@@ -519,7 +519,7 @@ export const COMPETITORS = [
       },
       {
         title: "Voice Training + drafts-never-sent",
-        body: "MonitorBase alerts surface opportunities; the LO writes the outreach. LO Radar drafts the outreach in the LO's own writing voice and presents it ready to send — but never sends on the LO's behalf, which keeps TCPA consent obligations cleanly under the LO's existing framework.",
+        body: "MonitorBase alerts surface opportunities; the LO writes the outreach. LO Radar drafts the outreach in the LO's own writing voice and presents it ready to send once the LO approves it. LO Radar does not auto-send, which keeps TCPA consent obligations cleanly under the LO's existing framework.",
       },
     ],
     sideBySide: [

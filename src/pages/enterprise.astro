@@ -42,8 +42,8 @@ const enhancements = [
   },
   {
     title: "State Disclosure Engine",
-    status: "10 states live · 50-state roadmap",
-    summary: "Automatically populates state-required mortgage advertising disclosures on every outreach draft, based on the LO's licensed-state set. Currently live for CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ; expanding to all 50.",
+    status: "In development · 10-state launch set",
+    summary: "Appends state-required mortgage advertising disclosures to outreach drafts based on the LO's licensed-state set and the borrower's property state. Launch set: CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ. Disclosure language for the launch set is under outside counsel review; the engine ships to customers when that review is complete.",
     blocker: "State-level advertising rules (CA/TX/FL/NY especially)",
     unlocks: "Clean adoption in high-regulation states",
     href: "/security/state-disclosures",
@@ -77,7 +77,7 @@ const faq = [
   },
   {
     q: "Which states does the State Disclosure Engine currently cover?",
-    a: "Live today: CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ (the 10 highest-mortgage-volume states, covering ~70% of US originations). Each state's required mortgage-advertising disclosures are automatically appended to outreach drafts when the borrower's property is in that state and the LO is licensed there. 50-state coverage is on the Q3 2026 roadmap, ordered by mortgage volume and rule complexity (next states: NJ, VA, MI, WA, MA, CO, MD, MN, IN, MO).",
+    a: "The launch set is CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ, the 10 highest-volume origination states. The licensed-state settings and the versioned disclosure database are built; the disclosure text for each state is under outside counsel review and is not yet appended to customer drafts. Enterprise customers can supply their own approved disclosure text per state, which the engine will append immediately. Remaining states follow in volume order (next: NJ, VA, MI, WA, MA, CO, MD, MN, IN, MO).",
   },
   {
     q: "Is the Credit Signal Methodology whitepaper enough for FCRA review?",
