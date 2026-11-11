@@ -1,0 +1,121 @@
+---
+import { BOOKING_URL, SITE_URL } from "../../config.js";
+import Base from "../../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Compliance", url: SITE_URL + "/compliance/" },
+  { name: "AI Outreach Compliance", url: SITE_URL + "/compliance/ai-outreach-compliance/" },
+];
+
+const faq = [
+  {
+    q: "Is AI-generated mortgage outreach compliant?",
+    a: "The AI tool itself does not set compliance posture; the workflow around it does. The pattern a bank compliance officer will sign off on, every time: AI drafts, a named human reviews and approves each message, the message leaves from the loan officer's own systems or an employer-controlled sending channel, and a full audit log captures every version. Autonomous outbound AI voice or SMS without a human-in-the-loop checkpoint raises TCPA and state-mini-TCPA exposure most compliance teams will not accept.",
+  },
+  {
+    q: "Does AI voice calling (outbound AI voice agents) comply with TCPA?",
+    a: "Outbound AI voice calling to a consumer mobile without prior express written consent is a TCPA risk regardless of whether the voice is AI-generated or human. The FCC has stated that AI-generated voices in robocalls are governed under existing TCPA rules. Mortgage-specific enforcement risk scales with the fact that most consumer calls after a credit pull are to past borrowers whose consent to the original lender does not automatically extend to a successor or affiliate.",
+  },
+  {
+    q: "Can AI tools pull borrower credit?",
+    a: "AI tools that pull consumer credit become consumer reporting agencies under FCRA and inherit the full set of CRA obligations: dispute handling, permissible-purpose verification, accuracy requirements. The compliant pattern for mortgage AI is to work from first-party data the loan officer already lawfully holds (past-client book) and from soft-pull tier-band aggregations where credit signal is needed. LO Radar is not a CRA and does not pull consumer credit.",
+  },
+  {
+    q: "What about AI hallucinations in mortgage outreach?",
+    a: "A hallucinated rate, APR, program term, or disclosure in a borrower-facing message is a TILA and state UDAAP risk regardless of the technology that generated it. The compliant pattern is to render drafts with data from structured sources (rate feed, LOS record, program rules table) rather than free-form LLM generation of numeric values, and to flag any draft where the LLM cannot cite the source for a numeric claim. LO Radar renders rate figures from the Freddie Mac PMMS feed and loan terms from the imported LOS record, and refuses to generate a number that cannot be traced back to a structured source.",
+  },
+  {
+    q: "What does an AI outreach audit log need to include?",
+    a: "For a bank compliance review to sign off: (1) the draft version shown to the LO, (2) the LO's edits, (3) the approver's identity and timestamp, (4) the sending channel, (5) the compliance flags that fired (RESPA, TILA, TCPA, state disclosure, consent status, licensing gate), (6) the outcome (sent, deferred, abandoned), (7) attribution tokens for closed-loop tracking. LO Radar logs all seven on every outreach.",
+  },
+];
+---
+
+<Base
+  title="AI Outreach Compliance for Mortgage Loan Officers (2026)"
+  description="How to run AI-generated mortgage outreach compliantly in 2026. The draft-approve-log pattern, TCPA risk on autonomous AI voice, FCRA and AI credit, TILA hallucination risk, and the audit log a bank compliance officer will sign off on."
+  canonical={SITE_URL + "/compliance/ai-outreach-compliance/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 md:pt-32 pb-16 bg-ink-950 text-white">
+    <div class="container-xl max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        AI compliance overlay
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-6">
+        AI outreach compliance
+        <span class="italic text-gradient-gold">for mortgage.</span>
+      </h1>
+      <p class="text-xl text-ink-300 font-light leading-relaxed max-w-3xl">
+        The AI overlay on top of the existing RESPA / TILA / TCPA / FCRA / GLBA stack. Where autonomous outbound AI voice fails the TCPA bar, where AI credit pulls trigger FCRA CRA status, where LLM hallucinations become TILA exposure, and the draft-approve-log pattern that a bank compliance officer signs off on.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-6 bg-amber-50 border-y border-amber-200">
+    <div class="container-xl max-w-4xl">
+      <p class="text-sm text-amber-900"><strong>Not legal advice.</strong> The AI regulatory environment is moving faster than any other mortgage compliance topic. Verify specific rules with counsel before relying on operational guidance.</p>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white">
+    <div class="container-xl max-w-4xl">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-6">The pattern a bank will sign off on.</h2>
+      <div class="bg-refi-50 rounded-xl p-8 border border-refi-200">
+        <ol class="list-decimal pl-5 space-y-3 text-ink-800 leading-relaxed">
+          <li><strong>AI drafts.</strong> Not autonomously sends.</li>
+          <li><strong>A named human reviews and approves</strong> every message, by name, with a timestamp.</li>
+          <li><strong>The message leaves through a channel the employer controls</strong>, either the LO's own email or CRM, or an approved sending channel.</li>
+          <li><strong>A full audit log captures</strong> the draft version, the approver, the compliance flags that fired, and the outcome.</li>
+          <li><strong>The audit log is exportable</strong> as a dated examination packet the compliance officer can hand to an examiner.</li>
+        </ol>
+      </div>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-16 mb-4">Where autonomous AI voice fails the TCPA bar.</h2>
+      <p class="text-lg text-ink-700 leading-relaxed mb-4">
+        Outbound AI voice calling to a consumer mobile without prior express written consent is a TCPA risk regardless of whether the voice is AI-generated or human. The FCC's 2024 ruling on AI-generated voices in robocalls brought clarity (AI voice falls under the existing TCPA framework) rather than exemption. Enterprise AI voice products that pace toward 100M-plus outbound calls per year are acting at a volume where even a low per-call violation rate produces nine-figure exposure.
+      </p>
+      <p class="text-lg text-ink-700 leading-relaxed">
+        The compliance-safe posture for a loan officer is to treat AI voice as a human-triggered tool (the LO clicks "call," the AI handles the dial and the opening, the LO steps in for the conversation) rather than as an autonomous outbound dialer. LO Radar does not operate outbound AI voice.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-16 mb-4">Where AI credit pulls trigger FCRA CRA status.</h2>
+      <p class="text-lg text-ink-700 leading-relaxed">
+        An AI system that routinely pulls consumer credit, aggregates it across a book of past borrowers, and sells the output back to the loan officer as a product becomes a consumer reporting agency under FCRA and inherits the full CRA obligation set: dispute handling, permissible-purpose verification, accuracy standards, consumer-facing access rights. Mortgage AI vendors that have not explicitly structured themselves to avoid CRA status carry hidden FCRA exposure. LO Radar is not a CRA; credit-improvement flags come from FCRA-clean soft-pull tier-band aggregations only, documented in the <a href="/security/credit-signal-methodology" class="text-refi-700 underline">Credit Signal Methodology whitepaper</a>.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-16 mb-4">Where LLM hallucinations become TILA exposure.</h2>
+      <p class="text-lg text-ink-700 leading-relaxed">
+        A free-form LLM asked to draft a refi pitch to a borrower can produce a plausible-sounding but fabricated rate, APR, program term, or disclosure. In a borrower-facing message, a fabricated figure is a TILA and state UDAAP issue regardless of the technology that generated it. The compliant pattern is to render numeric values from structured sources (a real rate feed, the real LOS record, a real program-rules table) and to flag any draft where the LLM cannot cite a structured source for every numeric claim. LO Radar renders rate figures from the Freddie Mac PMMS feed and loan terms from the imported LOS record, and refuses to generate a numeric value that cannot be traced to a structured source.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-16 mb-4">What the audit log must include.</h2>
+      <p class="text-lg text-ink-700 leading-relaxed mb-4">For a bank compliance review to accept an AI outreach tool, the audit log needs:</p>
+      <ul class="list-disc pl-6 space-y-2 text-ink-700 leading-relaxed">
+        <li>The draft version shown to the loan officer, with every revision.</li>
+        <li>The loan officer's edits.</li>
+        <li>The approver's identity and timestamp.</li>
+        <li>The sending channel used.</li>
+        <li>The compliance flags that fired: RESPA posture, TILA rate basis, TCPA consent status, state disclosure, licensing gate on the LO's state coverage.</li>
+        <li>The outcome: sent, deferred, abandoned.</li>
+        <li>Attribution tokens so a closed loan can be traced back to the specific outreach that produced it.</li>
+      </ul>
+      <p class="text-lg text-ink-700 leading-relaxed mt-6">
+        LO Radar logs all seven on every outreach. The Branch Compliance Dashboard surfaces the log to the branch compliance officer in a read-only view, filterable by loan officer, trigger, and date. See <a href="/security" class="text-refi-700 underline">/security</a> for the full set.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink-50">
+    <div class="container-xl max-w-4xl text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 mb-5">AI compliance a bank will actually sign.</h2>
+      <p class="text-lg text-ink-700 mb-8 max-w-2xl mx-auto">Draft-approve-log, with the audit trail built in. See it on your own book in 15 minutes.</p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book the walkthrough
+      </a>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,203 @@
+---
+import { BOOKING_URL, SITE_URL } from "../../config.js";
+import Base from "../../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Best CRM for Loan Officers", url: SITE_URL + "/best/crm-for-loan-officers/" },
+];
+
+const faq = [
+  {
+    q: "What is the best CRM for loan officers in 2026?",
+    a: "There is no single best CRM for every loan officer; the right choice depends on the shop size, the LOS already in use, and the budget. For large enterprise lenders with marketing teams, Total Expert and Surefire (ICE Mortgage Technology) lead. For mid-market shops, Bonzo and Aidium are strong contenders. For individual LOs who want modern UX at a workable price, Jungo, Shape, LoanOfficer.ai, and BNTouch each have their place. Many loan officers run a CRM for contact state and LO Radar on top for past-client intelligence (voice-trained drafts, rate math, trigger ranking).",
+  },
+  {
+    q: "What is the difference between a mortgage CRM and past-client intelligence software?",
+    a: "A mortgage CRM manages contact state: who called whom, which stage a deal is in, what tasks are overdue. Past-client intelligence software (LO Radar) sits above the CRM and answers a different question: of all the past clients in the book, which ones are worth calling today and why. The two complement rather than replace each other, and the right pattern is to keep the CRM you already have and add intelligence on top.",
+  },
+  {
+    q: "How much does a mortgage CRM cost?",
+    a: "Published 2026 pricing varies widely. Bonzo starts around $69/mo per user; BNTouch individual plans begin near $148/mo per user; Jungo runs roughly $99 to $149/mo per user; Shape CRM starts around $99/mo per user; LoanOfficer.ai does not publish; Total Expert, Surefire, Aidium, Velocify, and Shape Enterprise are enterprise contracts without public pricing. Add-ons for AI features, dialers, and marketing automation push the total higher at every tier.",
+  },
+  {
+    q: "What is the best free CRM for loan officers?",
+    a: "There is no serious free mortgage-specific CRM that handles LOS integrations and compliance posture adequately for an active loan officer. LoanGraphs has a free tier but is focused on past-client refinance monitoring (not full CRM). GoHighLevel has mortgage templates and runs around $97/mo; it is generalist, not mortgage-native. For zero-cost contact state, loan officers often start with a well-structured spreadsheet plus LO Radar for intelligence; this is a workable pattern until the shop grows past one LO.",
+  },
+];
+---
+
+<Base
+  title="Best CRM for Loan Officers (2026): Honest Comparison of 10 Mortgage CRMs"
+  description="A no-fluff 2026 guide to the best CRM for mortgage loan officers. Pricing, strengths, weaknesses, and when each option is the right call. Updated November 2026."
+  canonical={SITE_URL + "/best/crm-for-loan-officers/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 md:pt-32 pb-16 bg-ink-950 text-white">
+    <div class="container-xl max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        Updated November 11, 2026
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-6">
+        The best CRM for loan officers,
+        <span class="italic text-gradient-gold">compared honestly.</span>
+      </h1>
+      <p class="text-xl text-ink-300 font-light leading-relaxed max-w-3xl">
+        Ten mortgage CRMs loan officers actually consider in 2026, scored on pricing, LOS integration, AI features, and how well each one handles a loan officer's own past-client book. Written by a vendor (us); competitors covered honestly or we hear about it from our own buyers.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════ CATEGORY ═══════ -->
+  <section class="py-14 bg-white border-b border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The category</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-5">
+        A mortgage CRM manages <span class="italic text-refi-600">contact state.</span>
+      </h2>
+      <div class="space-y-4 text-lg text-ink-700 leading-relaxed">
+        <p>
+          A mortgage CRM is a contact-management system tuned to the loan officer workflow: a pipeline with mortgage-shaped stages (lead, application, processing, underwriting, clear-to-close, funded, servicing), LOS integration for borrower data, and automated touches tied to loan events. It is not a book-intelligence tool, a trigger-alert service, or a marketing OS, though many CRMs now bolt one or more of those on.
+        </p>
+        <p>
+          The right question for a loan officer is not "which CRM has the most features" but "which CRM fits my LOS and my shop size at a price I am willing to pay for the next three years." The list below is organized by shop size.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ LIST ═══════ -->
+  <section class="py-16 md:py-20 bg-ink-50">
+    <div class="container-xl max-w-5xl">
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        The ten CRMs loan officers actually consider.
+      </h2>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">1. Total Expert</h3>
+            <span class="text-xs text-ink-500">Enterprise · no public pricing</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Enterprise lenders with marketing teams. Customer Operating System plus AI Sales Assistant for outbound voice at scale.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Depth. Nothing in the category rivals Total Expert for breadth of marketing automation, journeys, and compliance tooling on an enterprise footprint.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Setup time measured in quarters, marketing-team required, cost high enough that an individual LO or small shop cannot justify it. <a href="/vs/total-expert" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">2. Surefire CRM (ICE Mortgage Technology)</h3>
+            <span class="text-xs text-ink-500">Enterprise · no public pricing</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Lenders already on ICE (Encompass, etc.) who want the native CRM integration with the LOS.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Deep Encompass integration, large library of mortgage-specific journeys, strong brand compliance tooling.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Enterprise pace, legacy UI patterns in parts of the product, journey builder complexity. <a href="/vs/surefire-crm" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">3. Aidium (formerly Whiteboard)</h3>
+            <span class="text-xs text-ink-500">Mid-market · enterprise</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Mid-market IMBs and branches that want a modern mortgage CRM with marketing automation and reporting without the enterprise price.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Clean UX, strong referral-partner management, mortgage-shaped out of the box.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Still a CRM, not a book-intelligence tool; the past-client ranking math is not what LO Radar does. <a href="/vs/aidium" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">4. Bonzo</h3>
+            <span class="text-xs text-ink-500">~$69/mo per user</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Individual loan officers and small teams who want mortgage conversation automation with modern AI drafting.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Price-to-feature ratio, conversation-focused UI, fast time to value.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> No native past-client book intelligence, no Pipeline NPV, no Drift Radar. <a href="/vs/bonzo" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">5. Jungo</h3>
+            <span class="text-xs text-ink-500">~$99 to $149/mo per user</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Loan officers who already live in Salesforce and want the mortgage package on top of it.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Salesforce power, extensibility, mortgage-shaped reports.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Salesforce complexity, learning curve, admin time. <a href="/vs/jungo" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">6. BNTouch</h3>
+            <span class="text-xs text-ink-500">~$148/mo per user</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Individual mortgage loan officers who want a mortgage-native CRM with campaigns and a dialer bundled.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Mortgage-specific out of the box, campaigns library, individual-LO pricing.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Dated UI in some surfaces, limited modern AI features. <a href="/vs/bntouch" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">7. Shape CRM</h3>
+            <span class="text-xs text-ink-500">~$99/mo per user</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Loan officers running a high-volume dialer-driven sales process.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Dialer integration, lead distribution rules, visual pipeline.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Generalist roots show through in a few mortgage-specific corners. <a href="/vs/shape-crm" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">8. LoanOfficer.ai</h3>
+            <span class="text-xs text-ink-500">No public pricing</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Loan officers who want an AI CRM with "Property Pulse" database mining on 150M+ property records.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Strong SEO presence, AI-first positioning, property-data layer.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Opaque pricing, less proven on past-client intelligence than LO Radar. <a href="/vs/loanofficer-ai" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">9. Velocify (ICE)</h3>
+            <span class="text-xs text-ink-500">Enterprise</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Call-center-style enterprise mortgage operations with high-volume inbound lead flow.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Speed-to-contact workflow, distribution engine, enterprise reporting.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> Wrong shape for a relationship-driven past-client workflow. <a href="/vs/velocify" class="text-refi-700 underline">Full comparison</a>.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <div class="flex items-baseline justify-between mb-3">
+            <h3 class="font-serif text-2xl text-ink-900">10. GoHighLevel (with a mortgage template)</h3>
+            <span class="text-xs text-ink-500">~$97/mo starter</span>
+          </div>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Best for:</strong> Loan officers who want a generalist CRM they can shape to mortgage with a template library and an agency-style pricing model.</p>
+          <p class="text-ink-700 leading-relaxed mb-3"><strong>Where it wins:</strong> Flexibility, low floor price, deep automation builder.</p>
+          <p class="text-ink-700 leading-relaxed"><strong>Where it loses:</strong> No native mortgage LOS integration, setup labor required, not purpose-built for the workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ADD LO RADAR ═══════ -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container-xl max-w-5xl">
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-6">
+        None of these replace what LO Radar does on your past-client book.
+      </h2>
+      <div class="space-y-4 text-lg text-ink-700 leading-relaxed max-w-3xl">
+        <p>
+          Every CRM on the list above is a contact-management system. None of them computes a book-wide Pipeline NPV, scores each borrower's drift against their own personal contact rhythm, or drafts outreach in the loan officer's voice with RESPA / TILA / TCPA posture inline on every message.
+        </p>
+        <p>
+          <strong>Keep your CRM. Add LO Radar on top.</strong> The CRM owns contact state; LO Radar owns the daily action list. They talk to each other through CSV import and attribution hand-off. See <a href="/" class="text-refi-700 underline">how LO Radar works</a> or <a href="/mortgage-client-retention-software" class="text-refi-700 underline">the full mortgage client retention software guide</a>.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+          See LO Radar on your own CSV in 15 minutes
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

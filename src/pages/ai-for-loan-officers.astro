@@ -1,0 +1,241 @@
+---
+import { BOOKING_URL, SITE_URL } from "../config.js";
+import Base from "../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "AI for Loan Officers", url: SITE_URL + "/ai-for-loan-officers/" },
+];
+
+const faq = [
+  {
+    q: "What is the best AI for loan officers in 2026?",
+    a: "The best AI for a loan officer depends on the job to be done. For working a past-client book (refinance recapture, ARM reset, HELOC, cash-out), LO Radar is the purpose-built option: past-client intelligence with voice-trained outreach drafts and RESPA / TILA / TCPA posture checks baked in. For enterprise outbound AI voice campaigns, Total Expert leads. For consumer-facing equity reports, Homebot. For general LO productivity (meeting notes, email summaries, call recaps), a generic LLM assistant like ChatGPT or Claude suffices once the loan officer has a documented data-handling policy.",
+  },
+  {
+    q: "What are the best AI tools for mortgage loan officers?",
+    a: "A current working stack: (1) LO Radar for past-client intelligence and voice-trained drafts, (2) a transcription and call-recap tool (Fireflies, Otter, or a native dialer transcription), (3) a generic LLM for email drafting and research (ChatGPT, Claude, or Gemini) with a written data-handling policy that bars entering NPI into third-party prompts, (4) a scheduling AI (Reclaim, Motion) for client calendar management, and (5) a document-extraction AI for pulling data out of Closing Disclosures and 1003s during book onboarding.",
+  },
+  {
+    q: "How do loan officers use AI prompts?",
+    a: "Three practical categories: borrower drafting prompts (rate-drop outreach, ARM reset explainers, HELOC comparisons) where the prompt must carry the loan officer's voice and the compliance posture; analysis prompts (running cash-out versus HELOC math on a specific borrower's numbers); and operations prompts (rewriting a Closing Disclosure summary for a borrower, pulling a loan estimate narrative from a rate-lock email). Never put a borrower's SSN, DOB, credit score, or bank-account number into a general-purpose AI prompt; use LO Radar or a GLBA-appropriate tool for anything containing non-public personal information.",
+  },
+  {
+    q: "What is AI CRM for loan officers?",
+    a: "An AI CRM for loan officers combines contact management with autonomous task generation: suggested next actions, auto-drafted outreach, lead scoring, and (in the enterprise category) autonomous outbound voice or SMS. LO Radar is positioned above the CRM layer as past-client intelligence: it tells the CRM what to do rather than replacing it. The best integration pattern is to run LO Radar alongside the lender's existing CRM (Encompass CRM, Surefire, Bonzo, Aidium, Jungo) and let each do its job.",
+  },
+  {
+    q: "What is LO AI?",
+    a: "LO AI is the shorthand for artificial intelligence tools built specifically for the mortgage loan officer workflow. The term was popularized by LoanOfficer.ai in 2024 to 2025. The category covers past-client intelligence (LO Radar), AI CRMs (LoanOfficer.ai, Bonzo's AI features), enterprise voice AI (Total Expert's Sales Assistant), and purpose-built analysis assistants. The common thread is domain training on mortgage data, LOS exports, and RESPA / TILA / TCPA posture rather than a generic business assistant.",
+  },
+  {
+    q: "Does AI for loan officers comply with RESPA, TILA, and TCPA?",
+    a: "The AI tool itself is not what sets compliance posture; the workflow around it is. The safe pattern is draft-then-approve: the AI generates the outreach, a named human reviews and approves every message, and the message leaves from the loan officer's own systems or an employer-controlled sending channel with a full audit log. LO Radar implements this pattern as a first principle (auto-send cannot be switched on for a mortgage practice in code). Autonomous outbound AI voice or SMS without a human-in-the-loop step raises TCPA and state-mini-TCPA exposure that most compliance teams will not accept.",
+  },
+  {
+    q: "Can AI replace loan officers?",
+    a: "No. AI replaces the parts of the loan officer's day that were mechanical: ranking the book, running the rate math, drafting the first version of outreach, pulling summaries out of long emails. The relationship work (the 15-minute call, the strategy conversation, the referral earned by handling a hard situation well) is where loan officers compete, and AI makes that work more leveraged rather than less necessary. A loan officer running LO Radar does the same number of calls as before; the calls are just higher-value because the work of picking them is automated.",
+  },
+];
+---
+
+<Base
+  title="AI for Loan Officers (2026): Tools, Prompts, and the Honest Guide to LO AI"
+  description="A working guide to AI for mortgage loan officers in 2026. The best AI tools for loan officers, prompt patterns that work on a past-client book, AI CRM options, compliance posture, and what the LO AI category actually covers."
+  canonical={SITE_URL + "/ai-for-loan-officers/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="relative pt-24 md:pt-32 pb-16 md:pb-20 bg-ink-950 text-white overflow-hidden">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-30 pointer-events-none"
+      style="background: radial-gradient(circle, rgba(20,184,166,0.4), transparent 70%); filter: blur(120px);"></div>
+
+    <div class="container-xl relative max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        LO AI, honestly
+      </div>
+
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-8">
+        AI for mortgage loan officers,
+        <span class="italic text-gradient-gold">without the hype.</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-ink-300 font-light leading-relaxed max-w-3xl mb-8">
+        A working guide to what actually helps a mortgage loan officer today: the tools that pay for themselves, the prompts that work on a past-client book, the compliance posture that keeps you off a TCPA complaint, and the honest limits of LO AI in 2026.
+      </p>
+
+      <div class="flex flex-wrap gap-4 text-sm text-ink-400">
+        <a href="#tools" class="bg-ink-800 px-3 py-1.5 rounded-full hover:bg-ink-700">AI tools stack</a>
+        <a href="#prompts" class="bg-ink-800 px-3 py-1.5 rounded-full hover:bg-ink-700">Prompts that work</a>
+        <a href="#crm" class="bg-ink-800 px-3 py-1.5 rounded-full hover:bg-ink-700">AI CRM</a>
+        <a href="#compliance" class="bg-ink-800 px-3 py-1.5 rounded-full hover:bg-ink-700">Compliance</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ DEFINITIONAL ANSWER ═══════ -->
+  <section class="py-14 md:py-16 bg-white border-b border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">What LO AI is</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-5">
+        AI trained on the <span class="italic text-refi-600">mortgage loan officer workflow.</span>
+      </h2>
+      <div class="space-y-4 text-lg text-ink-700 leading-relaxed max-w-3xl">
+        <p>
+          <strong>LO AI</strong> is artificial intelligence purpose-built for the mortgage loan officer workflow: past-client intelligence that surfaces who to call today, voice-trained drafting that keeps outreach in the LO's own voice, LOS-native data handling that respects GLBA constraints, and compliance posture checks (RESPA, TILA, TCPA) baked into every draft before it reaches the LO.
+        </p>
+        <p>
+          The category is distinct from a general-purpose AI assistant (ChatGPT, Claude, Gemini) in three ways: it reads mortgage-industry data formats natively (CSV exports from Encompass, Calyx, Surefire, Jungo, LendingPad), it ranks a past-client book by the specific economic triggers that matter in mortgage (rate-drop, ARM reset, anniversary, HELOC, cash-out, credit improvement), and it enforces a draft-then-approve workflow that the lender's compliance officer will sign off on.
+        </p>
+        <p>
+          <strong>LO Radar</strong> sits in the past-client intelligence layer of the LO AI stack. For an individual loan officer's daily workflow of working a career book of past borrowers, it is the purpose-built option, and it runs alongside (not instead of) the lender's existing CRM.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TOOLS STACK ═══════ -->
+  <section id="tools" class="py-16 md:py-20 bg-ink-50">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The working stack</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        The best AI tools for loan officers today.
+      </h2>
+
+      <div class="space-y-5">
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <h3 class="font-serif text-xl text-ink-900 mb-2">1. Past-client intelligence: <a href="/" class="text-refi-700">LO Radar</a></h3>
+          <p class="text-ink-700 leading-relaxed text-base">Daily ranking of a loan officer's career book across every LOS by the seven triggers (rate-drop, ARM reset, anniversary, HELOC, cash-out, second-home, credit improvement) with voice-trained drafts and RESPA / TILA / TCPA posture inline. The primary LO AI investment for anyone with a past-client book.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <h3 class="font-serif text-xl text-ink-900 mb-2">2. AI CRM: LoanOfficer.ai, Bonzo, or an LOS-native CRM</h3>
+          <p class="text-ink-700 leading-relaxed text-base">For contact management, task queues, and AI-generated next-actions. Compare on your own list: <a href="/vs/loanofficer-ai" class="text-refi-700 underline">LO Radar vs LoanOfficer.ai</a>, <a href="/vs/bonzo" class="text-refi-700 underline">vs Bonzo</a>. The CRM owns contact state; LO Radar owns the trigger intelligence.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <h3 class="font-serif text-xl text-ink-900 mb-2">3. Call transcription and recap: Fireflies, Otter, or a native dialer</h3>
+          <p class="text-ink-700 leading-relaxed text-base">Record and summarize client calls. Pair with a retention policy (a lot of loan officers purge recordings at 90 days by default) and clear borrower-notice language before the call starts.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <h3 class="font-serif text-xl text-ink-900 mb-2">4. General-purpose LLM: ChatGPT, Claude, or Gemini</h3>
+          <p class="text-ink-700 leading-relaxed text-base">For email drafting, research, policy summaries, and ad-hoc analysis. Written data-handling policy required: never enter a borrower's SSN, DOB, credit score, or bank-account number into a general-purpose AI prompt. Use LO Radar for anything that touches NPI.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <h3 class="font-serif text-xl text-ink-900 mb-2">5. Scheduling AI: Reclaim, Motion, or a native calendar</h3>
+          <p class="text-ink-700 leading-relaxed text-base">For automatic call-block protection, meeting routing, and prospect self-service booking. Low lift, high daily payoff once configured.</p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 border border-ink-200">
+          <h3 class="font-serif text-xl text-ink-900 mb-2">6. Document extraction: for onboarding your book</h3>
+          <p class="text-ink-700 leading-relaxed text-base">Pulls borrower names, close dates, rates, and property addresses out of old Closing Disclosures, rate-lock confirmations, and 1003s. On the LO Radar Enterprise tier this is included in book onboarding; on the Performance tier a CSV export from the LOS is faster for most LOs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PROMPTS ═══════ -->
+  <section id="prompts" class="py-16 md:py-20 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">What works</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        AI prompts for loan officers that actually earn a call.
+      </h2>
+
+      <div class="space-y-8">
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">Rate-drop outreach, in the LO's voice</h3>
+          <div class="bg-ink-50 rounded-lg p-5 font-mono text-sm text-ink-800 mb-3 leading-relaxed">
+            Draft a short text to a past borrower whose current 30-year fixed at [RATE]% could refinance to today's rate of [NEW_RATE]% and save roughly $[SAVINGS]/mo. Match this tone: [paste 3 prior messages the LO has sent]. Lead with the savings number. End with a soft ask for 15 minutes. No RESPA-flagged words (we, our, team). TCPA-safe opening.
+          </div>
+          <p class="text-ink-700 leading-relaxed text-base">The three pasted messages are what make the output sound like the LO. In LO Radar this is Voice Training: paste 15 to 30 messages once, every draft after that renders in three tone variants automatically.</p>
+        </div>
+
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">HELOC vs cash-out blended-rate analysis</h3>
+          <div class="bg-ink-50 rounded-lg p-5 font-mono text-sm text-ink-800 mb-3 leading-relaxed">
+            Borrower has a first mortgage of $[BAL] at [RATE1]%. Property value $[VALUE], target cash out $[CASH]. Compare: (a) cash-out refi at [CASH_RATE]%, (b) HELOC at [HELOC_RATE]% drawing $[CASH], (c) closed-end second at [2ND_RATE]%. Show blended effective rate, monthly delta, break-even, and a one-line verdict for which option keeps the first mortgage intact.
+          </div>
+          <p class="text-ink-700 leading-relaxed text-base">In a 7% rate market this is the most valuable analysis a loan officer can run on a locked-in 3% borrower. LO Radar automates it across the whole book with the Blend-vs-Refi Engine.</p>
+        </div>
+
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">ARM reset heads-up (T minus 12 months)</h3>
+          <div class="bg-ink-50 rounded-lg p-5 font-mono text-sm text-ink-800 mb-3 leading-relaxed">
+            Draft a low-pressure note to a past borrower whose 7/1 ARM resets on [DATE]. Current rate [RATE]%, indicative reset rate [RESET]%. No rate quote, no refinance pitch. Just a heads-up that it is on my calendar and a line that I will be in touch around T-6. Match this tone: [paste 3 prior messages].
+          </div>
+          <p class="text-ink-700 leading-relaxed text-base">T-12 is where you win the ARM retention conversation; T-3 is where you lose it to whoever called first. The ARM Reset Calendar in LO Radar runs this cadence automatically.</p>
+        </div>
+
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-3">Closing Disclosure summary for a borrower</h3>
+          <div class="bg-ink-50 rounded-lg p-5 font-mono text-sm text-ink-800 mb-3 leading-relaxed">
+            Summarize the key figures from the attached Closing Disclosure in plain English for a first-time homebuyer: loan amount, rate, APR, monthly PITI, cash to close, lender credits, prepaid items. Call out any line the borrower is most likely to ask about on closing day. Keep under 200 words.
+          </div>
+          <p class="text-ink-700 leading-relaxed text-base">A high-value repeatable prompt. Scrub the borrower's SSN and account numbers before upload; a generic AI assistant is not a GLBA-safe destination for NPI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ AI CRM ═══════ -->
+  <section id="crm" class="py-16 md:py-20 bg-ink-50">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The category</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-8">
+        AI CRM for loan officers, and where LO Radar fits.
+      </h2>
+      <div class="space-y-5 text-lg text-ink-700 leading-relaxed max-w-3xl">
+        <p>
+          An AI CRM for loan officers adds autonomous task generation on top of contact management: suggested next actions, auto-drafted outreach, lead scoring, and (in the enterprise category) outbound AI voice. The most-cited options in 2026: LoanOfficer.ai (CRM plus Property Pulse database mining), Bonzo (conversation automation plus AI drafting), Surefire by ICE (enterprise CRM with generative email), Total Expert (enterprise marketing OS with AI Sales Assistant voice), Aidium (formerly Whiteboard, CRM plus marketing automation).
+        </p>
+        <p>
+          LO Radar is deliberately not a CRM. It sits above the CRM layer as past-client intelligence: it tells the CRM what to do rather than replacing it. The reason is architectural, not aesthetic. A CRM's primary job is contact state, pipeline stages, and activity history. A past-client intelligence tool's primary job is ranking the book by actionable economic signal every morning. Combining the two is the mistake that pushes a tool toward either "slow CRM" or "shallow intelligence." LO Radar runs alongside the lender's existing CRM and hands over drafts, call lists, and attribution data in a format the CRM already understands.
+        </p>
+        <p>
+          The practical test: if a loan officer already has a CRM they do not want to replace, LO Radar is the net-add. If they are shopping for a new CRM, pick one of the AI CRMs above and run LO Radar on top. See the full comparisons at <a href="/vs" class="text-refi-700 underline">/vs</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ COMPLIANCE ═══════ -->
+  <section id="compliance" class="py-16 md:py-20 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The posture</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-8">
+        AI compliance for loan officers: draft, approve, log.
+      </h2>
+      <div class="space-y-5 text-lg text-ink-700 leading-relaxed max-w-3xl">
+        <p>
+          The AI tool itself does not set compliance posture. The workflow around it does. The pattern a bank compliance officer will sign off on, every time: AI drafts, a named human reviews and approves each message, the message leaves from the loan officer's own systems or an employer-controlled sending channel, and a full audit log captures the draft version, the approver, the timestamp, and the sending channel.
+        </p>
+        <p>
+          LO Radar implements this pattern as a code-level first principle: auto-send cannot be enabled for a mortgage practice. See <a href="/security" class="text-refi-700 underline">/security</a> for the full RESPA / TILA / TCPA / FCRA / GLBA / HPPA posture, <a href="/compliance/tcpa-for-loan-officers" class="text-refi-700 underline">/compliance/tcpa-for-loan-officers</a> for the one-to-one consent rule and state mini-TCPA landscape, and <a href="/compliance/ai-outreach-compliance" class="text-refi-700 underline">/compliance/ai-outreach-compliance</a> for the AI-specific overlay.
+        </p>
+        <p>
+          Autonomous outbound AI voice or SMS at scale (Total Expert's Sales Assistant class) raises TCPA and state-mini-TCPA exposure most compliance teams will not accept without a human-in-the-loop checkpoint. LO Radar's position is that the LO AI stack a bank will actually approve is the one with explicit human approval as a code-enforced gate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="py-16 bg-ink-950 text-white">
+    <div class="container-xl max-w-4xl text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-white mb-5">
+        The best AI for your past-client book is the one trained on your past-client book.
+      </h2>
+      <p class="text-lg text-ink-300 mb-8 max-w-2xl mx-auto">
+        LO Radar is past-client intelligence for mortgage loan officers, voice-trained on messages the LO has already sent and compliance-aware on every draft.
+      </p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        See LO Radar on your CSV in 15 minutes
+      </a>
+    </div>
+  </section>
+</Base>

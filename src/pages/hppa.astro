@@ -1,0 +1,238 @@
+---
+import { BOOKING_URL, SITE_URL } from "../config.js";
+import Base from "../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "HPPA", url: SITE_URL + "/hppa/" },
+];
+
+const faq = [
+  {
+    q: "What is a mortgage trigger lead?",
+    a: "A mortgage trigger lead is a prescreened consumer report that credit bureaus sell to lenders when a consumer's credit is pulled for a mortgage inquiry. Before the Homebuyers Privacy Protection Act, any lender could buy these leads and solicit the consumer within 24 hours of a competing lender's pull. The practice generated tens of millions of unwanted calls and texts per year and was the subject of long-running consumer complaints before Congress acted.",
+  },
+  {
+    q: "When did the trigger lead ban take effect?",
+    a: "The Homebuyers Privacy Protection Act (H.R. 2808) was signed into law in 2025 and its mortgage trigger lead restrictions took effect on March 4, 2026. Some sources cite March 5, 2026; the statute itself is the March 4 date, which is the ninetieth day after enactment. The Government Accountability Office published GAO-27-108874 on November 7, 2026, reviewing the first eight months of implementation.",
+  },
+  {
+    q: "Can loan officers still get trigger leads on their own past clients?",
+    a: "Yes. HPPA restricts third-party purchase of credit-bureau trigger leads. It does not restrict a loan officer or lender from monitoring their own past-client book, since that borrower data is held under an existing GLBA relationship. Past-client intelligence platforms like LO Radar operate on this lawful, first-party data and are structurally compliant with HPPA.",
+  },
+  {
+    q: "Are mortgage trigger leads now illegal?",
+    a: "The sale and purchase of consumer mortgage trigger leads by third parties is restricted under HPPA. Exceptions exist for the originator of the consumer's current mortgage, the loan servicer, and certain depository institutions with an existing account relationship. Independent lenders and mortgage brokers without one of those relationships can no longer buy the leads at all.",
+  },
+  {
+    q: "What replaces trigger leads for loan officers after HPPA?",
+    a: "Three sources remain legally available: (1) a loan officer's own past-client book, (2) the lender or servicer's own portfolio where the relationship already exists, and (3) borrower-initiated opt-ins (consent capture on the loan officer's own site). Everything else that depended on third-party credit-bureau access is now blocked for independents.",
+  },
+  {
+    q: "What did the GAO report on HPPA find?",
+    a: "The GAO's November 7, 2026 report (GAO-27-108874) documented the first eight months of HPPA enforcement. Consumer complaint volumes about unsolicited mortgage calls dropped significantly, independent mortgage brokers reported substantial lead-cost shifts, and servicer-affiliated lenders and existing-relationship holders captured a larger share of refinance activity than in the pre-HPPA baseline.",
+  },
+];
+---
+
+<Base
+  title="Homebuyers Privacy Protection Act (HPPA): What Loan Officers Can Still Do in 2026"
+  description="HPPA (H.R. 2808) took effect March 4, 2026 and restricts third-party mortgage trigger leads. A plain-English guide to what the trigger lead ban changed, what loan officers can still do, and the GAO's November 7, 2026 implementation report."
+  canonical={SITE_URL + "/hppa/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="relative pt-24 md:pt-32 pb-16 md:pb-20 bg-ink-950 text-white overflow-hidden">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-30 pointer-events-none"
+      style="background: radial-gradient(circle, rgba(20,184,166,0.4), transparent 70%); filter: blur(120px);"></div>
+
+    <div class="container-xl relative max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        Federal law · effective March 4, 2026
+      </div>
+
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-8">
+        The Homebuyers Privacy Protection Act,
+        <span class="italic text-gradient-gold">and what loan officers can still do.</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-ink-300 font-light leading-relaxed max-w-3xl mb-8">
+        H.R. 2808 ended the third-party mortgage trigger lead industry on March 4, 2026. This is the plain-English guide to the trigger lead ban, what changed, what loan officers can still do, and what the GAO's November 7, 2026 report found in the first eight months of enforcement.
+      </p>
+
+      <div class="flex flex-wrap gap-4 text-sm text-ink-400">
+        <span class="bg-ink-800 px-3 py-1.5 rounded-full">Effective March 4, 2026</span>
+        <span class="bg-ink-800 px-3 py-1.5 rounded-full">GAO report November 7, 2026</span>
+        <span class="bg-ink-800 px-3 py-1.5 rounded-full">H.R. 2808</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ DEFINITIONAL ANSWER BLOCK (AEO) ═══════ -->
+  <section class="py-14 md:py-16 bg-white border-b border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">What HPPA is</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-5">
+        A federal restriction on selling <span class="italic text-refi-600">mortgage trigger leads.</span>
+      </h2>
+      <div class="space-y-4 text-lg text-ink-700 leading-relaxed max-w-3xl">
+        <p>
+          The <strong>Homebuyers Privacy Protection Act</strong> (HPPA, H.R. 2808) is a federal law that restricts the sale and purchase of consumer mortgage trigger leads by third-party lenders. It took effect on March 4, 2026, the ninetieth day after enactment. The statute amends the Fair Credit Reporting Act to narrow the permissible-purpose basis on which the national credit bureaus can furnish prescreened consumer reports generated by a mortgage credit pull.
+        </p>
+        <p>
+          A <strong>mortgage trigger lead</strong> is the prescreened consumer report a credit bureau sells when a lender pulls a borrower's credit for a new mortgage. Before HPPA, dozens of competing lenders could buy that lead within 24 hours of the pull and solicit the consumer. HPPA ends that practice for third parties, while preserving access for the originator of the consumer's current mortgage, the servicer of record, and depository institutions with an existing account relationship.
+        </p>
+        <p>
+          The practical result for mortgage loan officers: the third-party trigger lead stream is closed. The lawful, first-party stream that remains is each loan officer's own book of past clients, where the originator relationship already satisfies the FCRA permissible-purpose test and the Gramm-Leach-Bliley Act's non-public personal information rules.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ WHAT CHANGED ═══════ -->
+  <section class="py-16 md:py-20 bg-ink-50">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">Before and after</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        What the trigger lead ban actually changed.
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-8 border border-ink-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-ink-500 mb-3">Before March 4, 2026</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-4">Open market</h3>
+          <ul class="space-y-3 text-ink-700 text-base leading-relaxed">
+            <li>Credit bureaus sold trigger-lead lists to any lender on a daily basis.</li>
+            <li>A single mortgage credit pull generated calls and texts from 10 to 30 competing lenders within 24 hours.</li>
+            <li>Consumer complaint volume on unwanted mortgage solicitations ran in the tens of millions per year.</li>
+            <li>Independent mortgage brokers paid between $0.75 and $3.00 per lead and built pipelines around the stream.</li>
+          </ul>
+        </div>
+
+        <div class="bg-refi-50 rounded-xl p-8 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-3">After March 4, 2026</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-4">Relationship-only access</h3>
+          <ul class="space-y-3 text-ink-700 text-base leading-relaxed">
+            <li>Credit bureaus may furnish prescreened reports only to parties with a defined relationship: the originator, the servicer, or an existing-relationship depository.</li>
+            <li>Independent lenders and brokers without one of those relationships cannot buy mortgage trigger leads.</li>
+            <li>Lenders who did have an originator or servicer relationship with the borrower retain access.</li>
+            <li>Opt-in borrower-initiated leads (consent captured on the loan officer's own site) remain fully available.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ WHAT LOs CAN DO ═══════ -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The post-HPPA playbook</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        What loan officers can still do, legally.
+      </h2>
+
+      <div class="space-y-8">
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">1. Work your own past-client book.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            Every loan you originated is a borrower you already have an FCRA permissible-purpose relationship with. Rate-drop windows, ARM resets, HELOC and cash-out opportunities, anniversary touches, and credit-improvement events are all actionable from data you already hold. This is the single largest source of post-HPPA mortgage activity for an individual loan officer, and it is the exact problem LO Radar was built to solve.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">2. Work the lender's or servicer's portfolio where you have standing.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            If you originate for a bank or an IMB that services its own portfolio, you have access to that portfolio under the same existing-relationship exception. Servicing signals (payoff quotes viewed, autopay cancellations, escrow changes) remain lawful first-party intelligence and are often the strongest leading indicators of a payoff weeks before it happens.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">3. Capture borrower-initiated consent on your own site.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            A past borrower (or any homeowner) who opts in to "text me when I can save $300 a month" gives you the strongest possible consent record: timestamped, one-to-one, in the borrower's own words. Borrower-set triggers are the only post-HPPA lead source that is cleaner than past-client intelligence, and they are available to any loan officer who has a landing page and a calculator.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">4. Partner with your title, insurance, and real-estate ecosystem under RESPA-safe terms.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            Co-marketing is still permitted when the loan officer pays fair market value for the actual promotional cost and there is no thing of value exchanged for referrals. See our <a href="/compliance/respa-section-8-past-client-marketing" class="text-refi-700 underline">RESPA Section 8 guide</a> for the current enforcement posture.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-ink-300 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">What stops working.</h3>
+          <p class="text-ink-700 leading-relaxed">
+            Buying third-party mortgage trigger leads. Reselling borrower credit-pull lists. Any pipeline that depended on competing against an originator's own credit pull within the 24-hour window. Rebuilding around items 1 through 4 is not optional for an independent loan officer; it is the only legal path left.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ GAO REPORT ═══════ -->
+  <section class="py-16 md:py-20 bg-ink-950 text-white">
+    <div class="container-xl max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-gradient-gold mb-4">
+        <span class="w-6 h-px bg-amber-300"></span>
+        GAO-27-108874, published November 7, 2026
+      </div>
+      <h2 class="font-serif text-4xl md:text-5xl text-white tracking-tight leading-[1.05] mb-8">
+        What the first eight months of HPPA looked like.
+      </h2>
+      <div class="space-y-5 text-lg text-ink-300 leading-relaxed max-w-3xl">
+        <p>
+          The Government Accountability Office's first review of HPPA enforcement, published November 7, 2026, measured the eight months from March 4 (effective date) through October 31, 2026. Three findings matter for a loan officer thinking through the next twelve months:
+        </p>
+        <p>
+          <strong class="text-white">Consumer complaint volume on unsolicited mortgage calls fell sharply.</strong> The GAO found that CFPB, FCC, and state attorneys general received materially fewer complaints about mortgage trigger-lead solicitations in the eight-month window than in the equivalent pre-HPPA baseline. Enforcement actions were correspondingly rare.
+        </p>
+        <p>
+          <strong class="text-white">Independent mortgage brokers saw lead-cost shifts in both directions.</strong> Brokers who had relied on purchased trigger leads reported pipeline shortfalls through roughly the first four months, then partial recovery as they rebuilt around past-client monitoring, borrower-initiated opt-ins, and real-estate-agent referral networks. Lead-cost-per-closed-loan fell for those who successfully rebuilt around first-party sources.
+        </p>
+        <p>
+          <strong class="text-white">Existing-relationship holders captured a larger share of refinance activity.</strong> Depository institutions, servicers, and originators with standing access ran a higher recapture rate in the post-HPPA period than in the pre-HPPA baseline. For a bank home-lending head, this is the structural tailwind that makes a past-client intelligence investment underwrite itself.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href="https://www.gao.gov/products/gao-27-108874" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-300 hover:text-gold-200">
+          Read GAO-27-108874 →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FAQ ═══════ -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container-xl max-w-4xl">
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        HPPA questions, answered.
+      </h2>
+      <div class="space-y-8">
+        {faq.map(({ q, a }) => (
+          <div>
+            <h3 class="font-serif text-xl text-ink-900 mb-3">{q}</h3>
+            <p class="text-ink-700 leading-relaxed">{a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="py-16 bg-ink-50">
+    <div class="container-xl max-w-4xl text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 mb-5">
+        Your past-client book is the trigger lead source you already own.
+      </h2>
+      <p class="text-lg text-ink-700 mb-8 max-w-2xl mx-auto">
+        LO Radar consolidates every past borrower across every LOS you have ever used and runs the seven trigger categories (rate-drop, ARM reset, anniversary, HELOC, cash-out, second-home, credit-improvement) daily. HPPA-compliant by construction: all first-party data, no bureau pulls, no purchased leads.
+      </p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Bring a CSV, see your post-HPPA book in 15 minutes
+      </a>
+    </div>
+  </section>
+</Base>

@@ -738,4 +738,277 @@ export const COMPETITORS = [
       runBoth: "Workable. MyHomeIQ for the broader engagement layer and agent partnerships; LO Radar for the daily mortgage-specific call list.",
     },
   },
+  {
+    slug: "loangraphs",
+    name: "LoanGraphs",
+    category: "Refinance monitoring for LOs",
+    competitorWebsite: "https://www.loangraphs.com",
+    competitorBlurb: "LoanGraphs is a low-cost refinance-monitoring tool built around a product it calls Refi Miner, which scans a loan officer's past-client book for in-the-money refinance candidates. A free tier exists; paid tiers run $49/mo (Pro) and $99/mo (Pro Plus). Attractive to LOs who want a cheap first scan of their book.",
+    whatTheyDoWell: [
+      "Low price point, free tier for first look",
+      "Fast time to first scan",
+      "Priced rates integrated into the refi candidate view",
+      "Simple branded borrower cards",
+    ],
+    whereWeDiffer: [
+      {
+        title: "Refi-only scan vs full past-client intelligence",
+        body: "LoanGraphs scans for rate-drop refinance candidates. LO Radar runs the full seven-trigger set (rate-drop, ARM reset, anniversary, HELOC, cash-out, second-home, credit-improvement) plus the four November 2026 additions (Rate Trip Wires, Permit Radar, Program Eligibility, Outreach Monitor). In a 7 percent rate market most refi-only scans return empty; LO Radar's non-rate triggers keep the daily call list non-empty.",
+      },
+      {
+        title: "No Pipeline NPV, Drift Radar, or Voice Training",
+        body: "LoanGraphs focuses on the scan. LO Radar adds book valuation (Pipeline NPV), per-borrower churn scoring (Drift Radar), and the LO's own writing voice (Voice Training) on top.",
+      },
+      {
+        title: "Compliance posture not surfaced per draft",
+        body: "LoanGraphs produces borrower cards with rate math; the RESPA / TILA / TCPA posture is on the LO. LO Radar flags each draft inline for consent basis, licensing gate, state disclosure, and TILA calculation basis.",
+      },
+      {
+        title: "Enterprise and branch readiness",
+        body: "LoanGraphs is priced and shaped for an individual LO. LO Radar has an enterprise tier with SSO, Branch Compliance Dashboard, Employer Authorization Module, and a published RESPA opinion workflow for lender procurement.",
+      },
+    ],
+    sideBySide: [
+      ["Refi scan on past-client book",         "✓ (core, Refi Miner)", "✓ (one of seven triggers)"],
+      ["ARM Reset Calendar (12-mo cadence)",    "—",                    "✓"],
+      ["HELOC + Cash-Out + Credit-improvement",  "—",                    "✓"],
+      ["Permit Radar (public-record signals)",   "—",                    "✓ (Austin today)"],
+      ["Pipeline NPV (book valuation)",         "—",                    "✓"],
+      ["Per-borrower drift / churn score",       "—",                    "✓ (Drift Radar)"],
+      ["Voice-trained drafts",                   "—",                    "✓"],
+      ["Compliance posture inline per draft",    "—",                    "✓ (RESPA/TILA/TCPA)"],
+      ["Branch Compliance Dashboard",            "—",                    "✓"],
+      ["Published 2026 price",                   "$49 and $99/mo",       "$399 base + $85/deal, cap $1,499"],
+    ],
+    whoIsRight: {
+      stayWithThem: "If your budget is the constraint and a rate-drop scan is all you need, LoanGraphs at $49 to $99 per month is the cheap option.",
+      switchToUs: "If the rate market is flat (most of 2026) and you need non-rate triggers, book valuation, and compliance-safe drafts, LO Radar does the broader job.",
+      runBoth: "Rare. Most LOs pick one. If you are already running LoanGraphs and want to upgrade, LO Radar replaces it functionally.",
+    },
+  },
+  {
+    slug: "loanofficer-ai",
+    name: "LoanOfficer.ai",
+    category: "AI CRM for mortgage LOs",
+    competitorWebsite: "https://loanofficer.ai",
+    competitorBlurb: "LoanOfficer.ai is an AI-first CRM for mortgage loan officers, with a Property Pulse database mining layer reportedly covering 150M-plus property records. The company popularized the LO AI shorthand and publishes one of the stronger mortgage-tech blogs. Pricing is not published.",
+    whatTheyDoWell: [
+      "AI-first product positioning in a category still shaking out",
+      "Property-data mining layer (Property Pulse) distinct from past-client scan",
+      "Strong SEO presence and category-defining content",
+      "AI drafting woven into the CRM workflow",
+    ],
+    whereWeDiffer: [
+      {
+        title: "CRM + property mining vs past-client intelligence",
+        body: "LoanOfficer.ai is a CRM with AI features and property-data mining. LO Radar is past-client intelligence that sits above the CRM layer, tells the CRM what to do, and does not try to own contact state. The two run well together for LOs who want LoanOfficer.ai's CRM and LO Radar's book-wide ranking math.",
+      },
+      {
+        title: "Property Pulse is third-party property data; LO Radar's base is first-party book data",
+        body: "Both are lawful post-HPPA, but the intent quality differs. First-party past-client data carries an existing relationship and a stronger consent basis for outreach; third-party property data is informational and weaker as a contact basis.",
+      },
+      {
+        title: "Opaque vs published pricing",
+        body: "LoanOfficer.ai does not publish pricing. LO Radar publishes: $399/mo base plus $85 per closed deal, capped at $1,499/mo. Also a $999/mo flat option.",
+      },
+      {
+        title: "Pipeline NPV, Drift Radar, Voice Training",
+        body: "LoanOfficer.ai has strong AI drafting; the book valuation, per-borrower drift scoring, and voice-trained drafting that LO Radar provides are not core to its product.",
+      },
+    ],
+    sideBySide: [
+      ["AI CRM functionality",                   "✓ (core)",              "— (LO Radar is not a CRM)"],
+      ["Property-data mining",                    "✓ (Property Pulse)",    "✓ (county appraisal enrichment)"],
+      ["Past-client seven-trigger scan",          "Partial (CRM + AI)",    "✓ (core)"],
+      ["Pipeline NPV (book valuation)",           "—",                    "✓"],
+      ["Per-borrower drift / churn",              "—",                    "✓ (Drift Radar)"],
+      ["Voice-trained drafts",                    "AI drafting",          "✓ (LO's own voice)"],
+      ["Compliance posture inline per draft",     "Varies",               "✓ (RESPA/TILA/TCPA)"],
+      ["Published 2026 pricing",                  "Not published",        "Yes (performance and flat)"],
+    ],
+    whoIsRight: {
+      stayWithThem: "If you need a modern AI CRM and the property-data mining layer is the specific capability you want, LoanOfficer.ai is a strong pick.",
+      switchToUs: "If you already have a CRM and the gap is the book-wide intelligence layer that produces the daily ranked call list, LO Radar is the net-add.",
+      runBoth: "Yes. LoanOfficer.ai as the CRM, LO Radar as the past-client intelligence layer.",
+    },
+  },
+  {
+    slug: "jungo",
+    name: "Jungo",
+    category: "Mortgage CRM on Salesforce",
+    competitorWebsite: "https://www.jungo.com",
+    competitorBlurb: "Jungo is a mortgage-specific CRM built on top of Salesforce, extending the Salesforce platform with mortgage-shaped data models, workflows, and reports. Pricing runs approximately $99 to $149 per user per month depending on the Salesforce edition underneath.",
+    whatTheyDoWell: [
+      "Depth and extensibility of the Salesforce platform",
+      "Mortgage-specific data models and workflows out of the box",
+      "Strong reporting and customization options for larger shops",
+      "Integrations with Salesforce's broader ecosystem",
+    ],
+    whereWeDiffer: [
+      {
+        title: "CRM platform vs past-client intelligence",
+        body: "Jungo is a CRM; it stores contacts, pipeline stages, tasks, and activity. LO Radar is past-client intelligence that ranks the book daily and drafts outreach. The two sit at different layers of the stack.",
+      },
+      {
+        title: "Salesforce complexity",
+        body: "Jungo inherits Salesforce's strengths and its administration burden. Most individual LOs or small shops spend meaningful admin time keeping a Salesforce stack tidy. LO Radar runs out of the box with a CSV upload.",
+      },
+      {
+        title: "No book-valuation or drift math",
+        body: "Pipeline NPV and Drift Radar are mortgage-specific analytics LO Radar built from scratch; a Salesforce-based CRM would not approach them without a custom build.",
+      },
+      {
+        title: "Voice Training",
+        body: "Jungo supports templated drafts. LO Radar renders drafts in the LO's own voice from fifteen to thirty prior messages pasted once.",
+      },
+    ],
+    sideBySide: [
+      ["Mortgage CRM (contacts, pipeline, tasks)", "✓ (core)",             "—"],
+      ["Salesforce platform depth",                "✓",                    "—"],
+      ["Book-wide seven-trigger scan",             "—",                    "✓"],
+      ["Pipeline NPV (book valuation)",           "—",                    "✓"],
+      ["Drift Radar (per-borrower churn)",         "—",                    "✓"],
+      ["Voice-trained drafts",                      "Templates",            "✓ (LO's voice)"],
+      ["Setup time",                                "Weeks (Salesforce)",   "15 minutes from CSV"],
+      ["Published 2026 pricing",                    "~$99 to $149/user",    "$399 base + $85/deal, cap $1,499"],
+    ],
+    whoIsRight: {
+      stayWithThem: "If you are already on Salesforce and want the mortgage package on top, Jungo is the natural fit.",
+      switchToUs: "If Salesforce overhead is more than the shop can carry and you want a focused past-client intelligence layer, LO Radar runs faster and cheaper.",
+      runBoth: "Common pattern. Jungo as the CRM of record; LO Radar as the intelligence layer feeding the daily call list and the drafts.",
+    },
+  },
+  {
+    slug: "mortgage-coach",
+    name: "Mortgage Coach",
+    category: "Mortgage borrower presentation + Total Cost Analysis",
+    competitorWebsite: "https://www.mortgagecoach.com",
+    competitorBlurb: "Mortgage Coach is a borrower-presentation platform centered on its Total Cost Analysis (TCA), which lets a loan officer walk a borrower through loan-option scenarios side by side with amortization, net-wealth, and after-tax math. Well-regarded presentation tool, not a retention or trigger system.",
+    whatTheyDoWell: [
+      "Industry-leading borrower presentation experience (TCA)",
+      "Side-by-side loan-option scenarios with net-wealth math",
+      "Strong fit for jumbo, cash-out, and complex refinance conversations",
+      "Mobile-friendly borrower-facing delivery",
+    ],
+    whereWeDiffer: [
+      {
+        title: "Presentation vs identification",
+        body: "Mortgage Coach helps a loan officer present options to a borrower already in the pipeline. LO Radar helps the loan officer identify which past borrower to call today in the first place. The two run well together: LO Radar identifies, Mortgage Coach presents.",
+      },
+      {
+        title: "No past-client book scan",
+        body: "Mortgage Coach does not scan a past-client book for rate-drop, ARM reset, HELOC, or cash-out opportunities. Those are LO Radar's job.",
+      },
+      {
+        title: "No Pipeline NPV or drift scoring",
+        body: "Mortgage Coach does not produce book-level analytics (NPV, drift, retention ratio). LO Radar does.",
+      },
+      {
+        title: "Compliance posture on outreach drafts",
+        body: "Mortgage Coach's presentations are borrower-facing after the LO is in the conversation. LO Radar flags RESPA / TILA / TCPA posture on the outreach drafts that start the conversation.",
+      },
+    ],
+    sideBySide: [
+      ["Borrower presentation (TCA)",             "✓ (core)",             "—"],
+      ["Side-by-side loan-option scenarios",       "✓",                    "Rate-drop and HELOC math only"],
+      ["Past-client book scan (seven triggers)",   "—",                    "✓"],
+      ["ARM Reset Calendar (12-mo cadence)",       "—",                    "✓"],
+      ["Pipeline NPV (book valuation)",           "—",                    "✓"],
+      ["Voice-trained outreach drafts",            "—",                    "✓"],
+      ["Compliance posture flagged inline",        "—",                    "✓"],
+    ],
+    whoIsRight: {
+      stayWithThem: "If your workflow is strong but you want a better presentation tool for borrower conversations, Mortgage Coach is a category leader.",
+      switchToUs: "If the gap is identifying which past borrower to call today, not presenting to the ones already in the pipeline, LO Radar is the right layer.",
+      runBoth: "Common and complementary. LO Radar for identification and outreach; Mortgage Coach for the borrower-facing presentation.",
+    },
+  },
+  {
+    slug: "rebel-ai",
+    name: "rebel Ai",
+    category: "Living co-branded home reports with AVM and scenarios",
+    competitorWebsite: "https://rebeliq.com",
+    competitorBlurb: "rebel Ai delivers living co-branded home reports to past clients, with AVM home-value estimates, Street View imagery, and refi, cash-out, and HELOC scenarios the borrower can interact with. Positioned between Homebot and a presentation tool, with a focus on borrower engagement over a monthly report cadence.",
+    whatTheyDoWell: [
+      "Living borrower-facing home reports (not a flat email)",
+      "AVM-based home-value and equity estimates",
+      "Interactive refi, cash-out, and HELOC scenarios",
+      "Street View imagery for recognizability",
+      "Co-branding with real-estate agent partners",
+    ],
+    whereWeDiffer: [
+      {
+        title: "Borrower-facing reports vs loan-officer-facing call list",
+        body: "rebel Ai is a borrower engagement tool; the past client receives reports and interacts with scenarios. LO Radar is a loan-officer workflow tool; the LO receives a daily ranked call list with the rate math and the draft already written.",
+      },
+      {
+        title: "AVM estimates vs county-appraisal enrichment",
+        body: "rebel Ai uses AVM. LO Radar uses county appraisal data in covered counties (Austin today, more coming). County data is slower-moving but more authoritative for equity math.",
+      },
+      {
+        title: "No Pipeline NPV, Drift Radar, or Voice Training",
+        body: "rebel Ai focuses on the engagement artifacts. LO Radar's book-valuation, per-borrower drift, and voice-trained drafting are not core to its product.",
+      },
+    ],
+    sideBySide: [
+      ["Borrower-facing home report",             "✓ (core, living)",     "—"],
+      ["AVM home-value estimate",                 "✓",                    "County appraisal data (covered counties)"],
+      ["Interactive refi / cash-out / HELOC",      "✓",                    "In-draft scenario math"],
+      ["Real-estate-agent co-branding",            "✓",                    "—"],
+      ["Daily ranked call list for the LO",        "—",                    "✓"],
+      ["Pipeline NPV",                             "—",                    "✓"],
+      ["Voice-trained outreach drafts",            "—",                    "✓"],
+      ["ARM Reset Calendar",                       "—",                    "✓"],
+    ],
+    whoIsRight: {
+      stayWithThem: "If your retention strategy is to keep past clients engaged with a living home report and co-branded content with your agent partners, rebel Ai sits exactly there.",
+      switchToUs: "If you want the daily LO workflow (who to call, why, what to say) rather than the borrower-facing engagement artifact, LO Radar is the right tool.",
+      runBoth: "Workable. rebel Ai as the passive borrower-facing layer; LO Radar as the active LO-facing workflow layer.",
+    },
+  },
+  {
+    slug: "ardley",
+    name: "Ardley (now PLACE)",
+    category: "Automated pre-structured refi offers from servicing data",
+    competitorWebsite: "https://www.place.com",
+    competitorBlurb: "Ardley reads lender servicing portfolios and generates automated, pre-structured refinance offers for eligible borrowers. In 2026 the company was acquired by PLACE (per PR Newswire and HousingWire), positioning it as the mortgage layer of a broader operating system. The product is enterprise-focused, servicer-gated, and not sold to individual LOs.",
+    whatTheyDoWell: [
+      "Reads servicing data directly, so eligibility and offer math are accurate",
+      "Automated pre-structured offer generation at scale",
+      "Enterprise fit for depository lenders with retained servicing",
+      "Deep PLACE operating-system context post-acquisition",
+    ],
+    whereWeDiffer: [
+      {
+        title: "Enterprise servicing play vs individual-LO past-client intelligence",
+        body: "Ardley requires servicing-portfolio access and is sold to enterprise lenders. LO Radar is sold to individual loan officers and shops and runs against a CSV export from any LOS. Different buyers, different stacks.",
+      },
+      {
+        title: "Pre-structured offers vs voice-trained outreach",
+        body: "Ardley's output is a standardized pre-structured offer to the borrower. LO Radar's output is an outreach draft in the LO's own voice, approved by a named human before send. The compliance posture is different: Ardley operates inside the bank's existing consent framework; LO Radar explicitly preserves a draft-then-approve workflow a branch compliance officer signs off on per outreach.",
+      },
+      {
+        title: "No past-client career-book consolidation",
+        body: "Ardley reads the current servicer's portfolio. LO Radar consolidates the loan officer's entire career book across every prior employer and LOS into a single intelligence layer; this is the layer an LO who has moved shops needs.",
+      },
+      {
+        title: "Enterprise-only versus LO-facing",
+        body: "Ardley/PLACE sells to the enterprise. LO Radar sells to the LO (with an enterprise tier that gives the lender the Branch Compliance Dashboard and Employer Authorization overlay).",
+      },
+    ],
+    sideBySide: [
+      ["Servicing-data-driven offers",             "✓ (core)",             "—"],
+      ["Pre-structured borrower offers at scale",  "✓",                    "—"],
+      ["Loan officer's own career book layer",     "—",                    "✓"],
+      ["Voice-trained outreach drafts",            "—",                    "✓"],
+      ["Draft-then-approve compliance workflow",    "N/A (enterprise)",     "✓ (first principle)"],
+      ["Pipeline NPV (book valuation)",           "—",                    "✓"],
+      ["Sold to individual LOs",                   "—",                    "✓"],
+    ],
+    whoIsRight: {
+      stayWithThem: "If you are an enterprise lender with retained servicing and want pre-structured automated offer generation across the servicing portfolio, Ardley (PLACE) is the right enterprise tool.",
+      switchToUs: "If you are an individual loan officer or a shop working a past-client book (and especially one that spans multiple prior employers), LO Radar is built for that job.",
+      runBoth: "Yes, at a bank. Ardley at the enterprise portfolio level; LO Radar at the individual-LO career-book level.",
+    },
+  },
 ];

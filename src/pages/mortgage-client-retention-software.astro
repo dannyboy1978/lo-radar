@@ -1,0 +1,219 @@
+---
+import { BOOKING_URL, SITE_URL } from "../config.js";
+import Base from "../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Mortgage Client Retention Software", url: SITE_URL + "/mortgage-client-retention-software/" },
+];
+
+const faq = [
+  {
+    q: "What is mortgage client retention software?",
+    a: "Mortgage client retention software continuously scans a lender's or loan officer's past-borrower book for actionable signals (rate-drop opportunities, ARM resets, HELOC and cash-out windows, anniversary touches, credit-improvement events) and surfaces a ranked daily action list. It differs from a mortgage CRM (which stores contacts) and from marketing automation (which schedules drip campaigns) by being analysis-first: the output is a prioritized list of who to call today and why.",
+  },
+  {
+    q: "What is the best mortgage client retention software in 2026?",
+    a: "The right tool depends on who is buying. For an individual loan officer or a small shop, LO Radar is purpose-built past-client intelligence with voice-trained drafts and performance pricing. For an enterprise lender with a servicing portfolio, Total Expert covers the broader marketing OS and Sales Boomerang covers trigger alerts at scale. For passive brand presence through monthly equity emails to borrowers, Homebot is still the category leader. Many loan officers run LO Radar alongside one of the enterprise tools; the categories overlap but do not collide.",
+  },
+  {
+    q: "How much does mortgage client retention software cost?",
+    a: "Published 2026 pricing: LO Radar performance plan $399/mo base plus $85 per closed deal, capped at $1,499/mo (month-to-month); LO Radar flat plan $999/mo; Homebot Pro $225/mo per loan officer; Stikkum $34.95/mo plus $11.95 per credit alert; LoanGraphs Pro $49/mo, Pro Plus $99/mo; Sales Boomerang, Total Expert, and Surefire do not publish pricing (enterprise contracts typically start in the mid-five figures per year).",
+  },
+  {
+    q: "What is a good mortgage recapture rate?",
+    a: "The industry baseline for depository and IMB recapture sits around 14 percent, with top-quartile performers at 30 percent and the highest-performing shops (Rocket Mortgage is the most-cited public example) running near 40 percent. A loan officer running a disciplined past-client workflow with an intelligence layer in place can typically expect to double a cold-baseline recapture rate within a year.",
+  },
+  {
+    q: "What is the difference between mortgage client retention and mortgage recapture?",
+    a: "Mortgage client retention is the broader category: keeping a past borrower engaged across their relationship lifecycle (refinance, HELOC, second home, referral, next purchase). Mortgage recapture is the specific metric inside retention: the share of a past borrower's next mortgage transaction that is originated by the original loan officer or lender. Retention software is what drives recapture rate up.",
+  },
+];
+---
+
+<Base
+  title="Mortgage Client Retention Software (2026 Buyer's Guide) | LO Radar"
+  description="A 2026 buyer's guide to mortgage client retention software. What the category is, what each option does best, published pricing, how it differs from a CRM, and what a good recapture rate looks like."
+  canonical={SITE_URL + "/mortgage-client-retention-software/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="pt-24 md:pt-32 pb-16 bg-ink-950 text-white">
+    <div class="container-xl max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        2026 Buyer's Guide
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-6">
+        Mortgage client retention software,
+        <span class="italic text-gradient-gold">compared honestly.</span>
+      </h1>
+      <p class="text-xl text-ink-300 font-light leading-relaxed max-w-3xl">
+        A current guide to the mortgage client retention software category: what it actually does, how it differs from a mortgage CRM, where each option shines, published 2026 pricing, and a straight answer on what a good recapture rate looks like.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════ DEFINITIONAL ═══════ -->
+  <section class="py-14 bg-white border-b border-ink-100">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">What the category is</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-5">
+        Analysis-first, <span class="italic text-refi-600">not contact-management.</span>
+      </h2>
+      <div class="space-y-4 text-lg text-ink-700 leading-relaxed">
+        <p>
+          <strong>Mortgage client retention software</strong> continuously analyzes a loan officer's or lender's book of past borrowers and surfaces a ranked daily action list: rate-drop candidates, ARM resets inside the twelve-month window, HELOC and cash-out opportunities, anniversary touches (year 1, 3, 5, 7, 10), and credit-improvement events. It is a different category than a mortgage CRM (which stores contact state) or marketing automation (which schedules campaigns). Retention software drives the recapture rate metric.
+        </p>
+        <p>
+          The category matters more in 2026 than it did in 2022 for one structural reason: the <a href="/hppa" class="text-refi-700 underline">Homebuyers Privacy Protection Act</a> ended the third-party mortgage trigger lead industry on March 4, 2026. A loan officer's own past-client book is now the primary lawful source of refinance intent for everyone outside the servicer-affiliated enterprise.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ COMPARISON TABLE ═══════ -->
+  <section class="py-16 md:py-20 bg-ink-50">
+    <div class="container-xl max-w-6xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The options</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        Mortgage client retention software, side by side.
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-xl border border-ink-200 text-sm">
+          <thead class="bg-ink-100 text-left">
+            <tr>
+              <th class="p-4 font-bold text-ink-900">Tool</th>
+              <th class="p-4 font-bold text-ink-900">Best for</th>
+              <th class="p-4 font-bold text-ink-900">2026 price</th>
+              <th class="p-4 font-bold text-ink-900">Compare</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100">
+            <tr class="bg-refi-50/50">
+              <td class="p-4"><strong>LO Radar</strong><br/><span class="text-xs text-ink-500">Past-client intelligence</span></td>
+              <td class="p-4 text-ink-700">Individual loan officers and small shops working a career book across multiple LOS systems. Only tool with Pipeline NPV, Drift Radar, and Voice Training.</td>
+              <td class="p-4 text-ink-700">$399 + $85/deal, cap $1,499. Flat $999. Enterprise custom.</td>
+              <td class="p-4"><a href="/" class="text-refi-700 underline">Home</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>Homebot</strong><br/><span class="text-xs text-ink-500">Equity reports to homeowners</span></td>
+              <td class="p-4 text-ink-700">Passive monthly brand presence. New Loan Loss tab and consent capture in Q2 to Q3 2026. Strong real-estate-agent co-marketing.</td>
+              <td class="p-4 text-ink-700">Pro $225/mo per LO.</td>
+              <td class="p-4"><a href="/vs/homebot" class="text-refi-700 underline">vs Homebot</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>Sales Boomerang</strong><br/><span class="text-xs text-ink-500">Enterprise trigger alerts</span></td>
+              <td class="p-4 text-ink-700">Enterprise lenders already paying for TrustEngine. Post-HPPA restricted to existing-relationship triggers.</td>
+              <td class="p-4 text-ink-700">Enterprise contract, no public pricing.</td>
+              <td class="p-4"><a href="/vs/sales-boomerang" class="text-refi-700 underline">vs Sales Boomerang</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>Total Expert</strong><br/><span class="text-xs text-ink-500">Enterprise marketing OS + AI voice</span></td>
+              <td class="p-4 text-ink-700">Enterprise lenders with marketing teams. Customer Operating System plus AI Sales Assistant for outbound voice at scale.</td>
+              <td class="p-4 text-ink-700">Enterprise contract.</td>
+              <td class="p-4"><a href="/vs/total-expert" class="text-refi-700 underline">vs Total Expert</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>LoanGraphs</strong><br/><span class="text-xs text-ink-500">Refi Miner</span></td>
+              <td class="p-4 text-ink-700">LOs who want a low-cost rate-trigger scan on an imported book. Free tier for discovery, paid tier for ongoing monitoring.</td>
+              <td class="p-4 text-ink-700">Free; Pro $49/mo; Pro Plus $99/mo.</td>
+              <td class="p-4"><a href="/vs/loangraphs" class="text-refi-700 underline">vs LoanGraphs</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>Stikkum</strong><br/><span class="text-xs text-ink-500">Credit-pull alerts</span></td>
+              <td class="p-4 text-ink-700">LOs who want the cheapest possible credit-event monitoring on past clients, paid per alert.</td>
+              <td class="p-4 text-ink-700">$34.95/mo + $11.95 per credit alert.</td>
+              <td class="p-4"><a href="/vs/stikkum" class="text-refi-700 underline">vs Stikkum</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>MonitorBase</strong><br/><span class="text-xs text-ink-500">Enterprise retention + credit</span></td>
+              <td class="p-4 text-ink-700">Enterprise lenders combining credit monitoring with branded client marketing.</td>
+              <td class="p-4 text-ink-700">Enterprise contract.</td>
+              <td class="p-4"><a href="/vs/monitorbase" class="text-refi-700 underline">vs MonitorBase</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>MyHomeIQ</strong><br/><span class="text-xs text-ink-500">Homeowner engagement</span></td>
+              <td class="p-4 text-ink-700">LOs and agents running a co-marketing homeowner engagement program.</td>
+              <td class="p-4 text-ink-700">Per-user, published tiers not consistent.</td>
+              <td class="p-4"><a href="/vs/myhomeiq" class="text-refi-700 underline">vs MyHomeIQ</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>Milo</strong><br/><span class="text-xs text-ink-500">Retention + monthly engagement</span></td>
+              <td class="p-4 text-ink-700">Agent-plus-LO co-marketing with monthly borrower engagement artifacts.</td>
+              <td class="p-4 text-ink-700">Enterprise, limited public pricing.</td>
+              <td class="p-4"><a href="/vs/milo" class="text-refi-700 underline">vs Milo</a></td>
+            </tr>
+            <tr>
+              <td class="p-4"><strong>Uplist</strong><br/><span class="text-xs text-ink-500">Refinance recapture</span></td>
+              <td class="p-4 text-ink-700">Refinance-focused recapture platform, best for shops with a clean rate-movement playbook.</td>
+              <td class="p-4 text-ink-700">Enterprise contract.</td>
+              <td class="p-4"><a href="/vs/uplist" class="text-refi-700 underline">vs Uplist</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-ink-500 mt-4">Pricing verified November 11, 2026. Enterprise contracts without public pricing require a sales call.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ HOW TO CHOOSE ═══════ -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The decision</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        Which mortgage client retention software is right for you.
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-refi-50 rounded-xl p-8 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-3">If you are an individual LO or a small shop</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-4">LO Radar as the base</h3>
+          <p class="text-ink-700 leading-relaxed mb-4">Purpose-built past-client intelligence with voice-trained drafts, performance pricing that scales with closed deals, and HPPA-compliant by construction.</p>
+          <ul class="space-y-2 text-sm text-ink-700">
+            <li>· $399 base, capped at $1,499</li>
+            <li>· No annual contract</li>
+            <li>· 15 minutes from CSV to first call list</li>
+          </ul>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-8 border border-ink-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-ink-500 mb-3">If you want a passive monthly email add-on</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-4">Add Homebot</h3>
+          <p class="text-ink-700 leading-relaxed mb-4">Homebot keeps you in the borrower inbox monthly; LO Radar tells you which inbox-opener to turn into a phone call this week. Many LOs run both.</p>
+          <ul class="space-y-2 text-sm text-ink-700">
+            <li>· $225/mo per LO</li>
+            <li>· Real-estate-agent co-marketing</li>
+          </ul>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-8 border border-ink-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-ink-500 mb-3">If you are an enterprise lender with a marketing team</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-4">Total Expert or Sales Boomerang, with LO Radar for the individual-LO layer</h3>
+          <p class="text-ink-700 leading-relaxed">Enterprise tools own the journey and the outbound; LO Radar owns the individual LO's daily action list. Branch Compliance Dashboard and Fair-Lending Outreach Monitor (shipping Tier 1a) close the gap enterprise tools leave open on the LO's own book.</p>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-8 border border-ink-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-ink-500 mb-3">If you want the cheapest possible monitor</div>
+          <h3 class="font-serif text-2xl text-ink-900 mb-4">LoanGraphs or Stikkum, with LO Radar when the pipeline justifies it</h3>
+          <p class="text-ink-700 leading-relaxed">Both are low-price alert tools; neither carries Pipeline NPV, Drift Radar, Voice Training, or a compliance-posture gate on drafts. Fine as a starting point; upgrade when the book justifies the workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="py-16 bg-ink-50">
+    <div class="container-xl max-w-4xl text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 mb-5">
+        The 15-minute test: your own CSV, your own book, your own number.
+      </h2>
+      <p class="text-lg text-ink-700 mb-8 max-w-2xl mx-auto">
+        Bring a CSV export from your LOS; LO Radar returns your top three calls with rate math and draft outreach before the end of the walkthrough.
+      </p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book the 15-minute walkthrough
+      </a>
+    </div>
+  </section>
+</Base>

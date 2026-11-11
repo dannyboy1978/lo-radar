@@ -1,0 +1,162 @@
+---
+import { BOOKING_URL, SITE_URL } from "../config.js";
+import Base from "../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Recapture Rate", url: SITE_URL + "/recapture-rate/" },
+];
+
+const faq = [
+  {
+    q: "What is a mortgage recapture rate?",
+    a: "A mortgage recapture rate is the share of a past borrower's next mortgage transaction (refinance, cash-out, HELOC, or new purchase) that is originated by the original loan officer or lender. It is expressed as a percentage: if 100 past borrowers originate a new mortgage this year and 22 of them do it with the original lender, the recapture rate is 22 percent. It is the single most-cited metric in mortgage retention.",
+  },
+  {
+    q: "What is a good mortgage recapture rate in 2026?",
+    a: "The industry baseline across depository lenders and IMBs sits around 14 percent. Top-quartile performers run near 30 percent. The highest-performing shops, Rocket Mortgage being the most-cited public example, run near 40 percent on servicing-retained books. For an individual loan officer working a past-client book with discipline and an intelligence layer in place, doubling a cold-baseline recapture rate inside twelve months is a realistic benchmark.",
+  },
+  {
+    q: "How is mortgage recapture rate calculated?",
+    a: "The standard formula is: recapture rate equals the number of past borrowers whose next mortgage transaction was originated by the same loan officer or lender, divided by the total number of past borrowers whose next mortgage transaction was originated anywhere, over a defined window (commonly rolling twelve months). The denominator is the hard part: it requires knowing when a past borrower did a new loan, which usually comes from public deed-of-trust records, servicing data, or a third-party enrichment service.",
+  },
+  {
+    q: "What is the Rocket Mortgage recapture rate?",
+    a: "Rocket has publicly disclosed recapture rates in the high-30s to low-40s percent range in multiple quarterly releases, which is well above the depository and IMB baseline. The ratio is a function of (a) servicing retention, (b) the direct-to-consumer marketing stack, and (c) a scripted retention workflow. It is cited widely as the industry benchmark that other lenders are trying to approach.",
+  },
+  {
+    q: "How can a loan officer improve their recapture rate?",
+    a: "Four levers: (1) monitor the past-client book daily rather than monthly, so you are first when the rate-drop or ARM-reset moment arrives; (2) start ARM-reset outreach at twelve months out, not three; (3) add non-rate triggers (HELOC, cash-out, anniversary, credit-improvement, second-home) so you are still calling when rates are flat; (4) draft outreach in the LO's own voice with compliance posture inline so sends go out without a day of writing. LO Radar operationalizes all four.",
+  },
+];
+---
+
+<Base
+  title="Mortgage Recapture Rate: What's Good in 2026 (With Benchmarks)"
+  description="What a good mortgage recapture rate looks like in 2026, how to calculate it, how Rocket's number compares to the industry baseline, and the four levers that actually move the ratio for a loan officer working a past-client book."
+  canonical={SITE_URL + "/recapture-rate/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 md:pt-32 pb-16 bg-ink-950 text-white">
+    <div class="container-xl max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        Benchmarks · 2026
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-6">
+        Mortgage recapture rate,
+        <span class="italic text-gradient-gold">benchmarked.</span>
+      </h1>
+      <p class="text-xl text-ink-300 font-light leading-relaxed max-w-3xl">
+        A straight answer on what a good mortgage recapture rate is, how Rocket's number compares to the industry baseline, how to calculate your own, and the four levers that actually move the ratio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════ BENCHMARK CARDS ═══════ -->
+  <section class="py-16 bg-white border-b border-ink-100">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">2026 benchmarks</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-8">
+        The bands you are grading yourself against.
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="bg-ink-50 rounded-xl p-6 border border-ink-200">
+          <div class="text-xs font-bold uppercase tracking-widest text-ink-500 mb-2">Industry baseline</div>
+          <div class="font-serif text-5xl text-ink-900 mb-2">~14%</div>
+          <p class="text-sm text-ink-600">Depository and IMB average. The number cited most often by vendors and analysts.</p>
+        </div>
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-2">Good</div>
+          <div class="font-serif text-5xl text-ink-900 mb-2">~22%</div>
+          <p class="text-sm text-ink-600">A loan officer running a disciplined past-client workflow without an intelligence tool.</p>
+        </div>
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-2">Top quartile</div>
+          <div class="font-serif text-5xl text-ink-900 mb-2">~30%</div>
+          <p class="text-sm text-ink-600">Shops with servicing retention, structured retention workflow, and an intelligence layer.</p>
+        </div>
+        <div class="bg-ink-950 text-white rounded-xl p-6">
+          <div class="text-xs font-bold uppercase tracking-widest text-gold-300 mb-2">Best in class</div>
+          <div class="font-serif text-5xl text-white mb-2">~40%</div>
+          <p class="text-sm text-ink-300">Rocket Mortgage's publicly disclosed band on servicing-retained books. The ceiling to aim at.</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-ink-500 mt-4">Bands are rolling twelve-month averages. Volatility within a quarter can be large, especially in a flat or rising rate environment.</p>
+    </div>
+  </section>
+
+  <!-- ═══════ FORMULA ═══════ -->
+  <section class="py-16 bg-ink-50">
+    <div class="container-xl max-w-4xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The formula</div>
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-6">
+        How to calculate your recapture rate.
+      </h2>
+      <div class="bg-white rounded-xl p-6 border border-ink-200 mb-6">
+        <div class="font-mono text-base md:text-lg text-ink-800 leading-relaxed">
+          Recapture rate = <br/>
+          &nbsp;&nbsp;(past borrowers whose next mortgage was with YOU) <br/>
+          &nbsp;&nbsp;/ (past borrowers whose next mortgage was with anyone) <br/>
+          &nbsp;&nbsp;over a rolling twelve-month window
+        </div>
+      </div>
+      <div class="space-y-4 text-lg text-ink-700 leading-relaxed">
+        <p>The denominator is the hard part. Three ways loan officers measure it:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Deed-of-trust records.</strong> Public records show a new mortgage recorded against a property. Reliable but lags by weeks to months and requires a county-by-county data layer.</li>
+          <li><strong>Servicing payoff data.</strong> If the lender services the loan, a payoff request and incoming wire identify when (and sometimes to whom) the borrower refinanced. Reliable and fast, but only works for serviced loans.</li>
+          <li><strong>Third-party enrichment.</strong> Vendors like ATTOM, DataTree, and CoreLogic maintain nationwide databases of recorded deeds. Costs money but closes the measurement gap for non-serviced books.</li>
+        </ul>
+        <p>LO Radar handles the measurement layer automatically for the covered county footprint and surfaces the attribution dashboard on every Performance and Enterprise account.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ LEVERS ═══════ -->
+  <section class="py-16 bg-white">
+    <div class="container-xl max-w-5xl">
+      <div class="text-xs font-bold uppercase tracking-widest text-refi-700 mb-4">The four levers</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-ink-900 tracking-tight leading-[1.05] mb-10">
+        What actually moves a recapture rate.
+      </h2>
+
+      <div class="space-y-6">
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">1. Daily monitoring, not monthly scans.</h3>
+          <p class="text-ink-700 leading-relaxed">ICE data cited through 2026 shows that 78 percent of borrowers shop one or two lenders before closing. Whichever loan officer reaches the borrower first typically wins the call. A monthly manual scan of the servicing report cannot keep up; daily automated monitoring can. Rate Trip Wires in LO Radar pre-stage outreach for rates the borrower is not yet in the money on and release the batch the week the trigger prints, so the LO is first by design.</p>
+        </div>
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">2. Twelve-month ARM lead time, not three.</h3>
+          <p class="text-ink-700 leading-relaxed">At T minus three months, the client is in panic mode and shopping. At T minus twelve, nobody else is calling. Starting the ARM-reset conversation at T-12 turns into a 3x conversion improvement on the ARM subbook. Every 5/1, 7/1, and 10/1 ARM in your book has a known reset date; the LO Radar ARM Reset Calendar runs the T-12 / T-9 / T-6 / T-3 / T-1 cadence automatically.</p>
+        </div>
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">3. Non-rate triggers so you are still calling in a flat market.</h3>
+          <p class="text-ink-700 leading-relaxed">A pure rate-drop recapture workflow dies in a 7 percent market. The borrowers you need to call now are the ones with equity, ARM resets, HELOC headroom, PMI nearing cancellation, and anniversary windows. LO Radar runs seven trigger categories plus four newer capabilities (Rate Trip Wires, Permit Radar, Program Eligibility, Outreach Monitor) so the daily call list stays non-empty regardless of the rate environment.</p>
+        </div>
+        <div class="border-l-4 border-refi-600 pl-6">
+          <h3 class="font-serif text-2xl text-ink-900 mb-2">4. Pre-drafted outreach in the LO's own voice.</h3>
+          <p class="text-ink-700 leading-relaxed">The delta between identifying the opportunity and writing the message is where recapture rate dies in practice. If every rate-drop surfaced requires thirty minutes of writing, most never go out. If every opportunity ships with a draft in the LO's own voice and RESPA / TILA / TCPA posture inline, the LO ships. Voice Training in LO Radar learns the LO's tone from fifteen to thirty prior messages and renders every draft in three variants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="py-16 bg-ink-50">
+    <div class="container-xl max-w-4xl text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 mb-5">
+        Measure your recapture rate against the bands above.
+      </h2>
+      <p class="text-lg text-ink-700 mb-8 max-w-2xl mx-auto">
+        Bring a CSV from your LOS; LO Radar computes the baseline and shows the top three calls that would move the ratio in the first week.
+      </p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book the 15-minute walkthrough
+      </a>
+    </div>
+  </section>
+</Base>

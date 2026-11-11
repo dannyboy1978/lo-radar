@@ -1,0 +1,155 @@
+---
+import { BOOKING_URL, SITE_URL } from "../../config.js";
+import Base from "../../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Compliance", url: SITE_URL + "/compliance/" },
+  { name: "RESPA Section 8 for Past-Client Marketing", url: SITE_URL + "/compliance/respa-section-8-past-client-marketing/" },
+];
+
+const faq = [
+  {
+    q: "What is RESPA Section 8?",
+    a: "RESPA Section 8 is the federal anti-kickback provision of the Real Estate Settlement Procedures Act. It prohibits any person from giving or accepting a thing of value in exchange for the referral of settlement-service business involving a federally related mortgage loan. Settlement services include title, escrow, appraisal, inspection, insurance, and the mortgage origination itself.",
+  },
+  {
+    q: "Can a loan officer co-market with a real estate agent under RESPA?",
+    a: "Yes, but only if the loan officer pays fair market value for the actual promotional cost and the exchange is for genuine marketing services rather than for referrals. The CFPB's long-standing position is that each party must pay their proportional share of any co-marketing expense based on who benefits. A loan officer paying 100 percent of a Zillow co-marketing bill where the agent gets 50 percent of the benefit is the textbook kickback fact pattern.",
+  },
+  {
+    q: "Does giving a closing gift to a borrower violate RESPA?",
+    a: "A closing gift given to the borrower (the consumer who paid for the settlement services) is generally not a Section 8 issue; the prohibition is on compensation for referrals. A closing gift given to the real estate agent who referred the borrower, if it is tied to the referral, is a Section 8 problem. Keep gift value and recipient documented.",
+  },
+  {
+    q: "Is a Marketing Services Agreement (MSA) legal under RESPA?",
+    a: "Marketing Services Agreements remained legal after the CFPB's 2015 bulletin but the enforcement posture is strict. An MSA must provide for actual marketing services performed, at fair market value for those specific services, with documented performance. The CFPB's 2020 FAQ clarified that MSAs are not per se illegal; subsequent enforcement actions clarified that poorly documented ones are risky in practice.",
+  },
+  {
+    q: "What are RESPA Section 8 penalties?",
+    a: "RESPA Section 8 violations carry civil fines of up to $10,000 per violation and up to one year imprisonment per violation. Treble damages are available to borrowers in private actions. The CFPB, HUD, and state attorneys general all have enforcement authority. In recent years, the largest enforcement dollars have come from state AG settlements with mortgage lenders and title companies.",
+  },
+  {
+    q: "Does LO Radar create any RESPA Section 8 exposure?",
+    a: "No. LO Radar is software sold on a per-LO subscription (performance plan: $399/mo base plus $85 per closed deal, capped at $1,499/mo). Software licensing paid to a vendor is consideration for the software, not for referrals. LO Radar does not operate a referral marketplace, does not share revenue with settlement providers, and does not receive anything of value from settlement providers in exchange for loan officer traffic.",
+  },
+];
+---
+
+<Base
+  title="RESPA Section 8 for Past-Client Marketing (2026): Loan Officer Guide"
+  description="A practical RESPA Section 8 guide for mortgage loan officers doing past-client marketing in 2026. Kickbacks, co-marketing, Marketing Services Agreements, closing gifts, and the CFPB's current enforcement posture. Not legal advice."
+  canonical={SITE_URL + "/compliance/respa-section-8-past-client-marketing/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 md:pt-32 pb-16 bg-ink-950 text-white">
+    <div class="container-xl max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        Compliance guide
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-6">
+        RESPA Section 8
+        <span class="italic text-gradient-gold">for past-client marketing.</span>
+      </h1>
+      <p class="text-xl text-ink-300 font-light leading-relaxed max-w-3xl">
+        The federal anti-kickback rule every loan officer needs to think about before running a co-marketing program, drafting an MSA, or picking up a closing-gift tradition. 2026 enforcement posture, practical guardrails, and the fact patterns that get lenders fined.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-6 bg-amber-50 border-y border-amber-200">
+    <div class="container-xl max-w-4xl">
+      <p class="text-sm text-amber-900"><strong>Not legal advice.</strong> RESPA enforcement varies by jurisdiction and enforcer. A RESPA counsel review is required before implementing any of the patterns described below.</p>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white">
+    <div class="container-xl max-w-4xl">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-5">The core rule, in one paragraph.</h2>
+      <p class="text-lg text-ink-700 leading-relaxed mb-10">
+        RESPA Section 8 (12 U.S.C. §2607) prohibits giving or accepting a thing of value in exchange for the referral of settlement-service business involving a federally related mortgage loan. The statute is strict liability: intent is not required, and the enforcement bar is whether a thing of value changed hands and whether it was tied, directly or indirectly, to referrals. The exception path (Section 8(c)(2)) protects bona fide compensation for services actually performed, at fair market value, where the compensation is not tied to referrals. Everything in practice is about staying inside that exception.
+      </p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-5">Five fact patterns that hold up, and five that do not.</h2>
+
+      <div class="space-y-6">
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">Holds up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">Co-marketing where each party pays their proportional share.</h3>
+          <p class="text-ink-700 leading-relaxed">A Zillow Premier Agent plus Lender co-marketing bill where the agent pays 50 percent and the loan officer pays 50 percent, documented, matching the benefit each receives. Fair market value, actual service, proportional contribution.</p>
+        </div>
+
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">Holds up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">Software paid for on a per-LO subscription.</h3>
+          <p class="text-ink-700 leading-relaxed">LO Radar's performance plan ($399/mo base plus $85 per closed deal, capped at $1,499/mo) is software consideration paid to a vendor for software services, not consideration for referrals. The CFPB's long position: software licensing is not a Section 8 issue.</p>
+        </div>
+
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">Holds up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">A closing gift to the borrower.</h3>
+          <p class="text-ink-700 leading-relaxed">A bottle of wine delivered to the borrower (the consumer, not a settlement-service provider) at closing. Section 8 governs referral compensation, not customer appreciation.</p>
+        </div>
+
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">Holds up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">An affiliated business arrangement with proper disclosure.</h3>
+          <p class="text-ink-700 leading-relaxed">A mortgage lender that owns a title affiliate can refer borrowers to the title affiliate if the Affiliated Business Arrangement Disclosure is delivered and the borrower is free to use another provider. Common in bank-owned joint ventures.</p>
+        </div>
+
+        <div class="bg-refi-50 rounded-xl p-6 border border-refi-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">Holds up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">An MSA with documented services, fair market value, and no referral tie.</h3>
+          <p class="text-ink-700 leading-relaxed">A Marketing Services Agreement where the loan officer pays the real estate brokerage a flat monthly fee for a defined set of services (logo placement, co-branded printed materials, a listing on the brokerage's resource page) at a rate benchmarked to market, with performance documented and no reference to referred transactions.</p>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-amber-700 mb-2">Does not hold up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">Paying the entire co-marketing bill while the agent gets equal benefit.</h3>
+          <p class="text-ink-700 leading-relaxed">The classic kickback fact pattern. If both parties benefit, both parties pay in proportion to the benefit. One-sided payment is a thing of value given to the agent in exchange for referrals.</p>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-amber-700 mb-2">Does not hold up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">Gift cards to real-estate agents, title reps, or inspectors.</h3>
+          <p class="text-ink-700 leading-relaxed">Especially around the holidays, especially in a known-referral-source pattern. A $100 Amazon card to a referring agent is a thing of value and is tied to the ongoing referral relationship. Rank states and enforcers vary on dollar thresholds; the safe rule is don't.</p>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-amber-700 mb-2">Does not hold up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">MSAs with vague deliverables.</h3>
+          <p class="text-ink-700 leading-relaxed">"Marketing services as agreed" for $2,500/mo with no scope, no deliverables, and no performance documentation is the pattern CFPB settlements have targeted for a decade.</p>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-amber-700 mb-2">Does not hold up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">Desk rental in a real-estate brokerage at below-market rates.</h3>
+          <p class="text-ink-700 leading-relaxed">A loan officer renting desk space in a real-estate brokerage for far less than fair market value is receiving a thing of value from the brokerage. Where this scheme has been in place, the enforcement remedy has been full disgorgement plus penalties.</p>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-amber-700 mb-2">Does not hold up</div>
+          <h3 class="font-serif text-xl text-ink-900 mb-2">"Lead distribution" arrangements where the lead is paid by volume.</h3>
+          <p class="text-ink-700 leading-relaxed">If the price per lead varies with closed volume, enforcement treats it as consideration for referrals. Lead-gen vendors who are set up this way carry real Section 8 risk and the loan officer accepting those leads inherits exposure.</p>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-16 mb-4">The practical posture LO Radar runs on.</h2>
+      <p class="text-lg text-ink-700 leading-relaxed">
+        LO Radar is software. The subscription is paid to TechStack Consulting LLC for software services (search, ranking, drafting, compliance checks). LO Radar does not operate a referral marketplace, does not receive anything of value from title, escrow, appraisal, insurance, or any other settlement-service provider, and does not route borrowers to settlement providers. The RESPA Opinion Letter in review at <a href="/security/respa-opinion" class="text-refi-700 underline">/security/respa-opinion</a> documents the analysis distributable to enterprise procurement under NDA.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink-50">
+    <div class="container-xl max-w-4xl text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 mb-5">RESPA-safe outreach, by design.</h2>
+      <p class="text-lg text-ink-700 mb-8 max-w-2xl mx-auto">LO Radar operates on past-client data the loan officer already lawfully holds, with no settlement-service referrals and no fee flow between the LO and any settlement provider.</p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book a 15-minute walkthrough
+      </a>
+    </div>
+  </section>
+</Base>

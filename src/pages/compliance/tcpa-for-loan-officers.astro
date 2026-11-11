@@ -1,0 +1,114 @@
+---
+import { BOOKING_URL, SITE_URL } from "../../config.js";
+import Base from "../../layouts/Base.astro";
+
+const breadcrumbs = [
+  { name: "Home", url: SITE_URL + "/" },
+  { name: "Compliance", url: SITE_URL + "/compliance/" },
+  { name: "TCPA for Loan Officers", url: SITE_URL + "/compliance/tcpa-for-loan-officers/" },
+];
+
+const faq = [
+  {
+    q: "What is TCPA for loan officers?",
+    a: "The Telephone Consumer Protection Act (TCPA) is the federal law governing calls and text messages to consumer phones. For mortgage loan officers, TCPA sets the rules for who a loan officer can contact by phone or SMS, what consent is required, when quiet hours apply, and how revocations (opt-outs) must be honored. State mini-TCPA laws (Florida, Oklahoma, Maryland, Washington, and a growing list) add stricter overlays on top of the federal baseline.",
+  },
+  {
+    q: "What is the TCPA one-to-one consent rule?",
+    a: "The FCC's one-to-one consent rule requires that prior express written consent for marketing calls or texts using an autodialer or prerecorded voice is given to a single, named seller rather than to a broad category or a lead-gen comparison site. The rule has been actively litigated since 2024 and loan officers should verify the current status before relying on specific operational guidance. The practical compliant posture (written consent that names the specific lender or loan officer the consumer is agreeing to hear from) is good practice regardless of the rule's current enforcement status.",
+  },
+  {
+    q: "What are TCPA quiet hours?",
+    a: "Federal TCPA quiet hours run from 9:00 PM to 8:00 AM in the called party's local time zone. Several states apply stricter windows: Florida and Oklahoma restrict calls and texts to 8:00 AM through 8:00 PM local time, Maryland mirrors the 8 to 8 window for solicitations, and Washington applies the stricter of the two for telemarketing. Loan officers should run calls and SMS against the borrower's time zone, not the LO's.",
+  },
+  {
+    q: "What is a TCPA opt-out and how must it be honored?",
+    a: "A TCPA opt-out is a consumer's revocation of prior consent for calls or texts. Opt-outs must be honored permanently (no new consent can be assumed later), applied across channels (text STOP opts a borrower out of text, and reasonable interpretation applies the opt-out to voice calls as well), and logged with the timestamp and channel. Any further contact after an honored opt-out is an independent TCPA violation.",
+  },
+  {
+    q: "Does TCPA apply to past-client outreach for loan officers?",
+    a: "The established-business-relationship (EBR) exemption applies to certain informational and transactional calls to past clients, but the exemption is narrower than most loan officers assume and does not cover marketing calls or texts without separate consent. The safe compliant posture: treat every outreach as requiring explicit consent for the specific channel, document the consent basis per contact, and gate outreach behind a consent check before anything is sent.",
+  },
+  {
+    q: "Are text messages regulated under TCPA?",
+    a: "Yes. The TCPA treats SMS as functionally identical to a call for consent, quiet hours, and opt-out purposes. A loan officer sending a text to a past borrower from a dialer or messaging platform (including most LO-oriented SMS tools) is subject to the same consent and revocation rules that apply to a phone call. The DOJ, FCC, and state attorneys general have brought TCPA actions against mortgage lenders for text campaigns in each of the last five years.",
+  },
+];
+---
+
+<Base
+  title="TCPA for Loan Officers: 2026 Consent, Quiet Hours & State Rules Guide"
+  description="A working TCPA guide for mortgage loan officers in 2026. One-to-one consent rule, state mini-TCPA overlays (Florida, Oklahoma, Maryland), quiet hours, opt-outs, EBR exception, and the practical consent-first posture that keeps outreach defensible."
+  canonical={SITE_URL + "/compliance/tcpa-for-loan-officers/"}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+  <section class="pt-24 md:pt-32 pb-16 bg-ink-950 text-white">
+    <div class="container-xl max-w-5xl">
+      <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gradient-gold mb-6">
+        <span class="w-6 h-px bg-amber-300"></span>
+        Compliance guide
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl leading-[0.98] tracking-tight mb-6">
+        TCPA for loan officers,
+        <span class="italic text-gradient-gold">working version.</span>
+      </h1>
+      <p class="text-xl text-ink-300 font-light leading-relaxed max-w-3xl">
+        One-to-one consent, state mini-TCPA overlays, quiet hours, opt-outs, the established-business-relationship exception, and a practical consent-first operating posture a bank compliance officer will sign off on. Not legal advice.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════ Not legal advice ═══════ -->
+  <section class="py-6 bg-amber-50 border-y border-amber-200">
+    <div class="container-xl max-w-4xl">
+      <p class="text-sm text-amber-900"><strong>Not legal advice.</strong> This page summarizes the operational posture LO Radar runs on; the FCC's one-to-one consent rule has been actively litigated and mortgage lenders should verify current rulemaking with counsel before relying on specific operational guidance.</p>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white">
+    <div class="container-xl max-w-4xl prose prose-lg max-w-none">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 tracking-tight leading-[1.15] mb-5">The six rules you have to operate under.</h2>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-10 mb-3">1. Prior express written consent for marketing autodialed or prerecorded calls and texts.</h3>
+      <p class="text-ink-700 leading-relaxed">Any marketing call or text made with an autodialer or a prerecorded voice to a mobile number requires prior express written consent that clearly identifies the caller (the lender or the loan officer by name) and the channel. "Clicked through from a lead-gen partner" is not consent for the loan officer by name under the one-to-one rule's framing. The compliant pattern is a consent form that says, in plain English, that the consumer agrees to be contacted by this specific named lender or loan officer, with a timestamp and IP captured.</p>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-10 mb-3">2. The established-business-relationship (EBR) exception is narrower than it looks.</h3>
+      <p class="text-ink-700 leading-relaxed">For past clients, the EBR exception permits certain informational and transactional calls (a loan-anniversary note, a servicing-related update) without separate marketing consent. It does not cover a marketing refinance pitch or a HELOC offer. The practical operating posture is to treat every call or text as requiring marketing consent, document the basis per contact, and let the exception be a backstop rather than a plan.</p>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-10 mb-3">3. Federal quiet hours: 9 PM to 8 AM in the called party's time zone.</h3>
+      <p class="text-ink-700 leading-relaxed">A Chicago-based loan officer sending texts at 8:30 PM Central is calling into 9:30 PM Eastern. That is a quiet-hours violation for an East Coast borrower. The compliant posture is to run outreach against the borrower's local time zone, not the LO's. LO Radar gates every scheduled send on the recipient's timezone.</p>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-10 mb-3">4. State mini-TCPA overlays are stricter in several states.</h3>
+      <p class="text-ink-700 leading-relaxed">
+        Florida and Oklahoma restrict telephone solicitations to 8 AM to 8 PM local time and impose stricter consent rules than federal TCPA for certain classes of calls. Maryland's Telephone Solicitation Act applies a similar window. Washington has a stricter standard for automated marketing texts. California's regime has been actively legislated. Running outreach nationwide requires honoring the stricter of (a) federal TCPA, (b) the state of the LO's business, (c) the borrower's state of residence. The compliance-safe default is to apply 8 AM to 8 PM local-time windows across the board.
+      </p>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-10 mb-3">5. Opt-outs are permanent and cross-channel in effect.</h3>
+      <p class="text-ink-700 leading-relaxed">A text STOP opts the borrower out of text marketing. A verbal opt-out on a call opts them out of marketing calls. A reasonable operating posture extends either revocation across channels unless the borrower explicitly re-opts in. LO Radar logs every opt-out with timestamp, channel, and the message that triggered it, gates every draft against the live opt-out status, and refuses to render a marketing draft once the contact is in opted-out state.</p>
+
+      <h3 class="font-serif text-2xl text-ink-900 mt-10 mb-3">6. Re-consent is required when the loan officer changes employers.</h3>
+      <p class="text-ink-700 leading-relaxed">Consent is given to a named caller. When a loan officer moves from Lender A to Lender B, the past clients who consented to be contacted by "Jane Smith at Lender A" have not consented to be contacted by "Jane Smith at Lender B." A re-consent first-touch is required before any further marketing contact. This is the pattern Career Book Passport and the Consent Status + Re-consent Workflow in LO Radar automate.</p>
+
+      <h2 class="font-serif text-3xl text-ink-900 mt-16 mb-4">The operational posture a bank will accept.</h2>
+      <ol class="list-decimal pl-6 space-y-3 text-ink-700 leading-relaxed">
+        <li>Per-contact consent record (basis, entity, date, channel) stored on every borrower row.</li>
+        <li>Opt-out gate that refuses to draft outreach for an opted-out contact in code.</li>
+        <li>Timezone-aware scheduling with 8 AM to 8 PM windows as the default.</li>
+        <li>Re-consent first-touch when the loan officer changes employers.</li>
+        <li>Full audit log: draft generated, approver, timestamp, channel, outcome.</li>
+      </ol>
+      <p class="text-ink-700 leading-relaxed mt-6">LO Radar implements all five. See the full RESPA / TILA / TCPA / FCRA / GLBA / HPPA posture at <a href="/security" class="text-refi-700 underline">/security</a>, the consent workflow at <a href="/security/consent-management" class="text-refi-700 underline">/security/consent-management</a>, and the RESPA Section 8 companion at <a href="/compliance/respa-section-8-past-client-marketing" class="text-refi-700 underline">/compliance/respa-section-8-past-client-marketing</a>.</p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-ink-50">
+    <div class="container-xl max-w-4xl text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-ink-900 mb-5">TCPA-safe outreach, by construction.</h2>
+      <p class="text-lg text-ink-700 mb-8 max-w-2xl mx-auto">LO Radar runs the six rules above as code-level gates on every draft. See the posture on your own book in a 15-minute walkthrough.</p>
+      <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-4 bg-gold-gradient text-ink-950 rounded-lg font-semibold text-sm tracking-wide hover:shadow-2xl transition-all">
+        Book the walkthrough
+      </a>
+    </div>
+  </section>
+</Base>
