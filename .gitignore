@@ -6,3 +6,8 @@ dist/
 .env.production
 .DS_Store
 *.log
+
+# Strategy archive (lives in private repo dannyboy1978/lo-radar-notes)
+# Do NOT commit to this public repo. docs/ holds the U.S. Bank sales brief,
+# pricing drafts, pitch scripts, Whitespace Roadmap, and the Nov 11 addendum.
+docs/
