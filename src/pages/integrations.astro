@@ -29,8 +29,8 @@ const losSystems = [
 
 const faq = [
   {
-    q: "What's the minimum data LO Radar needs to import?",
-    a: "Borrower name, contact email or phone, loan close date, original loan amount, current rate, term (e.g. 30-yr fixed, 7/1 ARM), and property zip code. With those eight fields per past borrower, LO Radar can run the full analysis. Additional fields (NMLS, branch, original LTV, current servicer) improve precision but are not required.",
+    q: "What's the minimum data LoanOpticsAI needs to import?",
+    a: "Borrower name, contact email or phone, loan close date, original loan amount, current rate, term (e.g. 30-yr fixed, 7/1 ARM), and property zip code. With those eight fields per past borrower, LoanOpticsAI can run the full analysis. Additional fields (NMLS, branch, original LTV, current servicer) improve precision but are not required.",
   },
   {
     q: "Do you connect via API or just CSV?",
@@ -38,22 +38,22 @@ const faq = [
   },
   {
     q: "What if I have past clients spread across two or three former employers?",
-    a: "That's the norm, not the exception, and it's exactly what LO Radar is built for. You import a CSV from each prior LOS (or from the spreadsheet/PDFs you exported when you left). LO Radar dedupes by borrower email + phone + property address, merges loan histories, and presents one consolidated career-book view. Most LOs are surprised how many of their best opportunities are hiding in the 'pre-current-job' tranche.",
+    a: "That's the norm, not the exception, and it's exactly what LoanOpticsAI is built for. You import a CSV from each prior LOS (or from the spreadsheet/PDFs you exported when you left). LoanOpticsAI dedupes by borrower email + phone + property address, merges loan histories, and presents one consolidated career-book view. Most LOs are surprised how many of their best opportunities are hiding in the 'pre-current-job' tranche.",
   },
   {
     q: "Can I import folders of PDFs from a prior LOS I no longer have access to?",
-    a: "Yes, on the Performance and Enterprise tiers we run OCR + structured extraction against PDF loan files. Send us the folder and we'll convert it to LO Radar-ingestible CSV during onboarding. This is a one-time service for new accounts and doesn't carry a per-document fee.",
+    a: "Yes, on the Performance and Enterprise tiers we run OCR + structured extraction against PDF loan files. Send us the folder and we'll convert it to LoanOpticsAI-ingestible CSV during onboarding. This is a one-time service for new accounts and doesn't carry a per-document fee.",
   },
   {
-    q: "Does LO Radar integrate with my email or CRM for sending outreach?",
+    q: "Does LoanOpticsAI integrate with my email or CRM for sending outreach?",
     a: "We don't send messages on your behalf — see /security for why — but we generate drafts you can copy to your email, your CRM (BNTouch, Shape, Bonzo, HubSpot, Salesforce, etc.), or your phone. Drafts are formatted for plain text email, mobile-friendly subject lines, and short SMS. On the Enterprise tier, we can stage drafts directly into BNTouch, Shape, or Bonzo so the LO clicks send from inside their existing workflow.",
   },
 ];
 ---
 
 <Base
-  title="LOS Integrations | Encompass, Calyx, Surefire | LO Radar"
-  description="LO Radar imports your past-client book from every LOS (Encompass, Calyx, Surefire, Jungo, Byte, MeridianLink, LendingPad, OpenClose) and every mortgage CRM (BNTouch, Shape, Bonzo, Aidium). CSV-first. API on Enterprise tier."
+  title="LOS Integrations | Encompass, Calyx, Surefire | LoanOpticsAI"
+  description="LoanOpticsAI imports your past-client book from every LOS (Encompass, Calyx, Surefire, Jungo, Byte, MeridianLink, LendingPad, OpenClose) and every mortgage CRM (BNTouch, Shape, Bonzo, Aidium). CSV-first. API on Enterprise tier."
   breadcrumbs={breadcrumbs}
   faq={faq}
 >
@@ -64,7 +64,7 @@ const faq = [
         Every LOS. <span class="italic text-gradient-gold">Every CRM. Every job you've had.</span>
       </h1>
       <p class="text-xl text-ink-700 font-light leading-relaxed max-w-3xl">
-        LO Radar is LOS-agnostic by design. If you can export a CSV from it, we can import it.
+        LoanOpticsAI is LOS-agnostic by design. If you can export a CSV from it, we can import it.
       </p>
     </div>
   </section>
@@ -111,7 +111,7 @@ const faq = [
           <div>
             <h3 class="font-bold text-ink-900 text-xl mb-2">Export from your LOS</h3>
             <p class="text-ink-600 leading-relaxed">
-              Most LOSes have a Pipeline → Export → CSV path that's two or three clicks. We'll send a one-page export guide for your specific system if you don't already know how. You can include closed loans only, or closed + in-process, or your full contact database — whichever matches what you want LO Radar to work against.
+              Most LOSes have a Pipeline → Export → CSV path that's two or three clicks. We'll send a one-page export guide for your specific system if you don't already know how. You can include closed loans only, or closed + in-process, or your full contact database — whichever matches what you want LoanOpticsAI to work against.
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ const faq = [
         <div class="grid md:grid-cols-[60px_1fr] gap-5 items-start bg-white rounded-2xl border border-ink-100 p-6">
           <div class="text-5xl font-serif italic text-refi-600 leading-none">02</div>
           <div>
-            <h3 class="font-bold text-ink-900 text-xl mb-2">Drop the CSV into LO Radar</h3>
+            <h3 class="font-bold text-ink-900 text-xl mb-2">Drop the CSV into LoanOpticsAI</h3>
             <p class="text-ink-600 leading-relaxed">
               The importer auto-maps the columns it recognizes (borrower name, email, loan close date, original amount, rate, term, ARM details, property zip). For anything it doesn't recognize, you point and click to map the column. The importer rejects rows that contain Social Security Numbers, credit-report pulls, or bank account numbers — we don't need them and won't accept them.
             </p>
@@ -131,7 +131,7 @@ const faq = [
           <div>
             <h3 class="font-bold text-ink-900 text-xl mb-2">Add CSVs from prior jobs</h3>
             <p class="text-ink-600 leading-relaxed">
-              Most LOs have past-client data scattered across two or three prior employers. Upload a CSV from each. LO Radar dedupes by borrower email + phone + property address, merges loan histories, and presents one consolidated career-book view. The deals hiding in the "pre-current-job" tranche are usually the surprise — that's the unworked back catalog.
+              Most LOs have past-client data scattered across two or three prior employers. Upload a CSV from each. LoanOpticsAI dedupes by borrower email + phone + property address, merges loan histories, and presents one consolidated career-book view. The deals hiding in the "pre-current-job" tranche are usually the surprise — that's the unworked back catalog.
             </p>
           </div>
         </div>
@@ -141,7 +141,7 @@ const faq = [
           <div>
             <h3 class="font-bold text-ink-900 text-xl mb-2">Train your voice (optional, 5 min)</h3>
             <p class="text-ink-600 leading-relaxed">
-              Paste 15–30 outreach messages you've sent past clients before. LO Radar's voice model extracts your greeting style, sign-off, sentence length, distinctive phrases, and tone. From then on, every draft is rendered in three flavors of your voice: your tone, a little warmer, a little more direct.
+              Paste 15–30 outreach messages you've sent past clients before. LoanOpticsAI's voice model extracts your greeting style, sign-off, sentence length, distinctive phrases, and tone. From then on, every draft is rendered in three flavors of your voice: your tone, a little warmer, a little more direct.
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@ const faq = [
           <div>
             <h3 class="font-bold text-ink-900 text-xl mb-2">Open the morning briefing</h3>
             <p class="text-ink-600 leading-relaxed">
-              From day one, LO Radar opens to your top 3 calls today — ranked by projected annual savings if they refinanced now. Each one ships with the rate math, the ARM proximity context, and the draft message in your voice. The full Pipeline NPV, Drift Radar, ARM Reset Calendar, Anniversary Triggers, HELOC + Cash-Out detection, and Credit-Improvement flags layer in over the following 24-48 hours as the system finishes scoring your full book.
+              From day one, LoanOpticsAI opens to your top 3 calls today — ranked by projected annual savings if they refinanced now. Each one ships with the rate math, the ARM proximity context, and the draft message in your voice. The full Pipeline NPV, Drift Radar, ARM Reset Calendar, Anniversary Triggers, HELOC + Cash-Out detection, and Credit-Improvement flags layer in over the following 24-48 hours as the system finishes scoring your full book.
             </p>
           </div>
         </div>

@@ -104,10 +104,10 @@ Three common failure modes:
 
 All three failures are operational, not strategic. The strategy is obvious. The workflow is where it falls apart.
 
-## What this looks like with LO Radar
+## What this looks like with LoanOpticsAI
 
-LO Radar consolidates every ARM across every LOS you've ever used, maps them onto a single reset calendar, and automates the T-12/T-9/T-6/T-3/T-1 trigger messages. Each message is drafted in your voice with the specific rate math already computed (current rate, projected adjusted rate, current market rate, monthly delta). You approve, send from your own email.
+LoanOpticsAI consolidates every ARM across every LOS you've ever used, maps them onto a single reset calendar, and automates the T-12/T-9/T-6/T-3/T-1 trigger messages. Each message is drafted in your voice with the specific rate math already computed (current rate, projected adjusted rate, current market rate, monthly delta). You approve, send from your own email.
 
 Attribution tracks which trigger messages turned into a closed refi — so you can prove the cadence is earning its keep in dollars, not just activity.
 
-If you've got ARMs in your book that you haven't touched in 3+ years, [book a 15-minute demo](#book-demo) and we'll pull a sample of your ARM book into LO Radar live and show you exactly who's resetting when — with the T-12 message drafted and ready to review.
+If you've got ARMs in your book that you haven't touched in 3+ years, [book a 15-minute demo](#book-demo) and we'll pull a sample of your ARM book into LoanOpticsAI live and show you exactly who's resetting when — with the T-12 message drafted and ready to review.

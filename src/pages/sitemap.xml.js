@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════════════
-   LO Radar · Manual sitemap.xml endpoint
+   LoanOpticsAI · Manual sitemap.xml endpoint
    ──────────────────────────────────────────────────────────────────────────
    Auto-discovers /vs/[slug] pages from src/data/competitors.js and blog
    posts from the `blog` content collection so new pages are announced to

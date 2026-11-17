@@ -29,7 +29,7 @@ The pre-HPPA category that is gone: third-party trigger leads. Independent broke
 
 The loan officers hitting their numbers in this market run a specific weekly cadence. Not a quarterly campaign, not a monthly cycle. Weekly. The rhythm:
 
-**Monday morning: the briefing.** Open the past-client book, review the top three to five opportunities for the week ranked by expected value. These are the calls that will produce closes in 30 to 90 days. A tool like [LO Radar](/) produces this list automatically; the LOs who do it manually from a servicing report typically see a quarter of the volume.
+**Monday morning: the briefing.** Open the past-client book, review the top three to five opportunities for the week ranked by expected value. These are the calls that will produce closes in 30 to 90 days. A tool like [LoanOpticsAI](/) produces this list automatically; the LOs who do it manually from a servicing report typically see a quarter of the volume.
 
 **Monday through Wednesday: the calls.** Book-first. The reason it is Monday-through-Wednesday: client answer rates are measurably higher Monday through Wednesday than Thursday or Friday, and the LO's own energy for difficult conversations peaks early in the week. Five to eight substantive calls over three mornings beats fifteen quick dials over five.
 
@@ -37,13 +37,13 @@ The loan officers hitting their numbers in this market run a specific weekly cad
 
 **Thursday: the content and the opt-in capture.** Record the weekly rate recap (90 seconds on a phone, post to LinkedIn). Update the LO's own site if there are new scenarios worth capturing. Any opt-in forms (refi calculator, HELOC calculator, ARM reset estimator) that fired consent captures in the last week get a response.
 
-**Friday: the loss review and the next-week plan.** Which loans did not close this week? Why? What was the competing lender's edge? Which of the top three or five calls planned Monday actually happened, and what is next week's set? LO Radar's attribution dashboard surfaces the loss data automatically; LOs working from a manual tracker usually skip this step and compound the problem.
+**Friday: the loss review and the next-week plan.** Which loans did not close this week? Why? What was the competing lender's edge? Which of the top three or five calls planned Monday actually happened, and what is next week's set? LoanOpticsAI's attribution dashboard surfaces the loss data automatically; LOs working from a manual tracker usually skip this step and compound the problem.
 
 ## The three Tier-1 investments
 
 For an individual LO building the post-HPPA pipeline from zero, three things get bought first:
 
-**1. A past-client intelligence tool.** The book-wide ranking math is what turns a 500-to-1500 contact book into a weekly action list. [LO Radar](/) is the purpose-built option; it runs $399/mo base plus $85 per closed deal, capped at $1,499/mo, which for most LOs pays for itself in the first closed deal of the quarter.
+**1. A past-client intelligence tool.** The book-wide ranking math is what turns a 500-to-1500 contact book into a weekly action list. [LoanOpticsAI](/) is the purpose-built option; it runs $399/mo base plus $85 per closed deal, capped at $1,499/mo, which for most LOs pays for itself in the first closed deal of the quarter.
 
 **2. A consent-capturing calculator on the LO's own site.** A refi break-even calculator, a HELOC-vs-cash-out calculator, or an ARM reset estimator that captures a borrower-set trigger ("notify me when I can save $300 a month"). The consent record this produces is cleaner than anything on the pre-HPPA menu, and it is a one-time build that produces leads for years.
 
@@ -55,7 +55,7 @@ Beyond the three investments, four specific plays produce disproportionate pipel
 
 **Twelve-month ARM lead time.** Every 5/1, 7/1, 10/1 ARM in the book has a known reset date. Starting the conversation at T minus 12 instead of T minus 3 produces a 3x conversion improvement because nobody else is calling the borrower yet. See the [ARM Reset Playbook](/blog/arm-reset-calendar-twelve-months-out/).
 
-**Permit records.** A building permit pulled on a past client's property is a HELOC or cash-out conversation before the contractor's financing partner has it. Public record. Free. LO Radar's Permit Radar runs this against the book daily for the counties it covers (Austin today).
+**Permit records.** A building permit pulled on a past client's property is a HELOC or cash-out conversation before the contractor's financing partner has it. Public record. Free. LoanOpticsAI's Permit Radar runs this against the book daily for the counties it covers (Austin today).
 
 **The weekly LinkedIn recap.** Three times a week for 12 months is what builds an inbound pipeline from LinkedIn. Not every post has to perform; consistency is the asset.
 
@@ -75,4 +75,4 @@ Getting clients as a loan officer in 2026 is a quieter game than it was in 2024.
 
 The LOs who built around this in 2026 are closing. The ones still waiting for 2023 to come back are not.
 
-For the tool side of the problem, see [LO Radar](/). For the regulatory landscape, [HPPA](/hppa). For the full retention math, [recapture rate](/recapture-rate).
+For the tool side of the problem, see [LoanOpticsAI](/). For the regulatory landscape, [HPPA](/hppa). For the full retention math, [recapture rate](/recapture-rate).

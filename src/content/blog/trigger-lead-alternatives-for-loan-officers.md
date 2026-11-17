@@ -18,7 +18,7 @@ For the LOs and shops who have spent the last 18 months rebuilding their pipelin
 
 This is the pipeline. Every loan you originated is a borrower you already have an FCRA permissible-purpose relationship with. Seven trigger categories are actionable from data you already hold: rate-drop opportunities, ARM resets inside the 12-month window, anniversary touches (year 1, 3, 5, 7, 10), HELOC headroom, cash-out opportunities, second-home signals, and credit-improvement events.
 
-The gating factor is not the data; it is the workflow. A monthly manual scan of the servicing report finds maybe a quarter of the opportunities. A daily automated workflow with ranking, drafting, and compliance posture inline (which is what [LO Radar](/) does) finds all of them.
+The gating factor is not the data; it is the workflow. A monthly manual scan of the servicing report finds maybe a quarter of the opportunities. A daily automated workflow with ranking, drafting, and compliance posture inline (which is what [LoanOpticsAI](/) does) finds all of them.
 
 ## 2. Borrower-initiated opt-ins on your own site
 
@@ -38,7 +38,7 @@ The structural shift post-HPPA: agents are also losing their old lead flows (lis
 
 ## 5. Building permit records (the under-used public-record source)
 
-A building permit pulled on a past client's property is the strongest renovation-financing signal available and it is public record. A pool, solar, battery, EV charger, ADU, addition, or remodel permit is a HELOC or cash-out conversation before the contractor's financing partner has it. Match permits to the book daily; LO Radar's Permit Radar covers Austin today with Frisco, NYC, and Miami-Dade next in the pipeline.
+A building permit pulled on a past client's property is the strongest renovation-financing signal available and it is public record. A pool, solar, battery, EV charger, ADU, addition, or remodel permit is a HELOC or cash-out conversation before the contractor's financing partner has it. Match permits to the book daily; LoanOpticsAI's Permit Radar covers Austin today with Frisco, NYC, and Miami-Dade next in the pipeline.
 
 No credit-bureau data, no FCRA exposure, HPPA-irrelevant. The gating factor is the ingestion pipeline (county-by-county data layer), which is expensive to build once and free to query forever.
 
@@ -46,7 +46,7 @@ No credit-bureau data, no FCRA exposure, HPPA-irrelevant. The gating factor is t
 
 VA and FHA borrowers have well-defined streamline eligibility triggers: VA IRRRL requires 210 days from first payment, six payments on time, a 0.50-point rate reduction, and net-benefit math; FHA Streamline requires 210 days from closing, six payments, and a passing NTB test. Every VA or FHA loan in the book has a known date when eligibility opens. Monitoring that date and firing a borrower-friendly check-in at the exact right moment is one of the highest-retention plays available to any LO.
 
-LO Radar's Program Eligibility Engine runs these checks on every borrower in the book with the citations (38 U.S.C. §3709, HUD Handbook 4000.1) attached.
+LoanOpticsAI's Program Eligibility Engine runs these checks on every borrower in the book with the citations (38 U.S.C. §3709, HUD Handbook 4000.1) attached.
 
 ## 7. Escrow shock and property-tax reassessment
 
@@ -62,4 +62,4 @@ Homeowners insurance and property-tax reassessments are raising escrow payments 
 
 Build around 1, 2, and 3 first. They are the three sources with the strongest consent basis, the lowest ongoing cost, and the highest conversion. Layer 4 (RESPA-safe agent co-marketing) and 5 (permit records) once the base is running. Keep 6 and 7 as cadence enhancers that surface reasons to call when the rate market is quiet.
 
-[LO Radar](/) operationalizes 1, 5, 6, and parts of 7 out of the box. For the full post-HPPA strategy, see the [HPPA pillar](/hppa).
+[LoanOpticsAI](/) operationalizes 1, 5, 6, and parts of 7 out of the box. For the full post-HPPA strategy, see the [HPPA pillar](/hppa).

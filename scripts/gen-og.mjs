@@ -87,7 +87,7 @@ const template = (name) => ({
             color: "#ffffff",
             letterSpacing: -1,
           },
-          children: `LO Radar vs ${name}`,
+          children: `LoanOpticsAI vs ${name}`,
         },
       },
       {
@@ -99,7 +99,7 @@ const template = (name) => ({
               type: "div",
               props: {
                 style: { fontFamily: "DMSerifDisplay", fontSize: 42, fontWeight: 400, color: "#c9a96a" },
-                children: "LO Radar",
+                children: "LoanOpticsAI",
               },
             },
             {

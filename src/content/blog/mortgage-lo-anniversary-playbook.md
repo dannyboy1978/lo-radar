@@ -84,9 +84,9 @@ None of this works without a trigger calendar. You need a system that:
 
 The average LO does this in Excel, forgets about it by March, and has 0% compliance by Q4. The top 10% of LOs run a systematic trigger calendar.
 
-## What this looks like with LO Radar
+## What this looks like with LoanOpticsAI
 
-LO Radar maintains the trigger calendar for your entire past-client book — every LOS, every legacy system, all consolidated into one view. It knows each client's purchase anniversary, calculates the current rate delta against their original rate, flags ARM resets 12 months in advance, and drafts the anniversary message in your voice with the specific math inserted.
+LoanOpticsAI maintains the trigger calendar for your entire past-client book — every LOS, every legacy system, all consolidated into one view. It knows each client's purchase anniversary, calculates the current rate delta against their original rate, flags ARM resets 12 months in advance, and drafts the anniversary message in your voice with the specific math inserted.
 
 You review drafts 30 minutes a week, tap approve, and send from your own email client. Attribution tracks which message triggered which conversation and which refi closed — so you know exactly which part of the calendar is earning its keep.
 

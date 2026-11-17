@@ -1,11 +1,11 @@
 /* ══════════════════════════════════════════════════════════════════════════
-   LO Radar marketing site — central config
+   LoanOpticsAI marketing site — central config
    ──────────────────────────────────────────────────────────────────────────
    One source of truth. Update brand, calendar, app URL here.
    ══════════════════════════════════════════════════════════════════════════ */
 
 // ─── Brand ───────────────────────────────────────────────────────────────
-export const BRAND_NAME = "LO Radar";
+export const BRAND_NAME = "LoanOpticsAI";
 export const PARENT_COMPANY = "TechStack Consulting LLC";
 export const SITE_URL = "https://loanopticsai.com";
 

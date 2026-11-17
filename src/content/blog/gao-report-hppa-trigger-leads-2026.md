@@ -29,7 +29,7 @@ Two lessons for an IMB or broker shop:
 1. Past-client monitoring is not a nice-to-have anymore. It is the pipeline. Shops that invested in a book-intelligence workflow in 2026 are already running at or below pre-HPPA lead cost; shops that have not are running above.
 2. Borrower-initiated opt-ins (consent capture on the LO's own site) are the cleanest post-HPPA intent signal, and the brokers who built them earliest are running the strongest pipelines.
 
-See the [post-HPPA playbook](/hppa) for the four lawful sources that remain and [LO Radar's homepage](/) for the tool purpose-built for the first of them.
+See the [post-HPPA playbook](/hppa) for the four lawful sources that remain and [LoanOpticsAI's homepage](/) for the tool purpose-built for the first of them.
 
 ## Finding 3: existing-relationship holders captured a larger share of refinance activity
 
@@ -59,4 +59,4 @@ Three operating conclusions:
 
 GAO-27-108874 is at [gao.gov/products/gao-27-108874](https://www.gao.gov/products/gao-27-108874). The full report runs 68 pages; the highlights page captures the three findings above in one screen.
 
-For the plain-English version of what HPPA changed and what it left open, see our [HPPA pillar guide](/hppa) and [LO Radar's post-HPPA positioning](/) built for the tool side of the problem.
+For the plain-English version of what HPPA changed and what it left open, see our [HPPA pillar guide](/hppa) and [LoanOpticsAI's post-HPPA positioning](/) built for the tool side of the problem.

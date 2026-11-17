@@ -33,8 +33,8 @@ const faq = [
     a: "Every state with a Residential Mortgage Licensing Act (RMLA) or equivalent imposes its own mortgage advertising rules — required disclosures, mandatory NMLS identifiers, prohibited language, state-specific opt-out instructions. The rules vary materially by state (California's are different from Texas's, which are different from New York's). For an LO licensed in five states, manually appending the correct disclosure to each outreach is exactly the kind of thing that gets dropped in practice and then surfaces in a state regulator examination.",
   },
   {
-    q: "How does LO Radar know which state disclosure to use?",
-    a: "Two inputs: (1) the LO's licensed-state set, captured during onboarding from their NMLS Consumer Access page or entered manually, and (2) the borrower's state of residence, derived from the property address in the past-client record. LO Radar matches the borrower's state to the LO's licensed states and pulls the appropriate disclosure template from the state-disclosure database, then auto-appends it to the outreach draft.",
+    q: "How does LoanOpticsAI know which state disclosure to use?",
+    a: "Two inputs: (1) the LO's licensed-state set, captured during onboarding from their NMLS Consumer Access page or entered manually, and (2) the borrower's state of residence, derived from the property address in the past-client record. LoanOpticsAI matches the borrower's state to the LO's licensed states and pulls the appropriate disclosure template from the state-disclosure database, then auto-appends it to the outreach draft.",
   },
   {
     q: "What's in each state's disclosure?",
@@ -42,7 +42,7 @@ const faq = [
   },
   {
     q: "What happens if the LO isn't licensed in the borrower's state?",
-    a: "LO Radar surfaces a hard block on outreach to contacts in states where the LO is not licensed. The LO sees a 'Licensing gate — LO not licensed in [State]' status on the contact and must either (a) obtain licensure in that state and update the LO Radar settings, or (b) hand the contact off to a colleague at the LO's branch who is licensed there. This is one of the most-cited compliance wins LOs report after switching to LO Radar.",
+    a: "LoanOpticsAI surfaces a hard block on outreach to contacts in states where the LO is not licensed. The LO sees a 'Licensing gate — LO not licensed in [State]' status on the contact and must either (a) obtain licensure in that state and update the LoanOpticsAI settings, or (b) hand the contact off to a colleague at the LO's branch who is licensed there. This is one of the most-cited compliance wins LOs report after switching to LoanOpticsAI.",
   },
   {
     q: "How is the state-disclosure database maintained?",
@@ -56,7 +56,7 @@ const faq = [
 ---
 
 <Base
-  title="State Disclosure Engine | LO Radar Security"
+  title="State Disclosure Engine | LoanOpticsAI Security"
   description="Appends state-required mortgage advertising disclosures to outreach drafts based on the LO's licensed states and the borrower's state of residence. 10-state launch set (CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ) under outside counsel review, 50-state roadmap."
   breadcrumbs={breadcrumbs}
   faq={faq}
@@ -133,7 +133,7 @@ const faq = [
       <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">How it integrates into the outreach flow</h2>
       <ol>
         <li>The LO opens a past-client contact whose property is located in a specific state.</li>
-        <li>LO Radar checks: is the LO licensed in that state per their NMLS-verified license set?</li>
+        <li>LoanOpticsAI checks: is the LO licensed in that state per their NMLS-verified license set?</li>
         <li>If yes, the outreach draft is generated with the appropriate state disclosure block automatically appended, formatted per the state's requirements (footer block in email, footer in SMS, etc.).</li>
         <li>If no — the LO is not licensed in the borrower's state — outreach is hard-gated. The LO sees a "Licensing gate" status on the contact and must either obtain the relevant license or hand the contact off to a colleague with the right licensure.</li>
         <li>Every outreach draft is tagged with the state-rule version that was applied, so audit trails can prove the disclosure was current at the time of use.</li>
@@ -141,7 +141,7 @@ const faq = [
 
       <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">The "licensing gate" — a feature, not a bug</h2>
       <p>
-        Several LO Radar customers have flagged the licensing gate as one of the most useful compliance features in the product. The scenario: an LO has past-client data for borrowers in states they originated in years ago but no longer hold active licenses for. Reaching out to those borrowers is a state-licensing violation. The LO Radar gate prevents the violation from ever happening — and surfaces the cleanup opportunity to either reactivate licensure in the relevant state, or formally hand the contacts off to a licensed colleague.
+        Several LoanOpticsAI customers have flagged the licensing gate as one of the most useful compliance features in the product. The scenario: an LO has past-client data for borrowers in states they originated in years ago but no longer hold active licenses for. Reaching out to those borrowers is a state-licensing violation. The LoanOpticsAI gate prevents the violation from ever happening — and surfaces the cleanup opportunity to either reactivate licensure in the relevant state, or formally hand the contacts off to a licensed colleague.
       </p>
 
       <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">How the rules are maintained</h2>
@@ -161,11 +161,11 @@ const faq = [
 
       <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Questions for the LO's compliance team</h2>
       <p>
-        Compliance officers reviewing LO Radar's state-disclosure approach typically ask:
+        Compliance officers reviewing LoanOpticsAI's state-disclosure approach typically ask:
       </p>
       <ul>
         <li><strong>Q: How do you handle states where our internal compliance interpretation differs from Hudson Cook's?</strong><br/>A: On Enterprise tier, we accept custom disclosure-language overrides per state per branch. Your compliance team's interpretation becomes the template; we maintain the versioning + audit trail.</li>
-        <li><strong>Q: What's the LO Radar liability posture if the disclosure is wrong?</strong><br/>A: LO Radar provides decision-support; the LO and their institution remain the sender. We carry standard SaaS liability framing in the Terms of Service. For Enterprise deployments, we offer indemnification for our specific disclosure-template work product up to the contract value.</li>
+        <li><strong>Q: What's the LoanOpticsAI liability posture if the disclosure is wrong?</strong><br/>A: LoanOpticsAI provides decision-support; the LO and their institution remain the sender. We carry standard SaaS liability framing in the Terms of Service. For Enterprise deployments, we offer indemnification for our specific disclosure-template work product up to the contract value.</li>
         <li><strong>Q: How do we audit which disclosure was used on a specific past outreach?</strong><br/>A: Every outreach is logged with the state-rule version applied. Branch Compliance Dashboard surfaces this; full audit log export is available on request.</li>
       </ul>
     </div>

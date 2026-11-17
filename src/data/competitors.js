@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════════════════
-   LO Radar · competitor data for /vs/[slug] comparison pages
+   LoanOpticsAI · competitor data for /vs/[slug] comparison pages
    ══════════════════════════════════════════════════════════════════════════ */
 
 export const COMPETITORS = [
@@ -18,19 +18,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Passive presence vs active intelligence",
-        body: "HomeBot keeps your name in your past clients' inbox. LO Radar tells you which past client to call today — sorted by projected annual savings if they refinance now. HomeBot is the email; LO Radar is the action list.",
+        body: "HomeBot keeps your name in your past clients' inbox. LoanOpticsAI tells you which past client to call today — sorted by projected annual savings if they refinance now. HomeBot is the email; LoanOpticsAI is the action list.",
       },
       {
         title: "Pipeline NPV — your book priced as an asset",
-        body: "HomeBot reports each client's equity. LO Radar aggregates your entire career book and prices it as a single asset (Pipeline NPV) — a number that moves daily and shows you exactly where your highest-value opportunities sit.",
+        body: "HomeBot reports each client's equity. LoanOpticsAI aggregates your entire career book and prices it as a single asset (Pipeline NPV) — a number that moves daily and shows you exactly where your highest-value opportunities sit.",
       },
       {
         title: "Drift Radar, ARM resets, anniversary triggers",
-        body: "HomeBot is rate-and-equity-driven. LO Radar adds the workflow layer: ARM reset calendar (12-month pre-reset cadence), purchase-anniversary triggers (year 1, 3, 5, 7, 10), HELOC opportunity flags, second-home signal detection, credit-improvement windows.",
+        body: "HomeBot is rate-and-equity-driven. LoanOpticsAI adds the workflow layer: ARM reset calendar (12-month pre-reset cadence), purchase-anniversary triggers (year 1, 3, 5, 7, 10), HELOC opportunity flags, second-home signal detection, credit-improvement windows.",
       },
       {
         title: "Voice-trained outreach drafts",
-        body: "HomeBot ships an emailed report. LO Radar drafts the follow-up message — in your voice — that turns the rate signal into a conversation.",
+        body: "HomeBot ships an emailed report. LoanOpticsAI drafts the follow-up message — in your voice — that turns the rate signal into a conversation.",
       },
     ],
     sideBySide: [
@@ -49,8 +49,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If your strategy is passive brand-presence and you don't want a workflow to manage, HomeBot does that job well.",
-      switchToUs: "If you want a daily action list of past clients to actually call — with rate math, ARM timing, and the draft message ready — LO Radar is built for that.",
-      runBoth: "Yes. HomeBot keeps you visible in inboxes monthly; LO Radar tells you which of those inbox openers to convert into a phone call this week.",
+      switchToUs: "If you want a daily action list of past clients to actually call — with rate math, ARM timing, and the draft message ready — LoanOpticsAI is built for that.",
+      runBoth: "Yes. HomeBot keeps you visible in inboxes monthly; LoanOpticsAI tells you which of those inbox openers to convert into a phone call this week.",
     },
   },
   {
@@ -69,19 +69,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Built for the individual LO, not the enterprise",
-        body: "Total Expert is sold to and configured by enterprise marketing teams. LO Radar is built for the individual loan officer working their own past-client book. If you don't have a marketing department behind you, LO Radar is set up and running in days, not quarters.",
+        body: "Total Expert is sold to and configured by enterprise marketing teams. LoanOpticsAI is built for the individual loan officer working their own past-client book. If you don't have a marketing department behind you, LoanOpticsAI is set up and running in days, not quarters.",
       },
       {
         title: "Pipeline NPV vs activity reports",
-        body: "Total Expert reports campaigns sent and journeys completed. LO Radar tells you what your book of past clients is worth today as an asset — Pipeline NPV — and how much that number moved this week.",
+        body: "Total Expert reports campaigns sent and journeys completed. LoanOpticsAI tells you what your book of past clients is worth today as an asset — Pipeline NPV — and how much that number moved this week.",
       },
       {
         title: "Per-borrower intelligence, not segment-based journeys",
-        body: "Total Expert sends segment-based journeys. LO Radar scores each borrower individually on drift, rate-drop opportunity, ARM proximity, anniversary windows, and HELOC fit — then surfaces a daily action list per LO.",
+        body: "Total Expert sends segment-based journeys. LoanOpticsAI scores each borrower individually on drift, rate-drop opportunity, ARM proximity, anniversary windows, and HELOC fit — then surfaces a daily action list per LO.",
       },
       {
         title: "Voice-trained drafts vs corporate templates",
-        body: "Total Expert's templates pass corporate compliance review and end up sounding like every other lender's templates. LO Radar learns your specific voice and renders every draft in your tone — while still flagging anything that triggers RESPA / TILA / TCPA concerns.",
+        body: "Total Expert's templates pass corporate compliance review and end up sounding like every other lender's templates. LoanOpticsAI learns your specific voice and renders every draft in your tone — while still flagging anything that triggers RESPA / TILA / TCPA concerns.",
       },
     ],
     sideBySide: [
@@ -100,8 +100,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you're at a top-20 lender with a real marketing team and need enterprise compliance + LOS depth, Total Expert is the category leader.",
-      switchToUs: "If you're an individual LO or a small branch and need per-borrower intelligence with no implementation overhead, LO Radar delivers the action list Total Expert is built to ladder up to.",
-      runBoth: "Some enterprise LOs use Total Expert for the corporate journeys and add LO Radar as their individual book-of-business intelligence layer.",
+      switchToUs: "If you're an individual LO or a small branch and need per-borrower intelligence with no implementation overhead, LoanOpticsAI delivers the action list Total Expert is built to ladder up to.",
+      runBoth: "Some enterprise LOs use Total Expert for the corporate journeys and add LoanOpticsAI as their individual book-of-business intelligence layer.",
     },
   },
   {
@@ -119,15 +119,15 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Alerts vs action list",
-        body: "Sales Boomerang sends you alerts. LO Radar gives you a ranked, daily action list — top 3 calls today with rate math done and the draft message ready. Less noise, more clarity.",
+        body: "Sales Boomerang sends you alerts. LoanOpticsAI gives you a ranked, daily action list — top 3 calls today with rate math done and the draft message ready. Less noise, more clarity.",
       },
       {
         title: "Pipeline NPV — the asset view",
-        body: "Sales Boomerang's value is in the alerts. LO Radar adds a parent metric: the present value of your entire career book as a single moving number. Helps LOs think about their book like a portfolio manager, not a pipeline manager.",
+        body: "Sales Boomerang's value is in the alerts. LoanOpticsAI adds a parent metric: the present value of your entire career book as a single moving number. Helps LOs think about their book like a portfolio manager, not a pipeline manager.",
       },
       {
         title: "Voice Training",
-        body: "Sales Boomerang surfaces opportunities. LO Radar surfaces opportunities AND drafts the follow-up message in your tone, three flavors deep, with compliance flags.",
+        body: "Sales Boomerang surfaces opportunities. LoanOpticsAI surfaces opportunities AND drafts the follow-up message in your tone, three flavors deep, with compliance flags.",
       },
     ],
     sideBySide: [
@@ -143,7 +143,7 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If alerts are what you want and your workflow is to act on them ad-hoc, Sales Boomerang fills that role well.",
-      switchToUs: "If you want the alerts plus the workflow plus the Pipeline NPV view plus the drafts in your voice — LO Radar is the more complete intelligence layer.",
+      switchToUs: "If you want the alerts plus the workflow plus the Pipeline NPV view plus the drafts in your voice — LoanOpticsAI is the more complete intelligence layer.",
       runBoth: "Workable but redundant — you'll get the same alert from both. Most LOs pick one.",
     },
   },
@@ -163,19 +163,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Intelligence layer vs CRM",
-        body: "Aidium is a CRM you have to feed and configure — leads, sequences, partners. LO Radar is the analysis layer that sits on top of whatever CRM you already have, reading your career book and telling you who to call today. We don't replace your CRM; we tell you which contact in it to act on.",
+        body: "Aidium is a CRM you have to feed and configure — leads, sequences, partners. LoanOpticsAI is the analysis layer that sits on top of whatever CRM you already have, reading your career book and telling you who to call today. We don't replace your CRM; we tell you which contact in it to act on.",
       },
       {
         title: "Pipeline NPV — the asset metric",
-        body: "Aidium reports activity and pipeline by stage. LO Radar reports book value — the present value of your entire past-client book as a single moving number, like a portfolio. A different lens on the same business.",
+        body: "Aidium reports activity and pipeline by stage. LoanOpticsAI reports book value — the present value of your entire past-client book as a single moving number, like a portfolio. A different lens on the same business.",
       },
       {
         title: "Per-borrower, real-time intelligence",
-        body: "Aidium's automation runs on rules and segments you build. LO Radar's intelligence runs continuously per borrower — ARM proximity, today's rate vs each borrower's note rate, anniversary year, credit movement, equity windows — and re-ranks every day.",
+        body: "Aidium's automation runs on rules and segments you build. LoanOpticsAI's intelligence runs continuously per borrower — ARM proximity, today's rate vs each borrower's note rate, anniversary year, credit movement, equity windows — and re-ranks every day.",
       },
       {
         title: "Voice Training + compliance posture",
-        body: "Aidium's drafts come from templates. LO Radar learns your specific writing voice from messages you've already sent and renders every draft in three tone variants, with RESPA / TILA / TCPA compliance flags inline.",
+        body: "Aidium's drafts come from templates. LoanOpticsAI learns your specific writing voice from messages you've already sent and renders every draft in three tone variants, with RESPA / TILA / TCPA compliance flags inline.",
       },
     ],
     sideBySide: [
@@ -193,8 +193,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you need a full mortgage CRM with partner workflows and your team needs one platform for contacts, sequences, and pipeline — Aidium is built for that.",
-      switchToUs: "If you already have a CRM (any CRM) and what you actually need is a daily action list mined out of your career book — LO Radar is the intelligence layer Aidium doesn't try to be.",
-      runBoth: "Common. Aidium for CRM + partner workflows; LO Radar for the past-client intelligence that tells your LOs which contact in Aidium to call today.",
+      switchToUs: "If you already have a CRM (any CRM) and what you actually need is a daily action list mined out of your career book — LoanOpticsAI is the intelligence layer Aidium doesn't try to be.",
+      runBoth: "Common. Aidium for CRM + partner workflows; LoanOpticsAI for the past-client intelligence that tells your LOs which contact in Aidium to call today.",
     },
   },
   {
@@ -213,19 +213,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Content engine vs intelligence engine",
-        body: "Surefire is a content engine — pre-written campaigns sent on schedule or segment triggers. LO Radar is an intelligence engine — it reads the past-client book daily and surfaces the highest-value individual borrower to contact today, with the rate math and draft ready.",
+        body: "Surefire is a content engine — pre-written campaigns sent on schedule or segment triggers. LoanOpticsAI is an intelligence engine — it reads the past-client book daily and surfaces the highest-value individual borrower to contact today, with the rate math and draft ready.",
       },
       {
         title: "Pipeline NPV vs activity reports",
-        body: "Surefire reports campaigns sent, opens, clicks. LO Radar reports book value — the present value of your career book as a single number, moving daily. A balance-sheet view, not an activity view.",
+        body: "Surefire reports campaigns sent, opens, clicks. LoanOpticsAI reports book value — the present value of your career book as a single number, moving daily. A balance-sheet view, not an activity view.",
       },
       {
         title: "Designed for the LO, not the marketing team",
-        body: "Surefire is configured by enterprise marketing teams over months. LO Radar is set up by the individual LO against a CSV export in days. No campaign builder, no journey UI to learn — just the morning briefing.",
+        body: "Surefire is configured by enterprise marketing teams over months. LoanOpticsAI is set up by the individual LO against a CSV export in days. No campaign builder, no journey UI to learn — just the morning briefing.",
       },
       {
         title: "Voice Training",
-        body: "Surefire's templates are corporate-approved and end up sounding like every other lender's. LO Radar learns each LO's individual writing voice and renders every draft in their tone — with compliance posture still flagged inline.",
+        body: "Surefire's templates are corporate-approved and end up sounding like every other lender's. LoanOpticsAI learns each LO's individual writing voice and renders every draft in their tone — with compliance posture still flagged inline.",
       },
     ],
     sideBySide: [
@@ -243,8 +243,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you're at a large lender with a marketing team that needs Encompass-native journeys, an approved content library, and enterprise compliance governance — Surefire is the category incumbent.",
-      switchToUs: "If you're an individual LO or small branch that doesn't have months to configure journeys and just wants to know who to call today — LO Radar is built for that workflow.",
-      runBoth: "Yes. Lenders run Surefire as the corporate content layer and add LO Radar as the per-LO intelligence layer their LOs actually open every morning.",
+      switchToUs: "If you're an individual LO or small branch that doesn't have months to configure journeys and just wants to know who to call today — LoanOpticsAI is built for that workflow.",
+      runBoth: "Yes. Lenders run Surefire as the corporate content layer and add LoanOpticsAI as the per-LO intelligence layer their LOs actually open every morning.",
     },
   },
   {
@@ -263,19 +263,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Prospecting cadences vs past-client intelligence",
-        body: "Bonzo's center of gravity is outbound prospecting — sequences, drops, video DMs. LO Radar's center of gravity is the LO's existing book of past clients — the database you've already paid for. We tell you which of those past borrowers to reach out to today, and why.",
+        body: "Bonzo's center of gravity is outbound prospecting — sequences, drops, video DMs. LoanOpticsAI's center of gravity is the LO's existing book of past clients — the database you've already paid for. We tell you which of those past borrowers to reach out to today, and why.",
       },
       {
         title: "Pipeline NPV — the book as an asset",
-        body: "Bonzo reports activity and conversation engagement. LO Radar reports the present value of your career book as a single daily-moving number — the metric you'd use if pitching a recruiter or selling the book.",
+        body: "Bonzo reports activity and conversation engagement. LoanOpticsAI reports the present value of your career book as a single daily-moving number — the metric you'd use if pitching a recruiter or selling the book.",
       },
       {
         title: "Rate math, ARM reset calendar, anniversary triggers",
-        body: "Bonzo sequences fire on time or on action. LO Radar's triggers fire on financial reality — current rate vs each borrower's note rate, ARM proximity, anniversary year, credit movement, equity windows. Every alert ships with the math.",
+        body: "Bonzo sequences fire on time or on action. LoanOpticsAI's triggers fire on financial reality — current rate vs each borrower's note rate, ARM proximity, anniversary year, credit movement, equity windows. Every alert ships with the math.",
       },
       {
         title: "Voice Training",
-        body: "Bonzo templates are written by Bonzo. LO Radar learns the LO's own writing voice from their sent messages and renders each draft in their tone — three flavors deep, with compliance flags.",
+        body: "Bonzo templates are written by Bonzo. LoanOpticsAI learns the LO's own writing voice from their sent messages and renders each draft in their tone — three flavors deep, with compliance flags.",
       },
     ],
     sideBySide: [
@@ -291,8 +291,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If outbound prospecting and high-touch multichannel sequences are your primary workflow, Bonzo is purpose-built for that motion.",
-      switchToUs: "If your business is past-client-heavy — refinance and reactivation rather than cold outbound — LO Radar is the intelligence layer Bonzo doesn't try to be.",
-      runBoth: "Common. Bonzo for outbound prospecting cadences; LO Radar for the daily past-client action list.",
+      switchToUs: "If your business is past-client-heavy — refinance and reactivation rather than cold outbound — LoanOpticsAI is the intelligence layer Bonzo doesn't try to be.",
+      runBoth: "Common. Bonzo for outbound prospecting cadences; LoanOpticsAI for the daily past-client action list.",
     },
   },
   {
@@ -311,19 +311,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "CRM vs intelligence layer",
-        body: "BNTouch is the database — where you store contacts, manage your pipeline, and run campaigns. LO Radar is the daily intelligence layer that reads a book like BNTouch's (or any other CRM's) and tells you which contact to call today, with rate math and a draft message.",
+        body: "BNTouch is the database — where you store contacts, manage your pipeline, and run campaigns. LoanOpticsAI is the daily intelligence layer that reads a book like BNTouch's (or any other CRM's) and tells you which contact to call today, with rate math and a draft message.",
       },
       {
         title: "Pipeline NPV — book value, not activity",
-        body: "BNTouch reports pipeline stages and campaign activity. LO Radar reports the value of your past-client book as a single number, moving daily. A different metric for a different question — 'what is my book worth' rather than 'how many emails went out.'",
+        body: "BNTouch reports pipeline stages and campaign activity. LoanOpticsAI reports the value of your past-client book as a single number, moving daily. A different metric for a different question — 'what is my book worth' rather than 'how many emails went out.'",
       },
       {
         title: "Per-borrower triggers ranked by financial impact",
-        body: "BNTouch fires campaigns on dates and segments. LO Radar ranks every past borrower daily by projected annual savings if they refinance now, plus ARM proximity, anniversary year, equity opportunity, and credit movement.",
+        body: "BNTouch fires campaigns on dates and segments. LoanOpticsAI ranks every past borrower daily by projected annual savings if they refinance now, plus ARM proximity, anniversary year, equity opportunity, and credit movement.",
       },
       {
         title: "Voice Training + compliance posture",
-        body: "BNTouch templates are pre-written. LO Radar learns your individual writing voice and renders every draft in your tone, with RESPA / TILA / TCPA flags inline.",
+        body: "BNTouch templates are pre-written. LoanOpticsAI learns your individual writing voice and renders every draft in your tone, with RESPA / TILA / TCPA flags inline.",
       },
     ],
     sideBySide: [
@@ -340,8 +340,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you don't have a CRM yet and want one product that handles contacts, pipeline, and marketing for a solo LO at a reasonable price — BNTouch fits the bill.",
-      switchToUs: "If you already have a CRM and what you're missing is the daily intelligence on which past client to actually call — LO Radar is the layer above, not the CRM replacement.",
-      runBoth: "Common and recommended. BNTouch as the system of record; LO Radar as the daily action layer that mines BNTouch's contact data.",
+      switchToUs: "If you already have a CRM and what you're missing is the daily intelligence on which past client to actually call — LoanOpticsAI is the layer above, not the CRM replacement.",
+      runBoth: "Common and recommended. BNTouch as the system of record; LoanOpticsAI as the daily action layer that mines BNTouch's contact data.",
     },
   },
   {
@@ -360,19 +360,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Inbound leads vs existing past clients",
-        body: "Shape's strength is taking a fresh lead and moving it through the pipeline efficiently. LO Radar's strength is mining the past-client book you've already built — finding the refi opportunities, ARM resets, and anniversary triggers hiding in contacts you closed years ago.",
+        body: "Shape's strength is taking a fresh lead and moving it through the pipeline efficiently. LoanOpticsAI's strength is mining the past-client book you've already built — finding the refi opportunities, ARM resets, and anniversary triggers hiding in contacts you closed years ago.",
       },
       {
         title: "Pipeline NPV — book as an asset",
-        body: "Shape tracks active opportunities. LO Radar tracks the value of your career book as a single daily number — the asset you've built across every shop you've worked at.",
+        body: "Shape tracks active opportunities. LoanOpticsAI tracks the value of your career book as a single daily number — the asset you've built across every shop you've worked at.",
       },
       {
         title: "Rate-aware, ARM-aware, anniversary-aware intelligence",
-        body: "Shape's automation fires on stage changes and time. LO Radar's intelligence fires on financial reality — today's rate vs each borrower's note rate, ARM proximity, anniversary year, credit movement.",
+        body: "Shape's automation fires on stage changes and time. LoanOpticsAI's intelligence fires on financial reality — today's rate vs each borrower's note rate, ARM proximity, anniversary year, credit movement.",
       },
       {
         title: "Voice Training + compliance posture per draft",
-        body: "Shape templates are pre-written. LO Radar learns each LO's specific voice and ships compliance posture (RESPA / TILA / TCPA) inline on every draft.",
+        body: "Shape templates are pre-written. LoanOpticsAI learns each LO's specific voice and ships compliance posture (RESPA / TILA / TCPA) inline on every draft.",
       },
     ],
     sideBySide: [
@@ -389,8 +389,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you live on inbound lead flow and your top problem is moving fresh leads through stages quickly, Shape is built for that motion.",
-      switchToUs: "If you've been doing this long enough that your real opportunity is in the book of past clients you've already closed — LO Radar is built for that asset.",
-      runBoth: "Common. Shape for new leads; LO Radar for the daily past-client action list. They sit on either side of the funnel.",
+      switchToUs: "If you've been doing this long enough that your real opportunity is in the book of past clients you've already closed — LoanOpticsAI is built for that asset.",
+      runBoth: "Common. Shape for new leads; LoanOpticsAI for the daily past-client action list. They sit on either side of the funnel.",
     },
   },
   {
@@ -409,19 +409,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "New leads vs the career book",
-        body: "Velocify is built for the speed-to-contact race on fresh inbound leads. LO Radar is built for the opposite end of the funnel — the past-client book you've already closed and want to mine for refi, ARM reset, and anniversary opportunities.",
+        body: "Velocify is built for the speed-to-contact race on fresh inbound leads. LoanOpticsAI is built for the opposite end of the funnel — the past-client book you've already closed and want to mine for refi, ARM reset, and anniversary opportunities.",
       },
       {
         title: "Pipeline NPV — book value as a daily metric",
-        body: "Velocify reports lead-to-funded conversion math. LO Radar reports book value — the present value of your entire past-client base as a moving daily number.",
+        body: "Velocify reports lead-to-funded conversion math. LoanOpticsAI reports book value — the present value of your entire past-client base as a moving daily number.",
       },
       {
         title: "Per-borrower intelligence, not lead routing",
-        body: "Velocify's intelligence is in how it routes and sequences a new lead. LO Radar's intelligence is in how it ranks each past borrower daily on refinance opportunity, ARM proximity, anniversary year, equity windows, and credit movement.",
+        body: "Velocify's intelligence is in how it routes and sequences a new lead. LoanOpticsAI's intelligence is in how it ranks each past borrower daily on refinance opportunity, ARM proximity, anniversary year, equity windows, and credit movement.",
       },
       {
         title: "Voice-trained drafts",
-        body: "Velocify dialers run scripts. LO Radar drafts written outreach in the LO's voice, with RESPA / TILA / TCPA compliance flags inline.",
+        body: "Velocify dialers run scripts. LoanOpticsAI drafts written outreach in the LO's voice, with RESPA / TILA / TCPA compliance flags inline.",
       },
     ],
     sideBySide: [
@@ -438,8 +438,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you run a high-volume inbound lead shop and need speed-to-contact discipline, Velocify is purpose-built for that motion.",
-      switchToUs: "If your real edge is the past-client book you've built across years — and you need a daily layer that mines it for refinance opportunity — LO Radar lives on the other side of the funnel.",
-      runBoth: "Common at hybrid shops. Velocify for new lead flow; LO Radar for the past-client intelligence layer.",
+      switchToUs: "If your real edge is the past-client book you've built across years — and you need a daily layer that mines it for refinance opportunity — LoanOpticsAI lives on the other side of the funnel.",
+      runBoth: "Common at hybrid shops. Velocify for new lead flow; LoanOpticsAI for the past-client intelligence layer.",
     },
   },
   {
@@ -458,19 +458,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Market intelligence vs past-client intelligence",
-        body: "MMI is about the market outside your book — who's producing what, who's losing share, which agents to partner with. LO Radar is about the market inside your book — which of your existing past clients you should call today.",
+        body: "MMI is about the market outside your book — who's producing what, who's losing share, which agents to partner with. LoanOpticsAI is about the market inside your book — which of your existing past clients you should call today.",
       },
       {
         title: "Different buyers, different decisions",
-        body: "MMI is bought by branch managers, sales leaders, and recruiting teams making outside-the-walls decisions. LO Radar is used by individual LOs making inside-the-walls decisions about their own book.",
+        body: "MMI is bought by branch managers, sales leaders, and recruiting teams making outside-the-walls decisions. LoanOpticsAI is used by individual LOs making inside-the-walls decisions about their own book.",
       },
       {
         title: "Pipeline NPV vs market sizing",
-        body: "MMI tells you what your competitors did last quarter. LO Radar tells you what your book of past clients is worth today and how that number moved this week.",
+        body: "MMI tells you what your competitors did last quarter. LoanOpticsAI tells you what your book of past clients is worth today and how that number moved this week.",
       },
       {
         title: "Voice-trained outreach drafts",
-        body: "MMI is read-only intelligence — analytics dashboards. LO Radar produces the daily action list and the compliance-aware draft message to act on it.",
+        body: "MMI is read-only intelligence — analytics dashboards. LoanOpticsAI produces the daily action list and the compliance-aware draft message to act on it.",
       },
     ],
     sideBySide: [
@@ -487,8 +487,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If your job is to recruit LOs, partner with agents, or size markets, MMI is the standard tool for that work.",
-      switchToUs: "If you're an individual LO trying to convert your existing past-client book into more closings — different problem, different tool, and LO Radar is built for it.",
-      runBoth: "Yes, but they don't overlap. Use MMI for outside-the-walls market decisions; use LO Radar for the daily past-client action list inside your own book.",
+      switchToUs: "If you're an individual LO trying to convert your existing past-client book into more closings — different problem, different tool, and LoanOpticsAI is built for it.",
+      runBoth: "Yes, but they don't overlap. Use MMI for outside-the-walls market decisions; use LoanOpticsAI for the daily past-client action list inside your own book.",
     },
   },
   {
@@ -507,19 +507,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Enterprise platform vs individual-LO product",
-        body: "MonitorBase is bought and configured by lender retention departments and runs across an entire institution's portfolio. LO Radar is bought and run by the individual loan officer working their own career book — including loans the LO wrote at prior employers. Different buyer, different deployment shape, different price point.",
+        body: "MonitorBase is bought and configured by lender retention departments and runs across an entire institution's portfolio. LoanOpticsAI is bought and run by the individual loan officer working their own career book — including loans the LO wrote at prior employers. Different buyer, different deployment shape, different price point.",
       },
       {
         title: "Past-client-only by design (post-HPPA architecture)",
-        body: "After the Homebuyers Privacy Protection Act took effect March 4, 2026, much of the third-party trigger-lead data MonitorBase historically aggregated became restricted. LO Radar was built post-HPPA on past-client-only data — the LO already legally possesses it as the originator, no third-party sourcing required.",
+        body: "After the Homebuyers Privacy Protection Act took effect March 4, 2026, much of the third-party trigger-lead data MonitorBase historically aggregated became restricted. LoanOpticsAI was built post-HPPA on past-client-only data — the LO already legally possesses it as the originator, no third-party sourcing required.",
       },
       {
         title: "Pipeline NPV — book value as a daily metric",
-        body: "MonitorBase reports alerts and conversion events. LO Radar adds Pipeline NPV: the present value of your entire past-client book as a single number that moves daily. A balance-sheet view of the asset, not just an activity feed.",
+        body: "MonitorBase reports alerts and conversion events. LoanOpticsAI adds Pipeline NPV: the present value of your entire past-client book as a single number that moves daily. A balance-sheet view of the asset, not just an activity feed.",
       },
       {
         title: "Voice Training + drafts-never-sent",
-        body: "MonitorBase alerts surface opportunities; the LO writes the outreach. LO Radar drafts the outreach in the LO's own writing voice and presents it ready to send once the LO approves it. LO Radar does not auto-send, which keeps TCPA consent obligations cleanly under the LO's existing framework.",
+        body: "MonitorBase alerts surface opportunities; the LO writes the outreach. LoanOpticsAI drafts the outreach in the LO's own writing voice and presents it ready to send once the LO approves it. LoanOpticsAI does not auto-send, which keeps TCPA consent obligations cleanly under the LO's existing framework.",
       },
     ],
     sideBySide: [
@@ -537,8 +537,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you're a lender retention team running a portfolio-scale monitoring program with the resources to integrate at the institution level, MonitorBase is the category incumbent.",
-      switchToUs: "If you're an individual LO working your own past-client book — especially one accumulated across multiple employers — LO Radar is built for that buyer and that workflow.",
-      runBoth: "Yes at large lenders. MonitorBase as the institution-wide retention platform; LO Radar as the per-LO intelligence layer LOs actually open every morning.",
+      switchToUs: "If you're an individual LO working your own past-client book — especially one accumulated across multiple employers — LoanOpticsAI is built for that buyer and that workflow.",
+      runBoth: "Yes at large lenders. MonitorBase as the institution-wide retention platform; LoanOpticsAI as the per-LO intelligence layer LOs actually open every morning.",
     },
   },
   {
@@ -557,19 +557,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Refinance-only vs full past-client intelligence",
-        body: "Uplist focuses tightly on the refinance recapture workflow — identify the refi opportunity, run the math, build the presentation. LO Radar covers refinance opportunities AND ARM resets, anniversary triggers, HELOC/cash-out windows, second-home signals, credit-improvement events, and overall pipeline-NPV book valuation. A broader past-client intelligence layer.",
+        body: "Uplist focuses tightly on the refinance recapture workflow — identify the refi opportunity, run the math, build the presentation. LoanOpticsAI covers refinance opportunities AND ARM resets, anniversary triggers, HELOC/cash-out windows, second-home signals, credit-improvement events, and overall pipeline-NPV book valuation. A broader past-client intelligence layer.",
       },
       {
         title: "Daily ranked action list vs presentation builder",
-        body: "Uplist's deliverable is a polished refinance presentation. LO Radar's deliverable is a daily ranked action list — top 3 calls today across every trigger type, with the draft message ready to send. The two are complementary if a deeper refinance presentation is the LO's preferred close.",
+        body: "Uplist's deliverable is a polished refinance presentation. LoanOpticsAI's deliverable is a daily ranked action list — top 3 calls today across every trigger type, with the draft message ready to send. The two are complementary if a deeper refinance presentation is the LO's preferred close.",
       },
       {
         title: "Voice Training + per-borrower drafts",
-        body: "Uplist generates presentation collateral. LO Radar drafts the actual outreach message in the LO's own writing voice (learned from past sent messages), three flavors deep, with RESPA / TILA / TCPA compliance flags inline.",
+        body: "Uplist generates presentation collateral. LoanOpticsAI drafts the actual outreach message in the LO's own writing voice (learned from past sent messages), three flavors deep, with RESPA / TILA / TCPA compliance flags inline.",
       },
       {
         title: "Pipeline NPV — the book as an asset",
-        body: "Uplist reports refinance opportunity volume and conversion. LO Radar reports book value — the present value of your entire career book as a daily-moving number you'd use if pitching a recruiter or selling the book.",
+        body: "Uplist reports refinance opportunity volume and conversion. LoanOpticsAI reports book value — the present value of your entire career book as a daily-moving number you'd use if pitching a recruiter or selling the book.",
       },
     ],
     sideBySide: [
@@ -587,8 +587,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If refinance recapture is the only motion that matters to you and you want a polished refinance presentation as the deliverable, Uplist is purpose-built for that.",
-      switchToUs: "If refinance is one of seven triggers you want to mine your book for — and you want a daily ranked call list across all of them with the draft message ready — LO Radar covers more surface area.",
-      runBoth: "Workable. LO Radar to surface the daily refinance candidate; Uplist to build the deeper presentation when the conversation gets serious.",
+      switchToUs: "If refinance is one of seven triggers you want to mine your book for — and you want a daily ranked call list across all of them with the draft message ready — LoanOpticsAI covers more surface area.",
+      runBoth: "Workable. LoanOpticsAI to surface the daily refinance candidate; Uplist to build the deeper presentation when the conversation gets serious.",
     },
   },
   {
@@ -607,19 +607,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Automated outreach vs drafts-never-sent",
-        body: "Stikkum sends outreach to past clients automatically. LO Radar drafts every outreach for the LO's review and the LO sends from their own systems. This keeps TCPA consent obligations cleanly under the LO's existing framework and preserves the LO as the consenting sender — important for many compliance regimes and post-HPPA litigation posture.",
+        body: "Stikkum sends outreach to past clients automatically. LoanOpticsAI drafts every outreach for the LO's review and the LO sends from their own systems. This keeps TCPA consent obligations cleanly under the LO's existing framework and preserves the LO as the consenting sender — important for many compliance regimes and post-HPPA litigation posture.",
       },
       {
         title: "Plug-and-play breadth vs per-borrower intelligence depth",
-        body: "Stikkum's value proposition is speed of deployment and hands-off operation. LO Radar's value proposition is per-borrower intelligence depth — Pipeline NPV, Drift Radar, ARM Reset Calendar (12-month cadence), year-specific anniversary playbooks, equity windows, credit-improvement events. Different sale: speed vs depth.",
+        body: "Stikkum's value proposition is speed of deployment and hands-off operation. LoanOpticsAI's value proposition is per-borrower intelligence depth — Pipeline NPV, Drift Radar, ARM Reset Calendar (12-month cadence), year-specific anniversary playbooks, equity windows, credit-improvement events. Different sale: speed vs depth.",
       },
       {
         title: "Voice Training",
-        body: "Stikkum's automated outreach uses pre-written templates. LO Radar learns the LO's own writing voice and renders every draft in three flavors of the LO's tone — preserving the personal-relationship character that drives past-client conversion.",
+        body: "Stikkum's automated outreach uses pre-written templates. LoanOpticsAI learns the LO's own writing voice and renders every draft in three flavors of the LO's tone — preserving the personal-relationship character that drives past-client conversion.",
       },
       {
         title: "Pipeline NPV — the asset view",
-        body: "Stikkum reports retention activity. LO Radar reports book value — the present value of the past-client book as a single daily-moving number. A balance-sheet view rather than an activity view.",
+        body: "Stikkum reports retention activity. LoanOpticsAI reports book value — the present value of the past-client book as a single daily-moving number. A balance-sheet view rather than an activity view.",
       },
     ],
     sideBySide: [
@@ -636,7 +636,7 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If hands-off, automated past-client outreach is exactly what you want and you don't care to review each message, Stikkum is built for that motion.",
-      switchToUs: "If you want intelligence about your book, drafts in your voice you can review and send yourself, and the deeper triggers (ARM, anniversary, equity, credit) beyond rate-drop alerts — LO Radar covers more ground and keeps you cleanly as the sender.",
+      switchToUs: "If you want intelligence about your book, drafts in your voice you can review and send yourself, and the deeper triggers (ARM, anniversary, equity, credit) beyond rate-drop alerts — LoanOpticsAI covers more ground and keeps you cleanly as the sender.",
       runBoth: "Possible but uncommon. The automation philosophies are opposite (auto-send vs draft-and-review). Most LOs pick the one that matches their compliance + personalization stance.",
     },
   },
@@ -656,19 +656,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Monthly content vs daily action list",
-        body: "Milo keeps past clients warm with monthly interactive content. LO Radar tells the LO which past client to actually call today, ranked by projected refinance savings — and ships the rate math + draft message ready to send. Different leverage point: passive presence vs active outreach.",
+        body: "Milo keeps past clients warm with monthly interactive content. LoanOpticsAI tells the LO which past client to actually call today, ranked by projected refinance savings — and ships the rate math + draft message ready to send. Different leverage point: passive presence vs active outreach.",
       },
       {
         title: "Pipeline NPV — book as an asset",
-        body: "Milo reports engagement activity (opens, interactions). LO Radar reports book value — the present value of the past-client book as a single number, moving daily. The metric LOs use to think about their book like a portfolio rather than a campaign.",
+        body: "Milo reports engagement activity (opens, interactions). LoanOpticsAI reports book value — the present value of the past-client book as a single number, moving daily. The metric LOs use to think about their book like a portfolio rather than a campaign.",
       },
       {
         title: "Seven-trigger coverage vs general engagement",
-        body: "Milo's value is steady monthly engagement. LO Radar adds the seven-trigger intelligence layer: Rate-Drop Radar, ARM Reset Calendar (12-mo cadence), year-specific anniversary playbooks (year 1/3/5/7/10), HELOC Radar, Cash-Out Detection, Second-Home Signals, Credit-Improvement Flags. Each surfaces a different category of past-client opportunity.",
+        body: "Milo's value is steady monthly engagement. LoanOpticsAI adds the seven-trigger intelligence layer: Rate-Drop Radar, ARM Reset Calendar (12-mo cadence), year-specific anniversary playbooks (year 1/3/5/7/10), HELOC Radar, Cash-Out Detection, Second-Home Signals, Credit-Improvement Flags. Each surfaces a different category of past-client opportunity.",
       },
       {
         title: "Voice Training",
-        body: "Milo delivers branded content templates. LO Radar learns the LO's own writing voice from past sent messages and renders every draft in the LO's tone — three flavors deep with compliance flags inline.",
+        body: "Milo delivers branded content templates. LoanOpticsAI learns the LO's own writing voice from past sent messages and renders every draft in the LO's tone — three flavors deep with compliance flags inline.",
       },
     ],
     sideBySide: [
@@ -685,8 +685,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If steady, low-effort monthly engagement with past clients is what you want and you don't need a daily intelligence layer to act on, Milo does that job well.",
-      switchToUs: "If you want the daily call list with rate math and drafts in your voice across all seven trigger categories — and the Pipeline NPV view on top — LO Radar is the deeper intelligence layer.",
-      runBoth: "Common and complementary. Milo for ongoing past-client engagement at scale; LO Radar for the daily conversion list that turns engagement into closed loans.",
+      switchToUs: "If you want the daily call list with rate math and drafts in your voice across all seven trigger categories — and the Pipeline NPV view on top — LoanOpticsAI is the deeper intelligence layer.",
+      runBoth: "Common and complementary. Milo for ongoing past-client engagement at scale; LoanOpticsAI for the daily conversion list that turns engagement into closed loans.",
     },
   },
   {
@@ -705,19 +705,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Cross-vertical engagement vs mortgage-specific intelligence",
-        body: "MyHomeIQ serves both mortgage LOs and real-estate agents with the same engagement and content layer. LO Radar is mortgage-LO-only and goes deeper on mortgage-specific intelligence: ARM reset cadences, year-specific refinance anniversary playbooks, HELOC and cash-out math, FCRA-clean credit-improvement signals. Trade-off: breadth across roles vs depth within one role.",
+        body: "MyHomeIQ serves both mortgage LOs and real-estate agents with the same engagement and content layer. LoanOpticsAI is mortgage-LO-only and goes deeper on mortgage-specific intelligence: ARM reset cadences, year-specific refinance anniversary playbooks, HELOC and cash-out math, FCRA-clean credit-improvement signals. Trade-off: breadth across roles vs depth within one role.",
       },
       {
         title: "Content delivery vs daily ranked call list",
-        body: "MyHomeIQ delivers content and reports to past clients. LO Radar delivers a daily ranked call list to the LO — top 3 past borrowers to contact today, with the rate math done and the draft outreach ready. Different leverage point: keep past clients warm vs convert past clients today.",
+        body: "MyHomeIQ delivers content and reports to past clients. LoanOpticsAI delivers a daily ranked call list to the LO — top 3 past borrowers to contact today, with the rate math done and the draft outreach ready. Different leverage point: keep past clients warm vs convert past clients today.",
       },
       {
         title: "Pipeline NPV — the asset view",
-        body: "MyHomeIQ reports engagement metrics. LO Radar reports book value — the present value of the past-client book as a single daily-moving number, plus per-borrower drift scoring and per-trigger conversion attribution.",
+        body: "MyHomeIQ reports engagement metrics. LoanOpticsAI reports book value — the present value of the past-client book as a single daily-moving number, plus per-borrower drift scoring and per-trigger conversion attribution.",
       },
       {
         title: "Voice Training + compliance posture",
-        body: "MyHomeIQ uses pre-built templates. LO Radar learns the LO's individual writing voice and renders every draft in the LO's tone, with RESPA / TILA / TCPA / FCRA compliance flags inline per draft.",
+        body: "MyHomeIQ uses pre-built templates. LoanOpticsAI learns the LO's individual writing voice and renders every draft in the LO's tone, with RESPA / TILA / TCPA / FCRA compliance flags inline per draft.",
       },
     ],
     sideBySide: [
@@ -734,8 +734,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If your business is built around real-estate-agent co-marketing partnerships and you want one platform serving both roles, MyHomeIQ is the cross-vertical play.",
-      switchToUs: "If you're a mortgage LO whose primary leverage is your own past-client book — and you want the mortgage-specific seven-trigger intelligence layer and Pipeline NPV view — LO Radar goes deeper on the mortgage workflow specifically.",
-      runBoth: "Workable. MyHomeIQ for the broader engagement layer and agent partnerships; LO Radar for the daily mortgage-specific call list.",
+      switchToUs: "If you're a mortgage LO whose primary leverage is your own past-client book — and you want the mortgage-specific seven-trigger intelligence layer and Pipeline NPV view — LoanOpticsAI goes deeper on the mortgage workflow specifically.",
+      runBoth: "Workable. MyHomeIQ for the broader engagement layer and agent partnerships; LoanOpticsAI for the daily mortgage-specific call list.",
     },
   },
   {
@@ -753,19 +753,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Refi-only scan vs full past-client intelligence",
-        body: "LoanGraphs scans for rate-drop refinance candidates. LO Radar runs the full seven-trigger set (rate-drop, ARM reset, anniversary, HELOC, cash-out, second-home, credit-improvement) plus the four November 2026 additions (Rate Trip Wires, Permit Radar, Program Eligibility, Outreach Monitor). In a 7 percent rate market most refi-only scans return empty; LO Radar's non-rate triggers keep the daily call list non-empty.",
+        body: "LoanGraphs scans for rate-drop refinance candidates. LoanOpticsAI runs the full seven-trigger set (rate-drop, ARM reset, anniversary, HELOC, cash-out, second-home, credit-improvement) plus the four November 2026 additions (Rate Trip Wires, Permit Radar, Program Eligibility, Outreach Monitor). In a 7 percent rate market most refi-only scans return empty; LoanOpticsAI's non-rate triggers keep the daily call list non-empty.",
       },
       {
         title: "No Pipeline NPV, Drift Radar, or Voice Training",
-        body: "LoanGraphs focuses on the scan. LO Radar adds book valuation (Pipeline NPV), per-borrower churn scoring (Drift Radar), and the LO's own writing voice (Voice Training) on top.",
+        body: "LoanGraphs focuses on the scan. LoanOpticsAI adds book valuation (Pipeline NPV), per-borrower churn scoring (Drift Radar), and the LO's own writing voice (Voice Training) on top.",
       },
       {
         title: "Compliance posture not surfaced per draft",
-        body: "LoanGraphs produces borrower cards with rate math; the RESPA / TILA / TCPA posture is on the LO. LO Radar flags each draft inline for consent basis, licensing gate, state disclosure, and TILA calculation basis.",
+        body: "LoanGraphs produces borrower cards with rate math; the RESPA / TILA / TCPA posture is on the LO. LoanOpticsAI flags each draft inline for consent basis, licensing gate, state disclosure, and TILA calculation basis.",
       },
       {
         title: "Enterprise and branch readiness",
-        body: "LoanGraphs is priced and shaped for an individual LO. LO Radar has an enterprise tier with SSO, Branch Compliance Dashboard, Employer Authorization Module, and a published RESPA opinion workflow for lender procurement.",
+        body: "LoanGraphs is priced and shaped for an individual LO. LoanOpticsAI has an enterprise tier with SSO, Branch Compliance Dashboard, Employer Authorization Module, and a published RESPA opinion workflow for lender procurement.",
       },
     ],
     sideBySide: [
@@ -782,8 +782,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If your budget is the constraint and a rate-drop scan is all you need, LoanGraphs at $49 to $99 per month is the cheap option.",
-      switchToUs: "If the rate market is flat (most of 2026) and you need non-rate triggers, book valuation, and compliance-safe drafts, LO Radar does the broader job.",
-      runBoth: "Rare. Most LOs pick one. If you are already running LoanGraphs and want to upgrade, LO Radar replaces it functionally.",
+      switchToUs: "If the rate market is flat (most of 2026) and you need non-rate triggers, book valuation, and compliance-safe drafts, LoanOpticsAI does the broader job.",
+      runBoth: "Rare. Most LOs pick one. If you are already running LoanGraphs and want to upgrade, LoanOpticsAI replaces it functionally.",
     },
   },
   {
@@ -801,23 +801,23 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "CRM + property mining vs past-client intelligence",
-        body: "LoanOfficer.ai is a CRM with AI features and property-data mining. LO Radar is past-client intelligence that sits above the CRM layer, tells the CRM what to do, and does not try to own contact state. The two run well together for LOs who want LoanOfficer.ai's CRM and LO Radar's book-wide ranking math.",
+        body: "LoanOfficer.ai is a CRM with AI features and property-data mining. LoanOpticsAI is past-client intelligence that sits above the CRM layer, tells the CRM what to do, and does not try to own contact state. The two run well together for LOs who want LoanOfficer.ai's CRM and LoanOpticsAI's book-wide ranking math.",
       },
       {
-        title: "Property Pulse is third-party property data; LO Radar's base is first-party book data",
+        title: "Property Pulse is third-party property data; LoanOpticsAI's base is first-party book data",
         body: "Both are lawful post-HPPA, but the intent quality differs. First-party past-client data carries an existing relationship and a stronger consent basis for outreach; third-party property data is informational and weaker as a contact basis.",
       },
       {
         title: "Opaque vs published pricing",
-        body: "LoanOfficer.ai does not publish pricing. LO Radar publishes: $399/mo base plus $85 per closed deal, capped at $1,499/mo. Also a $999/mo flat option.",
+        body: "LoanOfficer.ai does not publish pricing. LoanOpticsAI publishes: $399/mo base plus $85 per closed deal, capped at $1,499/mo. Also a $999/mo flat option.",
       },
       {
         title: "Pipeline NPV, Drift Radar, Voice Training",
-        body: "LoanOfficer.ai has strong AI drafting; the book valuation, per-borrower drift scoring, and voice-trained drafting that LO Radar provides are not core to its product.",
+        body: "LoanOfficer.ai has strong AI drafting; the book valuation, per-borrower drift scoring, and voice-trained drafting that LoanOpticsAI provides are not core to its product.",
       },
     ],
     sideBySide: [
-      ["AI CRM functionality",                   "✓ (core)",              "— (LO Radar is not a CRM)"],
+      ["AI CRM functionality",                   "✓ (core)",              "— (LoanOpticsAI is not a CRM)"],
       ["Property-data mining",                    "✓ (Property Pulse)",    "✓ (county appraisal enrichment)"],
       ["Past-client seven-trigger scan",          "Partial (CRM + AI)",    "✓ (core)"],
       ["Pipeline NPV (book valuation)",           "—",                    "✓"],
@@ -828,8 +828,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you need a modern AI CRM and the property-data mining layer is the specific capability you want, LoanOfficer.ai is a strong pick.",
-      switchToUs: "If you already have a CRM and the gap is the book-wide intelligence layer that produces the daily ranked call list, LO Radar is the net-add.",
-      runBoth: "Yes. LoanOfficer.ai as the CRM, LO Radar as the past-client intelligence layer.",
+      switchToUs: "If you already have a CRM and the gap is the book-wide intelligence layer that produces the daily ranked call list, LoanOpticsAI is the net-add.",
+      runBoth: "Yes. LoanOfficer.ai as the CRM, LoanOpticsAI as the past-client intelligence layer.",
     },
   },
   {
@@ -847,19 +847,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "CRM platform vs past-client intelligence",
-        body: "Jungo is a CRM; it stores contacts, pipeline stages, tasks, and activity. LO Radar is past-client intelligence that ranks the book daily and drafts outreach. The two sit at different layers of the stack.",
+        body: "Jungo is a CRM; it stores contacts, pipeline stages, tasks, and activity. LoanOpticsAI is past-client intelligence that ranks the book daily and drafts outreach. The two sit at different layers of the stack.",
       },
       {
         title: "Salesforce complexity",
-        body: "Jungo inherits Salesforce's strengths and its administration burden. Most individual LOs or small shops spend meaningful admin time keeping a Salesforce stack tidy. LO Radar runs out of the box with a CSV upload.",
+        body: "Jungo inherits Salesforce's strengths and its administration burden. Most individual LOs or small shops spend meaningful admin time keeping a Salesforce stack tidy. LoanOpticsAI runs out of the box with a CSV upload.",
       },
       {
         title: "No book-valuation or drift math",
-        body: "Pipeline NPV and Drift Radar are mortgage-specific analytics LO Radar built from scratch; a Salesforce-based CRM would not approach them without a custom build.",
+        body: "Pipeline NPV and Drift Radar are mortgage-specific analytics LoanOpticsAI built from scratch; a Salesforce-based CRM would not approach them without a custom build.",
       },
       {
         title: "Voice Training",
-        body: "Jungo supports templated drafts. LO Radar renders drafts in the LO's own voice from fifteen to thirty prior messages pasted once.",
+        body: "Jungo supports templated drafts. LoanOpticsAI renders drafts in the LO's own voice from fifteen to thirty prior messages pasted once.",
       },
     ],
     sideBySide: [
@@ -874,8 +874,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you are already on Salesforce and want the mortgage package on top, Jungo is the natural fit.",
-      switchToUs: "If Salesforce overhead is more than the shop can carry and you want a focused past-client intelligence layer, LO Radar runs faster and cheaper.",
-      runBoth: "Common pattern. Jungo as the CRM of record; LO Radar as the intelligence layer feeding the daily call list and the drafts.",
+      switchToUs: "If Salesforce overhead is more than the shop can carry and you want a focused past-client intelligence layer, LoanOpticsAI runs faster and cheaper.",
+      runBoth: "Common pattern. Jungo as the CRM of record; LoanOpticsAI as the intelligence layer feeding the daily call list and the drafts.",
     },
   },
   {
@@ -893,19 +893,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Presentation vs identification",
-        body: "Mortgage Coach helps a loan officer present options to a borrower already in the pipeline. LO Radar helps the loan officer identify which past borrower to call today in the first place. The two run well together: LO Radar identifies, Mortgage Coach presents.",
+        body: "Mortgage Coach helps a loan officer present options to a borrower already in the pipeline. LoanOpticsAI helps the loan officer identify which past borrower to call today in the first place. The two run well together: LoanOpticsAI identifies, Mortgage Coach presents.",
       },
       {
         title: "No past-client book scan",
-        body: "Mortgage Coach does not scan a past-client book for rate-drop, ARM reset, HELOC, or cash-out opportunities. Those are LO Radar's job.",
+        body: "Mortgage Coach does not scan a past-client book for rate-drop, ARM reset, HELOC, or cash-out opportunities. Those are LoanOpticsAI's job.",
       },
       {
         title: "No Pipeline NPV or drift scoring",
-        body: "Mortgage Coach does not produce book-level analytics (NPV, drift, retention ratio). LO Radar does.",
+        body: "Mortgage Coach does not produce book-level analytics (NPV, drift, retention ratio). LoanOpticsAI does.",
       },
       {
         title: "Compliance posture on outreach drafts",
-        body: "Mortgage Coach's presentations are borrower-facing after the LO is in the conversation. LO Radar flags RESPA / TILA / TCPA posture on the outreach drafts that start the conversation.",
+        body: "Mortgage Coach's presentations are borrower-facing after the LO is in the conversation. LoanOpticsAI flags RESPA / TILA / TCPA posture on the outreach drafts that start the conversation.",
       },
     ],
     sideBySide: [
@@ -919,8 +919,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If your workflow is strong but you want a better presentation tool for borrower conversations, Mortgage Coach is a category leader.",
-      switchToUs: "If the gap is identifying which past borrower to call today, not presenting to the ones already in the pipeline, LO Radar is the right layer.",
-      runBoth: "Common and complementary. LO Radar for identification and outreach; Mortgage Coach for the borrower-facing presentation.",
+      switchToUs: "If the gap is identifying which past borrower to call today, not presenting to the ones already in the pipeline, LoanOpticsAI is the right layer.",
+      runBoth: "Common and complementary. LoanOpticsAI for identification and outreach; Mortgage Coach for the borrower-facing presentation.",
     },
   },
   {
@@ -939,15 +939,15 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Borrower-facing reports vs loan-officer-facing call list",
-        body: "rebel Ai is a borrower engagement tool; the past client receives reports and interacts with scenarios. LO Radar is a loan-officer workflow tool; the LO receives a daily ranked call list with the rate math and the draft already written.",
+        body: "rebel Ai is a borrower engagement tool; the past client receives reports and interacts with scenarios. LoanOpticsAI is a loan-officer workflow tool; the LO receives a daily ranked call list with the rate math and the draft already written.",
       },
       {
         title: "AVM estimates vs county-appraisal enrichment",
-        body: "rebel Ai uses AVM. LO Radar uses county appraisal data in covered counties (Austin today, more coming). County data is slower-moving but more authoritative for equity math.",
+        body: "rebel Ai uses AVM. LoanOpticsAI uses county appraisal data in covered counties (Austin today, more coming). County data is slower-moving but more authoritative for equity math.",
       },
       {
         title: "No Pipeline NPV, Drift Radar, or Voice Training",
-        body: "rebel Ai focuses on the engagement artifacts. LO Radar's book-valuation, per-borrower drift, and voice-trained drafting are not core to its product.",
+        body: "rebel Ai focuses on the engagement artifacts. LoanOpticsAI's book-valuation, per-borrower drift, and voice-trained drafting are not core to its product.",
       },
     ],
     sideBySide: [
@@ -962,8 +962,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If your retention strategy is to keep past clients engaged with a living home report and co-branded content with your agent partners, rebel Ai sits exactly there.",
-      switchToUs: "If you want the daily LO workflow (who to call, why, what to say) rather than the borrower-facing engagement artifact, LO Radar is the right tool.",
-      runBoth: "Workable. rebel Ai as the passive borrower-facing layer; LO Radar as the active LO-facing workflow layer.",
+      switchToUs: "If you want the daily LO workflow (who to call, why, what to say) rather than the borrower-facing engagement artifact, LoanOpticsAI is the right tool.",
+      runBoth: "Workable. rebel Ai as the passive borrower-facing layer; LoanOpticsAI as the active LO-facing workflow layer.",
     },
   },
   {
@@ -981,19 +981,19 @@ export const COMPETITORS = [
     whereWeDiffer: [
       {
         title: "Enterprise servicing play vs individual-LO past-client intelligence",
-        body: "Ardley requires servicing-portfolio access and is sold to enterprise lenders. LO Radar is sold to individual loan officers and shops and runs against a CSV export from any LOS. Different buyers, different stacks.",
+        body: "Ardley requires servicing-portfolio access and is sold to enterprise lenders. LoanOpticsAI is sold to individual loan officers and shops and runs against a CSV export from any LOS. Different buyers, different stacks.",
       },
       {
         title: "Pre-structured offers vs voice-trained outreach",
-        body: "Ardley's output is a standardized pre-structured offer to the borrower. LO Radar's output is an outreach draft in the LO's own voice, approved by a named human before send. The compliance posture is different: Ardley operates inside the bank's existing consent framework; LO Radar explicitly preserves a draft-then-approve workflow a branch compliance officer signs off on per outreach.",
+        body: "Ardley's output is a standardized pre-structured offer to the borrower. LoanOpticsAI's output is an outreach draft in the LO's own voice, approved by a named human before send. The compliance posture is different: Ardley operates inside the bank's existing consent framework; LoanOpticsAI explicitly preserves a draft-then-approve workflow a branch compliance officer signs off on per outreach.",
       },
       {
         title: "No past-client career-book consolidation",
-        body: "Ardley reads the current servicer's portfolio. LO Radar consolidates the loan officer's entire career book across every prior employer and LOS into a single intelligence layer; this is the layer an LO who has moved shops needs.",
+        body: "Ardley reads the current servicer's portfolio. LoanOpticsAI consolidates the loan officer's entire career book across every prior employer and LOS into a single intelligence layer; this is the layer an LO who has moved shops needs.",
       },
       {
         title: "Enterprise-only versus LO-facing",
-        body: "Ardley/PLACE sells to the enterprise. LO Radar sells to the LO (with an enterprise tier that gives the lender the Branch Compliance Dashboard and Employer Authorization overlay).",
+        body: "Ardley/PLACE sells to the enterprise. LoanOpticsAI sells to the LO (with an enterprise tier that gives the lender the Branch Compliance Dashboard and Employer Authorization overlay).",
       },
     ],
     sideBySide: [
@@ -1007,8 +1007,8 @@ export const COMPETITORS = [
     ],
     whoIsRight: {
       stayWithThem: "If you are an enterprise lender with retained servicing and want pre-structured automated offer generation across the servicing portfolio, Ardley (PLACE) is the right enterprise tool.",
-      switchToUs: "If you are an individual loan officer or a shop working a past-client book (and especially one that spans multiple prior employers), LO Radar is built for that job.",
-      runBoth: "Yes, at a bank. Ardley at the enterprise portfolio level; LO Radar at the individual-LO career-book level.",
+      switchToUs: "If you are an individual loan officer or a shop working a past-client book (and especially one that spans multiple prior employers), LoanOpticsAI is built for that job.",
+      runBoth: "Yes, at a bank. Ardley at the enterprise portfolio level; LoanOpticsAI at the individual-LO career-book level.",
     },
   },
 ];

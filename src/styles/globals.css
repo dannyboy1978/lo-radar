@@ -29,7 +29,7 @@ img, svg, video, canvas {
   .container-xl { padding-left: 2rem; padding-right: 2rem; }
 }
 
-/* LO Radar signature gradients */
+/* LoanOpticsAI signature gradients */
 .text-gradient-gold {
   background: linear-gradient(135deg, #e9c887 0%, #c9a96a 45%, #a17c3d 100%);
   -webkit-background-clip: text;

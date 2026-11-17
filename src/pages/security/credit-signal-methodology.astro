@@ -9,8 +9,8 @@ const breadcrumbs = [
 ];
 
 const article = {
-  headline: "Credit Signal Methodology — How LO Radar Surfaces Credit-Improvement Flags Without Being a Consumer Reporting Agency",
-  description: "Technical whitepaper documenting LO Radar's FCRA-clean approach to credit-improvement signals. Soft-pull aggregations only; never a hard inquiry. The LO's existing permissible-purpose framework remains the system of record for any actual credit decision.",
+  headline: "Credit Signal Methodology — How LoanOpticsAI Surfaces Credit-Improvement Flags Without Being a Consumer Reporting Agency",
+  description: "Technical whitepaper documenting LoanOpticsAI's FCRA-clean approach to credit-improvement signals. Soft-pull aggregations only; never a hard inquiry. The LO's existing permissible-purpose framework remains the system of record for any actual credit decision.",
   author: "TechStack Consulting LLC",
   datePublished: "2026-06-13T00:00:00Z",
   section: "Compliance Methodology",
@@ -19,8 +19,8 @@ const article = {
 ---
 
 <Base
-  title="Credit Signal Methodology — FCRA-Clean Soft-Pull Aggregation | LO Radar"
-  description="Technical whitepaper: how LO Radar surfaces credit-improvement signals without being a consumer reporting agency. Soft-pull aggregations only; never a hard inquiry."
+  title="Credit Signal Methodology — FCRA-Clean Soft-Pull Aggregation | LoanOpticsAI"
+  description="Technical whitepaper: how LoanOpticsAI surfaces credit-improvement signals without being a consumer reporting agency. Soft-pull aggregations only; never a hard inquiry."
   breadcrumbs={breadcrumbs}
   article={article}
 >
@@ -35,7 +35,7 @@ const article = {
         Credit Signal Methodology
       </h1>
       <p class="text-xl text-ink-700 font-light leading-relaxed">
-        How LO Radar surfaces credit-improvement signals without being a consumer reporting agency.
+        How LoanOpticsAI surfaces credit-improvement signals without being a consumer reporting agency.
       </p>
       <div class="text-sm text-ink-500 mt-5">
         Published 2026-06-13 · TechStack Consulting LLC · Version 1.0
@@ -48,15 +48,15 @@ const article = {
 
       <h2 class="font-serif text-3xl text-ink-900 mb-4">1. Executive summary</h2>
       <p>
-        LO Radar surfaces credit-improvement flags as one of seven trigger categories in its past-client intelligence layer. This document explains exactly what data feeds those flags, why our approach falls outside the definition of a consumer reporting agency under the Fair Credit Reporting Act (FCRA), and how the originating loan officer's existing permissible-purpose framework remains the system of record for any actual credit-related decision.
+        LoanOpticsAI surfaces credit-improvement flags as one of seven trigger categories in its past-client intelligence layer. This document explains exactly what data feeds those flags, why our approach falls outside the definition of a consumer reporting agency under the Fair Credit Reporting Act (FCRA), and how the originating loan officer's existing permissible-purpose framework remains the system of record for any actual credit-related decision.
       </p>
       <p>
         Three claims are operationally true and architecturally enforced:
       </p>
       <ol>
-        <li><strong>LO Radar does not pull credit reports.</strong> We do not have, and do not seek, a contractual relationship with Experian, Equifax, TransUnion, or any other consumer reporting agency as a reseller or downstream provider of consumer reports.</li>
+        <li><strong>LoanOpticsAI does not pull credit reports.</strong> We do not have, and do not seek, a contractual relationship with Experian, Equifax, TransUnion, or any other consumer reporting agency as a reseller or downstream provider of consumer reports.</li>
         <li><strong>Credit-improvement flags are derived exclusively from non-FCRA-regulated soft-pull aggregations and borrower-volunteered updates.</strong> Soft-pull data, by definition, does not affect a consumer's credit score, is not visible to other lenders, and is collected under a permissible purpose held by an upstream vendor whose data product is structured as marketing-eligibility data — not a consumer report.</li>
-        <li><strong>Any decision a loan officer makes based on a LO Radar credit-improvement flag is followed by a permissible-purpose credit pull through the LO's existing originator workflow.</strong> LO Radar surfaces the signal; the LO's lending institution pulls the file under its own FCRA compliance.</li>
+        <li><strong>Any decision a loan officer makes based on a LoanOpticsAI credit-improvement flag is followed by a permissible-purpose credit pull through the LO's existing originator workflow.</strong> LoanOpticsAI surfaces the signal; the LO's lending institution pulls the file under its own FCRA compliance.</li>
       </ol>
 
       <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">2. Why this is the right design</h2>
@@ -70,7 +70,7 @@ const article = {
         <strong>(b) Third-party trigger lead.</strong> A lender or marketing vendor receives notifications from the credit bureaus when a consumer's credit file is "triggered" — typically by an inquiry from another lender. This historically powered the mortgage trigger-lead industry until the Homebuyers Privacy Protection Act (HPPA) restricted it in March 2026.
       </p>
       <p>
-        LO Radar does neither. Credit-improvement flags occupy a third category: <strong>aggregated soft-pull signal data, derived from sources that do not constitute a consumer report under FCRA</strong>, used exclusively to identify candidates for further outreach by the originating LO.
+        LoanOpticsAI does neither. Credit-improvement flags occupy a third category: <strong>aggregated soft-pull signal data, derived from sources that do not constitute a consumer report under FCRA</strong>, used exclusively to identify candidates for further outreach by the originating LO.
       </p>
       <p>
         This is the right design for three reasons:
@@ -78,7 +78,7 @@ const article = {
       <ul>
         <li><strong>It works post-HPPA.</strong> The HPPA restrictions on third-party trigger leads do not apply to data sources that aren't consumer-report-triggered inquiries. The data sources we use were never structured as trigger leads.</li>
         <li><strong>It keeps us out of FCRA-regulated activity.</strong> We are not a consumer reporting agency, we do not assemble consumer reports, and we do not regularly engage in the practice of assembling or evaluating consumer credit information for the purpose of furnishing consumer reports to third parties (FCRA §603(f)). The signal we produce is not a consumer report.</li>
-        <li><strong>It keeps the LO cleanly in charge of the actual credit decision.</strong> When an LO acts on a credit-improvement flag — initiating a refinance conversation, pulling a credit file for underwriting — they do so under their lender's existing FCRA framework. LO Radar's role is upstream of any credit decision and downstream of any FCRA-regulated data movement.</li>
+        <li><strong>It keeps the LO cleanly in charge of the actual credit decision.</strong> When an LO acts on a credit-improvement flag — initiating a refinance conversation, pulling a credit file for underwriting — they do so under their lender's existing FCRA framework. LoanOpticsAI's role is upstream of any credit decision and downstream of any FCRA-regulated data movement.</li>
       </ul>
 
       <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">3. What feeds the credit-improvement flag</h2>
@@ -91,12 +91,12 @@ const article = {
         We license aggregated, anonymized soft-pull data from vendors whose product is structured for marketing-eligibility use (not for consumer credit decisions). The vendor's contractual permissible purpose under FCRA — typically <strong>FCRA §604(c)(1)(B)</strong>, the prescreened-firm-offer-of-credit basis with consumer opt-out registry checks — covers the underlying data collection. The vendor produces aggregated score-tier-change signals (e.g., "this matched contact moved from 680-700 to 720-740 tier in the last 90 days") without surfacing the underlying tradelines, balances, or specific events that drove the change.
       </p>
       <p>
-        LO Radar's contractual relationship with the soft-pull vendor explicitly prohibits us from re-selling, re-aggregating, or providing the signal data to third parties. The signal feeds the LO's per-borrower flag and is never exposed in aggregate to anyone outside the originating LO's account.
+        LoanOpticsAI's contractual relationship with the soft-pull vendor explicitly prohibits us from re-selling, re-aggregating, or providing the signal data to third parties. The signal feeds the LO's per-borrower flag and is never exposed in aggregate to anyone outside the originating LO's account.
       </p>
 
       <h3 class="font-serif text-2xl text-ink-900 mt-8 mb-3">3.2 Borrower-volunteered updates</h3>
       <p>
-        Past borrowers may volunteer credit updates in conversations with the LO — for example, "I just paid off the truck" or "my Experian shot up to 760 last month." When the LO records this in the LO Radar contact notes, the system extracts the score-change context and surfaces a credit-improvement flag without needing any external data source. Volunteered updates are tagged as such and do not enter our soft-pull data pipeline.
+        Past borrowers may volunteer credit updates in conversations with the LO — for example, "I just paid off the truck" or "my Experian shot up to 760 last month." When the LO records this in the LoanOpticsAI contact notes, the system extracts the score-change context and surfaces a credit-improvement flag without needing any external data source. Volunteered updates are tagged as such and do not enter our soft-pull data pipeline.
       </p>
 
       <h3 class="font-serif text-2xl text-ink-900 mt-8 mb-3">3.3 Public-records signal</h3>
@@ -118,7 +118,7 @@ const article = {
 
       <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">5. The "we surface, you pull" boundary</h2>
       <p>
-        LO Radar surfaces a credit-improvement flag as a <em>decision-support signal</em>. When an LO acts on the flag, the actual credit pull — the moment that requires FCRA permissible purpose and consumer authorization — happens through the LO's existing originator workflow at their lending institution. The LO Radar interface never shows a FICO score, never quotes a specific tradeline, and never surfaces any data element that would constitute a "consumer report" under FCRA §603(d).
+        LoanOpticsAI surfaces a credit-improvement flag as a <em>decision-support signal</em>. When an LO acts on the flag, the actual credit pull — the moment that requires FCRA permissible purpose and consumer authorization — happens through the LO's existing originator workflow at their lending institution. The LoanOpticsAI interface never shows a FICO score, never quotes a specific tradeline, and never surfaces any data element that would constitute a "consumer report" under FCRA §603(d).
       </p>
       <p>
         This boundary is enforced architecturally:
@@ -126,7 +126,7 @@ const article = {
       <ul>
         <li>The credit-improvement flag presents as a tier-band signal (e.g., "Moved up one or more credit tiers in the last 90 days"), not as a numeric score.</li>
         <li>The outreach draft generated for a credit-improvement flag is rate-and-product-scenario-based, never tied to a specific approved rate.</li>
-        <li>The LO must initiate the actual loan application and credit pull through their lender's normal originator workflow — LO Radar has no integration into pricing engines or AUS systems that would produce a credit-conditioned quote.</li>
+        <li>The LO must initiate the actual loan application and credit pull through their lender's normal originator workflow — LoanOpticsAI has no integration into pricing engines or AUS systems that would produce a credit-conditioned quote.</li>
       </ul>
 
       <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">6. Why this matters for HPPA</h2>
@@ -134,10 +134,10 @@ const article = {
         The Homebuyers Privacy Protection Act, effective March 4, 2026, restricted third-party access to consumer mortgage inquiry data from the credit bureaus. The intent of the rule was to end the third-party trigger-lead industry — companies whose business model was monetizing the inquiry-trigger data of consumers who had not affirmatively engaged with them.
       </p>
       <p>
-        LO Radar is structurally aligned with the HPPA intent. We are not a third-party intermediary repackaging credit-bureau inquiry data. We operate on past-client data the LO already legally possesses as the originator, augmented by soft-pull aggregator data that exists outside the inquiry-trigger system the HPPA addressed. The credit-improvement flag specifically does not depend on inquiry data of any kind — it depends on tier-band movement signals from a marketing-eligibility data source.
+        LoanOpticsAI is structurally aligned with the HPPA intent. We are not a third-party intermediary repackaging credit-bureau inquiry data. We operate on past-client data the LO already legally possesses as the originator, augmented by soft-pull aggregator data that exists outside the inquiry-trigger system the HPPA addressed. The credit-improvement flag specifically does not depend on inquiry data of any kind — it depends on tier-band movement signals from a marketing-eligibility data source.
       </p>
       <p>
-        We expect the HPPA's downstream effects (additional state-level legislation, CFPB guidance, FTC enforcement) to continue shaping the mortgage-data landscape over the next 12-24 months. LO Radar's data architecture was designed in 2026 with the post-HPPA regulatory direction explicitly in scope.
+        We expect the HPPA's downstream effects (additional state-level legislation, CFPB guidance, FTC enforcement) to continue shaping the mortgage-data landscape over the next 12-24 months. LoanOpticsAI's data architecture was designed in 2026 with the post-HPPA regulatory direction explicitly in scope.
       </p>
 
       <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">7. Audit + verification</h2>
@@ -152,15 +152,15 @@ const article = {
         <li>The LO who viewed it and when</li>
       </ul>
       <p>
-        Enterprise customers receive a quarterly aggregated audit report. Bank and credit-union mortgage divisions can request access logs at any time. The full per-flag audit detail is available to the LO Radar account owner via Settings → Audit → Credit Signals.
+        Enterprise customers receive a quarterly aggregated audit report. Bank and credit-union mortgage divisions can request access logs at any time. The full per-flag audit detail is available to the LoanOpticsAI account owner via Settings → Audit → Credit Signals.
       </p>
       <p>
-        For compliance officers conducting a vendor review: we will provide, under NDA, the specific soft-pull vendor name, the contractual permissible-purpose basis, the data dictionary, and the architectural separation between the soft-pull signal pipeline and any other LO Radar data flow. Request via your account manager or <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+        For compliance officers conducting a vendor review: we will provide, under NDA, the specific soft-pull vendor name, the contractual permissible-purpose basis, the data dictionary, and the architectural separation between the soft-pull signal pipeline and any other LoanOpticsAI data flow. Request via your account manager or <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
 
       <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">8. What we will not represent</h2>
       <p>
-        We will not represent that LO Radar:
+        We will not represent that LoanOpticsAI:
       </p>
       <ul>
         <li>Constitutes a "consumer report" within the meaning of FCRA §603(d)</li>
@@ -174,7 +174,7 @@ const article = {
 
       <h2 class="font-serif text-3xl text-ink-900 mt-12 mb-4">9. Document control</h2>
       <p>
-        This whitepaper is the canonical methodology document for LO Radar's credit-improvement signal. Material changes (data sources, architectural boundaries, permissible-purpose representations) are versioned and the prior version is preserved in the document history. Compliance officers reviewing this document for vendor approval should reference Version 1.0, published 2026-06-13. Subsequent versions will note the specific change and the effective date.
+        This whitepaper is the canonical methodology document for LoanOpticsAI's credit-improvement signal. Material changes (data sources, architectural boundaries, permissible-purpose representations) are versioned and the prior version is preserved in the document history. Compliance officers reviewing this document for vendor approval should reference Version 1.0, published 2026-06-13. Subsequent versions will note the specific change and the effective date.
       </p>
       <p>
         Questions, document requests, or vendor-review correspondence: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.

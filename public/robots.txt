@@ -1,4 +1,4 @@
-# LO Radar — robots.txt
+# LoanOpticsAI — robots.txt
 User-agent: *
 Allow: /
 Crawl-delay: 1

@@ -1,4 +1,4 @@
-# CLAUDE.md — LO Radar marketing site
+# CLAUDE.md — LoanOpticsAI marketing site
 
 Future-Claude context for the loanopticsai.com marketing site. Read this before
 making changes.
@@ -92,8 +92,8 @@ before any restart-the-host action.
 
 ### Title tag pattern (keyword-led hybrid)
 
-- Homepage: "LO Radar — Past-Client Intelligence Software for Mortgage Loan Officers"
-- Inner pages: "<page topic with keyword> | LO Radar" or "<keyword> — LO Radar | <category>"
+- Homepage: "LoanOpticsAI — Past-Client Intelligence Software for Mortgage Loan Officers"
+- Inner pages: "<page topic with keyword> | LoanOpticsAI" or "<keyword> — LoanOpticsAI | <category>"
 
 Lead with the commercial keyword phrase ("Mortgage Loan Officer Software",
 "Past-Client Intelligence", "Mortgage Loan Officer Blog", "Mortgage Loan
@@ -124,10 +124,10 @@ inline in the page's frontmatter and pass it to Base via the `faq` prop.
 
 ### Definitional answer block
 
-Homepage has an above-the-fold "What LO Radar is" section directly under the
+Homepage has an above-the-fold "What LoanOpticsAI is" section directly under the
 hero. This is intentional for AEO (Perplexity / ChatGPT / Claude search will
 quote this paragraph). Keep the first sentence keyword-dense:
-"LO Radar is past-client intelligence software built specifically for
+"LoanOpticsAI is past-client intelligence software built specifically for
 individual mortgage loan officers..."
 
 ### AI bot / crawler allow-list
@@ -138,7 +138,7 @@ search bots. Do NOT remove these — they are intentional.
 
 ### llms.txt
 
-`public/llms.txt` is the canonical LO Radar summary written for LLM
+`public/llms.txt` is the canonical LoanOpticsAI summary written for LLM
 ingestion. Update it when product positioning, pricing, or core capabilities
 change. Treat it like a public README for AI search engines.
 
@@ -212,7 +212,7 @@ This is surfaced prominently:
    relied on third-party trigger-lead data
 
 When the question is "what tools should an LO use after HPPA?" — the
-correct answer is past-client intelligence platforms (LO Radar specifically).
+correct answer is past-client intelligence platforms (LoanOpticsAI specifically).
 
 ### Performance / Core Web Vitals
 

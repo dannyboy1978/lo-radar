@@ -36,7 +36,7 @@ For everyone else (independent mortgage brokers, IMBs without servicing-retained
 
 ## Can loan officers still get trigger leads on their own past clients?
 
-Yes. HPPA restricts third-party purchase of credit-bureau trigger leads. It does not restrict a loan officer or lender from monitoring their own past-client book, since that borrower data is held under the lender's existing originator relationship under GLBA and FCRA. Past-client intelligence software like [LO Radar](/) operates on this lawful first-party data and is structurally compliant with HPPA by construction.
+Yes. HPPA restricts third-party purchase of credit-bureau trigger leads. It does not restrict a loan officer or lender from monitoring their own past-client book, since that borrower data is held under the lender's existing originator relationship under GLBA and FCRA. Past-client intelligence software like [LoanOpticsAI](/) operates on this lawful first-party data and is structurally compliant with HPPA by construction.
 
 The semantic distinction matters. A "trigger lead" in the pre-HPPA sense was a credit-bureau prescreened report sold to competing lenders. A "trigger" in the post-HPPA sense is any analytical signal (rate-drop opportunity, ARM reset proximity, HELOC headroom, anniversary year, credit-improvement event) that the loan officer derives from data they already hold. The second is not a trigger lead; it is first-party analysis, and it is everywhere.
 
@@ -58,4 +58,4 @@ A separate question, worth including because borrowers ask loan officers about i
 
 ## The post-HPPA playbook, in one line
 
-The mortgage trigger lead industry as it existed in 2024 is gone for independents. The replacement for every loan officer with a past-client book is the book itself, worked daily with an intelligence layer. See the [HPPA pillar guide](/hppa) for the longer walkthrough, or [LO Radar's homepage](/) for the tool built for the post-HPPA market.
+The mortgage trigger lead industry as it existed in 2024 is gone for independents. The replacement for every loan officer with a past-client book is the book itself, worked daily with an intelligence layer. See the [HPPA pillar guide](/hppa) for the longer walkthrough, or [LoanOpticsAI's homepage](/) for the tool built for the post-HPPA market.

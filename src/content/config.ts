@@ -9,7 +9,7 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
     heroAlt: z.string().optional(),
-    author: z.string().default("LO Radar Team"),
+    author: z.string().default("LoanOpticsAI Team"),
     category: z.enum([
       "Industry Insights",
       "Product Deep Dives",

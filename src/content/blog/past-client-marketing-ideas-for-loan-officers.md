@@ -86,4 +86,4 @@ The 27 ideas below are the ones that work in a flat or rising rate market. They 
 
 The LOs who end 2026 ahead of where they started it are the ones who pick a handful of these and run them with discipline, not the ones who try all 27 and ship none.
 
-The infrastructure for 1 through 15 (the ARM, equity, anniversary, and life-stage plays) is what [LO Radar](/) does out of the box: daily ranking of the book against the trigger categories, voice-trained drafts, compliance posture inline. Items 17 through 27 are LO-driven and no software replaces the work, though the daily call list that LO Radar produces frees up the time to actually do them.
+The infrastructure for 1 through 15 (the ARM, equity, anniversary, and life-stage plays) is what [LoanOpticsAI](/) does out of the box: daily ranking of the book against the trigger categories, voice-trained drafts, compliance posture inline. Items 17 through 27 are LO-driven and no software replaces the work, though the daily call list that LoanOpticsAI produces frees up the time to actually do them.

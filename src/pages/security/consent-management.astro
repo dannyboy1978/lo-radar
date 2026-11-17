@@ -11,7 +11,7 @@ const breadcrumbs = [
 const faq = [
   {
     q: "Why track consent at the per-contact level?",
-    a: "TCPA, CAN-SPAM, state-level Mini-TCPAs, and Do Not Call registries all evaluate consent at the consumer level — not at the LO level. When a past borrower originally provided contact consent during their loan origination, that consent was given to a specific entity (the originating lender) for a specific purpose (servicing-and-related-communications, typically). LO Radar mirrors that reality by storing consent_basis, consent_entity, and consent_date on every contact record. This makes consent status auditable per contact and detects the cases where re-consent is required (e.g., the LO has changed employers since the consent was originally given).",
+    a: "TCPA, CAN-SPAM, state-level Mini-TCPAs, and Do Not Call registries all evaluate consent at the consumer level — not at the LO level. When a past borrower originally provided contact consent during their loan origination, that consent was given to a specific entity (the originating lender) for a specific purpose (servicing-and-related-communications, typically). LoanOpticsAI mirrors that reality by storing consent_basis, consent_entity, and consent_date on every contact record. This makes consent status auditable per contact and detects the cases where re-consent is required (e.g., the LO has changed employers since the consent was originally given).",
   },
   {
     q: "What are the recognized consent bases?",
@@ -19,7 +19,7 @@ const faq = [
   },
   {
     q: "What triggers the re-consent workflow?",
-    a: "When an LO's current employer (per their LO Radar account settings) is different from the consent_entity stored on a past-client contact, outreach drafting for that contact is automatically gated. The LO sees a 'Re-consent required' status and is presented with the TCPA-safe first-touch template (see below). Only after the borrower responds to the re-consent message and the LO records the response is the contact unlocked for ongoing outreach.",
+    a: "When an LO's current employer (per their LoanOpticsAI account settings) is different from the consent_entity stored on a past-client contact, outreach drafting for that contact is automatically gated. The LO sees a 'Re-consent required' status and is presented with the TCPA-safe first-touch template (see below). Only after the borrower responds to the re-consent message and the LO records the response is the contact unlocked for ongoing outreach.",
   },
   {
     q: "What does the TCPA-safe re-consent template look like?",
@@ -30,14 +30,14 @@ const faq = [
     a: "The contact is immediately tagged with consent_basis='opted-out' and outreach drafting is permanently gated for that contact. Internal DNC list integration is automatic. The audit log captures the opt-out timestamp and the channel through which it was received. Re-opt-in requires explicit written borrower request, captured and stored with the contact.",
   },
   {
-    q: "Does LO Radar integrate with our existing CRM's consent fields?",
-    a: "Yes on Enterprise. The Employer Authorization flow includes an option to specify the CRM-of-record (BNTouch, Shape, Bonzo, Aidium, Total Expert, Surefire, etc.) and the field path for each consent attribute in that CRM. LO Radar syncs consent status bidirectionally on a configurable cadence so the CRM remains the operational system of record for consent.",
+    q: "Does LoanOpticsAI integrate with our existing CRM's consent fields?",
+    a: "Yes on Enterprise. The Employer Authorization flow includes an option to specify the CRM-of-record (BNTouch, Shape, Bonzo, Aidium, Total Expert, Surefire, etc.) and the field path for each consent attribute in that CRM. LoanOpticsAI syncs consent status bidirectionally on a configurable cadence so the CRM remains the operational system of record for consent.",
   },
 ];
 ---
 
 <Base
-  title="Consent Management + Re-consent Workflow | LO Radar Security"
+  title="Consent Management + Re-consent Workflow | LoanOpticsAI Security"
   description="Per-contact consent tracking for mortgage loan officers: consent basis, consent entity, consent date. Automatic re-consent workflow on employer transitions, with a TCPA-safe first-touch template. CAN-SPAM and state Mini-TCPA aware."
   breadcrumbs={breadcrumbs}
   faq={faq}
@@ -64,7 +64,7 @@ const faq = [
 
       <h2 class="font-serif text-3xl text-ink-900 mt-4 mb-4">The data model</h2>
       <p>
-        Every past-client contact in LO Radar carries three consent-related fields:
+        Every past-client contact in LoanOpticsAI carries three consent-related fields:
       </p>
       <ul>
         <li><strong>consent_basis</strong> — one of: <code>originator-prior-relationship</code>, <code>borrower-volunteered</code>, <code>re-consent</code>, <code>inherited-with-employer-authorization</code>, <code>opted-out</code>, <code>unknown</code></li>
@@ -85,7 +85,7 @@ const faq = [
         <li>The contact's <code>consent_basis</code> is <code>originator-prior-relationship</code> (the most common case where re-consent applies)</li>
       </ol>
       <p>
-        For affected contacts, LO Radar:
+        For affected contacts, LoanOpticsAI:
       </p>
       <ul>
         <li>Tags the contact with status <em>"Re-consent required"</em></li>
@@ -131,7 +131,7 @@ To opt out of future emails, reply STOP or click [unsubscribe link].
         <strong>(b) Opt-out (STOP / "remove me" / negative response).</strong> The contact updates to <code>consent_basis='opted-out'</code>. Outreach drafting is permanently gated. Internal DNC list updates. The audit log captures the opt-out timestamp and channel.
       </p>
       <p>
-        <strong>(c) No response (default after 30 days).</strong> The contact remains in <em>"Re-consent required"</em> status indefinitely. The LO can manually escalate via phone or in-person conversation; if successful, the LO captures the verbal consent in LO Radar (with date and channel for audit) and the contact unlocks. Without affirmative re-consent, the contact stays gated to outreach.
+        <strong>(c) No response (default after 30 days).</strong> The contact remains in <em>"Re-consent required"</em> status indefinitely. The LO can manually escalate via phone or in-person conversation; if successful, the LO captures the verbal consent in LoanOpticsAI (with date and channel for audit) and the contact unlocks. Without affirmative re-consent, the contact stays gated to outreach.
       </p>
 
       <h2 class="font-serif text-3xl text-ink-900 mt-10 mb-4">Why this is the right TCPA posture</h2>
@@ -139,7 +139,7 @@ To opt out of future emails, reply STOP or click [unsubscribe link].
         TCPA exposure for mortgage LOs concentrates in two scenarios:
       </p>
       <ul>
-        <li><strong>Auto-dialed or pre-recorded contact without prior express written consent.</strong> LO Radar does not auto-dial and does not auto-send. Every draft goes out only after a named human approves it, from the LO's own systems or an employer-controlled channel, which keeps these out of the autodialer-consent framework.</li>
+        <li><strong>Auto-dialed or pre-recorded contact without prior express written consent.</strong> LoanOpticsAI does not auto-dial and does not auto-send. Every draft goes out only after a named human approves it, from the LO's own systems or an employer-controlled channel, which keeps these out of the autodialer-consent framework.</li>
         <li><strong>Contact to a past borrower after the LO has left the originating entity, where the original consent was tied to that entity.</strong> This is the scenario the re-consent workflow specifically addresses. Without it, an LO who changes employers inherits TCPA exposure with their book — the consent given to Lender A doesn't automatically transfer to outreach from the LO at Lender B.</li>
       </ul>
       <p>

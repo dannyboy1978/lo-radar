@@ -13,16 +13,16 @@ const faq = [
     a: "Yes. All past-client data is encrypted at rest with AES-256. The database is a managed Postgres instance (Supabase) on AWS infrastructure in the United States. Database backups are encrypted, retained for 30 days, and stored in a separate AWS region.",
   },
   {
-    q: "Does LO Radar send messages to my past clients on my behalf?",
-    a: "Not automatically, and never without a named human approving the specific message. This is a first principle of LO Radar. For individual loan officers, we generate drafts and you send them from your own email, CRM, or phone. For enterprise deployments, approved messages go through a channel your employer configures and controls, with the approver, timestamp, and message version logged. This preserves your existing TCPA contact-consent record, keeps you legally clean as the sender, and prevents the appearance of a third-party broker under RESPA Section 8.",
+    q: "Does LoanOpticsAI send messages to my past clients on my behalf?",
+    a: "Not automatically, and never without a named human approving the specific message. This is a first principle of LoanOpticsAI. For individual loan officers, we generate drafts and you send them from your own email, CRM, or phone. For enterprise deployments, approved messages go through a channel your employer configures and controls, with the approver, timestamp, and message version logged. This preserves your existing TCPA contact-consent record, keeps you legally clean as the sender, and prevents the appearance of a third-party broker under RESPA Section 8.",
   },
   {
-    q: "Is LO Radar SOC 2 compliant?",
+    q: "Is LoanOpticsAI SOC 2 compliant?",
     a: "We follow SOC 2 Type II control objectives in our internal practices (access logging, least-privilege internal access, encryption, change management, vendor DPAs), but we have not yet completed a formal third-party SOC 2 audit. For enterprise / branch deployments where a SOC 2 letter is a procurement requirement, talk to us — we can prioritize the audit if it unblocks a deployment.",
   },
   {
-    q: "How does LO Radar handle the Homebuyers Privacy Protection Act (HPPA)?",
-    a: "LO Radar operates on past-client data that you, as the originating loan officer, already legally possess. We do not purchase, broker, or aggregate trigger-lead data from credit bureaus or any third party — which is exactly the activity HPPA restricted as of March 4, 2026. Past-client intelligence is, in fact, the regulatorily clean alternative to the third-party trigger-lead market that HPPA closed.",
+    q: "How does LoanOpticsAI handle the Homebuyers Privacy Protection Act (HPPA)?",
+    a: "LoanOpticsAI operates on past-client data that you, as the originating loan officer, already legally possess. We do not purchase, broker, or aggregate trigger-lead data from credit bureaus or any third party — which is exactly the activity HPPA restricted as of March 4, 2026. Past-client intelligence is, in fact, the regulatorily clean alternative to the third-party trigger-lead market that HPPA closed.",
   },
   {
     q: "What is your data residency?",
@@ -32,8 +32,8 @@ const faq = [
 ---
 
 <Base
-  title="Security & Compliance | LO Radar — RESPA, TILA, TCPA, FCRA, GLBA, HPPA"
-  description="LO Radar security and compliance posture for mortgage loan officers. RESPA, TILA, TCPA, FCRA, GLBA, and post-HPPA data handling. Encryption at rest + transit. We draft, a human approves, you control the channel. Audit log per account."
+  title="Security & Compliance | LoanOpticsAI — RESPA, TILA, TCPA, FCRA, GLBA, HPPA"
+  description="LoanOpticsAI security and compliance posture for mortgage loan officers. RESPA, TILA, TCPA, FCRA, GLBA, and post-HPPA data handling. Encryption at rest + transit. We draft, a human approves, you control the channel. Audit log per account."
   breadcrumbs={breadcrumbs}
   faq={faq}
 >
@@ -44,7 +44,7 @@ const faq = [
         Built for the regulatory <span class="italic text-gradient-gold">reality of mortgage.</span>
       </h1>
       <p class="text-xl text-ink-700 font-light leading-relaxed max-w-3xl">
-        LO Radar handles the most sensitive asset in your business: your past-client book. Here's how we treat it.
+        LoanOpticsAI handles the most sensitive asset in your business: your past-client book. Here's how we treat it.
       </p>
     </div>
   </section>
@@ -106,7 +106,7 @@ const faq = [
             <h3 class="font-serif text-lg text-ink-900 leading-tight">Credit Signal Methodology</h3>
             <span class="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 shrink-0">Published</span>
           </div>
-          <p class="text-xs text-ink-600 leading-relaxed">Whitepaper on FCRA-clean soft-pull aggregation. Documents why LO Radar is not a consumer reporting agency.</p>
+          <p class="text-xs text-ink-600 leading-relaxed">Whitepaper on FCRA-clean soft-pull aggregation. Documents why LoanOpticsAI is not a consumer reporting agency.</p>
         </a>
       </div>
     </div>
@@ -132,35 +132,35 @@ const faq = [
           <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">RESPA § 8</div>
           <h3 class="font-serif text-2xl text-ink-900 mb-3">Real Estate Settlement Procedures Act</h3>
           <p class="text-sm text-ink-700 leading-relaxed">
-            LO Radar is software. We do not provide settlement services. We do not accept referrals for fees. We do not act as a kickback conduit between LOs and other settlement providers. Per-deal pricing on the Performance tier is consideration for software usage, not a referral fee.
+            LoanOpticsAI is software. We do not provide settlement services. We do not accept referrals for fees. We do not act as a kickback conduit between LOs and other settlement providers. Per-deal pricing on the Performance tier is consideration for software usage, not a referral fee.
           </p>
         </div>
         <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
           <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">TILA</div>
           <h3 class="font-serif text-2xl text-ink-900 mb-3">Truth in Lending Act</h3>
           <p class="text-sm text-ink-700 leading-relaxed">
-            Every rate or APR figure LO Radar surfaces carries the calculation basis and the data date so you can verify before quoting. Draft outreach messages reference rate scenarios, not loan estimates, and clearly indicate that any quote will follow a formal Loan Estimate process.
+            Every rate or APR figure LoanOpticsAI surfaces carries the calculation basis and the data date so you can verify before quoting. Draft outreach messages reference rate scenarios, not loan estimates, and clearly indicate that any quote will follow a formal Loan Estimate process.
           </p>
         </div>
         <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
           <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">TCPA</div>
           <h3 class="font-serif text-2xl text-ink-900 mb-3">Telephone Consumer Protection Act</h3>
           <p class="text-sm text-ink-700 leading-relaxed">
-            LO Radar never sends a message without a named human approving that specific message. For individual loan officers, LO Radar drafts and the LO sends from their own email, CRM, or phone. For enterprise deployments, every send goes through a channel the employer configures and controls, under the employer's TCPA consent records, with the approver, timestamp, and message version logged for audit. There is no automatic send in LO Radar for mortgage customers. We surface compliance flags on every draft so you can confirm consent status before reaching out.
+            LoanOpticsAI never sends a message without a named human approving that specific message. For individual loan officers, LoanOpticsAI drafts and the LO sends from their own email, CRM, or phone. For enterprise deployments, every send goes through a channel the employer configures and controls, under the employer's TCPA consent records, with the approver, timestamp, and message version logged for audit. There is no automatic send in LoanOpticsAI for mortgage customers. We surface compliance flags on every draft so you can confirm consent status before reaching out.
           </p>
         </div>
         <div class="bg-ink-50/50 rounded-2xl p-6 border border-ink-100">
           <div class="text-[10px] font-bold uppercase tracking-widest text-refi-700 mb-2">FCRA</div>
           <h3 class="font-serif text-2xl text-ink-900 mb-3">Fair Credit Reporting Act</h3>
           <p class="text-sm text-ink-700 leading-relaxed">
-            LO Radar does not pull credit reports and is not a consumer reporting agency. Credit-improvement flags are derived from soft-pull aggregations or borrower-volunteered data — never from a hard pull through LO Radar. Any decision to refinance is contingent on the LO's own permissible-purpose credit pull through their existing originator workflow.
+            LoanOpticsAI does not pull credit reports and is not a consumer reporting agency. Credit-improvement flags are derived from soft-pull aggregations or borrower-volunteered data — never from a hard pull through LoanOpticsAI. Any decision to refinance is contingent on the LO's own permissible-purpose credit pull through their existing originator workflow.
           </p>
         </div>
         <div class="bg-gradient-to-br from-ink-950 to-ink-900 rounded-2xl p-6 border border-gold-300/30 text-white">
           <div class="text-[10px] font-bold uppercase tracking-widest text-gradient-gold mb-2">HPPA · NEW</div>
           <h3 class="font-serif text-2xl mb-3">Homebuyers Privacy Protection Act</h3>
           <p class="text-sm text-ink-300 leading-relaxed">
-            Effective March 4, 2026. Third parties may no longer purchase consumer mortgage inquiry data from credit bureaus. LO Radar is structurally aligned: we operate on past-client data you already legally possess as the originating LO. We do not purchase, broker, or aggregate any third-party trigger-lead data.
+            Effective March 4, 2026. Third parties may no longer purchase consumer mortgage inquiry data from credit bureaus. LoanOpticsAI is structurally aligned: we operate on past-client data you already legally possess as the originating LO. We do not purchase, broker, or aggregate any third-party trigger-lead data.
           </p>
         </div>
       </div>
@@ -179,7 +179,7 @@ const faq = [
         <div class="bg-white rounded-2xl border border-ink-100 p-6">
           <h3 class="font-bold text-ink-900 text-xl mb-2">1. We draft. A human approves. You control the channel.</h3>
           <p class="text-ink-700 leading-relaxed">
-            LO Radar generates every outreach draft and surfaces RESPA, TILA, and TCPA flags on it. Nothing is sent until a named person approves that message, and sends go out either from your own systems or through a channel your compliance team configured. LO Radar does not auto-send to borrowers. This keeps TCPA, CAN-SPAM, and state-equivalent consent law obligations under your existing framework, and it preserves your record as the consenting sender.
+            LoanOpticsAI generates every outreach draft and surfaces RESPA, TILA, and TCPA flags on it. Nothing is sent until a named person approves that message, and sends go out either from your own systems or through a channel your compliance team configured. LoanOpticsAI does not auto-send to borrowers. This keeps TCPA, CAN-SPAM, and state-equivalent consent law obligations under your existing framework, and it preserves your record as the consenting sender.
           </p>
         </div>
 
@@ -200,7 +200,7 @@ const faq = [
         <div class="bg-white rounded-2xl border border-ink-100 p-6">
           <h3 class="font-bold text-ink-900 text-xl mb-2">4. Reject the data we don't need.</h3>
           <p class="text-ink-700 leading-relaxed">
-            LO Radar does not need Social Security Numbers, credit reports, government IDs, or bank account numbers to do its job. We don't ask for them, and our CSV importer actively rejects rows that contain them. The less of that data we hold, the smaller the blast radius if anything ever goes wrong.
+            LoanOpticsAI does not need Social Security Numbers, credit reports, government IDs, or bank account numbers to do its job. We don't ask for them, and our CSV importer actively rejects rows that contain them. The less of that data we hold, the smaller the blast radius if anything ever goes wrong.
           </p>
         </div>
       </div>
@@ -254,7 +254,7 @@ const faq = [
         </div>
         <div>
           <dt class="font-bold text-ink-900 mb-1">No advertising pixels</dt>
-          <dd class="text-sm text-ink-700">Zero advertising or behavioral tracking inside the signed-in LO Radar application.</dd>
+          <dd class="text-sm text-ink-700">Zero advertising or behavioral tracking inside the signed-in LoanOpticsAI application.</dd>
         </div>
       </dl>
     </div>
