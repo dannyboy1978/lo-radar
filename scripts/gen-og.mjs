@@ -46,9 +46,9 @@ const template = (name) => ({
       padding: "80px 90px",
       backgroundColor: "#0a0d15",
       backgroundImage:
-        "radial-gradient(circle at 95% 5%, rgba(201,169,106,0.35), transparent 55%), " +
-        "radial-gradient(circle at 5% 95%, rgba(20,184,166,0.22), transparent 55%), " +
-        "radial-gradient(circle at 75% 60%, rgba(20,184,166,0.12), transparent 60%)",
+        "radial-gradient(circle at 95% 5%, rgba(124,58,237,0.35), transparent 55%), " +
+        "radial-gradient(circle at 5% 95%, rgba(13,123,245,0.22), transparent 55%), " +
+        "radial-gradient(circle at 75% 60%, rgba(13,123,245,0.12), transparent 60%)",
       color: "#ffffff",
       fontFamily: "NotoSans",
     },
@@ -58,12 +58,12 @@ const template = (name) => ({
         props: {
           style: { display: "flex", flexDirection: "column", gap: 14 },
           children: [
-            { type: "div", props: { style: { width: 64, height: 3, backgroundColor: "#c9a96a" } } },
+            { type: "div", props: { style: { width: 64, height: 3, backgroundColor: "#b98cff" } } },
             {
               type: "div",
               props: {
                 style: {
-                  color: "#c9a96a",
+                  color: "#b98cff",
                   fontSize: 22,
                   fontWeight: 700,
                   letterSpacing: 6,
@@ -98,7 +98,7 @@ const template = (name) => ({
             {
               type: "div",
               props: {
-                style: { fontFamily: "DMSerifDisplay", fontSize: 42, fontWeight: 400, color: "#c9a96a" },
+                style: { fontFamily: "DMSerifDisplay", fontSize: 42, fontWeight: 400, color: "#b98cff" },
                 children: "LoanOpticsAI",
               },
             },

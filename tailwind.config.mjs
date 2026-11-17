@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        // LO Radar palette — teal + gold + deep ink. No retention-blue or revenue-orange
-        // (those belong to the sister sites at retentioniq.io).
+        // LoanOpticsAI palette — drawn directly from the logo mark (magnifier +
+        // bar chart, blue-to-violet gradient) + the near-black navy wordmark ink.
         ink: {
           50:  "#f8fafc",
           100: "#f1f5f9",
@@ -19,28 +19,31 @@ export default {
           900: "#0a0d15",
           950: "#05070d",
         },
-        // Refi teal — the engine accent
+        // Blue — the bar-chart / magnifier-ring half of the logo gradient.
+        // Was "refi" (teal); kept the key name so every text-refi-*/bg-refi-*
+        // utility across the site updates without touching each file.
         refi: {
-          50:  "#f0fdfa",
-          100: "#ccfbf1",
-          200: "#99f6e4",
-          300: "#5eead4",
-          400: "#2dd4bf",
-          500: "#14b8a6",
-          600: "#0d9488",
-          700: "#0f766e",
-          800: "#115e59",
-          900: "#134e4a",
+          50:  "#eef6ff",
+          100: "#dceaff",
+          200: "#b7d6ff",
+          300: "#86b9ff",
+          400: "#4a94f9",
+          500: "#0d7bf5",
+          600: "#0a63cc",
+          700: "#0a4fa3",
+          800: "#0c3f81",
+          900: "#0b325f",
         },
-        // Gold — the "luxurious" mortgage signal
+        // Violet — the magnifier-handle / "AI" half of the logo gradient.
+        // Was "gold" (warm tan); kept the key name for the same reason.
         gold: {
-          100: "#f7e9c8",
-          200: "#e9c887",
-          300: "#dab76a",
-          400: "#c9a96a",
-          500: "#b89050",
-          600: "#a17c3d",
-          700: "#85652d",
+          100: "#f2ecff",
+          200: "#ddc5ff",
+          300: "#b98cff",
+          400: "#9c5ff2",
+          500: "#7c3aed",
+          600: "#6422c7",
+          700: "#4c1799",
         },
       },
       fontFamily: {

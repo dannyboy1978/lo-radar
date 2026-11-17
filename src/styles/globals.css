@@ -29,22 +29,23 @@ img, svg, video, canvas {
   .container-xl { padding-left: 2rem; padding-right: 2rem; }
 }
 
-/* LoanOpticsAI signature gradients */
+/* LoanOpticsAI signature gradients — sampled directly from the logo mark:
+   blue (#00aaed) through indigo (#3d1fc4) to violet (#7030d9). */
 .text-gradient-gold {
-  background: linear-gradient(135deg, #e9c887 0%, #c9a96a 45%, #a17c3d 100%);
+  background: linear-gradient(135deg, #00aaed 0%, #3d1fc4 55%, #7030d9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #e9c887 0%, #c9a96a 50%, #a17c3d 100%);
+  background: linear-gradient(135deg, #00aaed 0%, #3d1fc4 55%, #7030d9 100%);
 }
 .gradient-refi {
-  background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
+  background: linear-gradient(135deg, #00aaed 0%, #0d7bf5 100%);
 }
 .text-gradient-refi {
-  background: linear-gradient(135deg, #2dd4bf 0%, #0f766e 100%);
+  background: linear-gradient(135deg, #00aaed 0%, #0d7bf5 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -53,5 +54,5 @@ img, svg, video, canvas {
 
 .hairline {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(201,169,106,0.4) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(124,58,237,0.45) 50%, transparent 100%);
 }
