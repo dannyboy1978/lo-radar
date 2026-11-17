@@ -10,7 +10,7 @@ import { COMPETITORS } from "../data/competitors.js";
 
 export const prerender = true;
 
-const SITE = "https://loradar.com";
+const SITE = "https://loanopticsai.com";
 
 const STATIC_PAGES = [
   { path: "/",                                              priority: "1.0", changefreq: "weekly"  },

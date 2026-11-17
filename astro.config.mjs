@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
 // CHANGE ME after Danny finalizes the brand name + buys the domain
-const SITE = "https://loradar.com";
+const SITE = "https://loanopticsai.com";
 
 export default defineConfig({
   site: SITE,

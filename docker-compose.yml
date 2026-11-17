@@ -15,7 +15,7 @@ services:
     expose:
       - "80"
     environment:
-      VIRTUAL_HOST: ${LORADAR_DOMAIN}                  # loradar.com,www.loradar.com
+      VIRTUAL_HOST: ${LORADAR_DOMAIN}                  # loanopticsai.com,www.loanopticsai.com
       VIRTUAL_PORT: "80"
       LETSENCRYPT_HOST: ${LORADAR_DOMAIN}
       LETSENCRYPT_EMAIL: hello@techstackllc.info

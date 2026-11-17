@@ -1,6 +1,6 @@
 # CLAUDE.md — LO Radar marketing site
 
-Future-Claude context for the loradar.com marketing site. Read this before
+Future-Claude context for the loanopticsai.com marketing site. Read this before
 making changes.
 
 ## Deployment
@@ -11,7 +11,7 @@ Routing: `nginx-proxy` + `nginx-proxy-acme` on the external `web` Docker network
 This repo lives at `/root/loradar/` on the VPS. Containers:
 
 - `loradar-marketing` (image `loradar-marketing:latest`) — serves apex
-  `loradar.com,www.loradar.com`. Built from THIS source. Astro v5 -> static -> nginx:alpine.
+  `loanopticsai.com,www.loanopticsai.com`. Built from THIS source. Astro v5 -> static -> nginx:alpine.
 - `lo-radar-app` (image `techstack-iq:latest`) — serves `app.loradar.com` AND
   `app.retentioniq.io`. Shares a codebase with the RetentionIQ app variant.
   NOT built from this repo.
@@ -21,7 +21,7 @@ Deploy pattern:
     cd /root/loradar
     docker compose up -d --build
     docker logs loradar-marketing --tail 50
-    curl -sI https://loradar.com | head -5
+    curl -sI https://loanopticsai.com | head -5
 
 For SSH-rate-limited deploys (the VPS is sensitive to many parallel SSH
 attempts), use the nohup pattern: write the deploy commands to
@@ -273,6 +273,6 @@ After the 2026-06-07 deep SEO/AEO pass (commit 1c90dd5):
 - robots.txt + sitemap.xml + sitemap-index.xml + llms.txt all live.
 - nginx serves trailing-slash routes without redirect (perf fix).
 - CSP header present (was missing before 2026-06-07).
-- /privacy + /terms on loradar.com brand (no longer pointing to retentioniq.io).
+- /privacy + /terms on loanopticsai.com brand (no longer pointing to retentioniq.io).
 - 15 competitors with auto-generated OG images.
 - HPPA positioning surfaced across homepage, /security, /glossary, llms.txt.

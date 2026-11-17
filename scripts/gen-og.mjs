@@ -106,7 +106,7 @@ const template = (name) => ({
               type: "div",
               props: {
                 style: { color: "#ffffff", fontSize: 26, fontWeight: 400, opacity: 0.85 },
-                children: "loradar.com",
+                children: "loanopticsai.com",
               },
             },
           ],

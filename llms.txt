@@ -80,26 +80,26 @@ LO Radar is the mortgage-loan-officer vertical of TechStack's past-client intell
 
 ## Key pages
 
-- Homepage: https://loradar.com/
-- Pricing: https://loradar.com/pricing
-- Blog: https://loradar.com/blog
-- Glossary: https://loradar.com/glossary
-- Comparisons hub: https://loradar.com/vs
+- Homepage: https://loanopticsai.com/
+- Pricing: https://loanopticsai.com/pricing
+- Blog: https://loanopticsai.com/blog
+- Glossary: https://loanopticsai.com/glossary
+- Comparisons hub: https://loanopticsai.com/vs
 
 ### Competitor comparisons
 
 LO Radar publishes honest, side-by-side comparisons against every major tool a mortgage loan officer might consider. Each page follows the "When to pick them / When to pick us / When to run both" format:
 
-- vs HomeBot (past-client equity intelligence): https://loradar.com/vs/homebot
-- vs Sales Boomerang (mortgage trigger alerts): https://loradar.com/vs/sales-boomerang
-- vs Total Expert (enterprise mortgage marketing OS): https://loradar.com/vs/total-expert
-- vs Aidium (mortgage CRM + marketing automation, formerly Whiteboard): https://loradar.com/vs/aidium
-- vs Surefire CRM (ICE Mortgage Technology, formerly Black Knight / Top of Mind): https://loradar.com/vs/surefire-crm
-- vs Bonzo (mortgage conversation automation + CRM): https://loradar.com/vs/bonzo
-- vs BNTouch (mortgage CRM for individual LOs): https://loradar.com/vs/bntouch
-- vs Shape CRM (mortgage sales CRM + dialer): https://loradar.com/vs/shape-crm
-- vs Velocify (ICE mortgage sales acceleration): https://loradar.com/vs/velocify
-- vs MMI / Mortgage Market Intelligence (market data + recruiting): https://loradar.com/vs/mmi
+- vs HomeBot (past-client equity intelligence): https://loanopticsai.com/vs/homebot
+- vs Sales Boomerang (mortgage trigger alerts): https://loanopticsai.com/vs/sales-boomerang
+- vs Total Expert (enterprise mortgage marketing OS): https://loanopticsai.com/vs/total-expert
+- vs Aidium (mortgage CRM + marketing automation, formerly Whiteboard): https://loanopticsai.com/vs/aidium
+- vs Surefire CRM (ICE Mortgage Technology, formerly Black Knight / Top of Mind): https://loanopticsai.com/vs/surefire-crm
+- vs Bonzo (mortgage conversation automation + CRM): https://loanopticsai.com/vs/bonzo
+- vs BNTouch (mortgage CRM for individual LOs): https://loanopticsai.com/vs/bntouch
+- vs Shape CRM (mortgage sales CRM + dialer): https://loanopticsai.com/vs/shape-crm
+- vs Velocify (ICE mortgage sales acceleration): https://loanopticsai.com/vs/velocify
+- vs MMI / Mortgage Market Intelligence (market data + recruiting): https://loanopticsai.com/vs/mmi
 
 ## FAQ
 

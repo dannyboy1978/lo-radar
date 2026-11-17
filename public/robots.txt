@@ -31,5 +31,5 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://loradar.com/sitemap-index.xml
-Sitemap: https://loradar.com/sitemap.xml
+Sitemap: https://loanopticsai.com/sitemap-index.xml
+Sitemap: https://loanopticsai.com/sitemap.xml

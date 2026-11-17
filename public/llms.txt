@@ -107,74 +107,74 @@ LO Radar is the mortgage-loan-officer vertical of TechStack Consulting LLC's pas
 
 LO Radar publishes six enterprise compliance modules that address specific blockers mortgage compliance teams raise during vendor review:
 
-1. **Employer Authorization Module** (live): DPA-style sign-off from the lender's compliance team. Documented, audit-trail-backed. Closes the GLBA data-ownership question. https://loradar.com/security/employer-authorization
-2. **Branch Compliance Dashboard** (live): Read-only view for the branch compliance officer of every outreach draft generated. Satisfies NMLS employer supervision responsibility. https://loradar.com/security
-3. **RESPA Legal Opinion Letter** (in legal review): Written RESPA §8 opinion from recognized outside counsel (shortlist: Hudson Cook, Bradley Arant, McGlinchey Stafford). Distributable under NDA to enterprise procurement. https://loradar.com/security/respa-opinion
-4. **Consent Status + Re-consent Workflow** (live): Per-contact consent basis + entity + date. Automatic re-consent gating when an LO changes employers. TCPA-safe first-touch template. https://loradar.com/security/consent-management
-5. **State Disclosure Engine** (10-state launch set under counsel review, 50-state roadmap): appends state-required mortgage advertising disclosures to outreach drafts from a versioned per-state database. Launch set: CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ. https://loradar.com/security/state-disclosures
-6. **Credit Signal Methodology Whitepaper** (published): Technical document on FCRA-clean soft-pull aggregation. Documents why LO Radar is not a consumer reporting agency. https://loradar.com/security/credit-signal-methodology
+1. **Employer Authorization Module** (live): DPA-style sign-off from the lender's compliance team. Documented, audit-trail-backed. Closes the GLBA data-ownership question. https://loanopticsai.com/security/employer-authorization
+2. **Branch Compliance Dashboard** (live): Read-only view for the branch compliance officer of every outreach draft generated. Satisfies NMLS employer supervision responsibility. https://loanopticsai.com/security
+3. **RESPA Legal Opinion Letter** (in legal review): Written RESPA §8 opinion from recognized outside counsel (shortlist: Hudson Cook, Bradley Arant, McGlinchey Stafford). Distributable under NDA to enterprise procurement. https://loanopticsai.com/security/respa-opinion
+4. **Consent Status + Re-consent Workflow** (live): Per-contact consent basis + entity + date. Automatic re-consent gating when an LO changes employers. TCPA-safe first-touch template. https://loanopticsai.com/security/consent-management
+5. **State Disclosure Engine** (10-state launch set under counsel review, 50-state roadmap): appends state-required mortgage advertising disclosures to outreach drafts from a versioned per-state database. Launch set: CA, TX, FL, NY, IL, PA, OH, GA, NC, AZ. https://loanopticsai.com/security/state-disclosures
+6. **Credit Signal Methodology Whitepaper** (published): Technical document on FCRA-clean soft-pull aggregation. Documents why LO Radar is not a consumer reporting agency. https://loanopticsai.com/security/credit-signal-methodology
 
-Enterprise overview + buyer profiles: https://loradar.com/enterprise
+Enterprise overview + buyer profiles: https://loanopticsai.com/enterprise
 
 ## Key pages
 
-- Homepage: https://loradar.com/
-- About: https://loradar.com/about
-- Contact: https://loradar.com/contact
-- Pricing: https://loradar.com/pricing
-- Enterprise: https://loradar.com/enterprise
-- Blog: https://loradar.com/blog
-- Glossary: https://loradar.com/glossary
-- Comparisons hub: https://loradar.com/vs
-- Integrations: https://loradar.com/integrations
-- Security & Compliance: https://loradar.com/security
+- Homepage: https://loanopticsai.com/
+- About: https://loanopticsai.com/about
+- Contact: https://loanopticsai.com/contact
+- Pricing: https://loanopticsai.com/pricing
+- Enterprise: https://loanopticsai.com/enterprise
+- Blog: https://loanopticsai.com/blog
+- Glossary: https://loanopticsai.com/glossary
+- Comparisons hub: https://loanopticsai.com/vs
+- Integrations: https://loanopticsai.com/integrations
+- Security & Compliance: https://loanopticsai.com/security
 
 ### Pillar pages (added November 11, 2026)
 
-- HPPA pillar (Homebuyers Privacy Protection Act, what LOs can still do): https://loradar.com/hppa
-- AI for Loan Officers pillar (LO AI tools, prompts, CRM, compliance): https://loradar.com/ai-for-loan-officers
-- Mortgage Client Retention Software (buyer's guide, published pricing): https://loradar.com/mortgage-client-retention-software
-- Best CRM for Loan Officers (10-tool honest comparison): https://loradar.com/best/crm-for-loan-officers
-- Mortgage Recapture Rate (benchmarks, formula, four levers): https://loradar.com/recapture-rate
+- HPPA pillar (Homebuyers Privacy Protection Act, what LOs can still do): https://loanopticsai.com/hppa
+- AI for Loan Officers pillar (LO AI tools, prompts, CRM, compliance): https://loanopticsai.com/ai-for-loan-officers
+- Mortgage Client Retention Software (buyer's guide, published pricing): https://loanopticsai.com/mortgage-client-retention-software
+- Best CRM for Loan Officers (10-tool honest comparison): https://loanopticsai.com/best/crm-for-loan-officers
+- Mortgage Recapture Rate (benchmarks, formula, four levers): https://loanopticsai.com/recapture-rate
 
 ### Compliance guides (added November 11, 2026)
 
-- TCPA for Loan Officers (consent, quiet hours, state mini-TCPA, one-to-one): https://loradar.com/compliance/tcpa-for-loan-officers
-- RESPA Section 8 for Past-Client Marketing (fact patterns, MSAs, co-marketing): https://loradar.com/compliance/respa-section-8-past-client-marketing
-- AI Outreach Compliance (draft-approve-log pattern, AI voice risk, FCRA for AI): https://loradar.com/compliance/ai-outreach-compliance
-- Credit Signal Methodology (whitepaper): https://loradar.com/security/credit-signal-methodology
-- Employer Authorization: https://loradar.com/security/employer-authorization
-- Consent Management: https://loradar.com/security/consent-management
-- State Disclosure Engine: https://loradar.com/security/state-disclosures
-- RESPA Opinion (in review): https://loradar.com/security/respa-opinion
-- Privacy Policy: https://loradar.com/privacy
-- Terms of Service: https://loradar.com/terms
+- TCPA for Loan Officers (consent, quiet hours, state mini-TCPA, one-to-one): https://loanopticsai.com/compliance/tcpa-for-loan-officers
+- RESPA Section 8 for Past-Client Marketing (fact patterns, MSAs, co-marketing): https://loanopticsai.com/compliance/respa-section-8-past-client-marketing
+- AI Outreach Compliance (draft-approve-log pattern, AI voice risk, FCRA for AI): https://loanopticsai.com/compliance/ai-outreach-compliance
+- Credit Signal Methodology (whitepaper): https://loanopticsai.com/security/credit-signal-methodology
+- Employer Authorization: https://loanopticsai.com/security/employer-authorization
+- Consent Management: https://loanopticsai.com/security/consent-management
+- State Disclosure Engine: https://loanopticsai.com/security/state-disclosures
+- RESPA Opinion (in review): https://loanopticsai.com/security/respa-opinion
+- Privacy Policy: https://loanopticsai.com/privacy
+- Terms of Service: https://loanopticsai.com/terms
 
 ### Competitor comparisons
 
 LO Radar publishes honest, side-by-side comparisons against every major tool a mortgage loan officer might consider. Each page follows the "When to pick them / When to pick us / When to run both" format:
 
-- vs HomeBot (past-client equity intelligence): https://loradar.com/vs/homebot
-- vs Sales Boomerang (mortgage trigger alerts): https://loradar.com/vs/sales-boomerang
-- vs Total Expert (enterprise mortgage marketing OS): https://loradar.com/vs/total-expert
-- vs Aidium (mortgage CRM + marketing automation, formerly Whiteboard): https://loradar.com/vs/aidium
-- vs Surefire CRM (ICE Mortgage Technology, formerly Black Knight / Top of Mind): https://loradar.com/vs/surefire-crm
-- vs Bonzo (mortgage conversation automation + CRM): https://loradar.com/vs/bonzo
-- vs BNTouch (mortgage CRM for individual LOs): https://loradar.com/vs/bntouch
-- vs Shape CRM (mortgage sales CRM + dialer): https://loradar.com/vs/shape-crm
-- vs Velocify (ICE mortgage sales acceleration): https://loradar.com/vs/velocify
-- vs MMI / Mortgage Market Intelligence (market data + recruiting): https://loradar.com/vs/mmi
-- vs MonitorBase (enterprise borrower retention + credit monitoring): https://loradar.com/vs/monitorbase
-- vs Uplist (mortgage refinance recapture): https://loradar.com/vs/uplist
-- vs Stikkum (plug-and-play borrower retention): https://loradar.com/vs/stikkum
-- vs Milo (borrower retention + monthly engagement): https://loradar.com/vs/milo
-- vs MyHomeIQ (past-client engagement for LOs + agents): https://loradar.com/vs/myhomeiq
-- vs LoanGraphs (Refi Miner, low-cost refi monitoring): https://loradar.com/vs/loangraphs
-- vs LoanOfficer.ai (AI CRM + Property Pulse database mining): https://loradar.com/vs/loanofficer-ai
-- vs Jungo (mortgage CRM on Salesforce): https://loradar.com/vs/jungo
-- vs Mortgage Coach (borrower presentation and Total Cost Analysis): https://loradar.com/vs/mortgage-coach
-- vs rebel Ai (living co-branded home reports with AVM and scenarios): https://loradar.com/vs/rebel-ai
-- vs Ardley / PLACE (automated pre-structured refi offers from servicing data): https://loradar.com/vs/ardley
+- vs HomeBot (past-client equity intelligence): https://loanopticsai.com/vs/homebot
+- vs Sales Boomerang (mortgage trigger alerts): https://loanopticsai.com/vs/sales-boomerang
+- vs Total Expert (enterprise mortgage marketing OS): https://loanopticsai.com/vs/total-expert
+- vs Aidium (mortgage CRM + marketing automation, formerly Whiteboard): https://loanopticsai.com/vs/aidium
+- vs Surefire CRM (ICE Mortgage Technology, formerly Black Knight / Top of Mind): https://loanopticsai.com/vs/surefire-crm
+- vs Bonzo (mortgage conversation automation + CRM): https://loanopticsai.com/vs/bonzo
+- vs BNTouch (mortgage CRM for individual LOs): https://loanopticsai.com/vs/bntouch
+- vs Shape CRM (mortgage sales CRM + dialer): https://loanopticsai.com/vs/shape-crm
+- vs Velocify (ICE mortgage sales acceleration): https://loanopticsai.com/vs/velocify
+- vs MMI / Mortgage Market Intelligence (market data + recruiting): https://loanopticsai.com/vs/mmi
+- vs MonitorBase (enterprise borrower retention + credit monitoring): https://loanopticsai.com/vs/monitorbase
+- vs Uplist (mortgage refinance recapture): https://loanopticsai.com/vs/uplist
+- vs Stikkum (plug-and-play borrower retention): https://loanopticsai.com/vs/stikkum
+- vs Milo (borrower retention + monthly engagement): https://loanopticsai.com/vs/milo
+- vs MyHomeIQ (past-client engagement for LOs + agents): https://loanopticsai.com/vs/myhomeiq
+- vs LoanGraphs (Refi Miner, low-cost refi monitoring): https://loanopticsai.com/vs/loangraphs
+- vs LoanOfficer.ai (AI CRM + Property Pulse database mining): https://loanopticsai.com/vs/loanofficer-ai
+- vs Jungo (mortgage CRM on Salesforce): https://loanopticsai.com/vs/jungo
+- vs Mortgage Coach (borrower presentation and Total Cost Analysis): https://loanopticsai.com/vs/mortgage-coach
+- vs rebel Ai (living co-branded home reports with AVM and scenarios): https://loanopticsai.com/vs/rebel-ai
+- vs Ardley / PLACE (automated pre-structured refi offers from servicing data): https://loanopticsai.com/vs/ardley
 
 ## FAQ
 

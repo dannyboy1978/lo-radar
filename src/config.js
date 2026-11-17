@@ -7,7 +7,7 @@
 // ─── Brand ───────────────────────────────────────────────────────────────
 export const BRAND_NAME = "LO Radar";
 export const PARENT_COMPANY = "TechStack Consulting LLC";
-export const SITE_URL = "https://loradar.com";
+export const SITE_URL = "https://loanopticsai.com";
 
 // ─── BOOKING — primary CTA destination (GHL calendar) ───────────────────
 // All venture sites share a single TechStack Strategy Call calendar. The
@@ -15,7 +15,7 @@ export const SITE_URL = "https://loradar.com";
 // which brand drove the meeting inside GHL contacts.
 export const BOOKING_URL =
   import.meta.env.PUBLIC_BOOKING_URL ||
-  "https://link.techstackconsulting.io/widget/booking/37UnLBt2Z1zHR5uXbiw2?product=LO%20Radar&utm_source=loradar.com&utm_medium=web&utm_campaign=book-demo";
+  "https://link.techstackconsulting.io/widget/booking/37UnLBt2Z1zHR5uXbiw2?product=LO%20Radar&utm_source=loanopticsai.com&utm_medium=web&utm_campaign=book-demo";
 
 // ─── CONTACT ─────────────────────────────────────────────────────────────
 export const CONTACT_EMAIL = "hello@techstackllc.info";
